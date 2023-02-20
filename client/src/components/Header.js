@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 const Header = () => {
   return (
     <>
@@ -127,3 +129,92 @@ const Header = () => {
   );
 };
 export default Header;
+
+const Wrapper = styled.header`
+  header {
+    position: relative;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #221333;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0px 0 45px 0;
+    margin-top: 14px;
+  }
+  header h4 {
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 3.2px;
+    margin-bottom: -7px;
+  }
+  header .logo {
+    position: relative;
+    height: 70px;
+  }
+  header h1 {
+    font-weight: 400;
+    font-size: 44px;
+    letter-spacing: 3px;
+    color: #df3311;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .block {
+    width: 16.3rem;
+    height: 1.05rem;
+    background-color: #221333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    background-image: repeating-linear-gradient(
+      60deg,
+      #ffffff58 0px,
+      #ffffff58 1px,
+      #221333 1px,
+      #221333 1px,
+      #221333 1.5px
+    );
+  }
+  header p {
+    font-weight: 200;
+    letter-spacing: 4.7px;
+    font-size: 12px;
+  }
+  @media screen and (min-width: 850px) {
+    header {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 35px 0 45px 0;
+      margin-top: 0;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    header {
+      padding-bottom: 30px;
+    }
+    header h4 {
+      font-size: 12px;
+      margin-bottom: -11px;
+    }
+    header .logo {
+      margin-bottom: -6px;
+    }
+    header h1 {
+      font-size: 34px;
+    }
+    .block {
+      height: 0.8rem;
+      transform: translate(-50%, 25%);
+    }
+    header p {
+      font-size: 10px;
+    }
+  }
+`;
