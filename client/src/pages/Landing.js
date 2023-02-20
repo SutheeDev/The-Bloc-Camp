@@ -1,9 +1,10 @@
-import { Navbar } from "../components";
+import { Navbar, Header } from "../components";
 
 const Landing = () => {
   return (
     <>
       <Navbar />
+      <Header />
     </>
   );
 };
