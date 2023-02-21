@@ -1,10 +1,11 @@
-import { Navbar, Header, Footer } from "../components";
+import { Navbar, Header, Footer, Slideshow } from "../components";
 
 const Landing = () => {
   return (
     <>
       <Navbar />
       <Header />
+      <Slideshow />
       <Footer />
     </>
   );
