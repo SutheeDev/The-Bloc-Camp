@@ -11,8 +11,16 @@ const Navbar = () => {
           <nav>
             <ul class="links">
               <li class="hamburger">
-                <img src={hamburger} alt="hamburger menu icon" />
-                <img src={closeHamburger} alt="close hamburger menu icon" />
+                <img
+                  src={hamburger}
+                  alt="hamburger menu icon"
+                  className="hamburger-open"
+                />
+                <img
+                  src={closeHamburger}
+                  alt="close hamburger menu icon"
+                  className="hamburger-close"
+                />
               </li>
               <li class="link">
                 <a href="#">home</a>

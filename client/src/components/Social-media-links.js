@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const SocialLinks = () => {
   return (
-    <nav>
+    <Wrapper>
       <ul class="social-links">
         <li>
           <a href="https://www.facebook.com/" target="_blank">
@@ -29,9 +29,35 @@ const SocialLinks = () => {
           </a>
         </li>
       </ul>
-    </nav>
+    </Wrapper>
   );
 };
 export default SocialLinks;
 
-const Wrapper = styled.nav``;
+const Wrapper = styled.nav`
+  .social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .social-links li {
+    margin: 0 21px;
+  }
+  @media screen and (min-width: 850px) {
+    .social-links {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: #221333;
+      flex-direction: column;
+      margin-top: 0;
+      border-radius: 2px;
+      z-index: 10;
+    }
+    .social-links li {
+      margin: 15px 15px;
+    }
+  }
+`;
