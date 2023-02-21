@@ -40,21 +40,17 @@ const Navbar = () => {
 export default Navbar;
 
 const Wrapper = styled.section`
-  section.navigation {
-    background-color: #221333;
-    padding: 37px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    overflow: hidden;
-    z-index: 10;
-    transition: all 0.2s ease;
-  }
-  .navigation {
-    transition: all 0.2s ease;
-  }
+  background-color: #221333;
+  padding: 37px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.2s ease;
+
   .container {
     width: 90vw;
     margin: 0 auto;
@@ -65,7 +61,7 @@ const Wrapper = styled.section`
   .links {
     padding: 0;
   }
-  .navigation nav {
+  nav {
     width: 100%;
   }
   .links li {
@@ -95,7 +91,7 @@ const Wrapper = styled.section`
     display: block;
     margin-bottom: 40px;
   }
-  section.navigation.open-nav {
+  .open-nav {
     height: auto;
   }
   .hamburger {
@@ -110,25 +106,24 @@ const Wrapper = styled.section`
   .hamburger-close {
     opacity: 0;
   }
-  section.navigation.open-nav .hamburger-open {
+  .open-nav .hamburger-open {
     opacity: 0;
   }
-  section.navigation.open-nav .hamburger-close {
+  .open-nav .hamburger-close {
     opacity: 1;
   }
   @media screen and (min-width: 850px) {
-    section.navigation {
-      background-color: transparent;
-      padding: 10px 0;
-      position: fixed;
-      top: 19px;
-      left: 0;
-      width: 100%;
-    }
+    background-color: transparent;
+    padding: 10px 0;
+    position: fixed;
+    top: 19px;
+    left: 0;
+    width: 100%;
+
     .container {
       align-items: center;
     }
-    .navigation nav {
+    nav {
       background-color: #221333;
       width: 40vw;
       border-radius: 2px;
