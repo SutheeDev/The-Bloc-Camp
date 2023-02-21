@@ -1,7 +1,7 @@
-import facebook from "../images/facebook.svg";
-import twitter from "../images/twitter.svg";
-import instagram from "../images/instagram.svg";
-import youtube from "../images/youtube.svg";
+import facebook from "../assets/svg/facebook.svg";
+import twitter from "../assets/svg/twitter.svg";
+import instagram from "../assets/svg/instagram.svg";
+import youtube from "../assets/svg/youtube.svg";
 import styled from "styled-components";
 
 const SocialLinks = () => {

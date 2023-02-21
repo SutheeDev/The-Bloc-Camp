@@ -1,6 +1,6 @@
-import hamburger from "../images/hamburger.svg";
-import closeHamburger from "../images/close-hamburger.svg";
-import login from "../images/login.svg";
+import hamburger from "../assets/svg/hamburger.svg";
+import closeHamburger from "../assets/svg/close-hamburger.svg";
+import login from "../assets/svg/login.svg";
 import styled from "styled-components";
 
 const Navbar = () => {
