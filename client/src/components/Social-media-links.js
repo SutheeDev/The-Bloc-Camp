@@ -9,22 +9,22 @@ const SocialLinks = () => {
     <Wrapper>
       <ul class="social-links">
         <li>
-          <a href="https://www.facebook.com/" target="_blank">
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
             <img src={facebook} alt="facebook icon" />
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/" target="_blank">
+          <a href="https://twitter.com/" target="_blank" rel="noreferrer">
             <img src={twitter} alt="twitter icon" />
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/" target="_blank">
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
             <img src={instagram} alt="instagram icon" />
           </a>
         </li>
         <li>
-          <a href="https://www.youtube.com/" target="_blank">
+          <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
             <img src={youtube} alt="youtube icon" />
           </a>
         </li>

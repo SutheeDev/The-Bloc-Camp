@@ -1,29 +1,290 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import SwiperCore, { Autoplay } from "swiper/core";
+import "swiper/css/autoplay";
+
+import styled from "styled-components";
+import testImg1 from "../assets/images/img-bg-1.jpg";
+import testImg2 from "../assets/images/img-bg-2.jpg";
+import testImg3 from "../assets/images/img-bg-3.jpg";
+
 const Slideshow = () => {
   return (
-    <section class="slideshow">
-      <div class="swiper" id="swiper1">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div>
-              <div class="slides-info">
-                <h1>Artist.</h1>
-                <div class="slide-info">
-                  <span class="slide-date">Tue Feb 21</span>
-                  <span class="slide-time">8.00 pm</span>
-                  <div>
-                    <a href="#">
-                      <button>Get Tickets</button>
-                    </a>
-                    <div class="btn-block"></div>
-                  </div>
+    <Wrapper>
+      <Swiper
+        modules={[Autoplay]}
+        loop={true}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        slidesPerView={1}
+        speed={1000}
+      >
+        <SwiperSlide>
+          <div>
+            <div className="slides-info">
+              <h1>Artist.</h1>
+              <div className="slide-info">
+                <span className="slide-date">Tue Feb 21</span>
+                <span className="slide-time">8.00 pm</span>
+                <div>
+                  <a href="#">
+                    <button>Get Tickets</button>
+                  </a>
+                  <div className="btn-block"></div>
                 </div>
               </div>
-              <img src="#" alt="" />
             </div>
+            <img src={testImg1} alt="" />
           </div>
-        </div>
-      </div>
-    </section>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <div className="slides-info">
+              <h1>Artist.</h1>
+              <div className="slide-info">
+                <span className="slide-date">Tue Feb 21</span>
+                <span className="slide-time">8.00 pm</span>
+                <div>
+                  <a href="#">
+                    <button>Get Tickets</button>
+                  </a>
+                  <div className="btn-block"></div>
+                </div>
+              </div>
+            </div>
+            <img src={testImg2} alt="" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <div className="slides-info">
+              <h1>Artist.</h1>
+              <div className="slide-info">
+                <span className="slide-date">Tue Feb 21</span>
+                <span className="slide-time">8.00 pm</span>
+                <div>
+                  <a href="#">
+                    <button>Get Tickets</button>
+                  </a>
+                  <div className="btn-block"></div>
+                </div>
+              </div>
+            </div>
+            <img src={testImg3} alt="" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </Wrapper>
   );
 };
+
 export default Slideshow;
+
+const Wrapper = styled.section`
+  /* ---------------- */
+  /* Slideshow */
+  /* ---------------- */
+  .swiper {
+    width: 100vw;
+    color: #221333;
+  }
+  .swiper-wrapper .swiper-slide {
+    position: relative;
+  }
+  .swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(30%);
+  }
+  .slides-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 7rem 9rem 0 9rem;
+  }
+  .slides-info h1 {
+    width: 50%;
+    font-size: calc(7vw + 1rem);
+    text-transform: uppercase;
+    color: #df3311;
+    line-height: 5.5rem;
+  }
+  .slide-info {
+    width: 36%;
+    height: 34vw;
+    max-height: 370px;
+    background-color: #df3311;
+    position: relative;
+    border-radius: 1px;
+  }
+  .slide-info span {
+    display: block;
+    font-size: calc(2vw + 0.5rem);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #221333;
+    padding: 0.3rem 2rem 0.5rem 1rem;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    border-radius: 1px;
+  }
+  .slide-date {
+    width: calc(2rem + 26vw);
+  }
+  .slide-time {
+    width: calc(2rem + 13vw);
+    transform: translateY(4.5rem);
+  }
+  .slide-info button,
+  .slide-info div .btn-block {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+  }
+  .slide-info button {
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    color: #221333;
+    border: 3px solid #221333;
+    background-color: transparent;
+    border-radius: 1px;
+    z-index: 2;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+  }
+  .slide-info div {
+    height: 100%;
+    position: relative;
+  }
+  .slide-info div .btn-block {
+    width: 235px;
+    height: 27px;
+    background-color: #ffffff;
+    transform: translate(-42%, -51%);
+    border-radius: 1px;
+  }
+  .slide-info button:hover {
+    background-color: #221333;
+    color: #df3311;
+  }
+  /* ---------------- */
+  /* Slideshow Media Queries */
+  /* ---------------- */
+  @media screen and (min-width: 1300px) {
+    .slides-info h1 {
+      line-height: 7rem;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    .slideshow {
+      position: relative;
+      top: 60px;
+      left: 0;
+    }
+    .slides-info {
+      padding: 5rem 6rem 0 6rem;
+    }
+    .slides-info h1 {
+      font-size: calc(6vw + 1rem);
+      line-height: 4rem;
+    }
+    .slide-info span {
+      font-size: calc(1.5vw + 0.5rem);
+      top: 1rem;
+      left: 1rem;
+    }
+    .slide-date {
+      width: calc(2rem + 25vw);
+    }
+    .slide-time {
+      width: calc(2rem + 12vw);
+      transform: translateY(3.5rem);
+    }
+    .slide-info button,
+    .slide-info div .btn-block {
+      left: 1rem;
+    }
+    .slide-info button {
+      font-size: 12px;
+      width: 7.5rem;
+      padding: 12px 10px;
+    }
+    .slide-info div .btn-block {
+      transform: translate(-36%, -34%);
+      width: 172px;
+    }
+  }
+  @media screen and (max-width: 850px) {
+    .slides-info {
+      padding: 5rem 3rem;
+    }
+    .slides-info h1 {
+      font-size: calc(5vw + 1rem);
+      line-height: 3rem;
+    }
+    .slide-info span {
+      font-size: calc(1vw + 0.5rem);
+      top: 1rem;
+      left: 1rem;
+      padding: 0.3rem 2rem 0.5rem 0.5rem;
+    }
+    .slide-date {
+      width: calc(2rem + 23vw);
+    }
+    .slide-time {
+      width: calc(2rem + 11vw);
+      transform: translateY(3rem);
+    }
+    .slide-info button,
+    .slide-info div .btn-block {
+      bottom: 0.5rem;
+    }
+    .slide-info button {
+      width: 7.5rem;
+      padding: 7px 0;
+    }
+    .slide-info div .btn-block {
+      transform: translate(-36%, -49%);
+      width: 170px;
+      height: 18px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .slides-info {
+      padding: 2rem 2rem;
+    }
+    .slide-info span {
+      top: 0.5rem;
+      left: 0.5rem;
+      padding: 0.3rem 0 0.5rem 0.5rem;
+    }
+    .slide-info button,
+    .slide-info div .btn-block {
+      left: 0.5rem;
+    }
+    .slide-info button {
+      font-size: 10px;
+      width: 6rem;
+      padding: 5px 0;
+    }
+    .slide-info div .btn-block {
+      transform: translate(-26%, -57%);
+      width: 120px;
+      height: 13px;
+    }
+  }
+`;
