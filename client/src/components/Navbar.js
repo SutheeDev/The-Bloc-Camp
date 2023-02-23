@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const Navbar = () => {
   return (
-    <Wrapper class="navigation">
+    <Wrapper class="navigation open-nav">
       <div class="container">
         <div>
           <nav>
@@ -78,9 +78,10 @@ const Wrapper = styled.section`
     font-weight: 400;
     cursor: pointer;
   }
-  .links li svg {
+  .hamburger-open,
+  .hamburger-close {
     margin-bottom: 100px;
-    fill: #df3311;
+    fill: var(--reddish);
   }
   .logIn {
     display: flex;
@@ -143,7 +144,8 @@ const Wrapper = styled.section`
       align-items: center;
       padding: 8px 0 10px 0;
     }
-    .links li {
+    .link,
+    .hamburger {
       margin-right: 40px;
       font-size: 14px;
       display: flex;
@@ -153,7 +155,7 @@ const Wrapper = styled.section`
     .links li:first-child {
       margin-right: 0;
     }
-    .links li svg {
+    .links li img {
       display: none;
     }
     .link {
