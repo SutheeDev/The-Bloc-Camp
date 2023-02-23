@@ -83,9 +83,6 @@ const Slideshow = () => {
 export default Slideshow;
 
 const Wrapper = styled.section`
-  /* ---------------- */
-  /* Slideshow */
-  /* ---------------- */
   .swiper {
     width: 100vw;
     color: #221333;
@@ -181,9 +178,6 @@ const Wrapper = styled.section`
     background-color: #221333;
     color: #df3311;
   }
-  /* ---------------- */
-  /* Slideshow Media Queries */
-  /* ---------------- */
   @media screen and (min-width: 1300px) {
     .slides-info h1 {
       line-height: 7rem;
