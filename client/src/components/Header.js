@@ -26,7 +26,7 @@ const Wrapper = styled.header`
   background-color: var(--darkBlue);
   text-transform: uppercase;
   text-align: center;
-  padding: 0px 0 45px 0;
+  padding: 0px 0 85px 0;
   margin-top: 14px;
 
   h4 {
@@ -83,8 +83,6 @@ const Wrapper = styled.header`
     margin-top: 0;
   }
   @media screen and (max-width: 450px) {
-    padding-bottom: 30px;
-
     h4 {
       font-size: 12px;
       margin-bottom: -11px;
@@ -94,6 +92,7 @@ const Wrapper = styled.header`
     }
     h1 {
       font-size: 34px;
+      margin-top: 1px;
     }
     .block {
       height: 0.8rem;
