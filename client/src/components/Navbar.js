@@ -1,16 +1,26 @@
+import { useState } from "react";
 import hamburger from "../assets/svg/hamburger.svg";
 import closeHamburger from "../assets/svg/close-hamburger.svg";
 import login from "../assets/svg/login.svg";
 import styled from "styled-components";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // const toggleHamburger = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
+
   return (
-    <Wrapper class="navigation open-nav">
-      <div class="container">
+    <Wrapper className={isMenuOpen ? "navigation open-nav" : "navigation"}>
+      <div className="container">
         <div>
           <nav>
-            <ul class="links">
-              <li class="hamburger">
+            <ul className="links">
+              <li
+                className="hamburger"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
                 <img
                   src={hamburger}
                   alt="hamburger menu icon"
@@ -22,22 +32,22 @@ const Navbar = () => {
                   className="hamburger-close"
                 />
               </li>
-              <li class="link">
+              <li className="link">
                 <a href="#">home</a>
               </li>
-              <li class="link">
+              <li className="link">
                 <a href="#">shows</a>
               </li>
-              <li class="link">
+              <li className="link">
                 <a href="#">about</a>
               </li>
-              <li class="link">
+              <li className="link">
                 <a href="#">contact</a>
               </li>
             </ul>
           </nav>
         </div>
-        <div class="logIn">
+        <div className="logIn">
           <img src={login} alt="login icon" />
           <a href="#">log in</a>
         </div>
@@ -49,6 +59,107 @@ export default Navbar;
 
 const Wrapper = styled.section`
   background-color: #221333;
+  padding: 37px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.2s ease;
+
+  .container {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    li {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+    li.hamburger {
+      display: grid;
+      place-items: left;
+      /* z-index: 10; */
+      .hamburger-open,
+      .hamburger-close {
+        margin-bottom: 100px;
+        grid-area: 1/1;
+        transition: all 0.2s ease;
+      }
+    }
+    li.link {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+
+  .logIn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    a {
+      text-transform: capitalize;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-left: 8px;
+      color: #df3311;
+    }
+  }
+
+  @media screen and (min-width: 450px) {
+    .logIn a {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width: 850px) {
+    background-color: transparent;
+    padding: 10px 0;
+    position: fixed;
+    top: 19px;
+    left: 0;
+    /* width: 100%; */
+
+    .container {
+      /* align-items: center; */
+
+      nav {
+        background-color: #221333;
+        width: 40vw;
+        border-radius: 2px;
+        padding-left: 10px;
+
+        .links {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 8px 0 10px 0;
+
+          .hamburger,
+          .link {
+            margin-right: 40px;
+            font-size: 14px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          }
+          .hamburger {
+            margin-right: 0;
+            display: none;
+          }
+          .link {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  /* background-color: #221333;
   padding: 37px 0;
   position: absolute;
   top: 0;
@@ -100,12 +211,13 @@ const Wrapper = styled.section`
     display: block;
     margin-bottom: 40px;
   }
-  .open-nav {
+  .navigation.open-nav {
     height: auto;
   }
   .hamburger {
     display: grid;
     place-items: left;
+    z-index: 10;
   }
   .hamburger-open,
   .hamburger-close {
@@ -166,5 +278,5 @@ const Wrapper = styled.section`
     .logIn a {
       font-size: 12px;
     }
-  }
+  } */
 `;
