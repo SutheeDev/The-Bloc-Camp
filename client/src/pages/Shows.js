@@ -14,6 +14,7 @@ const Shows = () => {
     <Wrapper>
       <Navbar />
       <Header />
+      <PageTitle />
     </Wrapper>
   );
 };
