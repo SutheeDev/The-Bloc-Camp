@@ -1,10 +1,13 @@
 import Landing from "./pages/Landing.js";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <>
-      <Landing />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
