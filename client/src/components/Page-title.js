@@ -43,6 +43,15 @@ const Wrapper = styled.div`
     position: relative;
   }
   .block {
+    background-image: repeating-linear-gradient(
+      60deg,
+      #ffffff58 0px,
+      #ffffff58 1px,
+      #221333 1px,
+      #221333 1px,
+      #221333 1.5px
+    );
+
     width: 58px;
     height: 17px;
     background-color: #221333;
