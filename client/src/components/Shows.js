@@ -101,10 +101,9 @@ const Wrapper = styled.section`
   /* ----------------- */
   /* Shows Section */
   /* ----------------- */
-  .shows {
-    background-color: #321f48;
-    padding: 80px 0;
-  }
+  background-color: var(--lighterBlue);
+  padding: 80px 0;
+
   .shows-container {
     width: 65vw;
     max-width: 1000px;
@@ -215,9 +214,8 @@ const Wrapper = styled.section`
   /* Shows Section Media Queries */
   /* ----------------- */
   @media screen and (max-width: 850px) {
-    .shows {
-      padding: 50px 0;
-    }
+    padding: 50px 0;
+
     .shows-container {
       width: 85vw;
     }
