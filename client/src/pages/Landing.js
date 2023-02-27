@@ -1,4 +1,11 @@
-import { Navbar, Header, Footer, Slideshow, PageTitle } from "../components";
+import {
+  Navbar,
+  Header,
+  Footer,
+  Slideshow,
+  PageTitle,
+  Shows,
+} from "../components";
 import styled from "styled-components";
 
 const Landing = () => {
@@ -18,6 +25,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
+      <Shows />
       <Footer />
     </Wrapper>
   );

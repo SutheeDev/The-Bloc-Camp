@@ -7,10 +7,6 @@ import styled from "styled-components";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // const toggleHamburger = () => {
-  //   setIsMenuOpen(!isMenuOpen);
-  // };
-
   return (
     <Wrapper className={isMenuOpen ? "navigation open-nav" : "navigation"}>
       <div className="container">
