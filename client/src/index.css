@@ -24,6 +24,7 @@ html {
 /* --------- */
 :root {
   /* colors */
+  --grey-300: #9fb3c8;
   --black: #222;
   --white: #fff;
   --darkBlue: #221333;
