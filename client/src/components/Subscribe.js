@@ -45,11 +45,11 @@ const Wrapper = styled.section`
       height: 55px;
       h1 {
         text-transform: uppercase;
-        font-size: calc(3vw + 1rem);
+        font-size: calc(3vw + 1.1rem);
         letter-spacing: 1px;
         background-color: transparent;
         padding-left: 30px;
-        line-height: 1;
+        line-height: 0;
         width: 200%;
         position: absolute;
         top: 0;
@@ -59,9 +59,22 @@ const Wrapper = styled.section`
       .block {
         width: 70vw;
         max-width: 900px;
+        height: 1.05rem;
+        background-color: #221333;
+        position: absolute;
         top: 50%;
         left: 25%;
-        transform: translate(0, -50%);
+
+        background-image: repeating-linear-gradient(
+          60deg,
+          #ffffff58 0px,
+          #ffffff58 1px,
+          #221333 1px,
+          #221333 1px,
+          #221333 1.5px
+        );
+
+        transform: translate(0, -27%);
         z-index: 1;
       }
     }
@@ -76,7 +89,6 @@ const Wrapper = styled.section`
   .subscribe-form {
     width: 50%;
     background-color: #df3311;
-    /* padding: 75px 0 75px 20px; */
     padding: 75px 0 75px 40px;
     display: flex;
     gap: 20px;
@@ -144,14 +156,13 @@ const Wrapper = styled.section`
     padding: 40px 20px;
     .subscribe-info {
       width: 100%;
-    }
-    .subscribe-title {
-      h1 {
-        line-height: 1.8;
-        padding-left: 20px;
-      }
-      .block {
-        display: none;
+      .subscribe-title {
+        h1 {
+          padding-left: 20px;
+        }
+        .block {
+          display: none;
+        }
       }
     }
     .subscribe-form {
