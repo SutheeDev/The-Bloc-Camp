@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Shows = () => {
+const Events = () => {
   return (
     <Wrapper class="shows">
       <div class="shows-container">
@@ -95,7 +95,7 @@ const Shows = () => {
     </Wrapper>
   );
 };
-export default Shows;
+export default Events;
 
 const Wrapper = styled.section`
   /* ----------------- */

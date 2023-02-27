@@ -4,7 +4,7 @@ import {
   Footer,
   Slideshow,
   PageTitle,
-  Shows,
+  Events,
   Subscribe,
 } from "../components";
 import styled from "styled-components";
@@ -26,7 +26,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <Shows />
+      <Events />
       <Subscribe />
       <Footer />
     </Wrapper>
