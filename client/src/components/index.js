@@ -5,5 +5,15 @@ import Slideshow from "./Slideshow";
 import PageTitle from "./Page-title";
 import Events from "./Events";
 import Subscribe from "./Subscribe";
+import Show from "./Show";
 
-export { Navbar, Header, Footer, Slideshow, PageTitle, Events, Subscribe };
+export {
+  Navbar,
+  Header,
+  Footer,
+  Slideshow,
+  PageTitle,
+  Events,
+  Subscribe,
+  Show,
+};
