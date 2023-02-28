@@ -1,4 +1,4 @@
-import { Landing, Shows, About } from "./pages";
+import { Landing, Shows, About, Contact } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/shows" element={<Shows />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );
