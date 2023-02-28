@@ -6,6 +6,7 @@ import PageTitle from "./Page-title";
 import Events from "./Events";
 import Subscribe from "./Subscribe";
 import Show from "./Show";
+import TicketsBtn from "./TicketsBtn";
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   Events,
   Subscribe,
   Show,
+  TicketsBtn,
 };

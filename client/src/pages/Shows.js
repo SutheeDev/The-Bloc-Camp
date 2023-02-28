@@ -22,6 +22,8 @@ const Shows = () => {
 
       <section class="calendar-shows">
         <Show />
+        <Show />
+        <Show />
       </section>
 
       <Subscribe />
@@ -41,5 +43,26 @@ const Wrapper = styled.main`
   .upcoming-container {
     width: 65vw;
     margin: 0 auto;
+  }
+
+  .calendar-shows {
+    width: 65vw;
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+    row-gap: 40px;
+    @media screen and (max-width: 850px) {
+      .calendar-shows {
+        width: 80vw;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      .calendar-shows {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 `;

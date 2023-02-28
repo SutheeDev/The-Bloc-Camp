@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TicketsBtn } from "../components";
 
 const Events = () => {
   return (
@@ -14,9 +15,7 @@ const Events = () => {
             </div>
             <h3>The Generators</h3>
           </div>
-          <a href="#">
-            <button class="btn">get tickets</button>
-          </a>
+          <TicketsBtn />
         </div>
         {/* End Show */}
 
@@ -30,9 +29,7 @@ const Events = () => {
             </div>
             <h3>The Generators</h3>
           </div>
-          <a href="#">
-            <button class="btn">get tickets</button>
-          </a>
+          <TicketsBtn />
         </div>
         {/* End Show */}
 
@@ -46,9 +43,7 @@ const Events = () => {
             </div>
             <h3>The Generators</h3>
           </div>
-          <a href="#">
-            <button class="btn">get tickets</button>
-          </a>
+          <TicketsBtn />
         </div>
         {/* End Show */}
 
@@ -62,9 +57,7 @@ const Events = () => {
             </div>
             <h3>The Generators</h3>
           </div>
-          <a href="#">
-            <button class="btn">get tickets</button>
-          </a>
+          <TicketsBtn />
         </div>
         {/* End Show */}
 
@@ -78,9 +71,7 @@ const Events = () => {
             </div>
             <h3>The Generators</h3>
           </div>
-          <a href="#">
-            <button class="btn">get tickets</button>
-          </a>
+          <TicketsBtn />
         </div>
         {/* End Show */}
 
@@ -140,23 +131,6 @@ const Wrapper = styled.section`
     font-size: 38px;
     text-transform: capitalize;
     padding-left: 20px;
-  }
-  .btn {
-    text-transform: uppercase;
-    padding: 1rem 1.5rem;
-    color: #df3311;
-    border: 3px solid #df3311;
-    background-color: transparent;
-    border-radius: 1px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    font-weight: 700;
-
-    transition: all 0.3s ease;
-  }
-  .btn:hover {
-    color: #ffffff;
-    border: 3px solid #8f210c;
   }
   .day {
     color: #726185;
@@ -232,9 +206,6 @@ const Wrapper = styled.section`
       font-size: 26px;
       padding-left: 15px;
     }
-    .btn {
-      padding: 10px 18px;
-    }
     .show:hover .show-info {
       transform: translateX(-90px);
     }
@@ -249,10 +220,6 @@ const Wrapper = styled.section`
       margin-bottom: 20px;
     }
     .show-info h3 {
-      display: block;
-      width: 100%;
-    }
-    .btn {
       display: block;
       width: 100%;
     }
