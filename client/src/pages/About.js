@@ -1,13 +1,23 @@
 import { Navbar, Header, Footer, PageTitle, Subscribe } from "../components";
+import aboutImg from "../assets/images/img-about.jpg";
 import styled from "styled-components";
 
 const About = () => {
   return (
     <Wrapper>
+      <Navbar />
+      <Header />
+
+      <section class="calendar">
+        <div class="calendar-container">
+          <PageTitle />
+        </div>
+      </section>
+
       <section class="about-info">
         <div class="about-info-container">
           <div></div>
-          <img src="" alt="" />
+          <img src={aboutImg} alt="" />
           <p>
             Live, local, and a little bit loud are the words the Bloc Camp lives
             by. A large space for standing and dancing to live music glows in
@@ -19,6 +29,9 @@ const About = () => {
           </p>
         </div>
       </section>
+
+      <Subscribe />
+      <Footer />
     </Wrapper>
   );
 };
