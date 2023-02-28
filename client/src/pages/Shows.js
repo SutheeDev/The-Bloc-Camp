@@ -14,13 +14,16 @@ const Shows = () => {
       <Navbar />
       <Header />
 
-      <section class="upcoming">
-        <div class="upcoming-container">
+      <section class="calendar">
+        <div class="calendar-container">
           <PageTitle />
         </div>
       </section>
 
       <section class="calendar-shows">
+        <Show />
+        <Show />
+        <Show />
         <Show />
         <Show />
         <Show />
@@ -35,14 +38,17 @@ const Shows = () => {
 export default Shows;
 
 const Wrapper = styled.main`
-  .upcoming {
+  .calendar {
     background-color: #221333;
     padding: 70px 0;
     margin-top: -5px;
   }
-  .upcoming-container {
+  .calendar-container {
     width: 65vw;
     margin: 0 auto;
+    @media screen and (max-width: 850px) {
+      width: 80vw;
+    }
   }
 
   .calendar-shows {
@@ -54,9 +60,7 @@ const Wrapper = styled.main`
     gap: 20px;
     row-gap: 40px;
     @media screen and (max-width: 850px) {
-      .calendar-shows {
-        width: 80vw;
-      }
+      width: 80vw;
     }
     @media screen and (max-width: 550px) {
       .calendar-shows {

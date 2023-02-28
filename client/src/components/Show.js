@@ -9,8 +9,8 @@ const Show = () => {
       <div class="calendar-show-info">
         <div class="band-date-info">
           <div class="band-date">
-            <h2 class="band-name">Artist</h2>
-            <h2>Mon Feb 27</h2>
+            <h2 class="band-name">The Generators</h2>
+            <h2>Mon, Feb 27</h2>
           </div>
           <div class="band-info">
             <p>
@@ -33,14 +33,12 @@ const Wrapper = styled.article`
   max-width: 280px;
   background-color: #221333;
   overflow: hidden;
+  @media screen and (max-width: 680px) {
+    min-width: 100%;
+  }
   img {
     width: 100%;
     filter: grayscale(100%);
-  }
-  @media screen and (max-width: 550px) {
-    .calendar-show {
-      max-width: 100%;
-    }
   }
   .calendar-show-info {
     position: relative;
@@ -56,9 +54,6 @@ const Wrapper = styled.article`
       min-height: 426px;
 
       transition: all 0.3s ease;
-    }
-    .calendar-show:hover .band-date-info {
-      top: -200px;
     }
     .band-date {
       display: flex;
@@ -86,5 +81,8 @@ const Wrapper = styled.article`
       left: 0;
       z-index: 3;
     }
+  }
+  :hover .band-date-info {
+    top: -200px;
   }
 `;
