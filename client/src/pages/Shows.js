@@ -44,7 +44,7 @@ const Wrapper = styled.main`
     margin-top: -5px;
   }
   .calendar-container {
-    width: 65vw;
+    width: 75vw;
     margin: 0 auto;
     @media screen and (max-width: 850px) {
       width: 80vw;
@@ -52,7 +52,7 @@ const Wrapper = styled.main`
   }
 
   .calendar-shows {
-    width: 65vw;
+    width: 75vw;
     max-width: 980px;
     margin: 0 auto;
     display: grid;
@@ -66,6 +66,7 @@ const Wrapper = styled.main`
       .calendar-shows {
         display: flex;
         flex-direction: column;
+        width: 100%;
       }
     }
   }

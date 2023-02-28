@@ -33,7 +33,7 @@ const Wrapper = styled.article`
   max-width: 280px;
   background-color: #221333;
   overflow: hidden;
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 850px) {
     min-width: 100%;
   }
   img {
