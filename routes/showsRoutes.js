@@ -2,14 +2,13 @@ import express from "express";
 const router = express.Router();
 
 import {
-  createShows,
+  createShow,
   getAllShows,
-  getPastShows,
   updateShow,
   deleteShow,
 } from "../controller/showsController.js";
 
-router.route("/").post(createShows).get(getAllShows).get(getPastShows);
+router.route("/").post(createShow).get(getAllShows);
 router.route("/:id").patch(updateShow).delete(deleteShow);
 
 export default router;
