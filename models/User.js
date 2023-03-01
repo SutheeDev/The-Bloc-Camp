@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
       validator: validator.isEmail,
       message: "Please provide valid email",
     },
-    unique: true,
+    unique: [true, "This email has already been in use"],
   },
   password: {
     type: String,
@@ -36,12 +36,12 @@ const UserSchema = new mongoose.Schema({
     default: "Lastname",
   },
   phoneNumber: {
-    type: Number,
-    default: Null,
+    type: String,
+    default: null,
   },
   location: {
     type: String,
-    default: Null,
+    default: null,
   },
 });
 

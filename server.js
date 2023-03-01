@@ -4,6 +4,8 @@ const app = express();
 import dotenv from "dotenv";
 dotenv.config();
 
+import "express-async-errors";
+
 // Routes
 import authRouter from "./routes/authRoutes.js";
 import showRouter from "./routes/showsRoutes.js";
