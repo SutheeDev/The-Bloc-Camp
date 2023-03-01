@@ -1,6 +1,9 @@
 import express from "express";
 const app = express();
 
+import dotenv from "dotenv";
+dotenv.config();
+
 // middleware import
 import NotFoundMiddleware from "./middleware/not-found.js";
 import ErrorHandlerMiddleware from "./middleware/error-handler.js";
