@@ -96,7 +96,7 @@ const Wrapper = styled.section`
   padding: 80px 0;
 
   .shows-container {
-    width: 65vw;
+    width: 70vw;
     max-width: 1000px;
     margin: 0 auto;
   }

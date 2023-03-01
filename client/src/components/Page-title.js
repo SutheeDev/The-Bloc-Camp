@@ -57,7 +57,7 @@ const Wrapper = styled.div`
     background-color: #221333;
     position: absolute;
     top: 20px;
-    left: 250px;
+    right: -36px;
     transform: rotate(90deg);
   }
   .line2 {
@@ -79,7 +79,7 @@ const Wrapper = styled.div`
       width: 210px;
     }
     .block {
-      left: 190px;
+      right: -37px;
     }
     .line2 {
       right: -17px;
@@ -89,8 +89,18 @@ const Wrapper = styled.div`
     }
   }
   @media screen and (max-width: 450px) {
+    width: 80vw;
+    .pageTitle-text1 {
+      width: 30%;
+    }
+    .pageTitle-box {
+      width: 70%;
+    }
+    .line2 {
+      right: 1px;
+    }
     .block {
-      left: 137px;
+      right: -20px;
     }
   }
 `;

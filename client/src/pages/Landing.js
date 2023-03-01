@@ -41,7 +41,7 @@ const Wrapper = styled.main`
     margin-top: -5px;
   }
   .upcoming-container {
-    width: 65vw;
+    width: 75vw;
     margin: 0 auto;
   }
   .line1 {
@@ -72,7 +72,8 @@ const Wrapper = styled.main`
   }
   @media screen and (max-width: 850px) {
     .upcoming {
-      margin-top: 55px;
+      margin-top: 15px;
+      padding: 30px 0 40px 0;
     }
     .upcoming-container {
       width: 80vw;
@@ -81,9 +82,9 @@ const Wrapper = styled.main`
       font-size: 14px;
     }
   }
-  @media screen and (max-width: 450px) {
+  /* @media screen and (max-width: 450px) {
     .upcoming {
       padding: 50px 0;
     }
-  }
+  } */
 `;
