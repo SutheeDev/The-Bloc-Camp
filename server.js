@@ -1,6 +1,11 @@
 import express from "express";
 const app = express();
 
+// middleware import
+import NotFoundMiddleware from "./middleware/not-found.js";
+
+app.use(NotFoundMiddleware);
+
 app.get("/", (req, res) => {
   res.send("Hello User");
 });
