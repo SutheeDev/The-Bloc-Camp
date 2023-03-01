@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/SutheeDev/The-Bloc-Camp/issues"
   },
-  "homepage": "https://github.com/SutheeDev/The-Bloc-Camp#readme"
+  "homepage": "https://github.com/SutheeDev/The-Bloc-Camp#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
