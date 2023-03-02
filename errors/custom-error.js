@@ -1,5 +1,5 @@
 class CustomError extends Error {
-  constructure(message) {
+  constructor(message) {
     super(message);
   }
 }
