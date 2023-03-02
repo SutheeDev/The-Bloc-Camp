@@ -9,7 +9,7 @@ const register = async (req, res) => {
     throw new BadRequestError("Please provide all values");
   }
 
-  const duplicatedEmail = User.findOne({ email });
+  const duplicatedEmail = await User.findOne({ email });
   if (duplicatedEmail) {
     throw new BadRequestError("This email has already been taken");
   }
