@@ -14,6 +14,10 @@ const initialState = {
 const Register = () => {
   const [values, setValues] = useState(initialState);
 
+  const toggleForm = () => {
+    setValues({ ...values, isRegistered: !values.isRegistered });
+  };
+
   const handleChange = (e) => {
     console.log(e.target.value);
   };
