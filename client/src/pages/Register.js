@@ -1,15 +1,26 @@
 import { Header, Footer } from "../components";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import { FormRow } from "../components";
 
 const Register = () => {
   const initialState = {
     name: "",
     email: "",
     password: "",
+    isRegistered: true,
   };
 
   const [values, setValues] = useState(initialState);
+
+  const handleChange = (e) => {
+    console.log(e.target);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+  };
 
   return (
     <Wrapper>
@@ -20,31 +31,26 @@ const Register = () => {
         <div class="login-container">
           <h1>Register</h1>
 
-          <form action="submit" class="login-form">
-            <div className="form-row">
-              <input
-                type="text"
-                placeholder="Name *"
-                name="name"
-                className="form-input"
-              />
-            </div>
-            <div className="form-row">
-              <input
-                type="email"
-                placeholder="Email *"
-                name="email"
-                className="form-input"
-              />
-            </div>
-            <div className="form-row">
-              <input
-                type="password"
-                placeholder="Password *"
-                name="password"
-                className="form-input"
-              />
-            </div>
+          <form onSubmit={onSubmit} class="login-form">
+            <FormRow
+              type="text"
+              name="name *"
+              placeholder="Your name"
+              handleChange={handleChange}
+            />
+            <FormRow
+              type="text"
+              name="email *"
+              placeholder="Email Address"
+              handleChange={handleChange}
+            />
+            <FormRow
+              type="text"
+              name="password *"
+              placeholder="Password"
+              handleChange={handleChange}
+            />
+
             <div class="login-btn-block">
               <Button class="btn login-btn" type="submit">
                 Login
@@ -120,26 +126,6 @@ const Wrapper = styled.main`
   /* ------------------- */
   Footer {
     margin-top: 100px;
-  }
-  /* ------------------- */
-  /* Form */
-  /* ------------------- */
-  .form-row {
-    width: 100%;
-  }
-  .form-input {
-    width: 100%;
-    outline: none;
-    padding: 1rem 1.5rem 1rem 1rem;
-    border: none;
-    border-width: 3px;
-    border-color: var(--darkBlue);
-    border-style: solid;
-    margin: 0 0 40px 0;
-  }
-  .form-input::placeholder {
-    font-size: 14px;
-    color: #84c3c3;
   }
   /* ------------------- */
   /* button */

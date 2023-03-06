@@ -7,6 +7,7 @@ import Events from "./Events";
 import Subscribe from "./Subscribe";
 import Show from "./Show";
 import TicketsBtn from "./TicketsBtn";
+import FormRow from "./FormRow";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   Subscribe,
   Show,
   TicketsBtn,
+  FormRow,
 };

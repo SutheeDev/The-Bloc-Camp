@@ -3,17 +3,21 @@ const FormRow = ({
   name,
   placeholder,
   value,
-  handleChage,
+  handleChange,
   labelText,
 }) => {
   return (
     <div className="form-row">
+      <label htmlFor={name} className="form-label">
+        {labelText || name}
+      </label>
       <input
         type={type}
         placeholder={placeholder}
         name={name}
         value={value}
-        onChange={handleChage}
+        onChange={handleChange}
+        className="form-input"
       />
     </div>
   );

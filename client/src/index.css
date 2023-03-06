@@ -25,6 +25,7 @@ html {
 :root {
   /* colors */
   --grey-300: #9fb3c8;
+  --grey-200: #bcccdc;
   --black: #222;
   --white: #fff;
   --darkBlue: #221333;
@@ -97,4 +98,28 @@ li {
   align-items: flex-end;
   padding: 20px;
   overflow: hidden;
+}
+.form-row {
+  width: 100%;
+}
+.form-input {
+  width: 100%;
+  outline: none;
+  padding: 1rem 1.5rem 1rem 1rem;
+  border: none;
+  border-width: 3px;
+  border-color: var(--darkBlue);
+  border-style: solid;
+  margin: 10px 0 40px 0;
+}
+.form-input::placeholder {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: var(--grey-200);
+}
+.form-label {
+  color: var(--darkBlue);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
