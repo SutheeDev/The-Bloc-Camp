@@ -2,17 +2,19 @@ import { Header, Footer } from "../components";
 import styled from "styled-components";
 import { useState } from "react";
 import { FormRow, Message } from "../components";
+import { useAppContext } from "../context/appContext";
 
 const initialState = {
   name: "",
   email: "",
   password: "",
   isRegistered: true,
-  showMessage: true,
 };
 
 const Register = () => {
   const [values, setValues] = useState(initialState);
+
+  const { showMessage } = useAppContext();
 
   const toggleForm = () => {
     setValues({ ...values, isRegistered: !values.isRegistered });
@@ -34,7 +36,7 @@ const Register = () => {
       <section class="login">
         <div class="login-container">
           <h1>{values.isRegistered ? "Login" : "Register"}</h1>
-          {values.showMessage && <Message />}
+          {showMessage && <Message />}
 
           <form onSubmit={onSubmit} class="login-form">
             {!values.isRegistered && (
