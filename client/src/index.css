@@ -110,7 +110,7 @@ li {
   border-width: 3px;
   border-color: var(--darkBlue);
   border-style: solid;
-  margin: 10px 0 40px 0;
+  margin: 10px 0 25px 0;
 }
 .form-input::placeholder {
   font-family: sans-serif;
@@ -124,7 +124,29 @@ li {
   font-weight: 500;
   padding-left: 2px;
 }
+.toggleForm {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px 0 10px 0;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  color: var(--darkBlue);
+}
+.toggleForm-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: var(--darkBlue);
+  text-transform: capitalize;
+  margin-left: 5px;
+  cursor: pointer;
 
+  transition: all 0.2s ease;
+}
+.toggleForm-btn:hover {
+  color: var(--white);
+}
 /* ---------------------------- */
 /* Message */
 /* ---------------------------- */

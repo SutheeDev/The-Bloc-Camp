@@ -65,6 +65,13 @@ const Register = () => {
               </Button>
               <div class="login-btn-bg"></div>
             </div>
+
+            <p className="toggleForm">
+              Already have an acoount?
+              <button type="button" className="toggleForm-btn">
+                Login
+              </button>
+            </p>
           </form>
         </div>
       </section>
@@ -142,6 +149,7 @@ const Wrapper = styled.main`
     position: relative;
     width: 142px;
     height: 53px;
+    margin-top: 20px;
   }
   .btn.login-btn:hover {
     background-color: var(--darkBlue);
