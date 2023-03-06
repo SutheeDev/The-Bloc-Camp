@@ -33,17 +33,19 @@ const Register = () => {
 
       <section class="login">
         <div class="login-container">
-          <h1>Register</h1>
+          <h1>{values.isRegistered ? "Login" : "Register"}</h1>
           {values.showMessage && <Message />}
 
           <form onSubmit={onSubmit} class="login-form">
-            <FormRow
-              type="text"
-              name="name *"
-              placeholder="Your name"
-              handleChange={handleChange}
-              value={values.name}
-            />
+            {!values.isRegistered && (
+              <FormRow
+                type="text"
+                name="name *"
+                placeholder="Your name"
+                handleChange={handleChange}
+                value={values.name}
+              />
+            )}
             <FormRow
               type="text"
               name="email *"
@@ -61,15 +63,22 @@ const Register = () => {
 
             <div class="login-btn-block">
               <Button class="btn login-btn" type="submit">
-                Login
+                {values.isRegistered ? "Login" : "Register"}
               </Button>
               <div class="login-btn-bg"></div>
             </div>
 
             <p className="toggleForm">
-              Already have an acoount?
-              <button type="button" className="toggleForm-btn">
-                Login
+              {values.isRegistered
+                ? `Don't have an account yet?`
+                : "Already have an acoount?"}
+
+              <button
+                type="button"
+                className="toggleForm-btn"
+                onClick={toggleForm}
+              >
+                {values.isRegistered ? "Register" : "Login"}
               </button>
             </p>
           </form>
