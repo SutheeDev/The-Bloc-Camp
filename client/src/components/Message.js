@@ -1,4 +1,9 @@
+import { useAppContext } from "../context/appContext";
+
 const Message = () => {
-  return <div className="message message-error">Message</div>;
+  const { messageText, messageType } = useAppContext;
+  return (
+    <div className={`message message-${messageType}`}> {messageText} </div>
+  );
 };
 export default Message;
