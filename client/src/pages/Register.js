@@ -3,18 +3,18 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { FormRow } from "../components";
 
-const Register = () => {
-  const initialState = {
-    name: "",
-    email: "",
-    password: "",
-    isRegistered: true,
-  };
+const initialState = {
+  name: "",
+  email: "",
+  password: "",
+  isRegistered: true,
+};
 
+const Register = () => {
   const [values, setValues] = useState(initialState);
 
   const handleChange = (e) => {
-    console.log(e.target);
+    console.log(e.target.value);
   };
 
   const onSubmit = (e) => {
@@ -24,7 +24,6 @@ const Register = () => {
 
   return (
     <Wrapper>
-      {/* <Navbar /> */}
       <Header />
 
       <section class="login">
@@ -37,18 +36,21 @@ const Register = () => {
               name="name *"
               placeholder="Your name"
               handleChange={handleChange}
+              value={values.name}
             />
             <FormRow
               type="text"
               name="email *"
               placeholder="Email Address"
               handleChange={handleChange}
+              value={values.email}
             />
             <FormRow
               type="text"
               name="password *"
               placeholder="Password"
               handleChange={handleChange}
+              value={values.password}
             />
 
             <div class="login-btn-block">
