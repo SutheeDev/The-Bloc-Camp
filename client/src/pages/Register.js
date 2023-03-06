@@ -1,13 +1,14 @@
 import { Header, Footer } from "../components";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { FormRow } from "../components";
+import { FormRow, Message } from "../components";
 
 const initialState = {
   name: "",
   email: "",
   password: "",
   isRegistered: true,
+  showMessage: true,
 };
 
 const Register = () => {
