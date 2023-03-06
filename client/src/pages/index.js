@@ -2,6 +2,6 @@ import Landing from "./Landing";
 import Shows from "./Shows";
 import About from "./About";
 import Contact from "./Contact";
-import Login from "./Login";
+import Register from "./Register";
 
-export { Landing, Shows, About, Contact, Login };
+export { Landing, Shows, About, Contact, Register };

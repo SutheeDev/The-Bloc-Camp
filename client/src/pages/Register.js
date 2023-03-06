@@ -1,7 +1,7 @@
 import { Header, Footer } from "../components";
 import styled from "styled-components";
 
-const Login = () => {
+const Register = () => {
   return (
     <Wrapper>
       {/* <Navbar /> */}
@@ -9,15 +9,22 @@ const Login = () => {
 
       <section class="login">
         <div class="login-container">
-          <h1>Admin Log In</h1>
+          <h1>Register</h1>
 
-          <form action="submit" method="post" class="login-form">
+          <form action="submit" class="login-form">
             <input
               autocomplete="off"
               type="text"
-              placeholder="Username *"
-              name="username"
+              placeholder="Name *"
+              name="name"
               class="username"
+            />
+            <input
+              autocomplete="off"
+              type="email"
+              placeholder="Email *"
+              name="email"
+              class="email"
             />
             <input
               autocomplete="off"
@@ -40,7 +47,7 @@ const Login = () => {
     </Wrapper>
   );
 };
-export default Login;
+export default Register;
 
 const Button = styled.button`
   text-transform: uppercase;
@@ -78,39 +85,30 @@ const Wrapper = styled.main`
   /* ------------------- */
   /* Login Page, Subscribe Page, Subscribed Page */
   /* ------------------- */
-  section.login {
+  .login {
     background-color: #221333;
-    padding: 50px 0 0 0;
-    height: 68vh;
-    overflow: hidden;
+    /* background-color: blue; */
+    padding: 30px 0 30px 0;
+    /* height: 68vh; */
+    /* overflow: hidden; */
   }
   .login-container {
-    width: 50vw;
-    max-width: 600px;
-    min-width: 450px;
+    width: 90vw;
     margin: 0 auto;
+    max-width: 450px;
+    /* min-width: 450px; */
   }
   .login h1 {
     text-transform: uppercase;
     font-size: calc(3vw + 1rem);
     letter-spacing: 1px;
     background-color: transparent;
-    padding-left: 30px;
-    line-height: 1.2;
+    padding: 0 0 25px 22px;
+    line-height: 0;
   }
   /* ------------------- */
   /* Form */
   /* ------------------- */
-  .login-form {
-    width: 100%;
-    background-color: #df3311;
-    border-radius: 1px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 20px;
-    overflow: hidden;
-  }
   .thank-message {
     padding: 40px 20px;
     justify-content: center;
@@ -199,9 +197,9 @@ const Wrapper = styled.main`
   /* Media Queries */
   /* ------------------- */
   @media screen and (max-width: 850px) {
-    section.login {
-      margin-top: 60px;
-      height: 58vh;
+    .login {
+      /* margin-top: 60px; */
+      /* height: 58vh; */
     }
     .login-btn-block {
       width: 130px;
