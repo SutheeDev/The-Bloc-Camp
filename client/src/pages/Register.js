@@ -3,6 +3,14 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 
 const Register = () => {
+  const initialState = {
+    name: "",
+    email: "",
+    password: "",
+  };
+
+  const [values, setValues] = useState(initialState);
+
   return (
     <Wrapper>
       {/* <Navbar /> */}
