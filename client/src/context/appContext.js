@@ -13,8 +13,14 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const showMessage = () => {
+    dispatch({ type: SHOW_MESSAGE });
+  };
+
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, showMessage }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 
