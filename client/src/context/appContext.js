@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 const initialState = {
   showMessage: false,
@@ -20,4 +20,4 @@ const useAppContext = () => {
   return useContext(AppContext);
 };
 
-export { AppProvider, initialState };
+export { AppProvider, initialState, useAppContext };
