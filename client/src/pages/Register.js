@@ -21,7 +21,7 @@ const Register = () => {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
@@ -33,16 +33,17 @@ const Register = () => {
     <Wrapper>
       <Header />
 
-      <section class="login">
-        <div class="login-container">
+      <section className="login">
+        <div className="login-container">
           <h1>{values.isRegistered ? "Login" : "Register"}</h1>
           {showMessage && <Message />}
 
-          <form onSubmit={onSubmit} class="login-form">
+          <form onSubmit={onSubmit} className="login-form">
             {!values.isRegistered && (
               <FormRow
                 type="text"
-                name="name *"
+                name="name"
+                id="name *"
                 placeholder="Your name"
                 handleChange={handleChange}
                 value={values.name}
@@ -50,24 +51,26 @@ const Register = () => {
             )}
             <FormRow
               type="text"
-              name="email *"
+              name="email"
+              id="email *"
               placeholder="Email Address"
               handleChange={handleChange}
               value={values.email}
             />
             <FormRow
               type="text"
-              name="password *"
+              name="password"
+              id="password *"
               placeholder="Password"
               handleChange={handleChange}
               value={values.password}
             />
 
-            <div class="login-btn-block">
-              <Button class="btn login-btn" type="submit">
+            <div className="login-btn-block">
+              <Button className="btn login-btn" type="submit">
                 {values.isRegistered ? "Login" : "Register"}
               </Button>
-              <div class="login-btn-bg"></div>
+              <div className="login-btn-bg"></div>
             </div>
 
             <p className="toggleForm">
