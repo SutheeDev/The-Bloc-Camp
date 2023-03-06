@@ -1,5 +1,6 @@
 import { Header, Footer } from "../components";
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 
 const Register = () => {
   return (
@@ -12,27 +13,30 @@ const Register = () => {
           <h1>Register</h1>
 
           <form action="submit" class="login-form">
-            <input
-              autocomplete="off"
-              type="text"
-              placeholder="Name *"
-              name="name"
-              class="name"
-            />
-            <input
-              autocomplete="off"
-              type="email"
-              placeholder="Email *"
-              name="email"
-              class="email"
-            />
-            <input
-              autocomplete="off"
-              type="password"
-              placeholder="Password *"
-              name="password"
-              class="password"
-            />
+            <div className="form-row">
+              <input
+                type="text"
+                placeholder="Name *"
+                name="name"
+                className="form-input"
+              />
+            </div>
+            <div className="form-row">
+              <input
+                type="email"
+                placeholder="Email *"
+                name="email"
+                className="form-input"
+              />
+            </div>
+            <div className="form-row">
+              <input
+                type="password"
+                placeholder="Password *"
+                name="password"
+                className="form-input"
+              />
+            </div>
             <div class="login-btn-block">
               <Button class="btn login-btn" type="submit">
                 Login
@@ -112,9 +116,10 @@ const Wrapper = styled.main`
   /* ------------------- */
   /* Form */
   /* ------------------- */
-  .name,
-  .password,
-  .email {
+  .form-row {
+    width: 100%;
+  }
+  .form-input {
     width: 100%;
     outline: none;
     padding: 1rem 1.5rem 1rem 1rem;
@@ -124,9 +129,7 @@ const Wrapper = styled.main`
     border-style: solid;
     margin: 0 0 40px 0;
   }
-  .name::placeholder,
-  .password::placeholder,
-  .email::placeholder {
+  .form-input::placeholder {
     font-size: 14px;
     color: #84c3c3;
   }
