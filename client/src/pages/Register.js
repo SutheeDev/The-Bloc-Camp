@@ -1,6 +1,6 @@
 import { Header, Footer } from "../components";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FormRow, Message } from "../components";
 
 const initialState = {
