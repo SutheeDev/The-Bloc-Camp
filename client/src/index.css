@@ -122,4 +122,29 @@ li {
   text-transform: capitalize;
   letter-spacing: 1px;
   font-weight: 500;
+  padding-left: 2px;
+}
+
+/* ---------------------------- */
+/* Message */
+/* ---------------------------- */
+.message {
+  width: 100%;
+  padding: 15px 22px;
+  margin-bottom: 35px;
+  border-radius: 3px;
+  text-align: center;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+.message-error {
+  border: 2px solid #df331183;
+  color: #fe2a00;
+  background-color: #df331136;
+}
+.message-success {
+  border: 2px solid rgba(0, 209, 0, 0.468);
+  color: var(--white);
+  background-color: rgba(0, 209, 0, 0.369);
 }
