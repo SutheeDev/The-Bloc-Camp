@@ -30,6 +30,7 @@ const Register = () => {
       <section class="login">
         <div class="login-container">
           <h1>Register</h1>
+          {values.showMessage && <Message />}
 
           <form onSubmit={onSubmit} class="login-form">
             <FormRow
