@@ -29,6 +29,17 @@ const reducer = (state, action) => {
       isLoading: true,
     };
   }
+  if (action.type === REGISTER_SUCCESS) {
+    return {
+      ...state,
+      showMessage: true,
+      messageText: "Your account has been created! Redirecting...",
+      messageType: "success",
+      isLoading: false,
+      user: action.payload.user,
+      token: action.payload.token,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
