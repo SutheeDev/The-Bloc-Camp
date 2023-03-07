@@ -40,6 +40,15 @@ const reducer = (state, action) => {
       token: action.payload.token,
     };
   }
+  if (action.type === REGISTER_ERROR) {
+    return {
+      ...state,
+      showMessage: true,
+      messageText: action.payload.msg,
+      messageType: "error",
+      isLoading: false,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

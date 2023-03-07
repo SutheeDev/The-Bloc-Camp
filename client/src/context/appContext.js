@@ -42,7 +42,13 @@ const AppProvider = ({ children }) => {
       const response = await axios.post("api/v1/auth/register", currentUser);
       const { user, token } = response.data;
       dispatch({ type: REGISTER_SUCCESS, payload: user, token });
-    } catch (error) {}
+    } catch (error) {
+      dispatch({
+        type: REGISTER_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    hideMessage();
   };
 
   return (
