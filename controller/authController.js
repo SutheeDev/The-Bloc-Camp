@@ -31,8 +31,23 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  res.send("Login Route");
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    throw new BadRequestError("Please provide all values!");
+  }
+
+  const user = User.findOne({ email });
+
+  if (!user) {
+    // create 401 and throw it here
+    throw new BadRequestError("Invalid email or password");
+  }
+  // Compare the password here
+
+  // If password doesn't match, throw 401 here.
 };
+
 const updateUser = async (req, res) => {
   res.send("Update User Route");
 };
