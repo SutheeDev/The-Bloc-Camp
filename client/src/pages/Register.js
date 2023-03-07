@@ -13,7 +13,7 @@ const initialState = {
 const Register = () => {
   const [values, setValues] = useState(initialState);
 
-  const { showMessage, displayMessage } = useAppContext();
+  const { showMessage, displayMessage, hideMessage } = useAppContext();
 
   const toggleForm = () => {
     setValues({ ...values, isRegistered: !values.isRegistered });
