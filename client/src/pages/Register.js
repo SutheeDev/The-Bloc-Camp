@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header, Footer, FormRow, Message } from "../components";
 import { useAppContext } from "../context/appContext";
 
@@ -12,9 +13,16 @@ const initialState = {
 
 const Register = () => {
   const [values, setValues] = useState(initialState);
+  const navigate = useNavigate();
 
-  const { showMessage, displayMessage, isLoading, hideMessage, registerUser } =
-    useAppContext();
+  const {
+    user,
+    showMessage,
+    displayMessage,
+    isLoading,
+    hideMessage,
+    registerUser,
+  } = useAppContext();
 
   const toggleForm = () => {
     setValues({ ...values, isRegistered: !values.isRegistered });
@@ -39,6 +47,14 @@ const Register = () => {
       registerUser(currentUser);
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 3000);
+    }
+  }, [user, navigate]);
 
   return (
     <Wrapper>
