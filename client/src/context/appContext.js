@@ -1,11 +1,19 @@
 import React, { useState, useEffect, useContext, useReducer } from "react";
 import reducer from "./reducer";
-import { SHOW_MESSAGE, HIDE_MESSAGE } from "./actions";
+import {
+  SHOW_MESSAGE,
+  HIDE_MESSAGE,
+  REGISTER_BEGIN,
+  REGISTER_ERROR,
+  REGISTER_SUCCESS,
+} from "./actions";
 
 const initialState = {
   showMessage: false,
   messageText: "",
   messageType: "",
+  user: null,
+  token: null,
 };
 
 const AppContext = React.createContext();
@@ -24,8 +32,14 @@ const AppProvider = ({ children }) => {
     }, 3000);
   };
 
+  const registerUser = async (currentUser) => {
+    console.log(currentUser);
+  };
+
   return (
-    <AppContext.Provider value={{ ...state, displayMessage, hideMessage }}>
+    <AppContext.Provider
+      value={{ ...state, displayMessage, hideMessage, registerUser }}
+    >
       {children}
     </AppContext.Provider>
   );

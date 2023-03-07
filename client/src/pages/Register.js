@@ -8,12 +8,14 @@ const initialState = {
   email: "",
   password: "",
   isRegistered: true,
+  isLoading: false,
 };
 
 const Register = () => {
   const [values, setValues] = useState(initialState);
 
-  const { showMessage, displayMessage, hideMessage } = useAppContext();
+  const { showMessage, displayMessage, hideMessage, registerUser } =
+    useAppContext();
 
   const toggleForm = () => {
     setValues({ ...values, isRegistered: !values.isRegistered });
@@ -30,7 +32,13 @@ const Register = () => {
       displayMessage();
       return;
     }
-    console.log(values);
+    const currentUser = { name, email, password };
+
+    if (isRegistered) {
+      console.log("Already have an account");
+    } else {
+      registerUser(currentUser);
+    }
   };
 
   return (
@@ -71,7 +79,11 @@ const Register = () => {
             />
 
             <div className="login-btn-block">
-              <Button className="btn login-btn" type="submit">
+              <Button
+                className="btn login-btn"
+                type="submit"
+                disabled={values.isLoading}
+              >
                 {values.isRegistered ? "Login" : "Register"}
               </Button>
               <div className="login-btn-bg"></div>

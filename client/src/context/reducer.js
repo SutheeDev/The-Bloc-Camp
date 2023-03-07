@@ -1,4 +1,10 @@
-import { SHOW_MESSAGE, HIDE_MESSAGE } from "./actions";
+import {
+  SHOW_MESSAGE,
+  HIDE_MESSAGE,
+  REGISTER_BEGIN,
+  REGISTER_ERROR,
+  REGISTER_SUCCESS,
+} from "./actions";
 
 const reducer = (state, action) => {
   if (action.type === SHOW_MESSAGE) {
