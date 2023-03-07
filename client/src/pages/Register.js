@@ -1,7 +1,6 @@
-import { Header, Footer } from "../components";
 import styled from "styled-components";
 import { useState } from "react";
-import { FormRow, Message } from "../components";
+import { Header, Footer, FormRow, Message } from "../components";
 import { useAppContext } from "../context/appContext";
 
 const initialState = {
@@ -14,7 +13,7 @@ const initialState = {
 const Register = () => {
   const [values, setValues] = useState(initialState);
 
-  const { showMessage } = useAppContext();
+  const { showMessage, displayMessage } = useAppContext();
 
   const toggleForm = () => {
     setValues({ ...values, isRegistered: !values.isRegistered });
@@ -26,7 +25,12 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    const { name, email, password, isRegistered } = values;
+    if (!email || !password || (!isRegistered && !name)) {
+      displayMessage();
+      return;
+    }
+    console.log(values);
   };
 
   return (

@@ -111,6 +111,8 @@ li {
   border-color: var(--darkBlue);
   border-style: solid;
   margin: 10px 0 25px 0;
+  font-family: sans-serif;
+  color: var(--darkBlue);
 }
 .form-input::placeholder {
   font-family: sans-serif;

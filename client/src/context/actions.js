@@ -1,1 +1,1 @@
-export const SHOW_MESSAGE = "SHOW_MESSGAE";
+export const SHOW_MESSAGE = "SHOW_MESSAGE";
