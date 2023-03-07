@@ -11,13 +11,16 @@ import {
   REGISTER_SUCCESS,
 } from "./actions";
 
+const user = localStorage.getItem("user");
+const token = localStorage.getItem("token");
+
 const initialState = {
   showMessage: false,
   messageText: "",
   messageType: "",
   isLoading: false,
-  user: null,
-  token: null,
+  user: JSON.parse(user) || null,
+  token: token,
 };
 
 const AppContext = React.createContext();
@@ -36,12 +39,23 @@ const AppProvider = ({ children }) => {
     }, 3000);
   };
 
+  const addUserToLocalStorage = ({ user, token }) => {
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("token", token);
+  };
+
+  const removeUserFromLocalStorage = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+  };
+
   const registerUser = async (currentUser) => {
     dispatch({ type: REGISTER_BEGIN });
     try {
       const response = await axios.post("api/v1/auth/register", currentUser);
       const { user, token } = response.data;
       dispatch({ type: REGISTER_SUCCESS, payload: { user, token } });
+      addUserToLocalStorage({ user, token });
     } catch (error) {
       dispatch({
         type: REGISTER_ERROR,
