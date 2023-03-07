@@ -23,6 +23,12 @@ const reducer = (state, action) => {
       messageType: "",
     };
   }
+  if (action.type === REGISTER_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

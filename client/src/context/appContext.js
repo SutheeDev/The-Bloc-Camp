@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useContext, useReducer } from "react";
+
 import reducer from "./reducer";
+import axios from "axios";
+
 import {
   SHOW_MESSAGE,
   HIDE_MESSAGE,
@@ -12,6 +15,7 @@ const initialState = {
   showMessage: false,
   messageText: "",
   messageType: "",
+  isLoading: false,
   user: null,
   token: null,
 };
@@ -33,7 +37,11 @@ const AppProvider = ({ children }) => {
   };
 
   const registerUser = async (currentUser) => {
-    console.log(currentUser);
+    dispatch({ type: REGISTER_BEGIN });
+    try {
+      const response = await axios.post("api/v1/auth/register", currentUser);
+      console.log(response);
+    } catch (error) {}
   };
 
   return (

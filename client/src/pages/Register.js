@@ -8,13 +8,12 @@ const initialState = {
   email: "",
   password: "",
   isRegistered: true,
-  isLoading: false,
 };
 
 const Register = () => {
   const [values, setValues] = useState(initialState);
 
-  const { showMessage, displayMessage, hideMessage, registerUser } =
+  const { showMessage, displayMessage, isLoading, hideMessage, registerUser } =
     useAppContext();
 
   const toggleForm = () => {
@@ -82,7 +81,7 @@ const Register = () => {
               <Button
                 className="btn login-btn"
                 type="submit"
-                disabled={values.isLoading}
+                disabled={isLoading}
               >
                 {values.isRegistered ? "Login" : "Register"}
               </Button>
