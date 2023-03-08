@@ -22,6 +22,7 @@ const Register = () => {
     isLoading,
     hideMessage,
     registerUser,
+    loginUser,
   } = useAppContext();
 
   const toggleForm = () => {
@@ -42,7 +43,7 @@ const Register = () => {
     const currentUser = { name, email, password };
 
     if (isRegistered) {
-      console.log("Already have an account");
+      loginUser(currentUser);
     } else {
       registerUser(currentUser);
     }
@@ -77,7 +78,7 @@ const Register = () => {
               />
             )}
             <FormRow
-              type="text"
+              type="email"
               name="email"
               id="email *"
               placeholder="Email Address"
@@ -85,7 +86,7 @@ const Register = () => {
               value={values.email}
             />
             <FormRow
-              type="text"
+              type="password"
               name="password"
               id="password *"
               placeholder="Password"

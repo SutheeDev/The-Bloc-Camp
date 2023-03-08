@@ -9,6 +9,9 @@ import {
   REGISTER_BEGIN,
   REGISTER_ERROR,
   REGISTER_SUCCESS,
+  LOGIN_BEGIN,
+  LOGIN_ERROR,
+  LOGIN_SUCCESS,
 } from "./actions";
 
 const user = localStorage.getItem("user");
@@ -65,9 +68,25 @@ const AppProvider = ({ children }) => {
     hideMessage();
   };
 
+  const loginUser = async (currentUser) => {
+    dispatch({ type: LOGIN_BEGIN });
+    try {
+      const response = await axios.post("api/v1/auth/login", currentUser);
+      const { user, token } = response.data;
+      dispatch({ type: LOGIN_SUCCESS, payload: { user, token } });
+      addUserToLocalStorage({ user, token });
+    } catch (error) {
+      dispatch({
+        type: LOGIN_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    hideMessage();
+  };
+
   return (
     <AppContext.Provider
-      value={{ ...state, displayMessage, hideMessage, registerUser }}
+      value={{ ...state, displayMessage, hideMessage, registerUser, loginUser }}
     >
       {children}
     </AppContext.Provider>
