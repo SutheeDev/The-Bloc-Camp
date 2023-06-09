@@ -26,8 +26,10 @@ html {
   /* colors */
   --grey-300: #9fb3c8;
   --grey-200: #bcccdc;
+  --grey-100: #f2f6f9;
   --black: #222;
   --white: #fff;
+  --blue: #6f489b56;
   --darkBlue: #221333;
   --lighterBlue: #29193c;
   --reddish: #df3311;
