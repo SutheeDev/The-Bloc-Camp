@@ -11,6 +11,7 @@ import FormRow from "./FormRow";
 import Message from "./Message";
 import Logo from "./Logo";
 import DashboardNavbar from "./Dashboard-Navbar";
+import Dropdown from "./Dropdown";
 
 export {
   Navbar,
@@ -26,4 +27,5 @@ export {
   Message,
   Logo,
   DashboardNavbar,
+  Dropdown,
 };

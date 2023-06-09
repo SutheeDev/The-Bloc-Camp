@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Logo } from ".";
-import { BiMenu, BiUserCircle } from "react-icons/bi";
+import { Dropdown, Logo } from ".";
+import { BiMenu } from "react-icons/bi";
 
 const DashboardNavbar = () => {
   return (
@@ -9,12 +9,7 @@ const DashboardNavbar = () => {
         <BiMenu />
       </div>
       <Logo />
-      <div className="dropdown">
-        <div className="dropdown-icon">
-          <BiUserCircle />
-        </div>
-        <h3>Pete</h3>
-      </div>
+      <Dropdown />
     </Wrapper>
   );
 };
@@ -25,10 +20,8 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2em 2em;
   .dashboard--hamburger {
     font-size: 1.7rem;
-  }
-  .dropdown-icon {
-    font-size: 1.4rem;
   }
 `;
