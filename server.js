@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import "express-async-errors";
+import morgan from "morgan";
 
 // Routes
 import authRouter from "./routes/authRoutes.js";
@@ -16,6 +17,11 @@ import ErrorHandlerMiddleware from "./middleware/error-handler.js";
 
 // connect to database function
 import connectDB from "./db/connect.js";
+
+// Invoke Morgan
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
 
 // Built-in middleware
 app.use(express.json());
