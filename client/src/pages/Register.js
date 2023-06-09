@@ -169,6 +169,7 @@ const Wrapper = styled.main`
   /* ------------------- */
   /* Login Page, Subscribe Page, Subscribed Page */
   /* ------------------- */
+  background-color: var(--darkBlue);
   .login {
     padding: 30px 0 30px 0;
   }

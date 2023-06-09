@@ -20,11 +20,11 @@ const Wrapper = styled.header`
   left: 0;
   width: 100%;
   background-color: var(--darkBlue);
-  text-transform: uppercase;
-  text-align: center;
   padding: 0px 0 85px 0;
   margin-top: 14px;
-
+  div {
+    width: 100%;
+  }
   @media screen and (min-width: 850px) {
     position: relative;
     top: 0;

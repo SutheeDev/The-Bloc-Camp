@@ -38,6 +38,7 @@ const Shows = () => {
 export default Shows;
 
 const Wrapper = styled.main`
+  background-color: var(--backgroundColor);
   .calendar {
     background-color: #221333;
     padding: 70px 0;

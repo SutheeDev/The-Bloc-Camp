@@ -10,6 +10,7 @@ import TicketsBtn from "./TicketsBtn";
 import FormRow from "./FormRow";
 import Message from "./Message";
 import Logo from "./Logo";
+import DashboardNavbar from "./Dashboard-Navbar";
 
 export {
   Navbar,
@@ -24,4 +25,5 @@ export {
   FormRow,
   Message,
   Logo,
+  DashboardNavbar,
 };

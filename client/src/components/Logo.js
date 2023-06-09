@@ -15,6 +15,10 @@ const Logo = () => {
 export default Logo;
 
 const Wrapper = styled.div`
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--darkBlue);
+  width: 300px;
   .logo {
     position: relative;
     height: 70px;
@@ -27,6 +31,7 @@ const Wrapper = styled.div`
   }
 
   h1 {
+    width: 100%;
     font-weight: 400;
     font-size: 44px;
     letter-spacing: 3px;

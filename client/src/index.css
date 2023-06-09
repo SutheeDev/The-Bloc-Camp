@@ -50,7 +50,6 @@ html {
 
 body {
   font-family: var(--headingFont);
-  background: var(--backgroundColor);
   font-size: 14px;
   color: var(--white);
 }

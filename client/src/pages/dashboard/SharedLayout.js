@@ -1,12 +1,17 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "../../components";
+import { DashboardNavbar } from "../../components";
+import styled from "styled-components";
 
 const SharedLayout = () => {
   return (
-    <>
-      <Header />
+    <Wrapper>
+      <DashboardNavbar />
       <Outlet />
-    </>
+    </Wrapper>
   );
 };
 export default SharedLayout;
+
+const Wrapper = styled.main`
+  background-color: var(--white);
+`;
