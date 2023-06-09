@@ -23,6 +23,7 @@ const Register = () => {
     hideMessage,
     registerUser,
     loginUser,
+    role,
   } = useAppContext();
 
   const toggleForm = () => {
@@ -52,7 +53,11 @@ const Register = () => {
   useEffect(() => {
     if (user) {
       setTimeout(() => {
-        navigate("/dashboard");
+        if (role === "admin") {
+          navigate("/admin-dashboard");
+        } else {
+          navigate("/dashboard");
+        }
       }, 3000);
     }
   }, [user, navigate]);

@@ -16,6 +16,7 @@ import {
 
 const user = localStorage.getItem("user");
 const token = localStorage.getItem("token");
+const role = localStorage.getItem("role");
 
 const initialState = {
   showMessage: false,
@@ -24,6 +25,7 @@ const initialState = {
   isLoading: false,
   user: JSON.parse(user) || null,
   token: token,
+  role: role,
 };
 
 const AppContext = React.createContext();
@@ -42,14 +44,16 @@ const AppProvider = ({ children }) => {
     }, 3000);
   };
 
-  const addUserToLocalStorage = ({ user, token }) => {
+  const addUserToLocalStorage = ({ user, token, role }) => {
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("token", token);
+    localStorage.setItem("role", role);
   };
 
   const removeUserFromLocalStorage = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+    localStorage.removeItem("role");
   };
 
   const registerUser = async (currentUser) => {
@@ -72,9 +76,9 @@ const AppProvider = ({ children }) => {
     dispatch({ type: LOGIN_BEGIN });
     try {
       const response = await axios.post("api/v1/auth/login", currentUser);
-      const { user, token } = response.data;
-      dispatch({ type: LOGIN_SUCCESS, payload: { user, token } });
-      addUserToLocalStorage({ user, token });
+      const { user, token, role } = response.data;
+      dispatch({ type: LOGIN_SUCCESS, payload: { user, token, role } });
+      addUserToLocalStorage({ user, token, role });
     } catch (error) {
       dispatch({
         type: LOGIN_ERROR,

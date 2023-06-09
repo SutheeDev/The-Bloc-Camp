@@ -53,7 +53,7 @@ const login = async (req, res) => {
 
   // Set password to undefined so it's not visible in the response
   user.password = undefined;
-  res.status(StatusCodes.OK).json({ user, token });
+  res.status(StatusCodes.OK).json({ user, token, role: user.role });
 };
 
 const updateUser = async (req, res) => {

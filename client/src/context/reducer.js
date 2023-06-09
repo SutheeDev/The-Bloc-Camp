@@ -67,6 +67,7 @@ const reducer = (state, action) => {
       isLoading: false,
       user: action.payload.user,
       token: action.payload.token,
+      role: action.payload.role,
     };
   }
   if (action.type === LOGIN_ERROR) {
