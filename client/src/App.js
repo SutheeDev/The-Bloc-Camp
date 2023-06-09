@@ -1,4 +1,11 @@
-import { Landing, Shows, About, Contact, Register } from "./pages";
+import {
+  Landing,
+  Shows,
+  About,
+  Contact,
+  Register,
+  ProtectedRoute,
+} from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Profile,
@@ -13,16 +20,30 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/admin-dashboard" element={<SharedLayout />}>
+        <Route
+          path="/admin-dashboard"
+          element={
+            <ProtectedRoute>
+              <SharedLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<Overview />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="allshows" element={<AllShows />} />
-          <Route path="addshow" element={<AddShow />} />
+          <Route path="all-shows" element={<AllShows />} />
+          <Route path="add-show" element={<AddShow />} />
         </Route>
-        <Route path="/dashboard" element={<SharedLayout />}>
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <SharedLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<Overview />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="mytickets" element={<MyTickets />} />
+          <Route path="my-tickets" element={<MyTickets />} />
         </Route>
         <Route path="/" element={<Landing />} />
         <Route path="/shows" element={<Shows />} />
