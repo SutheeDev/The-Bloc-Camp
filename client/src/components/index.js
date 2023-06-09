@@ -9,6 +9,7 @@ import Show from "./Show";
 import TicketsBtn from "./TicketsBtn";
 import FormRow from "./FormRow";
 import Message from "./Message";
+import Logo from "./Logo";
 
 export {
   Navbar,
@@ -22,4 +23,5 @@ export {
   TicketsBtn,
   FormRow,
   Message,
+  Logo,
 };
