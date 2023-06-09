@@ -29,23 +29,23 @@ const Navbar = () => {
                 />
               </li>
               <li className="link">
-                <a href="#">home</a>
+                <a href="/">home</a>
               </li>
               <li className="link">
-                <a href="#">shows</a>
+                <a href="/shows">shows</a>
               </li>
               <li className="link">
-                <a href="#">about</a>
+                <a href="/about">about</a>
               </li>
               <li className="link">
-                <a href="#">contact</a>
+                <a href="/contact">contact</a>
               </li>
             </ul>
           </nav>
         </div>
         <div className="logIn">
           <img src={login} alt="login icon" />
-          <a href="#">log in</a>
+          <a href="/register">log in</a>
         </div>
       </div>
     </Wrapper>
