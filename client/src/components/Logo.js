@@ -17,7 +17,7 @@ export default Logo;
 const Wrapper = styled.div`
   text-transform: uppercase;
   text-align: center;
-  background-color: var(--darkBlue);
+  background-color: transparent;
   width: 300px;
   .logo {
     position: relative;
