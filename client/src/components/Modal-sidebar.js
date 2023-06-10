@@ -1,10 +1,17 @@
 import styled from "styled-components";
+import { Logo } from ".";
 
 const ModalSidebar = () => {
   return (
     <Wrapper>
-      <div>
-        <h3>Modal</h3>
+      <div className="sidebar-container show-sidebar">
+        <div className="content">
+          <Logo />
+          <h3>Links</h3>
+          <h3>Links</h3>
+          <h3>Links</h3>
+          <h3>Links</h3>
+        </div>
       </div>
     </Wrapper>
   );
@@ -12,8 +19,35 @@ const ModalSidebar = () => {
 export default ModalSidebar;
 
 const Wrapper = styled.div`
-  color: black;
   @media (min-width: 950px) {
     display: none;
+  }
+  .sidebar-container {
+    position: fixed;
+    inset: 0;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    opacity: 0;
+
+    transition: all 0.3s ease;
+  }
+  .show-sidebar {
+    z-index: 100;
+    opacity: 1;
+  }
+  .content {
+    background-color: var(--reddish);
+    width: 95vw;
+    height: 95vh;
+    border-radius: 5px;
+    box-shadow: 0px 1.3px 1.7px rgba(0, 0, 0, 0.028),
+      0px 4.2px 5.6px rgba(0, 0, 0, 0.042), 0px 19px 25px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;

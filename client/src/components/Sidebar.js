@@ -4,7 +4,7 @@ const Sidebar = () => {
   return (
     <Wrapper>
       <div className="sidebar sidebar-show">
-        <h3>Sidebar</h3>
+        <div className="sidebar-content"></div>
       </div>
     </Wrapper>
   );
