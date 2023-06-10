@@ -5,15 +5,24 @@ import styled from "styled-components";
 const SharedLayout = () => {
   return (
     <Wrapper>
-      <ModalSidebar />
-      <Sidebar />
-      <DashboardNavbar />
-      <Outlet />
+      <div className="sharedLayout">
+        <ModalSidebar />
+        <Sidebar />
+        <div className="content">
+          <DashboardNavbar />
+          <Outlet />
+        </div>
+      </div>
     </Wrapper>
   );
 };
 export default SharedLayout;
 
 const Wrapper = styled.main`
-  background-color: var(--white);
+  .sharedLayout {
+    display: flex;
+  }
+  .content {
+    width: 100%;
+  }
 `;
