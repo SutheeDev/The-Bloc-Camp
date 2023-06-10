@@ -12,6 +12,8 @@ import Message from "./Message";
 import Logo from "./Logo";
 import DashboardNavbar from "./Dashboard-Navbar";
 import Dropdown from "./Dropdown";
+import Sidebar from "./Sidebar";
+import ModalSidebar from "./Modal-sidebar";
 
 export {
   Navbar,
@@ -28,4 +30,6 @@ export {
   Logo,
   DashboardNavbar,
   Dropdown,
+  ModalSidebar,
+  Sidebar,
 };

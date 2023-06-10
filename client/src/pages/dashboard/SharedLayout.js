@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
-import { DashboardNavbar } from "../../components";
+import { DashboardNavbar, ModalSidebar, Sidebar } from "../../components";
 import styled from "styled-components";
 
 const SharedLayout = () => {
   return (
     <Wrapper>
+      <ModalSidebar />
+      <Sidebar />
       <DashboardNavbar />
       <Outlet />
     </Wrapper>
