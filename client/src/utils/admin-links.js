@@ -2,35 +2,33 @@ import {
   BiBookContent,
   BiInfoSquare,
   BiAddToQueue,
-  BiGridSmall,
   BiBarChartSquare,
 } from "react-icons/bi";
 
 const adminLinks = [
   {
-    text: "Profile",
-    path: "/profile",
-    icon: <BiBookContent />,
+    id: 0,
+    text: "Overview",
+    path: "/admin-dashboard/",
+    icon: <BiBarChartSquare />,
   },
   {
-    text: "Create Show",
-    path: "/create-show",
-    icon: <BiInfoSquare />,
-  },
-  {
+    id: 1,
     text: "All Shows",
-    path: "/all-shows",
+    path: "/admin-dashboard/all-shows",
     icon: <BiAddToQueue />,
   },
   {
-    text: "My Tickets",
-    path: "/my-tickets",
-    icon: <BiGridSmall />,
+    id: 2,
+    text: "Create Show",
+    path: "/admin-dashboard/create-show",
+    icon: <BiInfoSquare />,
   },
   {
-    text: "Overview",
-    path: "/",
-    icon: <BiBarChartSquare />,
+    id: 3,
+    text: "Profile",
+    path: "/admin-dashboard/profile",
+    icon: <BiBookContent />,
   },
 ];
 

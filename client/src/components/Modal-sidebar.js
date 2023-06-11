@@ -17,7 +17,13 @@ const ModalSidebar = () => {
           </div>
           <div className="links">
             {adminLinks.map((link) => {
-              return <NavLink />;
+              const { text, path, icon, id } = link;
+              return (
+                <NavLink key={id} to={path}>
+                  <div className="links-icon">{icon}</div>
+                  {text}
+                </NavLink>
+              );
             })}
           </div>
         </div>
