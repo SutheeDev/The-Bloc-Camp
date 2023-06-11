@@ -14,6 +14,7 @@ import DashboardNavbar from "./Dashboard-Navbar";
 import Dropdown from "./Dropdown";
 import Sidebar from "./Sidebar";
 import ModalSidebar from "./Modal-sidebar";
+import NavLinks from "./NavLinks";
 
 export {
   Navbar,
@@ -32,4 +33,5 @@ export {
   Dropdown,
   ModalSidebar,
   Sidebar,
+  NavLinks,
 };

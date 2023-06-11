@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import { Logo } from ".";
+import { Logo, NavLinks } from ".";
 import { FiX } from "react-icons/fi";
-import adminLinks from "../utils/admin-links";
-import { NavLink } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
 
 const ModalSidebar = () => {
@@ -21,25 +19,7 @@ const ModalSidebar = () => {
           <div className="logo-container">
             <Logo />
           </div>
-          <div className="links">
-            {adminLinks.map((link) => {
-              const { text, path, icon, id } = link;
-              return (
-                <NavLink
-                  key={id}
-                  to={path}
-                  // Utilize isActive property to highlight an active link
-                  className={({ isActive }) =>
-                    isActive ? "link active" : "link"
-                  }
-                  end
-                >
-                  <div className="link-icon">{icon}</div>
-                  {text}
-                </NavLink>
-              );
-            })}
-          </div>
+          <NavLinks toggleSidebar={toggleSidebar} />
         </div>
       </div>
     </Wrapper>
@@ -94,27 +74,5 @@ const Wrapper = styled.div`
   }
   .logo-container {
     margin-bottom: 5em;
-  }
-  .link {
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 1.5px;
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
-    margin-bottom: 1.3em;
-    color: var(--blue);
-
-    transition: all 0.3s ease;
-  }
-  .link-icon {
-    display: flex;
-  }
-  /* Color an active link */
-  .active {
-    color: var(--white);
-  }
-  .link:hover {
-    color: var(--reddish);
   }
 `;
