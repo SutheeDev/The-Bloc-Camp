@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 const ModalSidebar = () => {
   return (
     <Wrapper>
-      <div className="sidebar-container show-sidebar">
+      <div className="sidebar-container">
         <div className="sidebar-content">
           <div className="close-icon">
             <FiX />
@@ -22,6 +22,7 @@ const ModalSidebar = () => {
                 <NavLink
                   key={id}
                   to={path}
+                  // Utilize isActive property to highlight an active link
                   className={({ isActive }) =>
                     isActive ? "link active" : "link"
                   }
@@ -102,6 +103,7 @@ const Wrapper = styled.div`
   .link-icon {
     display: flex;
   }
+  /* Color an active link */
   .active {
     color: var(--white);
   }

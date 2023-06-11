@@ -5,7 +5,7 @@ import { BiMenu } from "react-icons/bi";
 const DashboardNavbar = () => {
   return (
     <Wrapper>
-      <div className="dashboard--hamburger">
+      <div className="dashboard-hamburger">
         <BiMenu />
       </div>
       <Logo />
@@ -21,7 +21,7 @@ const Wrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 2em 2em;
-  .dashboard--hamburger {
+  .dashboard-hamburger {
     font-size: 1.7rem;
   }
 `;
