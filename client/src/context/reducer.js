@@ -7,6 +7,7 @@ import {
   LOGIN_BEGIN,
   LOGIN_ERROR,
   LOGIN_SUCCESS,
+  TOGGLE_SIDEBAR,
 } from "./actions";
 
 const reducer = (state, action) => {
