@@ -3,13 +3,19 @@ import { Logo } from ".";
 import { FiX } from "react-icons/fi";
 import adminLinks from "../utils/admin-links";
 import { NavLink } from "react-router-dom";
+import { useAppContext } from "../context/appContext";
 
 const ModalSidebar = () => {
+  const { showSidebar, toggleSidebar } = useAppContext();
   return (
     <Wrapper>
-      <div className="sidebar-container">
+      <div
+        className={
+          showSidebar ? "sidebar-container show-sidebar" : "sidebar-container"
+        }
+      >
         <div className="sidebar-content">
-          <div className="close-icon">
+          <div onClick={toggleSidebar} className="close-icon">
             <FiX />
           </div>
           <div className="logo-container">
