@@ -9,7 +9,7 @@ import {
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Profile,
-  AddShow,
+  CreateShow,
   AllShows,
   MyTickets,
   Overview,
@@ -31,7 +31,7 @@ function App() {
           <Route index element={<Overview />} />
           <Route path="profile" element={<Profile />} />
           <Route path="all-shows" element={<AllShows />} />
-          <Route path="add-show" element={<AddShow />} />
+          <Route path="create-show" element={<CreateShow />} />
         </Route>
         <Route
           path="/dashboard"

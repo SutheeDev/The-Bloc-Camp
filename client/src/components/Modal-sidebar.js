@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Logo } from ".";
 import { FiX } from "react-icons/fi";
+import adminLinks from "../utils/admin-links";
+import { NavLink } from "react-router-dom";
 
 const ModalSidebar = () => {
   return (
@@ -13,10 +15,11 @@ const ModalSidebar = () => {
           <div className="logo-container">
             <Logo />
           </div>
-          <h3>Links</h3>
-          <h3>Links</h3>
-          <h3>Links</h3>
-          <h3>Links</h3>
+          <div className="links">
+            {adminLinks.map((link) => {
+              return <NavLink />;
+            })}
+          </div>
         </div>
       </div>
     </Wrapper>
