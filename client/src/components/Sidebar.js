@@ -6,7 +6,11 @@ const Sidebar = () => {
   const { showSidebar, toggleSidebar } = useAppContext();
   return (
     <Wrapper>
-      <div className="sidebar-container show-sidebar">
+      <div
+        className={
+          showSidebar ? "sidebar-container" : "sidebar-container show-sidebar"
+        }
+      >
         <div className="sidebar-content">
           <h2 className="sidebar-title">dashboard</h2>
           <NavLinks />
