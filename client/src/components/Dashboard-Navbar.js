@@ -26,5 +26,10 @@ const Wrapper = styled.nav`
   .dashboard-hamburger {
     font-size: 1.7rem;
     cursor: pointer;
+
+    transition: all 0.3s ease;
+  }
+  .dashboard-hamburger:hover {
+    color: var(--reddish);
   }
 `;
