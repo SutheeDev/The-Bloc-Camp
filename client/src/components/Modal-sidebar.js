@@ -8,7 +8,7 @@ const ModalSidebar = () => {
   return (
     <Wrapper>
       <div className="sidebar-container show-sidebar">
-        <div className="content">
+        <div className="sidebar-content">
           <div className="close-icon">
             <FiX />
           </div>
@@ -19,8 +19,14 @@ const ModalSidebar = () => {
             {adminLinks.map((link) => {
               const { text, path, icon, id } = link;
               return (
-                <NavLink key={id} to={path}>
-                  <div className="links-icon">{icon}</div>
+                <NavLink
+                  key={id}
+                  to={path}
+                  className={({ isActive }) =>
+                    isActive ? "link active" : "link"
+                  }
+                >
+                  <div className="link-icon">{icon}</div>
                   {text}
                 </NavLink>
               );
@@ -53,7 +59,7 @@ const Wrapper = styled.div`
     z-index: 100;
     opacity: 1;
   }
-  .content {
+  .sidebar-content {
     background-color: var(--darkBlue);
     width: 95vw;
     height: 95vh;
@@ -79,6 +85,27 @@ const Wrapper = styled.div`
     color: var(--reddish);
   }
   .logo-container {
-    margin-bottom: 3em;
+    margin-bottom: 5em;
+  }
+  .link {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    margin-bottom: 1.3em;
+    color: var(--blue);
+
+    transition: all 0.3s ease;
+  }
+  .link-icon {
+    display: flex;
+  }
+  .active {
+    color: var(--white);
+  }
+  .link:hover {
+    color: var(--reddish);
   }
 `;
