@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 
 const Dropdown = () => {
-  const { user } = useAppContext();
+  const { user, logoutUser } = useAppContext();
   return (
     <Wrapper>
       <div className="dropdown">
@@ -17,10 +17,12 @@ const Dropdown = () => {
           </div>
         </div>
         <div className="dropdown-menu">
-          <button className="btn logout-btn">profile</button>
-          <button className="btn logout-btn">create new shows</button>
-          <button className="btn logout-btn">all shows</button>
-          <button className="btn logout-btn">logout</button>
+          <button className="btn">profile</button>
+          <button className="btn">create new shows</button>
+          <button className="btn">all shows</button>
+          <button onClick={logoutUser} className="btn logout-btn">
+            logout
+          </button>
         </div>
       </div>
     </Wrapper>
