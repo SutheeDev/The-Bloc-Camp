@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { Dropdown, Logo } from ".";
 import { BiMenu } from "react-icons/bi";
+import { useAppContext } from "../context/appContext";
 
 const DashboardNavbar = () => {
+  const { toggleSidebar } = useAppContext();
   return (
     <Wrapper>
-      <div className="dashboard-hamburger">
+      <div className="dashboard-hamburger" onClick={toggleSidebar}>
         <BiMenu />
       </div>
       <Logo />
@@ -23,5 +25,6 @@ const Wrapper = styled.nav`
   padding: 2em 2em;
   .dashboard-hamburger {
     font-size: 1.7rem;
+    cursor: pointer;
   }
 `;

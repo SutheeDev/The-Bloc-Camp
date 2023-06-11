@@ -80,6 +80,12 @@ const reducer = (state, action) => {
       isLoading: false,
     };
   }
+  if (action.type === TOGGLE_SIDEBAR) {
+    return {
+      ...state,
+      showSidebar: !state.showSidebar,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

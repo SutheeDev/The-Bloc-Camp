@@ -27,6 +27,7 @@ const initialState = {
   user: JSON.parse(user) || null,
   token: token,
   role: role,
+  showSidebar: false,
 };
 
 const AppContext = React.createContext();
@@ -89,9 +90,20 @@ const AppProvider = ({ children }) => {
     hideMessage();
   };
 
+  const toggleSidebar = () => {
+    dispatch({ type: TOGGLE_SIDEBAR });
+  };
+
   return (
     <AppContext.Provider
-      value={{ ...state, displayMessage, hideMessage, registerUser, loginUser }}
+      value={{
+        ...state,
+        displayMessage,
+        hideMessage,
+        registerUser,
+        loginUser,
+        toggleSidebar,
+      }}
     >
       {children}
     </AppContext.Provider>
