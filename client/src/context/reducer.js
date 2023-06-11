@@ -8,6 +8,7 @@ import {
   LOGIN_ERROR,
   LOGIN_SUCCESS,
   TOGGLE_SIDEBAR,
+  LOGOUT_USER,
 } from "./actions";
 
 const reducer = (state, action) => {

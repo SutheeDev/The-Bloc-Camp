@@ -81,6 +81,7 @@ const Wrapper = styled.div`
     font-family: var(--bodyFont);
     background-color: transparent;
     border: 7px solid var(--white);
+    cursor: pointer;
   }
   .btn:hover {
     background-color: var(--reddish);

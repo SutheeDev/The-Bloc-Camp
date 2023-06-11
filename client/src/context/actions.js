@@ -10,3 +10,5 @@ export const LOGIN_ERROR = "LOGIN_ERROR";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
+
+export const LOGOUT_USER = "LOGOUT_USER";
