@@ -11,6 +11,8 @@ import {
   LOGOUT_USER,
 } from "./actions";
 
+import { initialState } from "./appContext";
+
 const reducer = (state, action) => {
   if (action.type === SHOW_MESSAGE) {
     return {
@@ -85,6 +87,14 @@ const reducer = (state, action) => {
     return {
       ...state,
       showSidebar: !state.showSidebar,
+    };
+  }
+  if (action.type === LOGOUT_USER) {
+    return {
+      ...initialState,
+      user: null,
+      token: null,
+      role: "",
     };
   }
   throw new Error(`No such action: ${action.type}`);
