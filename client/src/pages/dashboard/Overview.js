@@ -1,4 +1,14 @@
+import styled from "styled-components";
+
 const Overview = () => {
-  return <h2>Overview</h2>;
+  return (
+    <Wrapper>
+      <h2>Overview</h2>
+    </Wrapper>
+  );
 };
 export default Overview;
+
+const Wrapper = styled.div`
+  color: var(--black);
+`;

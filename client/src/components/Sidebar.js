@@ -23,6 +23,7 @@ const Sidebar = () => {
                   className={({ isActive }) =>
                     isActive ? "link active" : "link"
                   }
+                  end
                 >
                   <div className="link-icon">{icon}</div>
                   {text}

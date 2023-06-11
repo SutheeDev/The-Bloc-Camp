@@ -9,7 +9,7 @@ const adminLinks = [
   {
     id: 0,
     text: "Overview",
-    path: "/admin-dashboard/",
+    path: "/admin-dashboard",
     icon: <BiBarChartSquare />,
   },
   {
