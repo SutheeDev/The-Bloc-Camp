@@ -20,6 +20,11 @@ const Profile = () => {
     // handleChange({ name, value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("update user");
+  };
+
   return (
     <Wrapper>
       <h2>Profile</h2>
