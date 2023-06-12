@@ -4,7 +4,6 @@ import { FormRow, Message } from "../../components";
 import { useState } from "react";
 
 const Profile = () => {
-  // const { handleChange } = useAppContext();
   const { user, showMessage, displayMessage, updateUser, isLoading } =
     useAppContext();
 
@@ -14,11 +13,11 @@ const Profile = () => {
   const [location, setLocation] = useState(user?.location);
   const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber);
 
-  const handleInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    // handleChange({ name, value });
-  };
+  // const handleInput = (e) => {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+  //   handleInputChange({ name, value });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +26,45 @@ const Profile = () => {
 
   return (
     <Wrapper>
-      <h2>Profile</h2>
+      <form className="form" onSubmit={handleSubmit}>
+        <h3 className="form=title">profile</h3>
+        {showMessage && <Message />}
+        <div className="form-input">
+          <FormRow
+            type="text"
+            name="name"
+            placeholder="name"
+            value={name}
+            handleChange={(e) => setname(e.target.value)}
+          />
+          <FormRow
+            type="text"
+            name="lastname"
+            labelText="last name"
+            placeholder="last name"
+            value={lastname}
+            handleChange={(e) => setLastname(e.target.value)}
+          />
+          <FormRow
+            type="text"
+            name="email"
+            placeholder="email address"
+            value={email}
+            handleChange={(e) => setEmail(e.target.value)}
+          />
+          <FormRow
+            type="text"
+            name="location"
+            placeholder="location"
+            value={location}
+            handleChange={(e) => setLocation(e.target.value)}
+          />
+
+          <button type="submit" className="btn" disabled={isLoading}>
+            update
+          </button>
+        </div>
+      </form>
     </Wrapper>
   );
 };

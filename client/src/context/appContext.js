@@ -105,7 +105,7 @@ const AppProvider = ({ children }) => {
     console.log(currentUser);
   };
 
-  const handleChange = ({ name, value }) => {
+  const handleInputChange = ({ name, value }) => {
     dispatch({
       type: HANDLE_CHANGE,
       payload: {
@@ -126,7 +126,7 @@ const AppProvider = ({ children }) => {
         toggleSidebar,
         logoutUser,
         updateUser,
-        handleChange,
+        handleInputChange,
       }}
     >
       {children}
