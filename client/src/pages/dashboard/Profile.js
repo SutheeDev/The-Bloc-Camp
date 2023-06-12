@@ -27,9 +27,9 @@ const Profile = () => {
   return (
     <Wrapper>
       <form className="form" onSubmit={handleSubmit}>
-        <h3 className="form=title">profile</h3>
+        <h3 className="form-title">profile</h3>
         {showMessage && <Message />}
-        <div className="form-input">
+        <div className="form-content">
           <FormRow
             type="text"
             name="name"
@@ -72,4 +72,29 @@ export default Profile;
 
 const Wrapper = styled.div`
   color: var(--black);
+  .form-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 1.3em;
+    padding-bottom: 0.7em;
+    border-bottom: 3px solid var(--grey-100);
+  }
+  .btn {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    color: var(--reddish);
+    border: 3px solid var(--reddish);
+    background-color: var(--white);
+    border-radius: 1px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    color: var(--white);
+    border: 3px solid var(--darkBlue);
+    background-color: var(--darkBlue);
+  }
 `;
