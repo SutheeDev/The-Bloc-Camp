@@ -14,6 +14,7 @@ import showRouter from "./routes/showsRoutes.js";
 // middleware import
 import NotFoundMiddleware from "./middleware/not-found.js";
 import ErrorHandlerMiddleware from "./middleware/error-handler.js";
+import authenticatedUser from "./middleware/auth.js";
 
 // connect to database function
 import connectDB from "./db/connect.js";
@@ -28,7 +29,7 @@ app.use(express.json());
 
 // API routes
 app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/shows", showRouter);
+app.use("/api/v1/shows", authenticatedUser, showRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello User");
