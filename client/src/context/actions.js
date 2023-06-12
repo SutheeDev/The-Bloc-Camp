@@ -12,3 +12,5 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
 
 export const LOGOUT_USER = "LOGOUT_USER";
+
+export const HANDLE_CHANGE = "HANDLE_CHANGE";

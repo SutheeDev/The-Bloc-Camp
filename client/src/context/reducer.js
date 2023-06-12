@@ -9,6 +9,7 @@ import {
   LOGIN_SUCCESS,
   TOGGLE_SIDEBAR,
   LOGOUT_USER,
+  HANDLE_CHANGE,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -95,6 +96,12 @@ const reducer = (state, action) => {
       user: null,
       token: null,
       role: "",
+    };
+  }
+  if (action.type === HANDLE_CHANGE) {
+    return {
+      ...state,
+      [action.payload.name]: action.payload.value,
     };
   }
   throw new Error(`No such action: ${action.type}`);
