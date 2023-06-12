@@ -42,10 +42,9 @@ const Wrapper = styled.div`
     }
     .sidebar-title {
       text-transform: capitalize;
-      /* font-family: var(--bodyFont); */
       font-size: 3.5rem;
       font-weight: 400;
-      margin-bottom: 1.2em;
+      margin-bottom: 1.35em;
     }
   }
 `;

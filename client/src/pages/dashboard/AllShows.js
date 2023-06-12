@@ -1,4 +1,14 @@
+import styled from "styled-components";
+
 const AllShows = () => {
-  return <h2>AllShows</h2>;
+  return (
+    <Wrapper>
+      <h2>All Shows</h2>
+    </Wrapper>
+  );
 };
 export default AllShows;
+
+const Wrapper = styled.div`
+  color: var(--black);
+`;

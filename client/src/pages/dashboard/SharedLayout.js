@@ -10,7 +10,9 @@ const SharedLayout = () => {
         <Sidebar />
         <div className="content">
           <DashboardNavbar />
-          <Outlet />
+          <div className="dashboard-page">
+            <Outlet />
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -24,5 +26,8 @@ const Wrapper = styled.main`
   }
   .content {
     width: 100%;
+  }
+  .dashboard-page {
+    padding: 2em 2em;
   }
 `;
