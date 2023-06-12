@@ -57,6 +57,20 @@ const login = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
+  const { name, lastname } = req.body;
+
+  if (!name || !lastname) {
+    throw new BadRequestError("Please provide all values!");
+  }
+
+  const user = await User.findOne({ _id: req.user.userId });
+  user.name = name;
+  user.lastname = lastname;
+
+  await user.save();
+
+  const token = user.createJWT();
+
   res.send("Update User Route");
 };
 export { register, login, updateUser };
