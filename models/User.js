@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     minlength: [2, "Lastname cannot be less than 2 characters"],
     maxlength: [50, "Lastname cannot be longer than 50 characters"],
-    default: "Lastname",
+    default: "Last Name",
   },
   phoneNumber: {
     type: String,
@@ -44,7 +44,7 @@ const UserSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    default: null,
+    default: "Your City",
   },
 });
 
