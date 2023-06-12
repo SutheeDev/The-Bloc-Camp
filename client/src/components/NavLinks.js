@@ -1,10 +1,8 @@
 import adminLinks from "../utils/admin-links";
 import { NavLink } from "react-router-dom";
-import { useAppContext } from "../context/appContext";
 import styled from "styled-components";
 
-const NavLinks = () => {
-  const { toggleSidebar } = useAppContext();
+const NavLinks = ({ toggleSidebar }) => {
   return (
     <Wrapper className="nav-links">
       {adminLinks.map((link) => {
