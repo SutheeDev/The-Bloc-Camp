@@ -10,6 +10,9 @@ import {
   TOGGLE_SIDEBAR,
   LOGOUT_USER,
   HANDLE_CHANGE,
+  UPDATE_USER_BEGIN,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_ERROR,
 } from "./actions";
 
 import { initialState } from "./appContext";
