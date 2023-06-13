@@ -36,6 +36,15 @@ html {
   --reddish: #df3311;
   --background: #2222225f;
 
+  /* message */
+  --error-bg: #eec8c5;
+  --error-border: #cb9d9f;
+  --error-text: #a03534;
+
+  --success-bg: #dcf3d7;
+  --success-border: #cadac2;
+  --success-text: #586e50;
+
   /* fonts  */
   --headingFont: "Oswald", San-Serifs;
   --bodyFont: Sans-Serif;
@@ -167,12 +176,12 @@ li {
   text-transform: capitalize;
 }
 .message-error {
-  border: 2px solid #df331183;
-  color: #fe2a00;
-  background-color: #df331136;
+  border: 2px solid var(--error-border);
+  color: var(--error-text);
+  background-color: var(--error-bg);
 }
 .message-success {
-  border: 2px solid rgba(0, 209, 0, 0.468);
-  color: var(--white);
-  background-color: rgba(0, 209, 0, 0.369);
+  border: 2px solid var(--success-border);
+  color: var(--success-text);
+  background-color: var(--success-bg);
 }
