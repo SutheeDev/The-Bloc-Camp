@@ -59,7 +59,6 @@ const AppProvider = ({ children }) => {
       return response;
     },
     (error) => {
-      console.log(error.response);
       if (error.response.status === 401) {
         console.log("AUTH ERROR!!!");
       }
@@ -135,11 +134,25 @@ const AppProvider = ({ children }) => {
     dispatch({ type: UPDATE_USER_BEGIN });
     try {
       const { data } = await authFetch.patch("/auth/updateuser", currentUser);
-      // dispatch({ type: UPDATE_USER_SUCCESS });
-      console.log(data);
+      const { user, token, role } = data;
+      dispatch({
+        type: UPDATE_USER_SUCCESS,
+        payload: {
+          user,
+          token,
+          role,
+        },
+      });
+      addUserToLocalStorage({ user, token, role });
     } catch (error) {
-      console.log(error.response);
+      dispatch({
+        type: UPDATE_USER_ERROR,
+        payload: {
+          msg: error.response.data.msg,
+        },
+      });
     }
+    hideMessage();
   };
 
   const handleInputChange = ({ name, value }) => {
