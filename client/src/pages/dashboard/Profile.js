@@ -11,7 +11,7 @@ const Profile = () => {
   const [lastname, setLastname] = useState(user?.lastname);
   const [email, setEmail] = useState(user?.email);
   const [location, setLocation] = useState(user?.location);
-  const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber);
+  // const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber);
 
   // const handleInput = (e) => {
   //   const name = e.target.name;
@@ -21,7 +21,12 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("update user");
+
+    if (!name || !lastname || !email || !location) {
+      displayMessage();
+      return;
+    }
+    updateUser({ name, lastname, email, location });
   };
 
   return (
@@ -41,7 +46,7 @@ const Profile = () => {
               type="text"
               name="lastname"
               labelText="last name"
-              placeholder="last name"
+              placeholder="your last name"
               value={lastname}
               handleChange={(e) => setLastname(e.target.value)}
             />
@@ -54,7 +59,7 @@ const Profile = () => {
             <FormRow
               type="text"
               name="location"
-              placeholder="location"
+              placeholder="your city"
               value={location}
               handleChange={(e) => setLocation(e.target.value)}
             />
