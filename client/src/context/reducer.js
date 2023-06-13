@@ -107,6 +107,12 @@ const reducer = (state, action) => {
       [action.payload.name]: action.payload.value,
     };
   }
+  if (action.type === UPDATE_USER_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

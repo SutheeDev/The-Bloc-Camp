@@ -131,8 +131,15 @@ const AppProvider = ({ children }) => {
     removeUserFromLocalStorage();
   };
 
-  const updateUser = (currentUser) => {
-    console.log(currentUser);
+  const updateUser = async (currentUser) => {
+    dispatch({ type: UPDATE_USER_BEGIN });
+    try {
+      const { data } = await authFetch.patch("/auth/updateuser", currentUser);
+      // dispatch({ type: UPDATE_USER_SUCCESS });
+      console.log(data);
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   const handleInputChange = ({ name, value }) => {
