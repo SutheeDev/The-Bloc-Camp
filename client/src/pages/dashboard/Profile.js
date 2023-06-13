@@ -30,39 +30,45 @@ const Profile = () => {
         <h3 className="form-title">profile</h3>
         {showMessage && <Message />}
         <div className="form-content">
-          <FormRow
-            type="text"
-            name="name"
-            placeholder="name"
-            value={name}
-            handleChange={(e) => setname(e.target.value)}
-          />
-          <FormRow
-            type="text"
-            name="lastname"
-            labelText="last name"
-            placeholder="last name"
-            value={lastname}
-            handleChange={(e) => setLastname(e.target.value)}
-          />
-          <FormRow
-            type="text"
-            name="email"
-            placeholder="email address"
-            value={email}
-            handleChange={(e) => setEmail(e.target.value)}
-          />
-          <FormRow
-            type="text"
-            name="location"
-            placeholder="location"
-            value={location}
-            handleChange={(e) => setLocation(e.target.value)}
-          />
+          <div className="form-row-container">
+            <FormRow
+              type="text"
+              name="name"
+              value={name}
+              handleChange={(e) => setname(e.target.value)}
+            />
+            <FormRow
+              type="text"
+              name="lastname"
+              labelText="last name"
+              placeholder="last name"
+              value={lastname}
+              handleChange={(e) => setLastname(e.target.value)}
+            />
+            <FormRow
+              type="text"
+              name="email"
+              value={email}
+              handleChange={(e) => setEmail(e.target.value)}
+            />
+            <FormRow
+              type="text"
+              name="location"
+              placeholder="location"
+              value={location}
+              handleChange={(e) => setLocation(e.target.value)}
+            />
+          </div>
 
-          <button type="submit" className="btn" disabled={isLoading}>
-            update
-          </button>
+          <div className="btn-container">
+            <button
+              type="submit"
+              className="btn update-btn"
+              disabled={isLoading}
+            >
+              update
+            </button>
+          </div>
         </div>
       </form>
     </Wrapper>
@@ -76,12 +82,17 @@ const Wrapper = styled.div`
     text-transform: uppercase;
     font-size: 2rem;
     margin-bottom: 1.3em;
-    padding-bottom: 0.7em;
-    border-bottom: 3px solid var(--grey-100);
+  }
+  .form-input {
+    border: none;
+    background-color: var(--grey-100);
+  }
+  .form-input::placeholder {
+    text-transform: capitalize;
   }
   .btn {
     text-transform: uppercase;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     color: var(--reddish);
     border: 3px solid var(--reddish);
     background-color: var(--white);
@@ -96,5 +107,18 @@ const Wrapper = styled.div`
     color: var(--white);
     border: 3px solid var(--darkBlue);
     background-color: var(--darkBlue);
+  }
+  .update-btn {
+    margin-top: 1.5em;
+  }
+  .btn-container {
+    text-align: right;
+  }
+  @media screen and (min-width: 1050px) {
+    .form-row-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2em;
+    }
   }
 `;
