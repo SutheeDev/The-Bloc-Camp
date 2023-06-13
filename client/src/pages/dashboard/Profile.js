@@ -46,7 +46,7 @@ const Profile = () => {
               type="text"
               name="lastname"
               labelText="last name"
-              placeholder="your last name"
+              placeholder="last name"
               value={lastname}
               handleChange={(e) => setLastname(e.target.value)}
             />
@@ -59,7 +59,7 @@ const Profile = () => {
             <FormRow
               type="text"
               name="location"
-              placeholder="your city"
+              placeholder="city"
               value={location}
               handleChange={(e) => setLocation(e.target.value)}
             />
