@@ -164,6 +164,7 @@ li {
   font-family: sans-serif;
   letter-spacing: 1px;
   font-size: 16px;
+  text-transform: capitalize;
 }
 .message-error {
   border: 2px solid #df331183;
