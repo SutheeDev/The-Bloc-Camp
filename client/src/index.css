@@ -45,6 +45,8 @@ html {
   --success-border: #cadac2;
   --success-text: #586e50;
 
+  --icon-bg: #22222225;
+
   /* fonts  */
   --headingFont: "Oswald", San-Serifs;
   --bodyFont: Sans-Serif;
@@ -166,14 +168,26 @@ li {
 /* ---------------------------- */
 .message {
   width: 100%;
-  padding: 15px 22px;
-  margin-bottom: 35px;
+  padding: 0.6em 2em;
+  margin-bottom: 2.2em;
   border-radius: 3px;
-  text-align: center;
   font-family: sans-serif;
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 1rem;
   text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.message-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  background-color: var(--icon-bg);
+  border-radius: 50%;
+  padding: 0.1em;
 }
 .message-error {
   border: 2px solid var(--error-border);
