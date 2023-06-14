@@ -15,6 +15,7 @@ import Dropdown from "./Dropdown";
 import Sidebar from "./Sidebar";
 import ModalSidebar from "./Modal-sidebar";
 import NavLinks from "./NavLinks";
+import ToggleSwitch from "./Switch";
 
 export {
   Navbar,
@@ -34,4 +35,5 @@ export {
   ModalSidebar,
   Sidebar,
   NavLinks,
+  ToggleSwitch,
 };

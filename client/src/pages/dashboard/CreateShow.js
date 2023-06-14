@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useAppContext } from "../../context/appContext";
-import { FormRow, Message } from "../../components";
+import { FormRow, Message, ToggleSwitch } from "../../components";
 
 const CreateShow = () => {
   const { handleInputChange, showMessage } = useAppContext();
@@ -43,6 +43,7 @@ const CreateShow = () => {
               name="featured"
               labelText="featured show?"
             />
+            <ToggleSwitch />
           </div>
         </div>
       </form>
