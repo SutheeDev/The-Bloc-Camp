@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const ShowSchema = new mongoose.Schema(
   {
-    name: {
+    artist: {
       type: String,
       trim: true,
       required: [true, "Please provide the artist name"],
@@ -10,7 +10,7 @@ const ShowSchema = new mongoose.Schema(
     performDate: {
       type: Date,
       min: Date.now,
-      required: [true, "Please provide the perform date"],
+      required: [true, "Please provide the performance date"],
     },
     performTime: {
       type: Date,
@@ -19,7 +19,11 @@ const ShowSchema = new mongoose.Schema(
     },
     artistInfo: {
       type: String,
-      maxlength: [500, "description can't be longer than 500 characters"],
+      maxlength: [
+        500,
+        "Artist description can't be longer than 500 characters",
+      ],
+      default: "",
     },
     smallImg: {
       type: String,
@@ -28,6 +32,11 @@ const ShowSchema = new mongoose.Schema(
     bigImg: {
       type: String,
       default: "",
+    },
+    createdBy: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+      required: [true, "Please provide the user"],
     },
   },
   { timestamps: true }
