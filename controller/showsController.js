@@ -7,8 +7,19 @@ import {
 import { StatusCodes } from "http-status-codes";
 
 const createShow = async (req, res) => {
-  res.send("Create Shows Route");
+  const { artist, performDate, performTime } = req.body;
+
+  if (!artist || !performDate || !performTime) {
+    throw new BadRequestError("Please provide all values!");
+  }
+
+  req.body.createdBy = req.user.userId;
+
+  const show = await Show.create(req.body);
+
+  res.status(StatusCodes.CREATED).json({ show });
 };
+
 const getAllShows = async (req, res) => {
   res.send("Get All Shows Route");
 };
