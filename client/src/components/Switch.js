@@ -3,15 +3,20 @@ import { FiX } from "react-icons/fi";
 import { BiCheck } from "react-icons/bi";
 import styled from "styled-components";
 
-const ToggleSwitch = () => {
+const ToggleSwitch = ({ text, name }) => {
   return (
     <Wrapper>
-      <Switch
-        className="switch"
-        defaultChecked={false}
-        checkedChildren={<BiCheck />}
-        unCheckedChildren={<FiX />}
-      />
+      <div className="form-row">
+        <label htmlFor={name} className="form-label">
+          {text}
+        </label>
+        <Switch
+          className="form-switch"
+          defaultChecked={false}
+          checkedChildren={<BiCheck />}
+          unCheckedChildren={<FiX />}
+        />
+      </div>
     </Wrapper>
   );
 };
@@ -19,10 +24,11 @@ const ToggleSwitch = () => {
 export default ToggleSwitch;
 
 const Wrapper = styled.div`
-  .switch {
+  .form-switch {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0 25px 0;
   }
   .ant-switch-inner-checked {
     line-height: 24px;

@@ -33,17 +33,8 @@ const CreateShow = () => {
               name="ticketPrice"
               labelText="ticket price"
             />
-            <FormRow
-              type="checkbox"
-              name="publish"
-              labelText="publish on site?"
-            />
-            <FormRow
-              type="checkbox"
-              name="featured"
-              labelText="featured show?"
-            />
-            <ToggleSwitch />
+            <ToggleSwitch text="publish on site?" name="publish" />
+            <ToggleSwitch text="featured show?" name="featured" />
           </div>
           <div className="btn-container">
             <button
@@ -98,6 +89,10 @@ const Wrapper = styled.div`
   }
   .btn-container {
     text-align: right;
+  }
+  .switch-container {
+    display: flex;
+    align-items: center;
   }
   @media screen and (min-width: 750px) {
     .form-row-container {
