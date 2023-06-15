@@ -24,8 +24,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
-  .ant-switch-inner-checked svg,
-  .ant-switch-inner-unchecked svg {
-    line-height: 23px;
+  .ant-switch-inner-checked {
+    line-height: 24px;
   }
 `;
