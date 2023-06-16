@@ -35,7 +35,7 @@ if (process.env.NODE_ENV !== "production") {
 // Built-in middleware
 app.use(express.json());
 // Invoke express-fileupload
-app.use(fileUpload());
+app.use(fileUpload({ useTempFiles: true }));
 
 // API routes
 app.use("/api/v1/auth", authRouter);
