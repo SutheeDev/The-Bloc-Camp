@@ -14,6 +14,11 @@ const uploadArtistImage = async (req, res) => {
     throw new BadRequestError("please upload image");
   }
 
+  const maxSize = 3(1024 * 1024);
+  if (artistImage.size > maxSize) {
+    throw new BadRequestError("please upload image smaller than 3 Megabytes");
+  }
+
   const result = await cloudinary.uploader.upload(
     req.files.image.tempFilePath,
     {
