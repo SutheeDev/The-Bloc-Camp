@@ -28,8 +28,30 @@ const uploadArtistImage = async (req, res) => {
   );
   // Remove copied file from the temp folder
   fs.unlinkSync(req.files.image.tempFilePath);
-
   res.status(StatusCodes.OK).json({ image: { src: result.secure_url } });
 };
 
-export default uploadArtistImage;
+const uploadFeatureImage = async (req, res) => {
+  const featureImage = req.files.image;
+  if (!featureImage.mimetype.startsWith("image")) {
+    throw new BadRequestError("please upload image");
+  }
+
+  const maxSize = 3 * (1024 * 1024);
+  if (featureImage.size > maxSize) {
+    throw new BadRequestError("please upload image smaller than 3 Megabytes");
+  }
+
+  const result = await cloudinary.uploader.upload(
+    req.files.image.tempFilePath,
+    {
+      use_filename: true,
+      folder: "the-bloc-camp/feature-image",
+    }
+  );
+
+  fs.unlinkSync(req.files.image.tempFilePath);
+  res.status(StatusCodes.OK).json({ image: { src: result.secure_url } });
+};
+
+export { uploadArtistImage, uploadFeatureImage };
