@@ -32,7 +32,8 @@ const ShowSchema = new mongoose.Schema(
     },
     bigImg: {
       type: String,
-      default: "",
+      default:
+        "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     },
     createdBy: {
       type: mongoose.Types.ObjectId,
