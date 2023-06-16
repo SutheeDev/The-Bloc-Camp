@@ -6,6 +6,7 @@ dotenv.config();
 
 import "express-async-errors";
 import morgan from "morgan";
+import fileUpload from "express-fileupload";
 
 // Routes
 import authRouter from "./routes/authRoutes.js";
@@ -26,6 +27,8 @@ if (process.env.NODE_ENV !== "production") {
 
 // Built-in middleware
 app.use(express.json());
+// Invoke express-fileupload
+app.use(fileUpload());
 
 // API routes
 app.use("/api/v1/auth", authRouter);
