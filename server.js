@@ -4,9 +4,16 @@ const app = express();
 import dotenv from "dotenv";
 dotenv.config();
 
+// Others import
 import "express-async-errors";
 import morgan from "morgan";
 import fileUpload from "express-fileupload";
+import { v2 as cloudinary } from "cloudinary";
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
 
 // Routes
 import authRouter from "./routes/authRoutes.js";
