@@ -12,11 +12,11 @@ const ShowSchema = new mongoose.Schema(
       min: Date.now,
       required: [true, "Please provide the performance date"],
     },
-    performTime: {
-      type: Date,
-      min: Date.now,
-      required: [true, "Please provide the show start time"],
-    },
+    // performTime: {
+    //   type: Date,
+    //   min: Date.now,
+    //   required: [true, "Please provide the show start time"],
+    // },
     artistInfo: {
       type: String,
       maxlength: [
@@ -27,7 +27,8 @@ const ShowSchema = new mongoose.Schema(
     },
     smallImg: {
       type: String,
-      default: "",
+      default:
+        "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     },
     bigImg: {
       type: String,

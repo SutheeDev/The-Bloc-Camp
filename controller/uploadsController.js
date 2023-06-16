@@ -5,16 +5,16 @@ import fs from "fs";
 import { BadRequestError } from "../errors/index.js";
 
 const uploadArtistImage = async (req, res) => {
-  if (!req.files) {
-    throw new BadRequestError("no file uploaded!");
-  }
+  // if (!req.files) {
+  //   throw new BadRequestError("no file uploaded!");
+  // }
 
   const artistImage = req.files.image;
   if (!artistImage.mimetype.startsWith("image")) {
     throw new BadRequestError("please upload image");
   }
 
-  const maxSize = 3(1024 * 1024);
+  const maxSize = 3 * (1024 * 1024);
   if (artistImage.size > maxSize) {
     throw new BadRequestError("please upload image smaller than 3 Megabytes");
   }

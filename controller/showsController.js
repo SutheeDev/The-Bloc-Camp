@@ -7,9 +7,9 @@ import {
 import { StatusCodes } from "http-status-codes";
 
 const createShow = async (req, res) => {
-  const { artist, performDate, performTime } = req.body;
+  const { artist, performDate } = req.body;
 
-  if (!artist || !performDate || !performTime) {
+  if (!artist || !performDate) {
     throw new BadRequestError("Please provide all values!");
   }
 
