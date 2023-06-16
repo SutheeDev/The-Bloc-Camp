@@ -2,8 +2,18 @@ import path from "path";
 import { StatusCodes } from "http-status-codes";
 import { v2 as cloudinary } from "cloudinary";
 import fs from "fs";
+import { BadRequestError } from "../errors/index.js";
 
 const uploadArtistImage = async (req, res) => {
+  if (!req.files) {
+    throw new BadRequestError("no file uploaded!");
+  }
+
+  const artistImage = req.files.image;
+  if (!artistImage.mimetype.startsWith("image")) {
+    throw new BadRequestError("please upload image");
+  }
+
   const result = await cloudinary.uploader.upload(
     req.files.image.tempFilePath,
     {
