@@ -38,6 +38,7 @@ const Wrapper = styled.div`
   input::file-selector-button {
     color: var(--darkBlue);
     min-width: 30%;
+    height: 3.6em;
     border: none;
     border-radius: 2px;
     background-color: var(--grey-100);
@@ -48,7 +49,6 @@ const Wrapper = styled.div`
     transition: all 0.3s ease;
   }
   input::file-selector-button:hover {
-    color: var(--white);
-    background-color: var(--darkBlue);
+    color: var(--reddish);
   }
 `;

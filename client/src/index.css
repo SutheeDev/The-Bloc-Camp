@@ -118,6 +118,7 @@ li {
 }
 .form-input {
   width: 100%;
+  height: 3.6em;
   outline: none;
   padding: 1rem 1.5rem 1rem 1rem;
   border: none;
