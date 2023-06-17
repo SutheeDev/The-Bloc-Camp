@@ -30,10 +30,25 @@ const Wrapper = styled.div`
   .form-upload {
     width: 100%;
     outline: none;
-    padding: 1rem 1.5rem 1rem 0;
     border: none;
     margin: 10px 0 25px 0;
     font-family: sans-serif;
     color: var(--darkBlue);
+  }
+  input::file-selector-button {
+    color: var(--darkBlue);
+    min-width: 30%;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--grey-100);
+    padding: 1rem;
+    cursor: pointer;
+    margin-right: 1em;
+
+    transition: all 0.3s ease;
+  }
+  input::file-selector-button:hover {
+    color: var(--white);
+    background-color: var(--darkBlue);
   }
 `;

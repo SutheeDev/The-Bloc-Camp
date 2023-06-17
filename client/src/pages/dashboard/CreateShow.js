@@ -32,6 +32,12 @@ const CreateShow = () => {
             <FormRow type="date" name="date" />
             <FormRow type="time" name="performTime" labelText="start time" />
 
+            <FormRow
+              type="number"
+              name="ticketPrice"
+              labelText="ticket price"
+            />
+
             <FormFileUpload
               type="file"
               name="smallImg"
@@ -46,12 +52,6 @@ const CreateShow = () => {
               labelText="featured image"
               id="bigImg"
               accept="image/*"
-            />
-
-            <FormRow
-              type="number"
-              name="ticketPrice"
-              labelText="ticket price"
             />
             <ToggleSwitch text="publish on site?" name="publish" />
             <ToggleSwitch text="featured show?" name="featured" />
@@ -114,17 +114,10 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
   }
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 950px) {
     .form-row-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 2em;
-    }
-  }
-  @media screen and (min-width: 1050px) {
-    .form-row-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
       column-gap: 2em;
     }
   }
