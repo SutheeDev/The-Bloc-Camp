@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { useAppContext } from "../../context/appContext";
-import { FormRow, Message, ToggleSwitch } from "../../components";
+import {
+  FormRow,
+  Message,
+  ToggleSwitch,
+  FormFileUpload,
+} from "../../components";
 
 const CreateShow = () => {
   const { isLoading, handleInputChange, showMessage } = useAppContext();
@@ -26,8 +31,23 @@ const CreateShow = () => {
             <FormRow type="text" name="artist" />
             <FormRow type="date" name="date" />
             <FormRow type="time" name="performTime" labelText="start time" />
-            <FormRow type="text" name="smallImg" labelText="thumbnail image" />
-            <FormRow type="text" name="bigImg" labelText="featured image" />
+
+            <FormFileUpload
+              type="file"
+              name="smallImg"
+              labelText="thumbnail image"
+              id="smallImg"
+              accept="image/*"
+            />
+
+            <FormFileUpload
+              type="file"
+              name="bigImg"
+              labelText="featured image"
+              id="bigImg"
+              accept="image/*"
+            />
+
             <FormRow
               type="number"
               name="ticketPrice"

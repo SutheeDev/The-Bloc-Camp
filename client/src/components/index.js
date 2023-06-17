@@ -16,6 +16,7 @@ import Sidebar from "./Sidebar";
 import ModalSidebar from "./Modal-sidebar";
 import NavLinks from "./NavLinks";
 import ToggleSwitch from "./Switch";
+import FormFileUpload from "./FormFileUpload";
 
 export {
   Navbar,
@@ -36,4 +37,5 @@ export {
   Sidebar,
   NavLinks,
   ToggleSwitch,
+  FormFileUpload,
 };
