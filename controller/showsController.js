@@ -21,8 +21,10 @@ const createShow = async (req, res) => {
 };
 
 const getAllShows = async (req, res) => {
-  res.send("Get All Shows Route");
+  const shows = await Show.find({});
+  res.status(StatusCodes.OK).json({ shows });
 };
+
 const updateShow = async (req, res) => {
   res.send("Update Show Route");
 };
