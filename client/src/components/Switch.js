@@ -28,7 +28,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0 25px 0;
+    margin: 1.2em 0 2em 0;
   }
   .ant-switch-inner-checked {
     line-height: 24px;

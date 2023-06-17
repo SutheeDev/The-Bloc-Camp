@@ -28,16 +28,46 @@ const CreateShow = () => {
         {showMessage && <Message />}
         <div className="form-content">
           <div className="form-row-container">
-            <FormRow type="text" name="artist" />
-            <FormRow type="date" name="date" />
-            <FormRow type="time" name="performTime" labelText="start time" />
+            <FormRow type="text" name="artist" placeholder="artist name" />
+            <FormRow type="date" name="date" labelText="show date" />
+
+            <FormRow
+              type="time"
+              name="performTime"
+              labelText="start time"
+              step="00:15"
+            />
 
             <FormRow
               type="number"
               name="ticketPrice"
               labelText="ticket price"
             />
+          </div>
+        </div>
 
+        <div className="form-content">
+          <div className="form-row-container form-row-container-desc">
+            <div className="form-row form-row-desc">
+              <label
+                htmlFor="artistInfo"
+                className="form-label form-label-desc"
+              >
+                artist info
+              </label>
+              <textarea
+                name="artistInfo"
+                id="artistInfo"
+                rows="10"
+                placeholder="artist info"
+                className="form-desc"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div className="form-content">
+          <div className="form-row-container form-row-container-lower">
             <FormFileUpload
               type="file"
               name="smallImg"
@@ -55,15 +85,15 @@ const CreateShow = () => {
             />
             <ToggleSwitch text="publish on site?" name="publish" />
             <ToggleSwitch text="featured show?" name="featured" />
-          </div>
-          <div className="btn-container">
-            <button
-              type="submit"
-              className="btn update-btn"
-              disabled={isLoading}
-            >
-              submit
-            </button>
+            <div className="btn-container">
+              <button
+                type="submit"
+                className="btn update-btn"
+                disabled={isLoading}
+              >
+                submit
+              </button>
+            </div>
           </div>
         </div>
       </form>
@@ -114,11 +144,39 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
   }
+  .form-label-desc {
+    display: block;
+  }
+  .form-desc {
+    width: 100%;
+    outline: none;
+    padding: 1rem;
+    border: none;
+    margin: 10px 0 25px 0;
+    font-family: sans-serif;
+    color: var(--darkBlue);
+    background-color: var(--grey-100);
+  }
+  textarea::placeholder {
+    text-transform: capitalize;
+  }
+  /* input[type="date"]::placeholder,
+  input[type="time"]::placeholder {
+    color: var(--grey-100);
+    background-color: var(--grey-100);
+  }
+  ::-webkit-datetime-edit-text {
+    color: var(--grey-100);
+  } */
   @media screen and (min-width: 950px) {
     .form-row-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 2em;
+    }
+    .form-row-container-desc,
+    .form-row-container-lower {
+      grid-template-columns: 1fr;
     }
   }
 `;

@@ -33,6 +33,17 @@ const initialState = {
   token: token,
   role: role,
   showSidebar: false,
+
+  isEditing: false,
+  editJobId: "",
+  artist: "",
+  performDate: "",
+  performTime: "",
+  smallImg: "",
+  bigImg: "",
+  artistInfo: "",
+  published: false,
+  featured: false,
 };
 
 const AppContext = React.createContext();

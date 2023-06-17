@@ -129,7 +129,8 @@ li {
   font-family: sans-serif;
   color: var(--darkBlue);
 }
-.form-input::placeholder {
+.form-input::placeholder,
+textarea::placeholder {
   font-family: sans-serif;
   font-size: 14px;
   color: var(--grey-200);
@@ -163,6 +164,19 @@ li {
 }
 .toggleForm-btn:hover {
   color: var(--white);
+}
+input[type="date"],
+input[type="time"] {
+  color: var(--grey-200);
+}
+::-webkit-calendar-picker-indicator {
+  color: var(--grey-200);
+  cursor: pointer;
+  border: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  /* display: none; */
+  color: var(--grey-200);
 }
 /* ---------------------------- */
 /* Message */
