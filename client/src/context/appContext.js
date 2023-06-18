@@ -18,6 +18,9 @@ import {
   UPDATE_USER_BEGIN,
   UPDATE_USER_SUCCESS,
   UPDATE_USER_ERROR,
+  UPLOAD_IMAGE_BEGIN,
+  UPLOAD_IMAGE_SUCCESS,
+  UPLOAD_IMAGE_ERROR,
 } from "./actions";
 
 const user = localStorage.getItem("user");
@@ -178,19 +181,21 @@ const AppProvider = ({ children }) => {
     });
   };
 
-  const uploadArtistImage = async (formData) => {
+  const uploadImage = async (formData, imageType) => {
+    dispatch({ UPLOAD_IMAGE_BEGIN });
     let imageSrc;
     try {
       const {
         data: {
           image: { src },
         },
-      } = await authFetch.post("/shows/uploads-artistImage", formData, {
+      } = await authFetch.post(`/shows/uploads-${imageType}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
       imageSrc = src;
+      dispatch({ UPLOAD_IMAGE_SUCCESS });
     } catch (error) {
       imageSrc = null;
       console.log(error.response);
@@ -209,7 +214,7 @@ const AppProvider = ({ children }) => {
         logoutUser,
         updateUser,
         handleInputChange,
-        uploadArtistImage,
+        uploadImage,
       }}
     >
       {children}

@@ -13,6 +13,9 @@ import {
   UPDATE_USER_BEGIN,
   UPDATE_USER_SUCCESS,
   UPDATE_USER_ERROR,
+  UPLOAD_IMAGE_BEGIN,
+  UPLOAD_IMAGE_SUCCESS,
+  UPLOAD_IMAGE_ERROR,
 } from "./actions";
 
 import { initialState } from "./appContext";

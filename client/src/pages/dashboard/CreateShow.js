@@ -8,7 +8,7 @@ import {
 } from "../../components";
 
 const CreateShow = () => {
-  const { isLoading, handleInputChange, showMessage, uploadArtistImage } =
+  const { isLoading, handleInputChange, showMessage, uploadImage } =
     useAppContext();
 
   const handleInput = (e) => {
@@ -23,11 +23,12 @@ const CreateShow = () => {
   };
 
   const handleImageChange = (e) => {
+    const imageType = e.target.name;
     const imageFile = e.target.files[0];
     const formData = new FormData();
     formData.append("image", imageFile);
 
-    uploadArtistImage(formData);
+    uploadImage(formData, imageType);
   };
 
   return (
@@ -79,18 +80,18 @@ const CreateShow = () => {
           <div className="form-row-container form-row-container-lower">
             <FormFileUpload
               type="file"
-              name="smallImg"
+              name="artistImage"
               labelText="thumbnail image"
-              id="smallImg"
+              id="artistImage"
               accept="image/*"
               handleChange={handleImageChange}
             />
 
             <FormFileUpload
               type="file"
-              name="bigImg"
+              name="featureImage"
               labelText="featured image"
-              id="bigImg"
+              id="featureImage"
               accept="image/*"
             />
             <ToggleSwitch text="publish on site?" name="publish" />
