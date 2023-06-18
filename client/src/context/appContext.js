@@ -42,8 +42,8 @@ const initialState = {
   artist: "",
   performDate: "",
   performTime: "",
-  smallImg: "",
-  bigImg: "",
+  artistImage: "",
+  featureImage: "",
   artistInfo: "",
   published: false,
   featured: false,
@@ -182,8 +182,7 @@ const AppProvider = ({ children }) => {
   };
 
   const uploadImage = async (formData, imageType) => {
-    dispatch({ UPLOAD_IMAGE_BEGIN });
-    let imageSrc;
+    dispatch({ type: UPLOAD_IMAGE_BEGIN });
     try {
       const {
         data: {
@@ -194,11 +193,21 @@ const AppProvider = ({ children }) => {
           "Content-Type": "multipart/form-data",
         },
       });
-      imageSrc = src;
-      dispatch({ UPLOAD_IMAGE_SUCCESS });
+      dispatch({
+        type: UPLOAD_IMAGE_SUCCESS,
+        payload: {
+          imageType,
+          src,
+        },
+      });
     } catch (error) {
-      imageSrc = null;
       console.log(error.response);
+      dispatch({
+        type: UPLOAD_IMAGE_ERROR,
+        payload: {
+          msg: error.response.data.msg,
+        },
+      });
     }
   };
 

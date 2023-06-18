@@ -93,6 +93,7 @@ const CreateShow = () => {
               labelText="featured image"
               id="featureImage"
               accept="image/*"
+              handleChange={handleImageChange}
             />
             <ToggleSwitch text="publish on site?" name="publish" />
             <ToggleSwitch text="featured show?" name="featured" />

@@ -136,6 +136,25 @@ const reducer = (state, action) => {
       messageType: "error",
     };
   }
+  if (action.type === UPLOAD_IMAGE_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === UPLOAD_IMAGE_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      [action.payload.imageType]: action.payload.src,
+    };
+  }
+  if (action.type === UPLOAD_IMAGE_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
