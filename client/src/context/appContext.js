@@ -178,6 +178,25 @@ const AppProvider = ({ children }) => {
     });
   };
 
+  const uploadArtistImage = async (formData) => {
+    let imageSrc;
+    try {
+      const {
+        data: {
+          image: { src },
+        },
+      } = await authFetch.post("/shows/uploads-artistImage", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      imageSrc = src;
+    } catch (error) {
+      imageSrc = null;
+      console.log(error.response);
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -190,6 +209,7 @@ const AppProvider = ({ children }) => {
         logoutUser,
         updateUser,
         handleInputChange,
+        uploadArtistImage,
       }}
     >
       {children}

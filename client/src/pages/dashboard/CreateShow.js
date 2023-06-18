@@ -8,7 +8,8 @@ import {
 } from "../../components";
 
 const CreateShow = () => {
-  const { isLoading, handleInputChange, showMessage } = useAppContext();
+  const { isLoading, handleInputChange, showMessage, uploadArtistImage } =
+    useAppContext();
 
   const handleInput = (e) => {
     const name = e.target.name;
@@ -19,6 +20,14 @@ const CreateShow = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Create Show");
+  };
+
+  const handleImageChange = (e) => {
+    const imageFile = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    uploadArtistImage(formData);
   };
 
   return (
@@ -74,6 +83,7 @@ const CreateShow = () => {
               labelText="thumbnail image"
               id="smallImg"
               accept="image/*"
+              handleChange={handleImageChange}
             />
 
             <FormFileUpload
