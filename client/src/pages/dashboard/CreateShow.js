@@ -38,20 +38,32 @@ const CreateShow = () => {
         {showMessage && <Message />}
         <div className="form-content">
           <div className="form-row-container">
-            <FormRow type="text" name="artist" placeholder="artist name" />
-            <FormRow type="date" name="date" labelText="show date" />
+            <FormRow
+              type="text"
+              name="artist"
+              placeholder="artist name"
+              handleChange={handleInput}
+            />
+            <FormRow
+              type="date"
+              name="performDate"
+              labelText="show date"
+              handleChange={handleInput}
+            />
 
             <FormRow
               type="time"
               name="performTime"
               labelText="start time"
               step="00:15"
+              handleChange={handleInput}
             />
 
             <FormRow
               type="number"
               name="ticketPrice"
               labelText="ticket price"
+              handleChange={handleInput}
             />
           </div>
         </div>
@@ -71,6 +83,7 @@ const CreateShow = () => {
                 rows="10"
                 placeholder="artist info"
                 className="form-desc"
+                onChange={handleInput}
               ></textarea>
             </div>
           </div>
