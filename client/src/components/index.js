@@ -17,6 +17,7 @@ import ModalSidebar from "./Modal-sidebar";
 import NavLinks from "./NavLinks";
 import ToggleSwitch from "./Switch";
 import FormFileUpload from "./FormFileUpload";
+import DatePickerComponent from "./DatePicker";
 
 export {
   Navbar,
@@ -38,4 +39,5 @@ export {
   NavLinks,
   ToggleSwitch,
   FormFileUpload,
+  DatePickerComponent,
 };

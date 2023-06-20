@@ -5,6 +5,7 @@ import {
   Message,
   ToggleSwitch,
   FormFileUpload,
+  DatePickerComponent,
 } from "../../components";
 
 const CreateShow = () => {
@@ -44,6 +45,7 @@ const CreateShow = () => {
               placeholder="artist name"
               handleChange={handleInput}
             />
+            <DatePickerComponent />
             <FormRow
               type="date"
               name="performDate"
