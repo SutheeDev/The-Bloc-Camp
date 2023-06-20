@@ -46,39 +46,9 @@ const CreateShow = () => {
               placeholder="artist name"
               handleChange={handleInput}
             />
-            <DatePickerComponent />
-            <TimePickerComponent />
-            {/* <FormRow
-              type="date"
-              name="performDate"
-              labelText="show date"
-              handleChange={handleInput}
-            />
 
-            <FormRow
-              type="time"
-              name="performTime"
-              labelText="start time"
-              step="00:15"
-              handleChange={handleInput}
-            /> */}
-
-            <FormRow
-              type="number"
-              name="ticketPrice"
-              labelText="ticket price"
-              handleChange={handleInput}
-            />
-          </div>
-        </div>
-
-        <div className="form-content">
-          <div className="form-row-container form-row-container-desc">
             <div className="form-row form-row-desc">
-              <label
-                htmlFor="artistInfo"
-                className="form-label form-label-desc"
-              >
+              <label htmlFor="artistInfo" className="form-label">
                 artist info
               </label>
               <textarea
@@ -90,11 +60,20 @@ const CreateShow = () => {
                 onChange={handleInput}
               ></textarea>
             </div>
-          </div>
-        </div>
 
-        <div className="form-content">
-          <div className="form-row-container form-row-container-lower">
+            <FormRow
+              type="number"
+              name="ticketPrice"
+              labelText="ticket price"
+              placeholder="70"
+              handleChange={handleInput}
+            />
+
+            <div className="form-row-subcontainer">
+              <DatePickerComponent />
+              <TimePickerComponent />
+            </div>
+
             <FormFileUpload
               type="file"
               name="artistImage"
@@ -173,9 +152,6 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
   }
-  .form-label-desc {
-    display: block;
-  }
   .form-desc {
     width: 100%;
     outline: none;
@@ -189,23 +165,11 @@ const Wrapper = styled.div`
   textarea::placeholder {
     text-transform: capitalize;
   }
-  /* input[type="date"]::placeholder,
-  input[type="time"]::placeholder {
-    color: var(--grey-100);
-    background-color: var(--grey-100);
-  }
-  ::-webkit-datetime-edit-text {
-    color: var(--grey-100);
-  } */
   @media screen and (min-width: 950px) {
-    .form-row-container {
+    .form-row-subcontainer {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 2em;
-    }
-    .form-row-container-desc,
-    .form-row-container-lower {
-      grid-template-columns: 1fr;
     }
   }
 `;

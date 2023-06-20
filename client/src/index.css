@@ -165,21 +165,6 @@ textarea::placeholder {
 .toggleForm-btn:hover {
   color: var(--white);
 }
-/* input[type="date"],
-input[type="time"] {
-  color: var(--grey-200);
-} */
-input[type="date"]::placeholder {
-  color: var(--grey-200);
-}
-::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  /* border: none; */
-}
-/* input[type="date"]::-webkit-calendar-picker-indicator { */
-/* display: none; */
-/* color: var(--grey-200); */
-/* } */
 /* ---------------------------- */
 /* Message */
 /* ---------------------------- */

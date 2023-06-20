@@ -116,16 +116,6 @@ const Wrapper = styled.div`
     .react-datepicker__navigation-icon::before {
     border-color: var(--reddish);
   }
-  /* .react-datepicker__time-list-item--selected {
-    background: var(--darkBlue);
-  } */
-  /* .react-datepicker__time-container
-    .react-datepicker__time
-    .react-datepicker__time-box
-    ul.react-datepicker__time-list
-    li.react-datepicker__time-list-item--selected {
-    background-color: var(--darkBlue);
-  } */
   .react-datepicker--time-only {
     width: 150px;
     display: flex;
