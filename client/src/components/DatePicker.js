@@ -92,6 +92,15 @@ const Wrapper = styled.div`
     border-radius: 50%;
     background-color: var(--reddish);
     color: var(--white);
+    font-weight: bold;
+  }
+  /* Change today font-weight */
+  .react-datepicker__day--today {
+    font-weight: 400;
+  }
+  /* Make today font-weight bold when selected */
+  .react-datepicker__day--today.react-datepicker__day--selected {
+    font-weight: bold;
   }
   /* Navigation icons positions */
   .react-datepicker__navigation--next {
