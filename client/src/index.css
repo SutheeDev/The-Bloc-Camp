@@ -135,6 +135,9 @@ textarea::placeholder {
   font-size: 14px;
   color: var(--grey-200);
 }
+textarea {
+  resize: vertical;
+}
 .form-label {
   color: var(--darkBlue);
   text-transform: capitalize;
