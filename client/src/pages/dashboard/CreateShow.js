@@ -6,6 +6,7 @@ import {
   ToggleSwitch,
   FormFileUpload,
   DatePickerComponent,
+  TimePickerComponent,
 } from "../../components";
 
 const CreateShow = () => {
@@ -46,7 +47,8 @@ const CreateShow = () => {
               handleChange={handleInput}
             />
             <DatePickerComponent />
-            <FormRow
+            <TimePickerComponent />
+            {/* <FormRow
               type="date"
               name="performDate"
               labelText="show date"
@@ -59,7 +61,7 @@ const CreateShow = () => {
               labelText="start time"
               step="00:15"
               handleChange={handleInput}
-            />
+            /> */}
 
             <FormRow
               type="number"

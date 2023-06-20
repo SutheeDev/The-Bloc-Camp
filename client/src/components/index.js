@@ -18,6 +18,7 @@ import NavLinks from "./NavLinks";
 import ToggleSwitch from "./Switch";
 import FormFileUpload from "./FormFileUpload";
 import DatePickerComponent from "./DatePicker";
+import TimePickerComponent from "./TimePicker";
 
 export {
   Navbar,
@@ -40,4 +41,5 @@ export {
   ToggleSwitch,
   FormFileUpload,
   DatePickerComponent,
+  TimePickerComponent,
 };

@@ -1,6 +1,7 @@
 import DatePicker, { CalendarContainer } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styled from "styled-components";
+import { setMinutes, setHours } from "date-fns";
 import { useState } from "react";
 
 const DatePickerComponent = () => {
@@ -19,7 +20,7 @@ const DatePickerComponent = () => {
   return (
     <Wrapper className="form-row">
       <label htmlFor="performDate" className="form-label">
-        show date
+        start time
       </label>
       <DatePicker
         selected={new Date()}
@@ -28,13 +29,21 @@ const DatePickerComponent = () => {
         calendarContainer={MyContainer}
         fixedHeight
         minDate={new Date()}
-        placeholderText="Click to select a date"
+        placeholderText="Click to select time slot"
         popperModifiers={{
           name: "offset",
           options: {
             offset: [0, -15],
           },
         }}
+        showTimeSelect
+        showTimeSelectOnly
+        timeFormat="HH:mm aa"
+        timeIntervals={15}
+        timeCaption="Time"
+        dateFormat="HH:mm aa"
+        minTime={setHours(setMinutes(new Date(), 0), 12)}
+        maxTime={setHours(setMinutes(new Date(), 30), 22)}
       />
     </Wrapper>
   );
@@ -106,5 +115,28 @@ const Wrapper = styled.div`
   .react-datepicker__navigation:hover
     .react-datepicker__navigation-icon::before {
     border-color: var(--reddish);
+  }
+  /* .react-datepicker__time-list-item--selected {
+    background: var(--darkBlue);
+  } */
+  /* .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item--selected {
+    background-color: var(--darkBlue);
+  } */
+  .react-datepicker--time-only {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+  }
+  .react-datepicker--time-only div {
+    width: 100%;
+  }
+  .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box {
+    width: 100px;
   }
 `;
