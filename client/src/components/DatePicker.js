@@ -49,6 +49,9 @@ const Wrapper = styled.div`
   .date-picker {
     outline: none;
   }
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
   .react-datepicker {
     border: none;
     padding: 1.5em;
