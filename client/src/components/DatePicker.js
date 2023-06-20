@@ -29,6 +29,12 @@ const DatePickerComponent = () => {
         fixedHeight
         minDate={new Date()}
         placeholderText="Click to select a date"
+        popperModifiers={{
+          name: "offset",
+          options: {
+            offset: [0, -15],
+          },
+        }}
       />
     </Wrapper>
   );
@@ -68,7 +74,7 @@ const Wrapper = styled.div`
   }
   /* Change color of day when hover */
   .react-datepicker__day:hover {
-    background: var(--grey-200);
+    background: var(--grey-100);
     border-radius: 50%;
   }
   /* Color of disabled day */
