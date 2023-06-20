@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const DatePickerComponent = () => {
-  const [startDate, setStartDate] = useState();
+  const [showDate, setShowDate] = useState(new Date());
 
   const MyContainer = ({ className, children }) => {
     return (
@@ -22,7 +22,7 @@ const DatePickerComponent = () => {
         show date
       </label>
       <DatePicker
-        selected={new Date()}
+        selected={showDate}
         closeOnScroll={true}
         className="date-picker form-input"
         calendarContainer={MyContainer}
@@ -35,6 +35,7 @@ const DatePickerComponent = () => {
             offset: [0, -15],
           },
         }}
+        onChange={(date) => setShowDate(date)}
       />
     </Wrapper>
   );
