@@ -10,7 +10,7 @@ import {
 } from "../../components";
 
 const CreateShow = () => {
-  const { isLoading, handleInputChange, showMessage, uploadImage } =
+  const { isLoading, handleInputChange, showMessage, uploadImage, isEditing } =
     useAppContext();
 
   const handleInput = (e) => {
@@ -36,7 +36,9 @@ const CreateShow = () => {
   return (
     <Wrapper>
       <form className="form" onSubmit={handleSubmit}>
-        <h3 className="form-title">create show</h3>
+        <h3 className="form-title">
+          {isEditing ? "edit show" : "create show"}
+        </h3>
         {showMessage && <Message />}
         <div className="form-content">
           <div className="form-row-container">
