@@ -9,10 +9,25 @@ import {
   TimePickerComponent,
 } from "../../components";
 import { useState } from "react";
+import moment from "moment";
 
 const CreateShow = () => {
-  const { isLoading, handleInputChange, showMessage, uploadImage, isEditing } =
-    useAppContext();
+  const {
+    isLoading,
+    handleInputChange,
+    showMessage,
+    displayMessage,
+    uploadImage,
+    isEditing,
+    artist,
+    performDate,
+    performTime,
+    artistImage,
+    featureImage,
+    artistInfo,
+    published,
+    featured,
+  } = useAppContext();
 
   const handleInput = (e) => {
     const name = e.target.name;
@@ -22,7 +37,12 @@ const CreateShow = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Create Show");
+
+    if (!artist || !performDate || !performTime) {
+      displayMessage();
+      return;
+    }
+    console.log("create show");
   };
 
   const handleImageChange = (e) => {
