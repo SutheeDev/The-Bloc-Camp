@@ -7,10 +7,10 @@ import {
 import { StatusCodes } from "http-status-codes";
 
 const createShow = async (req, res) => {
-  const { artist, performDate } = req.body;
+  const { artist, performDate, performTime } = req.body;
 
-  if (!artist || !performDate) {
-    throw new BadRequestError("Please provide all values!");
+  if (!artist || !performDate || !performTime) {
+    throw new BadRequestError("Please provide all required fields!");
   }
 
   req.body.createdBy = req.user.userId;
