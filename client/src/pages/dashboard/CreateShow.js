@@ -29,6 +29,17 @@ const CreateShow = () => {
     featured,
   } = useAppContext();
 
+  const [showDate, setShowDate] = useState(new Date());
+  const [startTime, setStartTime] = useState(new Date());
+
+  const handleDate = (date) => {
+    setShowDate(date);
+  };
+
+  const handleTime = (time) => {
+    setStartTime(time);
+  };
+
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -93,8 +104,14 @@ const CreateShow = () => {
             />
 
             <div className="form-row-subcontainer">
-              <DatePickerComponent />
-              <TimePickerComponent />
+              <DatePickerComponent
+                selected={showDate}
+                handleChange={handleDate}
+              />
+              <TimePickerComponent
+                selected={startTime}
+                handleChange={handleTime}
+              />
             </div>
 
             <FormFileUpload

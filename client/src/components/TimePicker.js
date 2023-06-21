@@ -2,11 +2,8 @@ import DatePicker, { CalendarContainer } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styled from "styled-components";
 import { setMinutes, setHours } from "date-fns";
-import { useState } from "react";
 
-const TimePickerComponent = () => {
-  const [startTime, setStartTime] = useState(new Date());
-
+const TimePickerComponent = ({ selected, handleChange }) => {
   const MyContainer = ({ className, children }) => {
     return (
       <div className="calendar-container">
@@ -23,7 +20,7 @@ const TimePickerComponent = () => {
         start time
       </label>
       <DatePicker
-        selected={startTime}
+        selected={selected}
         closeOnScroll={true}
         className="date-picker form-input"
         calendarContainer={MyContainer}
@@ -44,7 +41,7 @@ const TimePickerComponent = () => {
         dateFormat="HH:mm aa"
         minTime={setHours(setMinutes(new Date(), 0), 12)}
         maxTime={setHours(setMinutes(new Date(), 30), 22)}
-        onChange={(date) => setStartTime(date)}
+        onChange={handleChange}
       />
     </Wrapper>
   );
