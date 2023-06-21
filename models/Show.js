@@ -44,6 +44,14 @@ const ShowSchema = new mongoose.Schema(
       ref: "User",
       required: [true, "Please provide the user"],
     },
+    published: {
+      type: Boolean,
+      default: false,
+    },
+    featured: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

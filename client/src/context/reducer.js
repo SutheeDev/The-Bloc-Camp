@@ -16,6 +16,9 @@ import {
   UPLOAD_IMAGE_BEGIN,
   UPLOAD_IMAGE_SUCCESS,
   UPLOAD_IMAGE_ERROR,
+  CREATE_SHOW_BEGIN,
+  CREATE_SHOW_SUCCESS,
+  CREATE_SHOW_ERROR,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -153,6 +156,32 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
+    };
+  }
+  if (action.type === CREATE_SHOW_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === CREATE_SHOW_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showMessage: true,
+      messageText: "Success, new show created!",
+      messageType: "success",
+      performDate: action.payload.showDate,
+      performTime: action.payload.startTime,
+    };
+  }
+  if (action.type === CREATE_SHOW_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showMessage: true,
+      messageText: action.payload.msg,
+      messageType: "error",
     };
   }
   throw new Error(`No such action: ${action.type}`);

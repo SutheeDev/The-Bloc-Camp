@@ -22,8 +22,13 @@ const CreateShow = () => {
     artist,
     artistInfo,
     ticketPrice,
+    performDate,
+    performTime,
     artistImage,
-    featureimage,
+    featureImage,
+    published,
+    featured,
+    createShow,
   } = useAppContext();
 
   const [showDate, setShowDate] = useState(new Date());
@@ -50,7 +55,11 @@ const CreateShow = () => {
       displayMessage();
       return;
     }
-    console.log(artist, showDate, startTime, ticketPrice);
+
+    performDate = showDate;
+    performTime = startTime;
+
+    createShow({ artist, performDate, performTime });
   };
 
   const handleImageChange = (e) => {
