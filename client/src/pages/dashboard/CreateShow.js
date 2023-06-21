@@ -20,13 +20,10 @@ const CreateShow = () => {
     uploadImage,
     isEditing,
     artist,
-    performDate,
-    performTime,
-    artistImage,
-    featureImage,
     artistInfo,
-    published,
-    featured,
+    ticketPrice,
+    artistImage,
+    featureimage,
   } = useAppContext();
 
   const [showDate, setShowDate] = useState(new Date());
@@ -49,11 +46,11 @@ const CreateShow = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!artist || !performDate || !performTime) {
+    if (!artist || !showDate || !startTime) {
       displayMessage();
       return;
     }
-    console.log("create show");
+    console.log(artist, showDate, startTime, ticketPrice);
   };
 
   const handleImageChange = (e) => {
@@ -77,8 +74,10 @@ const CreateShow = () => {
             <FormRow
               type="text"
               name="artist"
+              labelText="artist *"
               placeholder="artist name"
               handleChange={handleInput}
+              required
             />
 
             <div className="form-row form-row-desc">
@@ -99,7 +98,7 @@ const CreateShow = () => {
               type="number"
               name="ticketPrice"
               labelText="ticket price"
-              placeholder="70"
+              placeholder={ticketPrice}
               handleChange={handleInput}
             />
 

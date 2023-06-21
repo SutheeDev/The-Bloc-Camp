@@ -17,7 +17,7 @@ const TimePickerComponent = ({ selected, handleChange }) => {
   return (
     <Wrapper className="form-row">
       <label htmlFor="performDate" className="form-label">
-        start time
+        start time *
       </label>
       <DatePicker
         selected={selected}
@@ -42,6 +42,7 @@ const TimePickerComponent = ({ selected, handleChange }) => {
         minTime={setHours(setMinutes(new Date(), 0), 12)}
         maxTime={setHours(setMinutes(new Date(), 30), 22)}
         onChange={handleChange}
+        required
       />
     </Wrapper>
   );

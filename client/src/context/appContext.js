@@ -45,6 +45,7 @@ const initialState = {
   artistImage: "",
   featureImage: "",
   artistInfo: "",
+  ticketPrice: 45,
   published: false,
   featured: false,
 };

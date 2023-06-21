@@ -16,7 +16,7 @@ const DatePickerComponent = ({ selected, handleChange }) => {
   return (
     <Wrapper className="form-row">
       <label htmlFor="performDate" className="form-label">
-        show date
+        show date *
       </label>
       <DatePicker
         selected={selected}
@@ -33,6 +33,7 @@ const DatePickerComponent = ({ selected, handleChange }) => {
           },
         }}
         onChange={handleChange}
+        required
       />
     </Wrapper>
   );

@@ -25,6 +25,10 @@ const ShowSchema = new mongoose.Schema(
       ],
       default: "",
     },
+    TicketPrice: {
+      type: Number,
+      default: 45,
+    },
     smallImg: {
       type: String,
       default:
