@@ -119,7 +119,7 @@ const CreateShow = () => {
               accept="image/*"
               handleChange={handleImageChange}
             />
-            <ToggleSwitch text="publish on site?" name="publish" />
+            <ToggleSwitch text="publish on site?" name="published" />
             <ToggleSwitch text="featured show?" name="featured" />
             <div className="btn-container">
               <button

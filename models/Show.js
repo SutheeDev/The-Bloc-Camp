@@ -17,6 +17,10 @@ const ShowSchema = new mongoose.Schema(
       min: Date.now,
       required: [true, "Please provide the show start time"],
     },
+    performDateTime: {
+      type: Date,
+      requred: true,
+    },
     artistInfo: {
       type: String,
       maxlength: [

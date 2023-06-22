@@ -2,8 +2,16 @@ import { Switch } from "antd";
 import { FiX } from "react-icons/fi";
 import { BiCheck } from "react-icons/bi";
 import styled from "styled-components";
+import { useAppContext } from "../context/appContext";
 
 const ToggleSwitch = ({ text, name }) => {
+  const { handleInputChange } = useAppContext();
+
+  const handleSwitchChange = (checked) => {
+    const value = checked.toString();
+    handleInputChange({ name, value });
+  };
+
   return (
     <Wrapper>
       <div className="form-row">
@@ -15,6 +23,7 @@ const ToggleSwitch = ({ text, name }) => {
           defaultChecked={false}
           checkedChildren={<BiCheck />}
           unCheckedChildren={<FiX />}
+          onChange={handleSwitchChange}
         />
       </div>
     </Wrapper>

@@ -48,12 +48,13 @@ const initialState = {
   ticketPrice: 45,
   performDate: "",
   performTime: "",
+  performDateTime: "",
   artistImage:
     "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
   featureImage:
     "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
-  published: false,
-  featured: false,
+  published: "false",
+  featured: "false",
 };
 
 const AppContext = React.createContext();
@@ -227,6 +228,8 @@ const AppProvider = ({ children }) => {
       performTime,
       artistImage,
       featureImage,
+      published,
+      featured,
     } = state;
     // const formatDate = moment(performDate).format("ddd MMM DD YYYY");
     // const formatTime = moment(performTime).format("hh:mmA");
@@ -242,7 +245,8 @@ const AppProvider = ({ children }) => {
       .locale("en")
       .format("ddd MMM DD YYYY HH:mm:ss");
 
-    console.log(performDateTime);
+    console.log(published, featured);
+
     // dispatch({ type: CREATE_SHOW_BEGIN });
     // try {
     //   const { artist, performDate, performTime } = state;
