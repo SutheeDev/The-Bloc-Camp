@@ -45,7 +45,7 @@ const initialState = {
   editJobId: "",
   artist: "",
   artistInfo: "",
-  ticketPrice: 45,
+  ticketPrice: 40,
   performDate: "",
   performTime: "",
   performDateTime: "",
@@ -251,13 +251,18 @@ const AppProvider = ({ children }) => {
     const isPublished = JSON.parse(published);
     const isFeatured = JSON.parse(featured);
 
-    // console.log(isPublished, isFeatured);
+    // Convert a string to Number
+    const ticketsPrice = parseInt(ticketPrice);
+
+    const now = moment().format("ddd MMM DD YYYY HH:mm:ss");
+    console.log(now, performDate, performTime);
+
     dispatch({ type: CREATE_SHOW_BEGIN });
     try {
       await authFetch.post("/shows", {
         artist,
         artistInfo,
-        ticketPrice,
+        ticketsPrice,
         performDate,
         performTime,
         performDateTime,
@@ -268,6 +273,12 @@ const AppProvider = ({ children }) => {
       });
       dispatch({ type: CREATE_SHOW_SUCCESS });
     } catch (error) {
+      dispatch({
+        type: CREATE_SHOW_ERROR,
+        payload: {
+          msg: error.response.data.msg,
+        },
+      });
       console.log(error.response);
     }
   };

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import moment from "moment";
 
 const ShowSchema = new mongoose.Schema(
   {
@@ -9,12 +10,20 @@ const ShowSchema = new mongoose.Schema(
     },
     performDate: {
       type: Date,
-      min: Date.now,
+      // min: Date.now,
+      min: () => {
+        const now = moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ");
+        return now;
+      },
       required: [true, "Please provide the performance date"],
     },
     performTime: {
       type: Date,
-      min: Date.now,
+      // min: Date.now,
+      min: () => {
+        const now = moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ");
+        return now;
+      },
       required: [true, "Please provide the show start time"],
     },
     performDateTime: {
@@ -29,7 +38,7 @@ const ShowSchema = new mongoose.Schema(
       ],
       default: "",
     },
-    TicketPrice: {
+    TicketsPrice: {
       type: Number,
       default: 45,
     },

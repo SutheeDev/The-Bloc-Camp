@@ -3,6 +3,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import styled from "styled-components";
 import { setMinutes, setHours } from "date-fns";
 import { useAppContext } from "../context/appContext";
+import moment from "moment";
 
 const TimePickerComponent = ({ selected, name }) => {
   const { handleInputChange } = useAppContext();
