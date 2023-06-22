@@ -9,10 +9,27 @@ import {
   TimePickerComponent,
 } from "../../components";
 import { useState } from "react";
+import moment from "moment";
 
 const CreateShow = () => {
-  const { isLoading, handleInputChange, showMessage, uploadImage, isEditing } =
-    useAppContext();
+  const {
+    isLoading,
+    handleInputChange,
+    showMessage,
+    displayMessage,
+    uploadImage,
+    isEditing,
+    artist,
+    artistInfo,
+    ticketPrice,
+    performDate,
+    performTime,
+    artistImage,
+    featureImage,
+    published,
+    featured,
+    createShow,
+  } = useAppContext();
 
   const handleInput = (e) => {
     const name = e.target.name;
@@ -20,9 +37,25 @@ const CreateShow = () => {
     handleInputChange({ name, value });
   };
 
+  const handleDatePicker = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    // handleInputChange({ name, value });
+    console.log(name, value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Create Show");
+
+    // if (!artist || !showDate || !startTime) {
+    //   displayMessage();
+    //   return;
+    // }
+
+    // performDate = showDate;
+    // performTime = startTime;
+
+    createShow({ artist, performDate, performTime });
   };
 
   const handleImageChange = (e) => {
@@ -46,8 +79,10 @@ const CreateShow = () => {
             <FormRow
               type="text"
               name="artist"
+              labelText="artist *"
               placeholder="artist name"
               handleChange={handleInput}
+              required
             />
 
             <div className="form-row form-row-desc">
@@ -68,13 +103,13 @@ const CreateShow = () => {
               type="number"
               name="ticketPrice"
               labelText="ticket price"
-              placeholder="70"
+              placeholder={ticketPrice}
               handleChange={handleInput}
             />
 
             <div className="form-row-subcontainer">
-              <DatePickerComponent />
-              <TimePickerComponent />
+              <DatePickerComponent name="performDate" selected={performDate} />
+              <TimePickerComponent name="performTime" selected={performTime} />
             </div>
 
             <FormFileUpload

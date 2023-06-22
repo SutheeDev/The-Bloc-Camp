@@ -12,11 +12,11 @@ const ShowSchema = new mongoose.Schema(
       min: Date.now,
       required: [true, "Please provide the performance date"],
     },
-    // performTime: {
-    //   type: Date,
-    //   min: Date.now,
-    //   required: [true, "Please provide the show start time"],
-    // },
+    performTime: {
+      type: Date,
+      min: Date.now,
+      required: [true, "Please provide the show start time"],
+    },
     artistInfo: {
       type: String,
       maxlength: [
@@ -24,6 +24,10 @@ const ShowSchema = new mongoose.Schema(
         "Artist description can't be longer than 500 characters",
       ],
       default: "",
+    },
+    TicketPrice: {
+      type: Number,
+      default: 45,
     },
     smallImg: {
       type: String,
@@ -39,6 +43,14 @@ const ShowSchema = new mongoose.Schema(
       type: mongoose.Types.ObjectId,
       ref: "User",
       required: [true, "Please provide the user"],
+    },
+    published: {
+      type: Boolean,
+      default: false,
+    },
+    featured: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true }

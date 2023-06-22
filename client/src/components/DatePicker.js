@@ -1,10 +1,14 @@
 import DatePicker, { CalendarContainer } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styled from "styled-components";
-import { useState } from "react";
+import { useAppContext } from "../context/appContext";
 
-const DatePickerComponent = () => {
-  const [showDate, setShowDate] = useState(new Date());
+const DatePickerComponent = ({ selected, name }) => {
+  const { handleInputChange } = useAppContext();
+
+  const handleInput = (value) => {
+    handleInputChange({ name, value });
+  };
 
   const MyContainer = ({ className, children }) => {
     return (
@@ -19,10 +23,10 @@ const DatePickerComponent = () => {
   return (
     <Wrapper className="form-row">
       <label htmlFor="performDate" className="form-label">
-        show date
+        show date *
       </label>
       <DatePicker
-        selected={showDate}
+        selected={selected}
         closeOnScroll={true}
         className="date-picker form-input"
         calendarContainer={MyContainer}
@@ -35,7 +39,8 @@ const DatePickerComponent = () => {
             offset: [0, -15],
           },
         }}
-        onChange={(date) => setShowDate(date)}
+        onChange={handleInput}
+        required
       />
     </Wrapper>
   );

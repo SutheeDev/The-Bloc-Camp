@@ -21,6 +21,9 @@ import {
   UPLOAD_IMAGE_BEGIN,
   UPLOAD_IMAGE_SUCCESS,
   UPLOAD_IMAGE_ERROR,
+  CREATE_SHOW_BEGIN,
+  CREATE_SHOW_SUCCESS,
+  CREATE_SHOW_ERROR,
 } from "./actions";
 
 const user = localStorage.getItem("user");
@@ -40,11 +43,14 @@ const initialState = {
   isEditing: false,
   editJobId: "",
   artist: "",
+  artistInfo: "",
+  ticketPrice: 45,
   performDate: "",
   performTime: "",
-  artistImage: "",
-  featureImage: "",
-  artistInfo: "",
+  artistImage:
+    "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
+  featureImage:
+    "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
   published: false,
   featured: false,
 };
@@ -211,6 +217,29 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const createShow = async (dateTime) => {
+    dispatch({ type: CREATE_SHOW_BEGIN });
+    try {
+      const { artist, performDate, performTime } = state;
+      const { data } = await authFetch.post("/shows", dateTime);
+      console.log(data);
+      dispatch({
+        type: CREATE_SHOW_SUCCESS,
+      });
+      console.log(data);
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: CREATE_SHOW_ERROR,
+        payload: {
+          msg: error.response.data.msg,
+        },
+      });
+      console.log(error);
+    }
+    hideMessage();
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -224,6 +253,7 @@ const AppProvider = ({ children }) => {
         updateUser,
         handleInputChange,
         uploadImage,
+        createShow,
       }}
     >
       {children}
