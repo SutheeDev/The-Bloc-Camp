@@ -37,13 +37,6 @@ const CreateShow = () => {
     handleInputChange({ name, value });
   };
 
-  const handleDatePicker = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    // handleInputChange({ name, value });
-    console.log(name, value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
