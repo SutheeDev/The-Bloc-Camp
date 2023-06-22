@@ -171,8 +171,6 @@ const reducer = (state, action) => {
       showMessage: true,
       messageText: "Success, new show created!",
       messageType: "success",
-      performDate: action.payload.showDate,
-      performTime: action.payload.startTime,
     };
   }
   if (action.type === CREATE_SHOW_ERROR) {

@@ -53,8 +53,8 @@ const initialState = {
     "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
   featureImage:
     "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
-  published: "false",
-  featured: "false",
+  published: false,
+  featured: false,
 };
 
 const AppContext = React.createContext();
@@ -234,6 +234,8 @@ const AppProvider = ({ children }) => {
     // const formatDate = moment(performDate).format("ddd MMM DD YYYY");
     // const formatTime = moment(performTime).format("hh:mmA");
     // const formatDate = new Date(performDate);
+
+    // combine performDate and performTime into performDateTime
     const formatDate = moment(performDate);
     const formatTime = moment(performTime);
     const performDateTime = formatDate
@@ -245,28 +247,29 @@ const AppProvider = ({ children }) => {
       .locale("en")
       .format("ddd MMM DD YYYY HH:mm:ss");
 
-    console.log(published, featured);
+    // Convert a string of published and featured into Boolean
+    const isPublished = JSON.parse(published);
+    const isFeatured = JSON.parse(featured);
 
-    // dispatch({ type: CREATE_SHOW_BEGIN });
-    // try {
-    //   const { artist, performDate, performTime } = state;
-    //   const { data } = await authFetch.post("/shows", dateTime);
-    //   console.log(data);
-    //   dispatch({
-    //     type: CREATE_SHOW_SUCCESS,
-    //   });
-    //   console.log(data);
-    // } catch (error) {
-    //   if (error.response.status === 401) return;
-    //   dispatch({
-    //     type: CREATE_SHOW_ERROR,
-    //     payload: {
-    //       msg: error.response.data.msg,
-    //     },
-    //   });
-    //   console.log(error);
-    // }
-    // hideMessage();
+    // console.log(isPublished, isFeatured);
+    dispatch({ type: CREATE_SHOW_BEGIN });
+    try {
+      await authFetch.post("/shows", {
+        artist,
+        artistInfo,
+        ticketPrice,
+        performDate,
+        performTime,
+        performDateTime,
+        artistImage,
+        featureImage,
+        isPublished,
+        isFeatured,
+      });
+      dispatch({ type: CREATE_SHOW_SUCCESS });
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   return (
