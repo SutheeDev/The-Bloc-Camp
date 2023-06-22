@@ -31,33 +31,29 @@ const CreateShow = () => {
     createShow,
   } = useAppContext();
 
-  const [showDate, setShowDate] = useState(new Date());
-  const [startTime, setStartTime] = useState(new Date());
-
-  const handleDate = (date) => {
-    setShowDate(date);
-  };
-
-  const handleTime = (time) => {
-    setStartTime(time);
-  };
-
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     handleInputChange({ name, value });
   };
 
+  const handleDatePicker = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    // handleInputChange({ name, value });
+    console.log(name, value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!artist || !showDate || !startTime) {
-      displayMessage();
-      return;
-    }
+    // if (!artist || !showDate || !startTime) {
+    //   displayMessage();
+    //   return;
+    // }
 
-    performDate = showDate;
-    performTime = startTime;
+    // performDate = showDate;
+    // performTime = startTime;
 
     createShow({ artist, performDate, performTime });
   };
@@ -112,14 +108,8 @@ const CreateShow = () => {
             />
 
             <div className="form-row-subcontainer">
-              <DatePickerComponent
-                selected={showDate}
-                handleChange={handleDate}
-              />
-              <TimePickerComponent
-                selected={startTime}
-                handleChange={handleTime}
-              />
+              <DatePickerComponent name="performDate" selected={performDate} />
+              <TimePickerComponent name="performTime" selected={performTime} />
             </div>
 
             <FormFileUpload

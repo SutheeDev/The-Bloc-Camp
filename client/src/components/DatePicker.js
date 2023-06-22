@@ -1,8 +1,15 @@
 import DatePicker, { CalendarContainer } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styled from "styled-components";
+import { useAppContext } from "../context/appContext";
 
-const DatePickerComponent = ({ selected, handleChange }) => {
+const DatePickerComponent = ({ selected, name }) => {
+  const { handleInputChange } = useAppContext();
+
+  const handleInput = (value) => {
+    handleInputChange({ name, value });
+  };
+
   const MyContainer = ({ className, children }) => {
     return (
       <div className="calendar-container">
@@ -32,7 +39,7 @@ const DatePickerComponent = ({ selected, handleChange }) => {
             offset: [0, -15],
           },
         }}
-        onChange={handleChange}
+        onChange={handleInput}
         required
       />
     </Wrapper>
