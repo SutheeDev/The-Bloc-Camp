@@ -25,6 +25,7 @@ import {
   CREATE_SHOW_SUCCESS,
   CREATE_SHOW_ERROR,
 } from "./actions";
+import moment from "moment";
 
 const user = localStorage.getItem("user");
 const token = localStorage.getItem("token");
@@ -217,27 +218,51 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  const createShow = async (dateTime) => {
-    dispatch({ type: CREATE_SHOW_BEGIN });
-    try {
-      const { artist, performDate, performTime } = state;
-      const { data } = await authFetch.post("/shows", dateTime);
-      console.log(data);
-      dispatch({
-        type: CREATE_SHOW_SUCCESS,
-      });
-      console.log(data);
-    } catch (error) {
-      if (error.response.status === 401) return;
-      dispatch({
-        type: CREATE_SHOW_ERROR,
-        payload: {
-          msg: error.response.data.msg,
-        },
-      });
-      console.log(error);
-    }
-    hideMessage();
+  const createShow = async () => {
+    const {
+      artist,
+      artistInfo,
+      ticketPrice,
+      performDate,
+      performTime,
+      artistImage,
+      featureImage,
+    } = state;
+    // const formatDate = moment(performDate).format("ddd MMM DD YYYY");
+    // const formatTime = moment(performTime).format("hh:mmA");
+    // const formatDate = new Date(performDate);
+    const formatDate = moment(performDate);
+    const formatTime = moment(performTime);
+    const performDateTime = formatDate
+      .set({
+        hour: formatTime.hour(),
+        minute: formatTime.minute(),
+        second: formatTime.second(),
+      })
+      .locale("en")
+      .format("ddd MMM DD YYYY HH:mm:ss");
+
+    console.log(performDateTime);
+    // dispatch({ type: CREATE_SHOW_BEGIN });
+    // try {
+    //   const { artist, performDate, performTime } = state;
+    //   const { data } = await authFetch.post("/shows", dateTime);
+    //   console.log(data);
+    //   dispatch({
+    //     type: CREATE_SHOW_SUCCESS,
+    //   });
+    //   console.log(data);
+    // } catch (error) {
+    //   if (error.response.status === 401) return;
+    //   dispatch({
+    //     type: CREATE_SHOW_ERROR,
+    //     payload: {
+    //       msg: error.response.data.msg,
+    //     },
+    //   });
+    //   console.log(error);
+    // }
+    // hideMessage();
   };
 
   return (

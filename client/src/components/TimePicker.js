@@ -49,7 +49,7 @@ const TimePickerComponent = ({ selected, name }) => {
         minTime={setHours(setMinutes(new Date(), 0), 12)}
         maxTime={setHours(setMinutes(new Date(), 30), 22)}
         onChange={handleInput}
-        required
+        // required
       />
     </Wrapper>
   );

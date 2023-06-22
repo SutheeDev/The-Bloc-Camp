@@ -40,15 +40,12 @@ const CreateShow = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // if (!artist || !showDate || !startTime) {
+    // if (!artist || !performDate || !performTime) {
     //   displayMessage();
     //   return;
     // }
 
-    // performDate = showDate;
-    // performTime = startTime;
-
-    createShow({ artist, performDate, performTime });
+    createShow();
   };
 
   const handleImageChange = (e) => {
