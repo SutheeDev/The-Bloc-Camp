@@ -22,8 +22,10 @@ const createShow = async (req, res) => {
 };
 
 const getAllShows = async (req, res) => {
-  const shows = await Show.find({});
-  res.status(StatusCodes.OK).json({ shows });
+  const shows = await Show.find({ createdBy: req.user.userId });
+  res
+    .status(StatusCodes.OK)
+    .json({ shows, totalShows: shows.length, numOfPages: 1 });
 };
 
 const updateShow = async (req, res) => {
