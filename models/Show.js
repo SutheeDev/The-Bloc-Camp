@@ -10,20 +10,10 @@ const ShowSchema = new mongoose.Schema(
     },
     performDate: {
       type: Date,
-      // min: Date.now,
-      min: () => {
-        const now = moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ");
-        return now;
-      },
       required: [true, "Please provide the performance date"],
     },
     performTime: {
       type: Date,
-      // min: Date.now,
-      min: () => {
-        const now = moment().format("YYYY-MM-DDTHH:mm:ss.SSSZ");
-        return now;
-      },
       required: [true, "Please provide the show start time"],
     },
     performDateTime: {
@@ -38,16 +28,16 @@ const ShowSchema = new mongoose.Schema(
       ],
       default: "",
     },
-    TicketsPrice: {
+    ticketsPrice: {
       type: Number,
-      default: 45,
+      default: 50,
     },
-    smallImg: {
+    artistImage: {
       type: String,
       default:
         "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     },
-    bigImg: {
+    featureImage: {
       type: String,
       default:
         "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",

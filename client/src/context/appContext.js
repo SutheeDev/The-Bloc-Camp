@@ -45,7 +45,7 @@ const initialState = {
   editJobId: "",
   artist: "",
   artistInfo: "",
-  ticketPrice: 40,
+  ticketPrice: 50,
   performDate: "",
   performTime: "",
   performDateTime: "",
@@ -279,8 +279,8 @@ const AppProvider = ({ children }) => {
           msg: error.response.data.msg,
         },
       });
-      console.log(error.response);
     }
+    hideMessage();
   };
 
   return (

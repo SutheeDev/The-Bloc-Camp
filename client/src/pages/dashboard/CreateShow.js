@@ -93,7 +93,7 @@ const CreateShow = () => {
               type="number"
               name="ticketPrice"
               labelText="ticket price"
-              placeholder={ticketPrice}
+              placeholder="ticket price"
               handleChange={handleInput}
             />
 
