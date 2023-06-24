@@ -55,6 +55,11 @@ const initialState = {
     "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
   published: false,
   featured: false,
+
+  shows: [],
+  totalShows: 0,
+  numOfPages: 1,
+  page: 1,
 };
 
 const AppContext = React.createContext();
