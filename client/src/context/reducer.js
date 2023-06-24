@@ -184,6 +184,22 @@ const reducer = (state, action) => {
       messageType: "error",
     };
   }
+  if (action.type === GET_SHOWS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+      showMessage: false,
+    };
+  }
+  if (action.type === GET_SHOWS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      shows: action.payload.shows,
+      totalShows: action.payload.totalShows,
+      numOfPages: action.payload.numOfPages,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
