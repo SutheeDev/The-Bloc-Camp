@@ -290,6 +290,28 @@ const AppProvider = ({ children }) => {
     hideMessage();
   };
 
+  const getShows = async () => {
+    let url = "/shows";
+    dispatch({ type: GET_SHOWS_BEGIN });
+    try {
+      const { data } = await authFetch.get(url);
+      const { shows, totalShows, numOfPages } = data;
+      dispatch({
+        type: GET_SHOWS_SUCCESS,
+        payload: {
+          shows,
+          totalShows,
+          numOfPages,
+        },
+      });
+    } catch (error) {
+      if (error.response !== 401) {
+        logoutUser();
+      }
+    }
+    hideMessage();
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -304,6 +326,7 @@ const AppProvider = ({ children }) => {
         handleInputChange,
         uploadImage,
         createShow,
+        getShows,
       }}
     >
       {children}
