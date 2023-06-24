@@ -280,6 +280,7 @@ const AppProvider = ({ children }) => {
       });
       dispatch({ type: CREATE_SHOW_SUCCESS });
     } catch (error) {
+      if (error.response.status === 401) return;
       dispatch({
         type: CREATE_SHOW_ERROR,
         payload: {
@@ -305,9 +306,8 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      if (error.response !== 401) {
-        logoutUser();
-      }
+      console.log(error.response);
+      // logoutUser();
     }
     hideMessage();
   };
