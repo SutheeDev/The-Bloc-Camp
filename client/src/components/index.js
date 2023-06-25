@@ -22,6 +22,7 @@ import TimePickerComponent from "./TimePicker";
 import SearchContainer from "./SearchContainer";
 import EventsContainer from "./EventsContainer";
 import Event from "./Event";
+import Loading from "./Loading";
 
 export {
   Navbar,
@@ -48,4 +49,5 @@ export {
   SearchContainer,
   EventsContainer,
   Event,
+  Loading,
 };
