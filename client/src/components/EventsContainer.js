@@ -1,4 +1,11 @@
+import Loading from "./Loading";
+
 const EventsContainer = () => {
-  return <div>EventsContainer</div>;
+  return (
+    <main>
+      <Loading />
+      <h1>Events Container</h1>
+    </main>
+  );
 };
 export default EventsContainer;
