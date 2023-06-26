@@ -16,7 +16,7 @@ const EventsContainer = () => {
     return <Loading center />;
   }
 
-  if (totalShows.length === 0) {
+  if (shows.length === 0) {
     return (
       <Wrapper>
         <h1>No upcoming show to display </h1>
@@ -27,10 +27,10 @@ const EventsContainer = () => {
   return (
     <Wrapper>
       <h1>
-        {totalShows} upcoming show{totalShows > 1 && "s"} found
+        {totalShows} upcoming show{shows.length > 1 && "s"} found
       </h1>
       {shows.map((show) => {
-        return <Event />;
+        return <Event key={show._id} {...show} />;
       })}
     </Wrapper>
   );
