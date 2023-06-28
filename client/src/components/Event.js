@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import moment from "moment";
+import { BiStar, BiCalendarEvent, BiTime } from "react-icons/bi";
 
 const Event = ({ artist, performDateTime, featureImage }) => {
   let date = moment(performDateTime);
@@ -23,7 +24,10 @@ const Event = ({ artist, performDateTime, featureImage }) => {
           </div>
           <h3 className="event-time">{time}</h3>
         </div>
-        <h3 className="artist-title">{artist}</h3>
+        <div className="title-container">
+          <BiStar className="star-icon" />
+          <h3 className="artist-title">{artist}</h3>
+        </div>
         <div className="btn-container">
           <button type="button" className="btn">
             edit
@@ -39,10 +43,11 @@ const Event = ({ artist, performDateTime, featureImage }) => {
 export default Event;
 
 const Wrapper = styled.div`
+  margin-bottom: 2cqmin;
   .event-info-container {
     display: flex;
     /* justify-content: space-between; */
-    align-items: flex-start;
+    /* align-items: flex-start; */
     gap: 1em;
 
     font-family: var(--bodyFont);
@@ -57,25 +62,51 @@ const Wrapper = styled.div`
     width: 100%;
   }
   .event-datetime {
-    width: 25%;
-    padding-top: 1em;
+    width: 15%;
+    min-width: 100px;
   }
   .event-daydate {
     display: flex;
     align-items: center;
     gap: 0.5em;
-  }
-  .event-day {
+    color: var(--lighterBlue);
     text-transform: capitalize;
+    padding-top: 1em;
   }
+  .event-day,
   .event-date {
-    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .event-time {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--grey-300);
+    margin-top: 0.3em;
+  }
+  .title-container {
+    width: 40%;
+    text-transform: capitalize;
+    color: var(--lighterBlue);
+    /* padding-top: 1em; */
+
+    display: flex;
+    /* justify-content: baseline; */
+    /* align-items: center; */
+    /* gap: 0.5em; */
+    /* background-color: red; */
   }
   .artist-title {
-    width: 25%;
-    padding-top: 1em;
-
-    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 600;
+    /* align-self: baseline; */
+    /* background-color: white; */
+  }
+  .star-icon {
+    /* background-color: wheat; */
+    display: flex;
+    font-size: 1.5rem;
+    /* align-self: baseline; */
   }
   .btn-container {
     width: 20%;
