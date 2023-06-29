@@ -25,8 +25,10 @@ const Event = ({ artist, performDateTime, featureImage }) => {
           <h3 className="event-time">{time}</h3>
         </div>
         <div className="title-container">
-          <BiStar className="star-icon" />
-          <h3 className="artist-title">{artist}</h3>
+          <div>
+            <BiStar className="star-icon" />
+            <h3 className="artist-title">{artist}</h3>
+          </div>
         </div>
         <div className="btn-container">
           <button type="button" className="btn">
@@ -46,16 +48,14 @@ const Wrapper = styled.div`
   margin-bottom: 2cqmin;
   .event-info-container {
     display: flex;
-    /* justify-content: space-between; */
-    /* align-items: flex-start; */
     gap: 1em;
 
     font-family: var(--bodyFont);
   }
   .event-img {
-    /* width: 160px; */
     width: 25%;
     max-width: 160px;
+    min-width: 110px;
     background-color: red;
   }
   .event-img img {
@@ -88,27 +88,57 @@ const Wrapper = styled.div`
     width: 40%;
     text-transform: capitalize;
     color: var(--lighterBlue);
-    /* padding-top: 1em; */
-
+  }
+  .title-container div {
     display: flex;
-    /* justify-content: baseline; */
-    /* align-items: center; */
-    /* gap: 0.5em; */
-    /* background-color: red; */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3em;
+    padding-top: 1em;
   }
   .artist-title {
     font-size: 1rem;
     font-weight: 600;
-    /* align-self: baseline; */
-    /* background-color: white; */
   }
   .star-icon {
-    /* background-color: wheat; */
     display: flex;
-    font-size: 1.5rem;
-    /* align-self: baseline; */
+    font-size: 1rem;
   }
   .btn-container {
-    width: 20%;
+    width: 30%;
+    padding-top: 1em;
+    text-align: right;
   }
+  .btn {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 0.3em 0.7em;
+    color: var(--grey-300);
+    border: 2px solid var(--grey-300);
+    background-color: transparent;
+    border-radius: 1px;
+    cursor: pointer;
+    /* letter-spacing: 1px; */
+    font-weight: 400;
+    margin-left: 1.1em;
+
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    color: var(--white);
+    background-color: var(--darkBlue);
+    border: 2px solid var(--darkBlue);
+  }
+  /* }
+  @media screen and (max-width: 850px) {
+    .btn {
+      padding: 10px 18px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .btn {
+      display: block;
+      width: 100%;
+    }
+  } */
 `;
