@@ -88,7 +88,7 @@ const Wrapper = styled.div`
     .block {
       width: 16.3rem;
       height: 1.05rem;
-      transform: translate(-50%, 50%);
+      transform: translate(-50%, 25%);
     }
     p {
       font-size: 12px;

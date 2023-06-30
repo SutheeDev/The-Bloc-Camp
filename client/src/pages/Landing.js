@@ -72,7 +72,7 @@ const Wrapper = styled.main`
   }
   @media screen and (max-width: 850px) {
     .upcoming {
-      margin-top: 15px;
+      margin-top: -3px;
       padding: 30px 0 40px 0;
     }
     .upcoming-container {
