@@ -36,7 +36,7 @@ export default SocialLinks;
 
 const Wrapper = styled.nav`
   .social-links {
-    margin-top: 30px;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +44,13 @@ const Wrapper = styled.nav`
   .social-links li {
     margin: 0 21px;
   }
+
+  @media screen and (min-width: 450px) {
+    .social-links {
+      margin-top: 30px;
+    }
+  }
+
   @media screen and (min-width: 850px) {
     .social-links {
       position: fixed;
