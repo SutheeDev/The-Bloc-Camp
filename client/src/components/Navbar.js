@@ -81,6 +81,7 @@ const Wrapper = styled.section`
       place-items: left;
       .hamburger-open,
       .hamburger-close {
+        width: 17px;
         margin-bottom: 100px;
         grid-area: 1/1;
         transition: all 0.2s ease;
@@ -109,6 +110,14 @@ const Wrapper = styled.section`
   @media screen and (min-width: 450px) {
     .logIn a {
       font-size: 16px;
+    }
+    .container {
+      li.hamburger {
+        .hamburger-open,
+        .hamburger-close {
+          width: 28px;
+        }
+      }
     }
   }
 
