@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   .dropdown-user {
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.2em;
     padding: 0.2em 0.4em;
     border-bottom: 7px solid var(--darkBlue);
     border-radius: 2px;
@@ -49,15 +49,16 @@ const Wrapper = styled.div`
     display: flex;
   }
   .username {
+    font-size: 0.75rem;
     text-transform: capitalize;
     font-family: var(--bodyFont);
     font-weight: 400;
   }
   .user-icon {
-    font-size: 1.4rem;
+    font-size: 0.9rem;
   }
   .arrow-icon {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
   .dropdown-menu {
     position: absolute;
@@ -88,5 +89,19 @@ const Wrapper = styled.div`
   .btn:hover {
     background-color: var(--reddish);
     color: var(--white);
+  }
+  @media (min-width: 450px) {
+    .user-icon {
+      font-size: 1.4rem;
+    }
+    .arrow-icon {
+      font-size: 1rem;
+    }
+    .username {
+      font-size: 1.024rem;
+    }
+    .dropdown-user {
+      gap: 0.5em;
+    }
   }
 `;

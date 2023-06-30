@@ -28,6 +28,11 @@ const Wrapper = styled.main`
     width: 100%;
   }
   .dashboard-page {
-    padding: 2em 2em;
+    padding: 1.3em 0.9em;
+  }
+  @media (min-width: 450px) {
+    .dashboard-page {
+      padding: 2em 2em;
+    }
   }
 `;

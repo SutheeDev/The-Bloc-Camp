@@ -29,9 +29,9 @@ const EventsContainer = () => {
       <h1>
         {totalShows} upcoming show{shows.length > 1 && "s"} found
       </h1>
-      {shows.map((show) => {
+      {/* {shows.map((show) => {
         return <Event key={show._id} {...show} />;
-      })}
+      })} */}
     </Wrapper>
   );
 };

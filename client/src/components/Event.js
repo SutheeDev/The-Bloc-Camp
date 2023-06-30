@@ -45,7 +45,8 @@ const Event = ({ artist, performDateTime, featureImage }) => {
 export default Event;
 
 const Wrapper = styled.div`
-  margin-bottom: 2cqmin;
+  /* width: 100%; */
+  margin-bottom: 2em;
   .event-info-container {
     display: flex;
     gap: 1em;
@@ -53,7 +54,7 @@ const Wrapper = styled.div`
     font-family: var(--bodyFont);
   }
   .event-img {
-    width: 25%;
+    /* width: 25%; */
     max-width: 160px;
     min-width: 110px;
     background-color: red;
@@ -62,7 +63,7 @@ const Wrapper = styled.div`
     width: 100%;
   }
   .event-datetime {
-    width: 15%;
+    /* width: 15%; */
     min-width: 100px;
   }
   .event-daydate {
@@ -85,7 +86,7 @@ const Wrapper = styled.div`
     margin-top: 0.3em;
   }
   .title-container {
-    width: 40%;
+    /* width: 40%; */
     text-transform: capitalize;
     color: var(--lighterBlue);
   }
@@ -105,7 +106,7 @@ const Wrapper = styled.div`
     font-size: 1rem;
   }
   .btn-container {
-    width: 30%;
+    /* width: 30%; */
     padding-top: 1em;
     text-align: right;
   }

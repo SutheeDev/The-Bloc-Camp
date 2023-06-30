@@ -49,8 +49,8 @@ const Wrapper = styled.div`
   }
   .sidebar-content {
     background-color: var(--darkBlue);
-    width: 95vw;
-    height: 95vh;
+    width: 95%;
+    height: 95%;
     border-radius: 5px;
     box-shadow: 0px 1.3px 1.7px rgba(0, 0, 0, 0.028),
       0px 4.2px 5.6px rgba(0, 0, 0, 0.042), 0px 19px 25px rgba(0, 0, 0, 0.07);
@@ -59,6 +59,7 @@ const Wrapper = styled.div`
     align-items: center;
     position: relative;
     padding: 2em;
+    overflow: hidden;
   }
   .close-icon {
     position: absolute;

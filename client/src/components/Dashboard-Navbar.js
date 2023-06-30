@@ -22,14 +22,21 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2em 2em;
+  padding: 1.3em 0.9em;
   .dashboard-hamburger {
-    font-size: 1.7rem;
+    font-size: 1rem;
     cursor: pointer;
+    z-index: 1;
 
     transition: all 0.3s ease;
   }
   .dashboard-hamburger:hover {
     color: var(--reddish);
+  }
+  @media (min-width: 450px) {
+    padding: 2em 2em;
+    .dashboard-hamburger {
+      font-size: 1.7rem;
+    }
   }
 `;
