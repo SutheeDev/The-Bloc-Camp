@@ -196,7 +196,7 @@ const Wrapper = styled.main`
   /* Footer */
   /* ------------------- */
   Footer {
-    margin-top: 100px;
+    margin-top: 20px;
   }
   /* ------------------- */
   /* button */
