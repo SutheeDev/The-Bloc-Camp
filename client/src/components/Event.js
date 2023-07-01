@@ -17,24 +17,33 @@ const Event = ({ artist, performDateTime, featureImage }) => {
         <div className="event-img">
           <img src={featureImage}></img>
         </div>
+
         <div className="event-datetime">
           <div className="event-daydate">
-            <h3 className="event-day">{day}</h3>
-            <h3 className="event-date">{date}</h3>
+            <div className="calendar-icon">
+              <BiCalendarEvent />
+            </div>
+            <p className="event-day">{day}</p>
+            <p className="event-date">{date}</p>
           </div>
-          <h3 className="event-time">{time}</h3>
+          <div className="time-container">
+            <div className="time-icon">
+              <BiTime />
+            </div>
+            <p className="event-time">{time}</p>
+          </div>
         </div>
+
         <div className="title-container">
-          <div>
-            <BiStar className="star-icon" />
-            <h3 className="artist-title">{artist}</h3>
-          </div>
+          <BiStar className="star-icon" />
+          <h3 className="artist-title">{artist}</h3>
         </div>
+
         <div className="btn-container">
-          <button type="button" className="btn">
+          <button type="button" className="btn edit-btn">
             edit
           </button>
-          <button type="button" className="btn">
+          <button type="button" className="btn del-btn">
             delete
           </button>
         </div>
@@ -45,69 +54,91 @@ const Event = ({ artist, performDateTime, featureImage }) => {
 export default Event;
 
 const Wrapper = styled.div`
-  /* width: 100%; */
-  margin-bottom: 2em;
+  margin: 2em 0;
+  font-family: var(--bodyFont);
   .event-info-container {
-    display: flex;
-    gap: 1em;
+    border-radius: 2px;
+    overflow: hidden;
+    padding-bottom: 1.4em;
+    box-shadow: 0px 0.2px 0.2px rgba(0, 0, 0, 0.014),
+      0px 0.4px 0.5px rgba(0, 0, 0, 0.02), 0px 0.8px 1px rgba(0, 0, 0, 0.025),
+      0px 1.3px 1.8px rgba(0, 0, 0, 0.03), 0px 2.5px 3.3px rgba(0, 0, 0, 0.036),
+      0px 6px 8px rgba(0, 0, 0, 0.05);
 
-    font-family: var(--bodyFont);
+    transition: all 0.3s ease;
+  }
+  .event-info-container:hover {
+    box-shadow: 0px 0.7px 1.7px rgba(0, 0, 0, 0.014),
+      0px 1.8px 4.1px rgba(0, 0, 0, 0.02), 0px 3.4px 7.8px rgba(0, 0, 0, 0.025),
+      0px 6px 13.8px rgba(0, 0, 0, 0.03), 0px 11.3px 25.9px rgba(0, 0, 0, 0.036),
+      0px 27px 62px rgba(0, 0, 0, 0.05);
   }
   .event-img {
-    /* width: 25%; */
-    max-width: 160px;
-    min-width: 110px;
-    background-color: red;
+    width: 100%;
+    margin-bottom: 1em;
   }
   .event-img img {
     width: 100%;
   }
   .event-datetime {
-    /* width: 15%; */
-    min-width: 100px;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin-bottom: 0.2em;
+  }
+  .event-datetime,
+  .title-container,
+  .btn-container {
+    padding-left: 16px;
   }
   .event-daydate {
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    color: var(--lighterBlue);
     text-transform: capitalize;
-    padding-top: 1em;
+    font-size: 0.85rem;
+    color: var(--lighterBlue);
   }
   .event-day,
   .event-date {
-    font-size: 1rem;
     font-weight: 400;
+  }
+  .event-day {
+    margin-right: 0.3em;
+  }
+  .time-container {
+    display: flex;
+    align-items: center;
   }
   .event-time {
     font-size: 0.85rem;
     font-weight: 400;
     color: var(--grey-300);
-    margin-top: 0.3em;
   }
-  .title-container {
-    /* width: 40%; */
-    text-transform: capitalize;
-    color: var(--lighterBlue);
-  }
-  .title-container div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.3em;
-    padding-top: 1em;
-  }
-  .artist-title {
-    font-size: 1rem;
-    font-weight: 600;
-  }
+  .time-icon,
+  .calendar-icon,
   .star-icon {
     display: flex;
+    width: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+  }
+  .time-icon {
+    font-size: 1.15rem;
+    color: var(--grey-300);
+  }
+  .title-container {
     font-size: 1rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  .artist-title {
+    font-weight: 600;
+    color: var(--lighterBlue);
   }
   .btn-container {
-    /* width: 30%; */
-    padding-top: 1em;
     text-align: right;
   }
   .btn {
@@ -117,29 +148,19 @@ const Wrapper = styled.div`
     color: var(--grey-300);
     border: 2px solid var(--grey-300);
     background-color: transparent;
-    border-radius: 1px;
+    border-radius: 2px;
     cursor: pointer;
-    /* letter-spacing: 1px; */
     font-weight: 400;
-    margin-left: 1.1em;
+    margin-left: 1.5em;
 
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   .btn:hover {
     color: var(--white);
-    background-color: var(--darkBlue);
-    border: 2px solid var(--darkBlue);
+    background-color: var(--lighterBlue);
+    border: 2px solid var(--lighterBlue);
   }
-  /* }
-  @media screen and (max-width: 850px) {
-    .btn {
-      padding: 10px 18px;
-    }
+  .del-btn {
+    margin-right: 1.5em;
   }
-  @media screen and (max-width: 450px) {
-    .btn {
-      display: block;
-      width: 100%;
-    }
-  } */
 `;

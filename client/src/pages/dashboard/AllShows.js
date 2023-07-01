@@ -4,7 +4,7 @@ import { SearchContainer, EventsContainer } from "../../components";
 const AllShows = () => {
   return (
     <Wrapper>
-      <h2>All Shows</h2>
+      <h3 className="form-title">All Shows</h3>
       <SearchContainer />
       <EventsContainer />
     </Wrapper>

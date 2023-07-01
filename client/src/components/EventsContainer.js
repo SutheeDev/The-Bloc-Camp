@@ -19,19 +19,19 @@ const EventsContainer = () => {
   if (shows.length === 0) {
     return (
       <Wrapper>
-        <h1>No upcoming show to display </h1>
+        <h2>No upcoming show to display </h2>
       </Wrapper>
     );
   }
 
   return (
     <Wrapper>
-      <h1>
+      <h2>
         {totalShows} upcoming show{shows.length > 1 && "s"} found
-      </h1>
-      {/* {shows.map((show) => {
+      </h2>
+      {shows.map((show) => {
         return <Event key={show._id} {...show} />;
-      })} */}
+      })}
     </Wrapper>
   );
 };
