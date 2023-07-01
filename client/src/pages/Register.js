@@ -166,6 +166,10 @@ const Button = styled.button`
 `;
 
 const Wrapper = styled.main`
+  .header {
+    top: 0;
+    padding: 20px 0;
+  }
   /* ------------------- */
   /* Login Page, Subscribe Page, Subscribed Page */
   /* ------------------- */
