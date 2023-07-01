@@ -110,7 +110,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 20px;
+  padding: 10px 20px;
   overflow: hidden;
 }
 .form-row {
@@ -118,14 +118,14 @@ li {
 }
 .form-input {
   width: 100%;
-  height: 3.6em;
+  height: 3em;
   outline: none;
-  padding: 1rem 1.5rem 1rem 1rem;
+  padding: 0 0 0 1rem;
   border: none;
   border-width: 3px;
   border-color: var(--darkBlue);
   border-style: solid;
-  margin: 10px 0 25px 0;
+  margin: 10px 0 10px 0;
   font-family: sans-serif;
   color: var(--darkBlue);
 }
@@ -167,6 +167,16 @@ textarea {
 }
 .toggleForm-btn:hover {
   color: var(--white);
+}
+@media screen and (min-width: 450px) {
+  .login-form {
+    padding: 20px;
+  }
+  .form-input {
+    height: 3.6em;
+    padding: 1rem 1.5rem 1rem 1rem;
+    margin: 10px 0 25px 0;
+  }
 }
 /* ---------------------------- */
 /* Message */

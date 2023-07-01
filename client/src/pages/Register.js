@@ -135,7 +135,7 @@ export default Register;
 
 const Button = styled.button`
   text-transform: uppercase;
-  padding: 1rem 1.5rem;
+  padding: 0.725em 1.125em;
   background-color: transparent;
   border: 3px solid #221333;
   border-radius: 1px;
@@ -156,12 +156,8 @@ const Button = styled.button`
     border: 3px solid #221333;
     color: #df3311;
   }
-  @media screen and (max-width: 850px) {
-    padding: 10px 18px;
-  }
-  @media screen and (max-width: 450px) {
-    display: block;
-    width: 100%;
+  @media screen and (min-width: 850px) {
+    padding: 1.135em 1.5em;
   }
 `;
 
@@ -203,8 +199,8 @@ const Wrapper = styled.main`
   /* ------------------- */
   .login-btn-block {
     position: relative;
-    width: 142px;
-    height: 53px;
+    width: 130px;
+    height: 41px;
     margin-top: 20px;
   }
   .btn.login-btn:hover {
@@ -225,10 +221,10 @@ const Wrapper = styled.main`
   /* ------------------- */
   /* Media Queries */
   /* ------------------- */
-  @media screen and (max-width: 850px) {
+  @media screen and (min-width: 850px) {
     .login-btn-block {
-      width: 130px;
-      height: 41px;
+      width: 142px;
+      height: 53px;
     }
   }
 `;
