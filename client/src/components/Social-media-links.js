@@ -10,22 +10,22 @@ const SocialLinks = () => {
       <ul class="social-links">
         <li>
           <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-            <img src={facebook} alt="facebook icon" />
+            <img src={facebook} alt="facebook icon" className="social-icon" />
           </a>
         </li>
         <li>
           <a href="https://twitter.com/" target="_blank" rel="noreferrer">
-            <img src={twitter} alt="twitter icon" />
+            <img src={twitter} alt="twitter icon" className="social-icon" />
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-            <img src={instagram} alt="instagram icon" />
+            <img src={instagram} alt="instagram icon" className="social-icon" />
           </a>
         </li>
         <li>
           <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
-            <img src={youtube} alt="youtube icon" />
+            <img src={youtube} alt="youtube icon" className="social-icon" />
           </a>
         </li>
       </ul>
@@ -44,13 +44,17 @@ const Wrapper = styled.nav`
   .social-links li {
     margin: 0 21px;
   }
-
+  .social-icon {
+    height: 13px;
+  }
   @media screen and (min-width: 450px) {
     .social-links {
       margin-top: 30px;
     }
+    .social-icon {
+      height: 18px;
+    }
   }
-
   @media screen and (min-width: 850px) {
     .social-links {
       position: fixed;
