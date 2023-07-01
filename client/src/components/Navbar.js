@@ -55,7 +55,7 @@ export default Navbar;
 
 const Wrapper = styled.section`
   background-color: #221333;
-  padding: 37px 0;
+  padding: 27px 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -108,6 +108,7 @@ const Wrapper = styled.section`
   }
 
   @media screen and (min-width: 450px) {
+    padding: 37px 0;
     .logIn a {
       font-size: 16px;
     }

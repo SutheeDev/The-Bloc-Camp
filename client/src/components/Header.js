@@ -16,7 +16,7 @@ export default Header;
 
 const Wrapper = styled.header`
   position: relative;
-  top: 60px;
+  top: 45px;
   left: 0;
   width: 100%;
   background-color: var(--darkBlue);
@@ -24,6 +24,9 @@ const Wrapper = styled.header`
   margin-top: 14px;
   div {
     width: 100%;
+  }
+  @media screen and (min-width: 450px) {
+    top: 60px;
   }
   @media screen and (min-width: 850px) {
     position: relative;
