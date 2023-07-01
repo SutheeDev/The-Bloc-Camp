@@ -83,11 +83,11 @@ export default Profile;
 
 const Wrapper = styled.div`
   color: var(--black);
-  .form-title {
+  /* .form-title {
     text-transform: uppercase;
     font-size: 2rem;
     margin-bottom: 1.3em;
-  }
+  } */
   .form-input {
     border: none;
     background-color: var(--grey-100);

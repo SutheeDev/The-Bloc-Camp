@@ -37,9 +37,14 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1.2em 0 2em 0;
+    margin: 0.6em 0 1.5em 0;
   }
   .ant-switch-inner-checked {
     line-height: 24px;
+  }
+  @media screen and (min-width: 450px) {
+    .form-switch {
+      margin: 1.2em 0 2em 0;
+    }
   }
 `;

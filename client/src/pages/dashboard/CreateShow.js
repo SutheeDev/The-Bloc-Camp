@@ -140,11 +140,11 @@ export default CreateShow;
 
 const Wrapper = styled.div`
   color: var(--black);
-  .form-title {
+  /* .form-title {
     text-transform: uppercase;
     font-size: 2rem;
     margin-bottom: 1.3em;
-  }
+  } */
   .form-input {
     border: none;
     background-color: var(--grey-100);
@@ -185,13 +185,18 @@ const Wrapper = styled.div`
     outline: none;
     padding: 1rem;
     border: none;
-    margin: 10px 0 25px 0;
+    margin: 10px 0 17px 0;
     font-family: sans-serif;
     color: var(--darkBlue);
     background-color: var(--grey-100);
   }
   textarea::placeholder {
     text-transform: capitalize;
+  }
+  @media screen and (min-width: 450px) {
+    .form-desc {
+      margin: 10px 0 25px 0;
+    }
   }
   @media screen and (min-width: 950px) {
     .form-row-subcontainer {

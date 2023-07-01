@@ -125,7 +125,7 @@ li {
   border-width: 3px;
   border-color: var(--darkBlue);
   border-style: solid;
-  margin: 10px 0 10px 0;
+  margin: 10px 0 17px 0;
   font-family: sans-serif;
   color: var(--darkBlue);
 }
@@ -168,6 +168,11 @@ textarea {
 .toggleForm-btn:hover {
   color: var(--white);
 }
+.form-title {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-bottom: 0.7em;
+}
 @media screen and (min-width: 450px) {
   .login-form {
     padding: 20px;
@@ -176,6 +181,10 @@ textarea {
     height: 3.6em;
     padding: 1rem 1.5rem 1rem 1rem;
     margin: 10px 0 25px 0;
+  }
+  .form-title {
+    font-size: 2rem;
+    margin-bottom: 1.3em;
   }
 }
 /* ---------------------------- */

@@ -31,7 +31,7 @@ const Wrapper = styled.div`
     width: 100%;
     outline: none;
     border: none;
-    margin: 10px 0 25px 0;
+    margin: 10px 0 17px 0;
     font-family: sans-serif;
     color: var(--darkBlue);
   }
@@ -50,5 +50,10 @@ const Wrapper = styled.div`
   }
   input::file-selector-button:hover {
     color: var(--reddish);
+  }
+  @media screen and (min-width: 450px) {
+    .form-upload {
+      margin: 10px 0 25px 0;
+    }
   }
 `;
