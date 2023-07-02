@@ -25,6 +25,8 @@ const Event = ({ artist, performDateTime, featureImage }) => {
           <img src={featureImage} />
         </div>
 
+        <BiChevronDown className="down-icon" />
+
         <div className="event-info">
           <div className="title-container">
             <BiStar className="star-icon" />
@@ -93,6 +95,9 @@ const Wrapper = styled.div`
       0px 1.8px 4.1px rgba(0, 0, 0, 0.02), 0px 3.4px 7.8px rgba(0, 0, 0, 0.025),
       0px 6px 13.8px rgba(0, 0, 0, 0.03), 0px 11.3px 25.9px rgba(0, 0, 0, 0.036),
       0px 27px 62px rgba(0, 0, 0, 0.05);
+  }
+  .down-icon {
+    display: none;
   }
   .event-info {
     padding: 1.2em 1em;
@@ -234,15 +239,20 @@ const Wrapper = styled.div`
       padding-bottom: 0;
       display: flex;
       align-items: flex-start;
+      position: relative;
     }
     .event-img {
       width: 25%;
     }
     .event-info {
+      padding: 0 1em;
       flex-grow: 1;
     }
     .title-container {
-      font-size: 0.9rem;
+      /* font-size: 0.9rem; */
+      border-bottom: none;
+      padding-bottom: 0em;
+      margin: 0.9em 0 0.6em 0;
     }
     .btn-container {
       padding: 0.7em 1em 0 0;
@@ -257,6 +267,16 @@ const Wrapper = styled.div`
     }
     .event-condition {
       display: none;
+    }
+    .down-icon {
+      position: absolute;
+      bottom: 16px;
+      right: 8px;
+      display: block;
+      cursor: pointer;
+      height: 24px;
+      width: 24px;
+      color: var(--grey-300);
     }
   }
 `;
