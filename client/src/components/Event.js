@@ -6,6 +6,7 @@ import {
   BiTime,
   BiMessageSquareCheck,
   BiMessageSquareX,
+  BiChevronDown,
 } from "react-icons/bi";
 
 const Event = ({ artist, performDateTime, featureImage }) => {
@@ -21,7 +22,7 @@ const Event = ({ artist, performDateTime, featureImage }) => {
     <Wrapper>
       <div className="event-info-container">
         <div className="event-img">
-          <img src={featureImage}></img>
+          <img src={featureImage} />
         </div>
 
         <div className="event-info">
@@ -97,7 +98,9 @@ const Wrapper = styled.div`
     padding: 1.2em 1em;
   }
   .event-img {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .event-img img {
     width: 100%;
@@ -137,7 +140,7 @@ const Wrapper = styled.div`
   .event-time {
     font-size: 0.85rem;
     font-weight: 400;
-    color: var(--grey-300);
+    /* color: var(--grey-300); */
   }
   .time-icon,
   .calendar-icon,
@@ -159,7 +162,7 @@ const Wrapper = styled.div`
   }
   .time-icon {
     font-size: 1.15rem;
-    color: var(--grey-300);
+    /* color: var(--grey-300); */
   }
   .title-container {
     font-size: 1rem;
@@ -225,5 +228,35 @@ const Wrapper = styled.div`
   .condition,
   .event-status {
     width: 50%;
+  }
+  @media screen and (min-width: 650px) {
+    .event-info-container {
+      padding-bottom: 0;
+      display: flex;
+      align-items: flex-start;
+    }
+    .event-img {
+      width: 25%;
+    }
+    .event-info {
+      flex-grow: 1;
+    }
+    .title-container {
+      font-size: 0.9rem;
+    }
+    .btn-container {
+      padding: 0.7em 1em 0 0;
+      text-align: right;
+    }
+    .btn {
+      padding: 0.6em 1em;
+      margin: 0;
+    }
+    .del-btn {
+      margin-left: 1.1em;
+    }
+    .event-condition {
+      display: none;
+    }
   }
 `;
