@@ -201,11 +201,17 @@ const Wrapper = styled.div`
 
     transition: all 0.2s ease;
   }
-  /* .btn:hover {
+  .edit-btn:hover {
     color: var(--white);
     background-color: var(--lighterBlue);
     border: 2px solid var(--lighterBlue);
-  } */
+  }
+  .del-btn:hover {
+    color: var(--white);
+    background-color: var(--reddish);
+    border: 2px solid var(--reddish);
+  }
+
   .published,
   .featured {
     text-transform: capitalize;
