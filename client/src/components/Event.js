@@ -8,6 +8,7 @@ import {
   BiMessageSquareCheck,
   BiMessageSquareX,
   BiChevronDown,
+  BiDollarCircle,
 } from "react-icons/bi";
 
 const Event = ({ artist, performDateTime, featureImage }) => {
@@ -72,16 +73,17 @@ const Event = ({ artist, performDateTime, featureImage }) => {
               <div className="status">upcoming</div>
             </div>
           </div>
-        </div>
 
-        <div className="price-desc">
-          <div className="price">
-            <p>$50</p>
-          </div>
-          <div className="desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-            necessitatibus illum suscipit asperiores ab maiores unde voluptates.
-            Ducimus, quam harum.
+          <div className="price-desc">
+            <div className="price">
+              <BiDollarCircle className="dollar-icon" />
+              <p>$50</p>
+            </div>
+            <div className="desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+              necessitatibus illum suscipit asperiores ab maiores unde
+              voluptates. Ducimus, quam harum.
+            </div>
           </div>
         </div>
 
@@ -133,7 +135,8 @@ const Wrapper = styled.div`
   .event-img img {
     width: 100%;
   }
-  .event-datetime {
+  .event-datetime,
+  .event-condition {
     display: flex;
     align-items: center;
     margin-bottom: 0.6em;
@@ -171,7 +174,8 @@ const Wrapper = styled.div`
   .calendar-icon,
   .star-icon,
   .check-icon,
-  .x-icon {
+  .x-icon,
+  .dollar-icon {
     display: flex;
     width: 18px;
     height: 18px;
@@ -209,7 +213,10 @@ const Wrapper = styled.div`
     padding: 0.6em 0.2em;
     border-radius: 3px;
   }
-
+  /* .price-desc {
+    display: flex;
+    align-items: flex-start;
+  } */
   .btn-container {
     text-align: left;
     padding: 0 1em;
@@ -240,17 +247,22 @@ const Wrapper = styled.div`
   }
 
   .published,
-  .featured {
+  .featured,
+  .price {
     text-transform: capitalize;
     display: flex;
     align-items: center;
   }
-  .event-condition {
+  .price {
+    margin-bottom: 0.6em;
+  }
+  /* .event-condition {
     display: flex;
     align-items: center;
-  }
+  } */
   .condition,
-  .event-status {
+  .event-status,
+  .price {
     width: 50%;
   }
   @media screen and (min-width: 650px) {
@@ -264,7 +276,8 @@ const Wrapper = styled.div`
     }
     .event-info {
       padding: 0 1em;
-      flex-grow: 1;
+      flex-grow: 0;
+      width: 52%;
       position: relative;
     }
     .title-container {
@@ -275,6 +288,7 @@ const Wrapper = styled.div`
     .btn-container {
       padding: 0.7em 1em 0 0;
       text-align: right;
+      flex-shrink: 0;
     }
     .btn {
       padding: 0.6em 1em;
@@ -283,7 +297,8 @@ const Wrapper = styled.div`
     .del-btn {
       margin-left: 1.1em;
     }
-    .event-condition {
+    .event-condition,
+    .price-desc {
       display: none;
 
       transition: all 0.2s ease;
@@ -301,14 +316,32 @@ const Wrapper = styled.div`
       transition: all 0.3s ease;
     }
     .open-dropdown {
-      padding-bottom: 1.1em;
+      padding-bottom: 1.5em;
     }
     .open-dropdown .event-condition {
       display: flex;
       margin-top: 2em;
     }
+    /* .open-dropdown .price-desc {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .open-dropdown .desc {
+      width: 100%;
+    } */
+    .open-dropdown .price-desc {
+      display: block;
+    }
+    /* .open-dropdown .desc {
+      display: none;
+    } */
     .open-dropdown .down-icon {
       transform: rotate(180deg);
+    }
+    .event-condition,
+    .price {
+      margin-bottom: 0.7em;
     }
   }
   @media screen and (min-width: 1150px) {
