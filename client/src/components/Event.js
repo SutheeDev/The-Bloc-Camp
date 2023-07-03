@@ -74,6 +74,17 @@ const Event = ({ artist, performDateTime, featureImage }) => {
           </div>
         </div>
 
+        <div className="price-desc">
+          <div className="price">
+            <p>$50</p>
+          </div>
+          <div className="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
+            necessitatibus illum suscipit asperiores ab maiores unde voluptates.
+            Ducimus, quam harum.
+          </div>
+        </div>
+
         <div className="btn-container">
           <button type="button" className="btn edit-btn">
             edit
