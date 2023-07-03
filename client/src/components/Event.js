@@ -51,10 +51,10 @@ const Event = ({ artist, performDateTime, featureImage }) => {
               <BiTime className="time-icon" />
               <p className="event-time">{time}</p>
             </div>
-            <BiChevronDown
+            {/* <BiChevronDown
               className="down-icon"
               onClick={() => setShowDropdown(!showDropdown)}
-            />
+            /> */}
           </div>
 
           <div className="event-condition">
@@ -94,6 +94,10 @@ const Event = ({ artist, performDateTime, featureImage }) => {
           <button type="button" className="btn del-btn">
             delete
           </button>
+          <BiChevronDown
+            className="down-icon"
+            onClick={() => setShowDropdown(!showDropdown)}
+          />
         </div>
       </div>
     </Wrapper>
@@ -220,6 +224,7 @@ const Wrapper = styled.div`
   .btn-container {
     text-align: left;
     padding: 0 1em;
+    position: relative;
   }
   .btn {
     font-size: 0.7rem;
@@ -277,8 +282,8 @@ const Wrapper = styled.div`
     .event-info {
       padding: 0 1em;
       flex-grow: 0;
-      width: 52%;
-      position: relative;
+      width: 50%;
+      /* position: relative; */
     }
     .title-container {
       border-bottom: none;
@@ -286,6 +291,7 @@ const Wrapper = styled.div`
       margin: 0.9em 0 0.6em 0;
     }
     .btn-container {
+      width: 25%;
       padding: 0.7em 1em 0 0;
       text-align: right;
       flex-shrink: 0;
@@ -305,8 +311,10 @@ const Wrapper = styled.div`
     }
     .down-icon {
       position: absolute;
-      top: 43px;
-      right: -141px;
+      /* top: 43px;
+      right: -141px; */
+      bottom: -27px;
+      right: 8px;
       display: block;
       cursor: pointer;
       height: 24px;
@@ -345,17 +353,25 @@ const Wrapper = styled.div`
     }
   }
   @media screen and (min-width: 1150px) {
-    .open-dropdown {
-      padding-bottom: 0 !important;
-    }
-    .open-dropdown .event-condition {
-      margin-top: 0;
-    }
     .event-img {
-      width: 150px;
+      width: 15%;
     }
-    .event-condition {
-      display: block;
+    .event-info {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0.2em;
+      padding-top: 0.6em;
+      width: 60%;
+      position: relative;
+    }
+    .btn-container {
+      width: 25%;
+      padding: 0.6em 1em 0 0;
+    }
+    .title-container {
+      margin: 0 0;
+      width: 50%;
     }
     .event-datetime {
       flex-direction: column;
@@ -366,32 +382,39 @@ const Wrapper = styled.div`
     .time-container {
       width: 100%;
     }
-    .event-info {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 0.2em;
-      padding-top: 0.6em;
-    }
-    .btn-container {
-      padding: 0.6em 1em 0 0;
-    }
     .event-condition {
       width: 25%;
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
     }
-    .condition {
-      width: 100%;
+    .status {
+      display: none;
     }
-    .title-container {
-      margin: 0 0;
-      width: 50%;
+    .open-dropdown {
+      padding-bottom: 0 !important;
     }
-    .event-status {
-      position: absolute;
-      left: 39px;
-      bottom: -17px;
+    .open-dropdown .event-condition {
+      margin-top: 0;
     }
-    .down-icon {
+    .open-dropdown .status {
+      display: block;
+    }
+    /* .event-condition {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 25%;
+    } */
+    /* .event-status {
+      display: none;
+    } */
+    /* .open-dropdown .event-condition {
+      margin-top: 0;
+    } */
+    /* .open-dropdown .event-status {
+      display: flex;
+    } */
+    .open-dropdown .price-desc {
       display: none;
     }
   }
