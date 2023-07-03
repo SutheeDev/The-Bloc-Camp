@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import moment from "moment";
+import { useState } from "react";
 import {
   BiStar,
   BiCalendarEvent,
@@ -10,6 +11,8 @@ import {
 } from "react-icons/bi";
 
 const Event = ({ artist, performDateTime, featureImage }) => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
   let date = moment(performDateTime);
   let time = moment(performDateTime);
   let day = moment(performDateTime);
@@ -20,7 +23,13 @@ const Event = ({ artist, performDateTime, featureImage }) => {
 
   return (
     <Wrapper>
-      <div className="event-info-container open-dropdown">
+      <div
+        className={
+          showDropdown
+            ? "event-info-container open-dropdown"
+            : "event-info-container"
+        }
+      >
         <div className="event-img">
           <img src={featureImage} />
         </div>
@@ -41,7 +50,10 @@ const Event = ({ artist, performDateTime, featureImage }) => {
               <BiTime className="time-icon" />
               <p className="event-time">{time}</p>
             </div>
-            <BiChevronDown className="down-icon" />
+            <BiChevronDown
+              className="down-icon"
+              onClick={() => setShowDropdown(!showDropdown)}
+            />
           </div>
 
           <div className="event-condition">
@@ -88,7 +100,7 @@ const Wrapper = styled.div`
       0px 1.3px 1.8px rgba(0, 0, 0, 0.03), 0px 2.5px 3.3px rgba(0, 0, 0, 0.036),
       0px 6px 8px rgba(0, 0, 0, 0.05);
 
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
   }
   .event-info-container:hover {
     box-shadow: 0px 0.7px 1.7px rgba(0, 0, 0, 0.014),
@@ -143,7 +155,6 @@ const Wrapper = styled.div`
   .event-time {
     font-size: 0.85rem;
     font-weight: 400;
-    /* color: var(--grey-300); */
   }
   .time-icon,
   .calendar-icon,
@@ -165,7 +176,6 @@ const Wrapper = styled.div`
   }
   .time-icon {
     font-size: 1.15rem;
-    /* color: var(--grey-300); */
   }
   .title-container {
     font-size: 1rem;
@@ -247,7 +257,6 @@ const Wrapper = styled.div`
       position: relative;
     }
     .title-container {
-      /* font-size: 0.9rem; */
       border-bottom: none;
       padding-bottom: 0em;
       margin: 0.9em 0 0.6em 0;
@@ -265,25 +274,39 @@ const Wrapper = styled.div`
     }
     .event-condition {
       display: none;
+
+      transition: all 0.2s ease;
     }
     .down-icon {
       position: absolute;
-      bottom: 6px;
+      top: 43px;
       right: -141px;
       display: block;
       cursor: pointer;
       height: 24px;
       width: 24px;
       color: var(--grey-300);
+
+      transition: all 0.3s ease;
     }
-    /* .open-dropdown {
-      height: 300px;
+    .open-dropdown {
+      padding-bottom: 1.1em;
     }
     .open-dropdown .event-condition {
-      display: block;
-    } */
+      display: flex;
+      margin-top: 2em;
+    }
+    .open-dropdown .down-icon {
+      transform: rotate(180deg);
+    }
   }
   @media screen and (min-width: 1150px) {
+    .open-dropdown {
+      padding-bottom: 0 !important;
+    }
+    .open-dropdown .event-condition {
+      margin-top: 0;
+    }
     .event-img {
       width: 150px;
     }
@@ -304,10 +327,10 @@ const Wrapper = styled.div`
       justify-content: flex-start;
       align-items: flex-start;
       gap: 0.2em;
-      padding-top: 1.5em;
+      padding-top: 0.6em;
     }
     .btn-container {
-      padding: 1.5em 1em 0 0;
+      padding: 0.6em 1em 0 0;
     }
     .event-condition {
       width: 25%;
