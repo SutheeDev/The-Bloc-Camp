@@ -20,12 +20,10 @@ const Event = ({ artist, performDateTime, featureImage }) => {
 
   return (
     <Wrapper>
-      <div className="event-info-container">
+      <div className="event-info-container open-dropdown">
         <div className="event-img">
           <img src={featureImage} />
         </div>
-
-        <BiChevronDown className="down-icon" />
 
         <div className="event-info">
           <div className="title-container">
@@ -43,6 +41,7 @@ const Event = ({ artist, performDateTime, featureImage }) => {
               <BiTime className="time-icon" />
               <p className="event-time">{time}</p>
             </div>
+            <BiChevronDown className="down-icon" />
           </div>
 
           <div className="event-condition">
@@ -56,6 +55,7 @@ const Event = ({ artist, performDateTime, featureImage }) => {
                 <p>featured</p>
               </div>
             </div>
+
             <div className="event-status">
               <div className="status">upcoming</div>
             </div>
@@ -113,14 +113,12 @@ const Wrapper = styled.div`
   .event-datetime {
     display: flex;
     align-items: center;
+    margin-bottom: 0.6em;
   }
   .title-container {
     border-bottom: 1px solid var(--grey-100);
     padding-bottom: 0.9em;
     margin-bottom: 0.8em;
-  }
-  .event-datetime {
-    margin-bottom: 0.6em;
   }
   .event-daydate {
     width: 50%;
@@ -239,7 +237,6 @@ const Wrapper = styled.div`
       padding-bottom: 0;
       display: flex;
       align-items: flex-start;
-      position: relative;
     }
     .event-img {
       width: 25%;
@@ -247,6 +244,7 @@ const Wrapper = styled.div`
     .event-info {
       padding: 0 1em;
       flex-grow: 1;
+      position: relative;
     }
     .title-container {
       /* font-size: 0.9rem; */
@@ -270,13 +268,64 @@ const Wrapper = styled.div`
     }
     .down-icon {
       position: absolute;
-      bottom: 16px;
-      right: 8px;
+      bottom: 6px;
+      right: -141px;
       display: block;
       cursor: pointer;
       height: 24px;
       width: 24px;
       color: var(--grey-300);
+    }
+    /* .open-dropdown {
+      height: 300px;
+    }
+    .open-dropdown .event-condition {
+      display: block;
+    } */
+  }
+  @media screen and (min-width: 1150px) {
+    .event-img {
+      width: 150px;
+    }
+    .event-condition {
+      display: block;
+    }
+    .event-datetime {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 25%;
+    }
+    .event-daydate,
+    .time-container {
+      width: 100%;
+    }
+    .event-info {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0.2em;
+      padding-top: 1.5em;
+    }
+    .btn-container {
+      padding: 1.5em 1em 0 0;
+    }
+    .event-condition {
+      width: 25%;
+    }
+    .condition {
+      width: 100%;
+    }
+    .title-container {
+      margin: 0 0;
+      width: 50%;
+    }
+    .event-status {
+      position: absolute;
+      left: 39px;
+      bottom: -17px;
+    }
+    .down-icon {
+      display: none;
     }
   }
 `;
