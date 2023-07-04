@@ -57,6 +57,8 @@ const initialState = {
     "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
   published: false,
   featured: false,
+  status: "upcoming",
+  statusOptions: ["upcoming", "canceled", "sold out"],
 
   shows: [],
   totalShows: 0,
