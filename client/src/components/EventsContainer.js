@@ -27,7 +27,7 @@ const EventsContainer = () => {
   return (
     <Wrapper>
       <h2>
-        {totalShows} upcoming show{shows.length > 1 && "s"} found
+        {totalShows} upcoming show{shows.length > 1 && "s"}
       </h2>
       {shows.map((show) => {
         return <Event key={show._id} {...show} />;
@@ -37,4 +37,8 @@ const EventsContainer = () => {
 };
 export default EventsContainer;
 
-const Wrapper = styled.main``;
+const Wrapper = styled.main`
+  h2 {
+    text-transform: capitalize;
+  }
+`;
