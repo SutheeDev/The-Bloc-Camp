@@ -65,11 +65,20 @@ const Event = ({
             <div className="event-condition">
               <div className="condition">
                 <div className="published">
-                  <BiMessageSquareCheck className="check-icon" />
+                  {isPublished ? (
+                    <BiMessageSquareCheck className="check-icon" />
+                  ) : (
+                    <BiMessageSquareX className="x-icon" />
+                  )}
                   <p>published</p>
                 </div>
                 <div className="featured">
-                  <BiMessageSquareX className="x-icon" />
+                  {isFeatured ? (
+                    <BiMessageSquareCheck className="check-icon" />
+                  ) : (
+                    <BiMessageSquareX className="x-icon" />
+                  )}
+
                   <p>featured</p>
                 </div>
               </div>

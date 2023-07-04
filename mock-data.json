@@ -24,7 +24,7 @@
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
     "status": "upcoming",
-    "isPublished": true,
+    "isPublished": false,
     "isFeatured": false
   },
   {
@@ -39,7 +39,7 @@
     "createdBy": "6487ec18266092355ca71b05",
     "status": "upcoming",
     "isPublished": true,
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "artist": "amy wilcox",
@@ -52,8 +52,8 @@
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
     "status": "upcoming",
-    "isPublished": true,
-    "isFeatured": false
+    "isPublished": false,
+    "isFeatured": true
   },
   {
     "artist": "the arlington",
