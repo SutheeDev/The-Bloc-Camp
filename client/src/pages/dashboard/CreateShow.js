@@ -29,6 +29,7 @@ const CreateShow = () => {
     published,
     featured,
     createShow,
+    statusOptions,
   } = useAppContext();
 
   const handleInput = (e) => {
@@ -96,6 +97,23 @@ const CreateShow = () => {
               placeholder="ticket price"
               handleChange={handleInput}
             />
+
+            <div className="form-row form-row-status">
+              <label htmlFor="status" className="form-label">
+                status
+              </label>
+              <select
+                name="status"
+                id="status"
+                // placehodler="upcoming"
+                className="form-status"
+                onChange={handleInput}
+              >
+                {statusOptions.map((status, index) => {
+                  return <option key={index}>{status}</option>;
+                })}
+              </select>
+            </div>
 
             <div className="form-row-subcontainer">
               <DatePickerComponent name="performDate" selected={performDate} />
