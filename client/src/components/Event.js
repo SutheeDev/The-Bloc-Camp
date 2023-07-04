@@ -11,7 +11,15 @@ import {
   BiDollarCircle,
 } from "react-icons/bi";
 
-const Event = ({ artist, performDateTime, featureImage }) => {
+const Event = ({
+  artist,
+  artistInfo,
+  performDateTime,
+  featureImage,
+  isPublished,
+  isFeatured,
+  status,
+}) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   let date = moment(performDateTime);
