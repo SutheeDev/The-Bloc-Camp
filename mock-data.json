@@ -9,6 +9,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -22,6 +23,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -35,6 +37,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -48,6 +51,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -61,6 +65,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "canceled",
     "isPublished": true,
     "isFeatured": false
   },
@@ -74,6 +79,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -87,6 +93,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "sold out",
     "isPublished": true,
     "isFeatured": false
   },
@@ -100,6 +107,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -113,6 +121,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -126,6 +135,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -139,6 +149,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -152,6 +163,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -165,6 +177,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -178,6 +191,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -191,6 +205,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -204,6 +219,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -217,6 +233,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -230,6 +247,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "canceled",
     "isPublished": true,
     "isFeatured": false
   },
@@ -243,6 +261,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -256,6 +275,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -269,6 +289,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   },
@@ -282,6 +303,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "sold out",
     "isPublished": true,
     "isFeatured": false
   },
@@ -295,6 +317,7 @@
     "artistImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
     "featureImage": "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
     "createdBy": "6487ec18266092355ca71b05",
+    "status": "upcoming",
     "isPublished": true,
     "isFeatured": false
   }
