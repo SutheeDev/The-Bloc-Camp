@@ -19,6 +19,7 @@ const Event = ({
   isPublished,
   isFeatured,
   status,
+  ticketsPrice,
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -92,7 +93,7 @@ const Event = ({
           <div className="price-desc">
             <div className="price">
               <BiDollarCircle className="dollar-icon" />
-              <p>$50</p>
+              <p>${ticketsPrice}</p>
             </div>
             <div className="desc">{artistInfo}</div>
           </div>
@@ -228,18 +229,16 @@ const Wrapper = styled.div`
     text-align: center;
     padding: 0.6em 0.2em;
     border-radius: 3px;
+    color: var(--white);
   }
   .status.upcoming {
     background-color: var(--grey-300);
-    color: var(--white);
   }
   .status.canceled {
-    background-color: var(--grey-300);
-    color: var(--white);
+    background-color: var(--reddish);
   }
   .status.sold {
-    background-color: var(--grey-300);
-    color: var(--white);
+    background-color: var(--lighterBlue);
   }
   .btn-container {
     text-align: left;
