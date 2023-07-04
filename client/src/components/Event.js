@@ -35,42 +35,40 @@ const Event = ({ artist, performDateTime, featureImage }) => {
           <img src={featureImage} />
         </div>
 
-        <div className="event-info">
-          <div className="title-container">
-            <BiStar className="star-icon" />
-            <h3 className="artist-title">{artist}</h3>
-          </div>
-
-          <div className="event-datetime">
-            <div className="event-daydate">
-              <BiCalendarEvent className="calendar-icon" />
-              <p className="event-day">{day}</p>
-              <p className="event-date">{date}</p>
+        <div className="all-info">
+          <div className="event-info">
+            <div className="title-container">
+              <BiStar className="star-icon" />
+              <h3 className="artist-title">{artist}</h3>
             </div>
-            <div className="time-container">
-              <BiTime className="time-icon" />
-              <p className="event-time">{time}</p>
-            </div>
-            {/* <BiChevronDown
-              className="down-icon"
-              onClick={() => setShowDropdown(!showDropdown)}
-            /> */}
-          </div>
 
-          <div className="event-condition">
-            <div className="condition">
-              <div className="published">
-                <BiMessageSquareCheck className="check-icon" />
-                <p>published</p>
+            <div className="event-datetime">
+              <div className="event-daydate">
+                <BiCalendarEvent className="calendar-icon" />
+                <p className="event-day">{day}</p>
+                <p className="event-date">{date}</p>
               </div>
-              <div className="featured">
-                <BiMessageSquareX className="x-icon" />
-                <p>featured</p>
+              <div className="time-container">
+                <BiTime className="time-icon" />
+                <p className="event-time">{time}</p>
               </div>
             </div>
 
-            <div className="event-status">
-              <div className="status">upcoming</div>
+            <div className="event-condition">
+              <div className="condition">
+                <div className="published">
+                  <BiMessageSquareCheck className="check-icon" />
+                  <p>published</p>
+                </div>
+                <div className="featured">
+                  <BiMessageSquareX className="x-icon" />
+                  <p>featured</p>
+                </div>
+              </div>
+
+              <div className="event-status">
+                <div className="status">upcoming</div>
+              </div>
             </div>
           </div>
 
@@ -128,8 +126,11 @@ const Wrapper = styled.div`
   .down-icon {
     display: none;
   }
-  .event-info {
+  .all-info {
     padding: 1.2em 1em;
+  }
+  .event-info {
+    padding: 0 0 1.2em 0;
   }
   .event-img {
     display: flex;
@@ -217,10 +218,6 @@ const Wrapper = styled.div`
     padding: 0.6em 0.2em;
     border-radius: 3px;
   }
-  /* .price-desc {
-    display: flex;
-    align-items: flex-start;
-  } */
   .btn-container {
     text-align: left;
     padding: 0 1em;
@@ -261,10 +258,6 @@ const Wrapper = styled.div`
   .price {
     margin-bottom: 0.6em;
   }
-  /* .event-condition {
-    display: flex;
-    align-items: center;
-  } */
   .condition,
   .event-status,
   .price {
@@ -279,11 +272,10 @@ const Wrapper = styled.div`
     .event-img {
       width: 25%;
     }
-    .event-info {
+    .all-info {
       padding: 0 1em;
       flex-grow: 0;
       width: 50%;
-      /* position: relative; */
     }
     .title-container {
       border-bottom: none;
@@ -311,8 +303,6 @@ const Wrapper = styled.div`
     }
     .down-icon {
       position: absolute;
-      /* top: 43px;
-      right: -141px; */
       bottom: -27px;
       right: 8px;
       display: block;
@@ -330,20 +320,9 @@ const Wrapper = styled.div`
       display: flex;
       margin-top: 2em;
     }
-    /* .open-dropdown .price-desc {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .open-dropdown .desc {
-      width: 100%;
-    } */
     .open-dropdown .price-desc {
       display: block;
     }
-    /* .open-dropdown .desc {
-      display: none;
-    } */
     .open-dropdown .down-icon {
       transform: rotate(180deg);
     }
@@ -354,19 +333,22 @@ const Wrapper = styled.div`
   }
   @media screen and (min-width: 1150px) {
     .event-img {
-      width: 15%;
+      max-width: 140px;
+    }
+    .all-info {
+      width: 65%;
+      flex-grow: 1;
     }
     .event-info {
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
       gap: 0.2em;
-      padding-top: 0.6em;
-      width: 60%;
+      padding: 0.6em 0 0 0;
       position: relative;
     }
     .btn-container {
-      width: 25%;
+      width: 20%;
       padding: 0.6em 1em 0 0;
     }
     .title-container {
@@ -387,35 +369,34 @@ const Wrapper = styled.div`
       margin-top: 0;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
     }
-    .status {
+    .condition {
+      width: 100%;
+    }
+    .event-status {
       display: none;
-    }
-    .open-dropdown {
-      padding-bottom: 0 !important;
     }
     .open-dropdown .event-condition {
       margin-top: 0;
     }
-    .open-dropdown .status {
+    .open-dropdown .event-status {
       display: block;
+      position: absolute;
+      bottom: -23px;
+      left: 25px;
     }
-    /* .event-condition {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 25%;
-    } */
-    /* .event-status {
-      display: none;
-    } */
-    /* .open-dropdown .event-condition {
-      margin-top: 0;
-    } */
-    /* .open-dropdown .event-status {
-      display: flex;
-    } */
     .open-dropdown .price-desc {
-      display: none;
+      margin-top: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .open-dropdown .price {
+    }
+    .open-dropdown .desc {
+      width: 50%;
     }
   }
 `;
