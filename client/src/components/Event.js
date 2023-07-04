@@ -84,7 +84,7 @@ const Event = ({
               </div>
 
               <div className="event-status">
-                <div className="status">upcoming</div>
+                <div className={`status ${status}`}>{status}</div>
               </div>
             </div>
           </div>
@@ -94,11 +94,7 @@ const Event = ({
               <BiDollarCircle className="dollar-icon" />
               <p>$50</p>
             </div>
-            <div className="desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              necessitatibus illum suscipit asperiores ab maiores unde
-              voluptates. Ducimus, quam harum.
-            </div>
+            <div className="desc">{artistInfo}</div>
           </div>
         </div>
 
@@ -226,14 +222,24 @@ const Wrapper = styled.div`
   }
   .status {
     text-transform: capitalize;
-    background-color: var(--grey-300);
-    color: var(--white);
     width: 60%;
     min-width: 90px;
     max-width: 140px;
     text-align: center;
     padding: 0.6em 0.2em;
     border-radius: 3px;
+  }
+  .status.upcoming {
+    background-color: var(--grey-300);
+    color: var(--white);
+  }
+  .status.canceled {
+    background-color: var(--grey-300);
+    color: var(--white);
+  }
+  .status.sold {
+    background-color: var(--grey-300);
+    color: var(--white);
   }
   .btn-container {
     text-align: left;
