@@ -55,6 +55,11 @@ const ShowSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    status: {
+      type: String,
+      enum: ["upcoming", "canceled", "sold out"],
+      default: "upcoming",
+    },
   },
   { timestamps: true }
 );
