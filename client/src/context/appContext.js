@@ -314,6 +314,14 @@ const AppProvider = ({ children }) => {
     hideMessage();
   };
 
+  const setEditShow = (id) => {
+    console.log(`set edit show: ${id}`);
+  };
+
+  const deleteShow = (id) => {
+    console.log(`delete show: ${id}`);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -329,6 +337,8 @@ const AppProvider = ({ children }) => {
         uploadImage,
         createShow,
         getShows,
+        setEditShow,
+        deleteShow,
       }}
     >
       {children}
