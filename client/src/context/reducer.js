@@ -201,6 +201,37 @@ const reducer = (state, action) => {
       numOfPages: action.payload.numOfPages,
     };
   }
+  if (action.type === SET_EDIT_SHOW) {
+    const show = state.shows.find((show) => show._id === action.payload.id);
+    const {
+      _id,
+      artist,
+      artistInfo,
+      artistImage,
+      featureImage,
+      isFeatured,
+      isPublished,
+      performDate,
+      performTime,
+      status,
+      ticketsPrice,
+    } = show;
+    return {
+      ...state,
+      isEditing: true,
+      editShowId: _id,
+      artist,
+      artistInfo,
+      artistImage,
+      featureImage,
+      isFeatured,
+      isPublished,
+      performDate,
+      performTime,
+      status,
+      ticketsPrice,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

@@ -45,7 +45,7 @@ const initialState = {
   showSidebar: false,
 
   isEditing: false,
-  editJobId: "",
+  editShowId: "",
   artist: "",
   artistInfo: "",
   ticketPrice: 50,
@@ -317,6 +317,7 @@ const AppProvider = ({ children }) => {
 
   const setEditShow = (id) => {
     console.log(`set edit show: ${id}`);
+    dispatch({ type: SET_EDIT_SHOW, payload: { id } });
   };
 
   const deleteShow = (id) => {
