@@ -30,6 +30,7 @@ const CreateShow = () => {
     featured,
     createShow,
     statusOptions,
+    status,
   } = useAppContext();
 
   const handleInput = (e) => {
@@ -105,12 +106,16 @@ const CreateShow = () => {
               <select
                 name="status"
                 id="status"
-                // placehodler="upcoming"
-                className="form-status"
+                placehodler="click to select a status"
+                className="form-input form-status"
                 onChange={handleInput}
               >
                 {statusOptions.map((status, index) => {
-                  return <option key={index}>{status}</option>;
+                  return (
+                    <option key={index} className="form-options">
+                      {status}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -208,6 +213,13 @@ const Wrapper = styled.div`
     color: var(--darkBlue);
     background-color: var(--grey-100);
   }
+  .form-status {
+    text-transform: capitalize;
+    /* color: var(--grey-200); */
+  }
+  /* .form-options {
+    text-transform: capitalize;
+  } */
   textarea::placeholder {
     text-transform: capitalize;
   }
