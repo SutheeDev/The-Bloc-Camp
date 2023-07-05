@@ -23,6 +23,7 @@ import SearchContainer from "./SearchContainer";
 import EventsContainer from "./EventsContainer";
 import Event from "./Event";
 import Loading from "./Loading";
+import FormRowSelect from "./FormRowSelect";
 
 export {
   Navbar,
@@ -50,4 +51,5 @@ export {
   EventsContainer,
   Event,
   Loading,
+  FormRowSelect,
 };

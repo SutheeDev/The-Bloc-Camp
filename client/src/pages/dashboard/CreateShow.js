@@ -7,6 +7,7 @@ import {
   FormFileUpload,
   DatePickerComponent,
   TimePickerComponent,
+  FormRowSelect,
 } from "../../components";
 import { useState } from "react";
 import moment from "moment";
@@ -99,26 +100,12 @@ const CreateShow = () => {
               handleChange={handleInput}
             />
 
-            <div className="form-row form-row-status">
-              <label htmlFor="status" className="form-label">
-                status
-              </label>
-              <select
-                name="status"
-                id="status"
-                placehodler="click to select a status"
-                className="form-input form-status"
-                onChange={handleInput}
-              >
-                {statusOptions.map((status, index) => {
-                  return (
-                    <option key={index} className="form-options">
-                      {status}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
+            <FormRowSelect
+              name="status"
+              placeholder="click to select a status"
+              handleChange={handleInput}
+              list={statusOptions}
+            />
 
             <div className="form-row-subcontainer">
               <DatePickerComponent name="performDate" selected={performDate} />
@@ -215,11 +202,7 @@ const Wrapper = styled.div`
   }
   .form-status {
     text-transform: capitalize;
-    /* color: var(--grey-200); */
   }
-  /* .form-options {
-    text-transform: capitalize;
-  } */
   textarea::placeholder {
     text-transform: capitalize;
   }
