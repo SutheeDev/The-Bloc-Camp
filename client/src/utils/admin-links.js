@@ -26,6 +26,12 @@ const adminLinks = [
   },
   {
     id: 3,
+    text: "Edit Show",
+    path: "/admin-dashboard/create-show",
+    icon: <BiInfoSquare />,
+  },
+  {
+    id: 4,
     text: "Profile",
     path: "/admin-dashboard/profile",
     icon: <BiBookContent />,

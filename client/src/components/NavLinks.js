@@ -1,28 +1,57 @@
 import adminLinks from "../utils/admin-links";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { useAppContext } from "../context/appContext";
 
 const NavLinks = ({ toggleSidebar }) => {
-  return (
-    <Wrapper className="nav-links">
-      {adminLinks.map((link) => {
-        const { text, path, icon, id } = link;
-        return (
-          <NavLink
-            key={id}
-            to={path}
-            onClick={toggleSidebar}
-            // Utilize isActive property to highlight an active link
-            className={({ isActive }) => (isActive ? "link active" : "link")}
-            end
-          >
-            <div className="link-icon">{icon}</div>
-            {text}
-          </NavLink>
-        );
-      })}
-    </Wrapper>
-  );
+  const { isEditing } = useAppContext();
+
+  if (isEditing) {
+    return (
+      <Wrapper className="nav-links">
+        {adminLinks.map((link) => {
+          const { text, path, icon, id } = link;
+
+          return (
+            <NavLink
+              key={id}
+              to={path}
+              onClick={toggleSidebar}
+              // Utilize isActive property to highlight an active link
+              className={({ isActive }) => (isActive ? "link active" : "link")}
+              end
+            >
+              <div className="link-icon">{icon}</div>
+              {text}
+            </NavLink>
+          );
+        })}
+      </Wrapper>
+    );
+  } else {
+    const filterLinks = adminLinks.filter((link) => link.text !== "Edit Show");
+    return (
+      <Wrapper className="nav-links">
+        {filterLinks.map((link) => {
+          const { text, path, icon, id } = link;
+
+          return (
+            <NavLink
+              key={id}
+              to={path}
+              onClick={toggleSidebar}
+              // Utilize isActive property to highlight an active link
+              className={({ isActive }) => (isActive ? "link active" : "link")}
+              end
+            >
+              <div className="link-icon">{icon}</div>
+              {text}
+            </NavLink>
+          );
+        })}
+      </Wrapper>
+    );
+  }
 };
 export default NavLinks;
 
