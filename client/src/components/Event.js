@@ -10,6 +10,8 @@ import {
   BiChevronDown,
   BiDollarCircle,
 } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import { useAppContext } from "../context/appContext";
 
 const Event = ({
   artist,
@@ -21,6 +23,7 @@ const Event = ({
   status,
   ticketsPrice,
 }) => {
+  const { setEditShow, deleteShow } = useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
 
   let date = moment(performDateTime);
