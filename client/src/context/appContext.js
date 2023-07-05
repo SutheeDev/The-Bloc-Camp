@@ -316,7 +316,6 @@ const AppProvider = ({ children }) => {
   };
 
   const setEditShow = (id) => {
-    console.log(`set edit show: ${id}`);
     dispatch({ type: SET_EDIT_SHOW, payload: { id } });
   };
 
