@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
 
 const Event = ({
+  _id,
   artist,
   artistInfo,
   performDateTime,
@@ -103,10 +104,18 @@ const Event = ({
         </div>
 
         <div className="btn-container">
-          <button type="button" className="btn edit-btn">
+          <Link
+            to="/admin-dashboard/create-show"
+            className="btn edit-btn"
+            onClick={() => setEditShow(_id)}
+          >
             edit
-          </button>
-          <button type="button" className="btn del-btn">
+          </Link>
+          <button
+            type="button"
+            className="btn del-btn"
+            onClick={() => deleteShow(_id)}
+          >
             delete
           </button>
           <BiChevronDown
