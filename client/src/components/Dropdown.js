@@ -55,6 +55,7 @@ export default Dropdown;
 const Wrapper = styled.div`
   .dropdown {
     position: relative;
+    z-index: 50;
   }
   .dropdown-user {
     display: flex;
