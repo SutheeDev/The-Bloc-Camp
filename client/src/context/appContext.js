@@ -26,6 +26,7 @@ import {
   CREATE_SHOW_ERROR,
   GET_SHOWS_BEGIN,
   GET_SHOWS_SUCCESS,
+  SET_EDIT_SHOW,
 } from "./actions";
 import moment from "moment";
 

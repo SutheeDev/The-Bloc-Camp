@@ -29,3 +29,5 @@ export const CREATE_SHOW_ERROR = "CREATE_SHOW_ERROR";
 
 export const GET_SHOWS_BEGIN = "GET_SHOWS_BEGIN";
 export const GET_SHOWS_SUCCESS = "GET_SHOWS_SUCCESS";
+
+export const SET_EDIT_SHOW = "SET_EDIT_SHOW";
