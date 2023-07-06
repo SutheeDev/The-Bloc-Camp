@@ -12,7 +12,7 @@ import {
 import { useState } from "react";
 import moment from "moment";
 
-const CreateShow = () => {
+const EditShow = () => {
   const {
     isLoading,
     handleInputChange,
@@ -22,9 +22,10 @@ const CreateShow = () => {
     isEditing,
     artist,
     artistInfo,
-    ticketPrice,
+    ticketsPrice,
     performDate,
     performTime,
+    performDateTime,
     artistImage,
     featureImage,
     published,
@@ -48,7 +49,7 @@ const CreateShow = () => {
     //   return;
     // }
 
-    createShow();
+    // createShow();
   };
 
   const handleImageChange = (e) => {
@@ -63,7 +64,7 @@ const CreateShow = () => {
   return (
     <Wrapper>
       <form className="form" onSubmit={handleSubmit}>
-        <h3 className="form-title">create show</h3>
+        <h3 className="form-title">edit show</h3>
         {showMessage && <Message />}
         <div className="form-content">
           <div className="form-row-container">
@@ -74,6 +75,7 @@ const CreateShow = () => {
               placeholder="artist name"
               handleChange={handleInput}
               required
+              value={artist}
             />
 
             <div className="form-row form-row-desc">
@@ -87,6 +89,7 @@ const CreateShow = () => {
                 placeholder="artist info"
                 className="form-desc"
                 onChange={handleInput}
+                value={artistInfo}
               ></textarea>
             </div>
 
@@ -96,6 +99,7 @@ const CreateShow = () => {
               labelText="ticket price"
               placeholder="ticket price"
               handleChange={handleInput}
+              value={ticketsPrice}
             />
 
             <FormRowSelect
@@ -103,10 +107,14 @@ const CreateShow = () => {
               placeholder="click to select a status"
               handleChange={handleInput}
               list={statusOptions}
+              value={status}
             />
 
             <div className="form-row-subcontainer">
-              <DatePickerComponent name="performDate" selected={performDate} />
+              <DatePickerComponent
+                name="performDate"
+                selected={performDateTime}
+              />
               <TimePickerComponent name="performTime" selected={performTime} />
             </div>
 
@@ -144,7 +152,7 @@ const CreateShow = () => {
     </Wrapper>
   );
 };
-export default CreateShow;
+export default EditShow;
 
 const Wrapper = styled.div`
   color: var(--black);

@@ -213,11 +213,12 @@ const reducer = (state, action) => {
       isPublished,
       performDate,
       performTime,
+      performDateTime,
       status,
       ticketsPrice,
     } = show;
-    console.log(performDate);
     console.log(performTime);
+    // console.log(performDateTime);
     return {
       ...state,
       isEditing: true,
@@ -228,8 +229,9 @@ const reducer = (state, action) => {
       featureImage,
       isFeatured,
       isPublished,
-      // performDate,
+      performDate,
       // performTime,
+      // performDateTime,
       status,
       ticketsPrice,
     };
