@@ -118,23 +118,31 @@ const EditShow = () => {
               <TimePickerComponent name="performTime" selected={performTime} />
             </div>
 
-            <FormFileUpload
-              type="file"
-              name="artistImage"
-              labelText="thumbnail image"
-              id="artistImage"
-              accept="image/*"
-              handleChange={handleImageChange}
-            />
+            <div className="image-uploader artist">
+              <img src={artistImage} alt="artist" />
+              <FormFileUpload
+                type="file"
+                name="artistImage"
+                labelText="current thumbnail image"
+                id="artistImage"
+                accept="image/*"
+                handleChange={handleImageChange}
+                // value={artistImage}
+              />
+            </div>
 
-            <FormFileUpload
-              type="file"
-              name="featureImage"
-              labelText="featured image"
-              id="featureImage"
-              accept="image/*"
-              handleChange={handleImageChange}
-            />
+            <div className="image-uploader feature">
+              <img src={featureImage} alt="featured" />
+              <FormFileUpload
+                type="file"
+                name="featureImage"
+                labelText="current featured image"
+                id="featureImage"
+                accept="image/*"
+                handleChange={handleImageChange}
+              />
+            </div>
+
             <ToggleSwitch text="publish on site?" name="published" />
             <ToggleSwitch text="featured show?" name="featured" />
             <div className="btn-container">
@@ -208,9 +216,27 @@ const Wrapper = styled.div`
   textarea::placeholder {
     text-transform: capitalize;
   }
+  .image-uploader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1em;
+  }
+  .image-uploader.artist img {
+    width: 76px;
+  }
+  .image-uploader.feature img {
+    width: 100px;
+  }
+  .image-uploader.artist {
+    margin-bottom: 25px;
+  }
   @media screen and (min-width: 450px) {
     .form-desc {
       margin: 10px 0 25px 0;
+    }
+    .image-uploader img {
+      width: 135px;
     }
   }
   @media screen and (min-width: 950px) {
