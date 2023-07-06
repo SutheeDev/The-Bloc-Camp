@@ -151,6 +151,7 @@ const Wrapper = styled.div`
   .form-input {
     border: none;
     background-color: var(--grey-100);
+    text-transform: capitalize;
   }
   .form-input::placeholder {
     text-transform: capitalize;
