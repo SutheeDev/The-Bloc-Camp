@@ -1,3 +1,4 @@
+import { parse } from "date-fns";
 import {
   SHOW_MESSAGE,
   HIDE_MESSAGE,
@@ -25,6 +26,8 @@ import {
 } from "./actions";
 
 import { initialState } from "./appContext";
+// import moment from "moment";
+import { parseISO } from "date-fns";
 
 const reducer = (state, action) => {
   if (action.type === SHOW_MESSAGE) {
@@ -217,8 +220,8 @@ const reducer = (state, action) => {
       status,
       ticketsPrice,
     } = show;
-    console.log(performTime);
-    // console.log(performDateTime);
+    const parsedPerformTime = parseISO(performTime);
+    const parsedPerformDateTime = parseISO(performDateTime);
     return {
       ...state,
       isEditing: true,
@@ -230,8 +233,8 @@ const reducer = (state, action) => {
       isFeatured,
       isPublished,
       performDate,
-      // performTime,
-      // performDateTime,
+      performTime: parsedPerformTime,
+      performDateTime: parsedPerformDateTime,
       status,
       ticketsPrice,
     };
