@@ -4,7 +4,7 @@ import { BiCheck } from "react-icons/bi";
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 
-const ToggleSwitch = ({ text, name }) => {
+const ToggleSwitch = ({ text, name, checked, onChange }) => {
   const { handleInputChange } = useAppContext();
 
   const handleSwitchChange = (checked) => {
@@ -24,6 +24,9 @@ const ToggleSwitch = ({ text, name }) => {
           checkedChildren={<BiCheck />}
           unCheckedChildren={<FiX />}
           onChange={handleSwitchChange}
+          // onChange={onChange}
+          checked={checked}
+          onClick={!checked}
         />
       </div>
     </Wrapper>

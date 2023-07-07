@@ -144,8 +144,19 @@ const EditShow = () => {
               />
             </div>
 
-            <ToggleSwitch text="publish on site?" name="published" />
-            <ToggleSwitch text="featured show?" name="featured" />
+            <ToggleSwitch
+              text="publish on site?"
+              name="published"
+              checked={published}
+              // onChange={handleInput}
+              onClick={handleInput}
+            />
+            <ToggleSwitch
+              text="featured show?"
+              name="featured"
+              checked={featured}
+              // onChange={handleInput}
+            />
             <div className="btn-container">
               <button
                 type="submit"

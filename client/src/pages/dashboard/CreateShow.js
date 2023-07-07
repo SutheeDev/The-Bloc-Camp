@@ -106,8 +106,16 @@ const CreateShow = () => {
             />
 
             <div className="form-row-subcontainer">
-              <DatePickerComponent name="performDate" selected={performDate} />
-              <TimePickerComponent name="performTime" selected={performTime} />
+              <DatePickerComponent
+                name="performDate"
+                selected={performDate}
+                // onChange={handleInput}
+              />
+              <TimePickerComponent
+                name="performTime"
+                selected={performTime}
+                // onChange={handleInput}
+              />
             </div>
 
             <FormFileUpload
