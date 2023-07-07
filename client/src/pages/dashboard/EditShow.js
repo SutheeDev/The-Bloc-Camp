@@ -119,7 +119,9 @@ const EditShow = () => {
             </div>
 
             <div className="image-uploader artist">
-              <img src={artistImage} alt="artist" />
+              <div className="artist-image">
+                <img src={artistImage} alt="artist" />
+              </div>
               <FormFileUpload
                 type="file"
                 name="artistImage"
@@ -218,24 +220,48 @@ const Wrapper = styled.div`
   }
   .image-uploader {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 1em;
   }
+  .artist-image {
+    width: 100%;
+    height: 200px;
+    background-color: var(--grey-100);
+    display: flex;
+    justify-content: center;
+  }
   .image-uploader.artist img {
-    width: 76px;
+    max-height: 100%;
   }
+
   .image-uploader.feature img {
-    width: 100px;
+    width: 100%;
   }
-  .image-uploader.artist {
-    margin-bottom: 25px;
+  .form-row-subcontainer,
+  .image-uploader {
+    margin-bottom: 8px;
   }
   @media screen and (min-width: 450px) {
     .form-desc {
       margin: 10px 0 25px 0;
     }
-    .image-uploader img {
+    .image-uploader {
+      flex-direction: row;
+    }
+    .form-row-subcontainer,
+    .image-uploader {
+      margin-bottom: 0;
+    }
+    .artist-image {
+      max-width: 135px;
+      height: 76px;
+    }
+    .image-uploader.artist img {
+      width: 76px;
+    }
+    .image-uploader.feature img {
       width: 135px;
     }
   }
