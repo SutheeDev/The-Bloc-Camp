@@ -7,7 +7,6 @@ const FormFileUpload = ({
   handleChange,
   labelText,
   id,
-  value,
 }) => {
   return (
     <Wrapper className="form-row">
@@ -21,7 +20,6 @@ const FormFileUpload = ({
         id={id}
         onChange={handleChange}
         className="form-upload"
-        value={value}
       />
     </Wrapper>
   );

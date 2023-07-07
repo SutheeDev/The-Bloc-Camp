@@ -129,7 +129,6 @@ const EditShow = () => {
                 id="artistImage"
                 accept="image/*"
                 handleChange={handleImageChange}
-                // value={artistImage}
               />
             </div>
 

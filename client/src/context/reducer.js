@@ -212,8 +212,8 @@ const reducer = (state, action) => {
       artistInfo,
       artistImage,
       featureImage,
-      isFeatured,
       isPublished,
+      isFeatured,
       performDate,
       performTime,
       performDateTime,
@@ -222,6 +222,8 @@ const reducer = (state, action) => {
     } = show;
     const parsedPerformTime = parseISO(performTime);
     const parsedPerformDateTime = parseISO(performDateTime);
+    const published = isPublished.toString();
+    const featured = isFeatured.toString();
     return {
       ...state,
       isEditing: true,
@@ -230,8 +232,10 @@ const reducer = (state, action) => {
       artistInfo,
       artistImage,
       featureImage,
-      isFeatured,
+      published: published,
       isPublished,
+      featured: featured,
+      isFeatured,
       performDate: parsedPerformDateTime,
       performTime: parsedPerformDateTime,
       performDateTime: parsedPerformDateTime,
