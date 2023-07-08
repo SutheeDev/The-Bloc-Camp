@@ -319,6 +319,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: SET_EDIT_SHOW, payload: { id } });
   };
 
+  const editShow = () => {
+    console.log("edit show");
+  };
+
   const deleteShow = (id) => {
     console.log(`delete show: ${id}`);
   };
@@ -339,6 +343,7 @@ const AppProvider = ({ children }) => {
         createShow,
         getShows,
         setEditShow,
+        editShow,
         deleteShow,
       }}
     >

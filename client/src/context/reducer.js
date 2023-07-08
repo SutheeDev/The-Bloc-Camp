@@ -214,16 +214,11 @@ const reducer = (state, action) => {
       featureImage,
       isPublished,
       isFeatured,
-      performDate,
-      performTime,
       performDateTime,
       status,
       ticketsPrice,
     } = show;
-    const parsedPerformTime = parseISO(performTime);
     const parsedPerformDateTime = parseISO(performDateTime);
-    const published = isPublished.toString();
-    const featured = isFeatured.toString();
     return {
       ...state,
       isEditing: true,

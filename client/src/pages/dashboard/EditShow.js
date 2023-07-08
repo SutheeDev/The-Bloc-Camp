@@ -33,6 +33,7 @@ const EditShow = () => {
     createShow,
     statusOptions,
     status,
+    editShow,
   } = useAppContext();
 
   const [publish, setPublish] = useState(published);
@@ -52,7 +53,7 @@ const EditShow = () => {
     //   return;
     // }
 
-    // createShow();
+    editShow();
   };
 
   const handleImageChange = (e) => {
@@ -162,8 +163,9 @@ const EditShow = () => {
                 type="submit"
                 className="btn update-btn"
                 disabled={isLoading}
+                onClick={handleSubmit}
               >
-                submit
+                save changes
               </button>
             </div>
           </div>
