@@ -35,6 +35,9 @@ const EditShow = () => {
     status,
   } = useAppContext();
 
+  const [publish, setPublish] = useState(published);
+  const [feature, setFeature] = useState(featured);
+
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -147,15 +150,12 @@ const EditShow = () => {
             <ToggleSwitch
               text="publish on site?"
               name="published"
-              checked={published}
-              // onChange={handleInput}
-              onClick={handleInput}
+              defaultChecked={published}
             />
             <ToggleSwitch
               text="featured show?"
               name="featured"
-              checked={featured}
-              // onChange={handleInput}
+              defaultChecked={featured}
             />
             <div className="btn-container">
               <button
