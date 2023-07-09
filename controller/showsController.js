@@ -29,7 +29,20 @@ const getAllShows = async (req, res) => {
 };
 
 const updateShow = async (req, res) => {
-  res.send("Update Show Route");
+  const { id: showId } = req.params;
+
+  const {
+    artist,
+    artistInfo,
+    ticketPrice,
+    status,
+    performDate,
+    performTime,
+    artistImage,
+    featureImage,
+    published,
+    featured,
+  } = req.body;
 };
 const deleteShow = async (req, res) => {
   res.send("Delete Show Route");

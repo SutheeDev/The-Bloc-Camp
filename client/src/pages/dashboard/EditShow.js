@@ -23,6 +23,7 @@ const EditShow = () => {
     artist,
     artistInfo,
     ticketsPrice,
+    ticketPrice,
     performDate,
     performTime,
     performDateTime,
@@ -103,7 +104,7 @@ const EditShow = () => {
               labelText="ticket price"
               placeholder="ticket price"
               handleChange={handleInput}
-              value={ticketsPrice}
+              value={ticketPrice}
             />
 
             <FormRowSelect

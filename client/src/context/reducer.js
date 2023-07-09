@@ -236,6 +236,7 @@ const reducer = (state, action) => {
       performDateTime: parsedPerformDateTime,
       status,
       ticketsPrice,
+      ticketPrice: ticketsPrice,
     };
   }
   throw new Error(`No such action: ${action.type}`);
