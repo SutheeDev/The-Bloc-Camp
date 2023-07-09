@@ -5,7 +5,7 @@ import {
   UnauthenticatedError,
 } from "../errors/index.js";
 import { StatusCodes } from "http-status-codes";
-import { checkPermission } from "../utils/checkPermission.js";
+import checkPermission from "../utils/checkPermission.js";
 
 const createShow = async (req, res) => {
   const { artist, performDate, performTime } = req.body;
@@ -50,7 +50,7 @@ const updateShow = async (req, res) => {
     throw new NotFoundError(`no show with id: ${showId}`);
   }
 
-  // checkPermission(req.user);
+  checkPermission(req.user);
 
   const updatedShow = await Show.findOneAndUpdate({ _id: showId }, req.body, {
     new: true,
