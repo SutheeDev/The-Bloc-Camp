@@ -31,19 +31,32 @@ const getAllShows = async (req, res) => {
 const updateShow = async (req, res) => {
   const { id: showId } = req.params;
 
-  const {
-    artist,
-    artistInfo,
-    ticketPrice,
-    status,
-    performDate,
-    performTime,
-    artistImage,
-    featureImage,
-    published,
-    featured,
-  } = req.body;
+  const { artist, performDate, performTime, artistImage, featureImage } =
+    req.body;
+
+  if (
+    !artist ||
+    !performDate ||
+    !performTime ||
+    !artistImage ||
+    !featureImage
+  ) {
+    throw new BadRequestError("Please provide all required fields!");
+  }
+
+  const show = await Show.findOne({ _id: showId });
+  if (!show) {
+    throw new NotFoundError(`no show with id: ${showId}`);
+  }
+
+  const updatedShow = await Show.findOneAndUpdate({ _id: showId }, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  res.status(StatusCodes.OK).json({ updatedShow });
 };
+
 const deleteShow = async (req, res) => {
   res.send("Delete Show Route");
 };
