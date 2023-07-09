@@ -61,7 +61,20 @@ const updateShow = async (req, res) => {
 };
 
 const deleteShow = async (req, res) => {
-  res.send("Delete Show Route");
+  const { id: showId } = req.params;
+
+  const show = await Show.findOne({ _id: showId });
+  if (!show) {
+    throw new NotFoundError(`no show with id: ${showId}`);
+  }
+
+  checkPermission(req.user);
+
+  // await show.remove();
+
+  res
+    .status(StatusCodes.OK)
+    .json({ msg: `the ${show.artist} show has been removed` });
 };
 
 export { createShow, getAllShows, updateShow, deleteShow };
