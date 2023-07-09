@@ -116,10 +116,7 @@ const EditShow = () => {
             />
 
             <div className="form-row-subcontainer">
-              <DatePickerComponent
-                name="performDate"
-                selected={performDateTime}
-              />
+              <DatePickerComponent name="performDate" selected={performDate} />
               <TimePickerComponent name="performTime" selected={performTime} />
             </div>
 
