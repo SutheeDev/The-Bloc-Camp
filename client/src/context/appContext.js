@@ -323,8 +323,43 @@ const AppProvider = ({ children }) => {
     dispatch({ type: SET_EDIT_SHOW, payload: { id } });
   };
 
-  const editShow = () => {
-    console.log("edit show");
+  const editShow = async () => {
+    dispatch({ type: EDIT_SHOW_BEGIN });
+    try {
+      const {
+        artist,
+        artistInfo,
+        ticketPrice,
+        status,
+        performDate,
+        performTime,
+        artistImage,
+        featureImage,
+        published,
+        featured,
+      } = state;
+      await authFetch.patch(`/shows/${state.editShowId}`, {
+        artist,
+        artistInfo,
+        ticketPrice,
+        status,
+        performDate,
+        performTime,
+        artistImage,
+        featureImage,
+        published,
+        featured,
+      });
+      dispatch({ type: EDIT_SHOW_SUCCESS });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: EDIT_SHOW_ERROR,
+        payload: {
+          msg: error.response.data.msg,
+        },
+      });
+    }
   };
 
   const deleteShow = async (id) => {
