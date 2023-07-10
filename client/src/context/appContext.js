@@ -27,6 +27,7 @@ import {
   GET_SHOWS_BEGIN,
   GET_SHOWS_SUCCESS,
   SET_EDIT_SHOW,
+  DELETE_SHOW_BEGIN,
 } from "./actions";
 import moment from "moment";
 
