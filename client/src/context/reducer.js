@@ -249,6 +249,27 @@ const reducer = (state, action) => {
       isLoading: true,
     };
   }
+  if (action.type === CLEAR_VALUES) {
+    const initialState = {
+      isEditing: false,
+      editShowId: "",
+      artist: "",
+      artistInfo: "",
+      ticketPrice: 50,
+      performDate: "",
+      performTime: "",
+      performDateTime: "",
+      artistImage: "",
+      featureImage: "",
+      published: false,
+      featured: false,
+      status: "",
+    };
+    return {
+      ...state,
+      ...initialState,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

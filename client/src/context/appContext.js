@@ -374,6 +374,10 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const clearValues = () => {
+    dispatch({ type: CLEAR_VALUES });
+  };
+
   return (
     <AppContext.Provider
       value={{
