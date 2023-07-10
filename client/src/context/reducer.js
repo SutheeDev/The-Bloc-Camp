@@ -1,4 +1,3 @@
-import { parse } from "date-fns";
 import {
   SHOW_MESSAGE,
   HIDE_MESSAGE,
@@ -26,7 +25,6 @@ import {
 } from "./actions";
 
 import { initialState } from "./appContext";
-// import moment from "moment";
 import { parseISO } from "date-fns";
 
 const reducer = (state, action) => {
@@ -192,6 +190,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: true,
+      isEditing: false,
       showMessage: false,
     };
   }

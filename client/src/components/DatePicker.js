@@ -2,7 +2,6 @@ import DatePicker, { CalendarContainer } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
-import moment from "moment";
 
 const DatePickerComponent = ({ selected, name }) => {
   const { handleInputChange } = useAppContext();

@@ -9,8 +9,6 @@ import {
   TimePickerComponent,
   FormRowSelect,
 } from "../../components";
-import { useState } from "react";
-import moment from "moment";
 
 const CreateShow = () => {
   const {
@@ -21,17 +19,10 @@ const CreateShow = () => {
     uploadImage,
     isEditing,
     artist,
-    artistInfo,
-    ticketPrice,
     performDate,
     performTime,
-    artistImage,
-    featureImage,
-    published,
-    featured,
     createShow,
     statusOptions,
-    status,
   } = useAppContext();
 
   const handleInput = (e) => {
