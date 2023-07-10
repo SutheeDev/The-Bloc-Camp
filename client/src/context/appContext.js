@@ -400,6 +400,7 @@ const AppProvider = ({ children }) => {
         setEditShow,
         editShow,
         deleteShow,
+        clearValues,
       }}
     >
       {children}

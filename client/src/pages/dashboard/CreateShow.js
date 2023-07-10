@@ -22,10 +22,13 @@ const CreateShow = () => {
     artistInfo,
     ticketPrice,
     status,
+    published,
+    featured,
     performDate,
     performTime,
     createShow,
     statusOptions,
+    clearValues,
   } = useAppContext();
 
   const handleInput = (e) => {
@@ -56,7 +59,7 @@ const CreateShow = () => {
 
   return (
     <Wrapper>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form">
         <h3 className="form-title">create show</h3>
         {showMessage && <Message />}
         <div className="form-content">
@@ -125,13 +128,31 @@ const CreateShow = () => {
               accept="image/*"
               handleChange={handleImageChange}
             />
-            <ToggleSwitch text="publish on site?" name="published" />
-            <ToggleSwitch text="featured show?" name="featured" />
+            <ToggleSwitch
+              text="publish on site?"
+              name="published"
+              defaultChecked={published}
+            />
+            <ToggleSwitch
+              text="featured show?"
+              name="featured"
+              defaultChecked={featured}
+            />
             <div className="btn-container">
+              <button
+                className="btn clear-btn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  clearValues();
+                }}
+              >
+                clear all
+              </button>
               <button
                 type="submit"
                 className="btn update-btn"
                 disabled={isLoading}
+                onClick={handleSubmit}
               >
                 submit
               </button>
@@ -172,11 +193,16 @@ const Wrapper = styled.div`
     border: 3px solid var(--darkBlue);
     background-color: var(--darkBlue);
   }
-  .update-btn {
-    margin-top: 1.5em;
-  }
   .btn-container {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .update-btn,
+  .clear-btn {
+    margin-top: 1.5em;
+    width: 100%;
   }
   .switch-container {
     display: flex;
@@ -201,6 +227,18 @@ const Wrapper = styled.div`
   @media screen and (min-width: 450px) {
     .form-desc {
       margin: 10px 0 25px 0;
+    }
+    .btn-container {
+      display: block;
+      text-align: right;
+    }
+    .update-btn,
+    .clear-btn {
+      width: 45%;
+      max-width: 200px;
+    }
+    .update-btn {
+      margin-left: 1.5em;
     }
   }
   @media screen and (min-width: 950px) {
