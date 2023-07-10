@@ -293,7 +293,7 @@ const AppProvider = ({ children }) => {
         isFeatured,
       });
       dispatch({ type: CREATE_SHOW_SUCCESS });
-      clearValues();
+      dispatch({ type: CLEAR_VALUES });
     } catch (error) {
       if (error.response.status === 401) return;
       dispatch({

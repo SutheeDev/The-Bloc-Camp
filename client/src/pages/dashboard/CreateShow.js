@@ -131,14 +131,24 @@ const CreateShow = () => {
             <ToggleSwitch
               text="publish on site?"
               name="published"
+              checked={published}
               defaultChecked={published}
             />
             <ToggleSwitch
               text="featured show?"
               name="featured"
+              checked={featured}
               defaultChecked={featured}
             />
             <div className="btn-container">
+              <button
+                type="submit"
+                className="btn update-btn"
+                disabled={isLoading}
+                onClick={handleSubmit}
+              >
+                submit
+              </button>
               <button
                 className="btn clear-btn"
                 onClick={(e) => {
@@ -147,14 +157,6 @@ const CreateShow = () => {
                 }}
               >
                 clear all
-              </button>
-              <button
-                type="submit"
-                className="btn update-btn"
-                disabled={isLoading}
-                onClick={handleSubmit}
-              >
-                submit
               </button>
             </div>
           </div>
@@ -237,7 +239,7 @@ const Wrapper = styled.div`
       width: 45%;
       max-width: 200px;
     }
-    .update-btn {
+    .clear-btn {
       margin-left: 1.5em;
     }
   }
