@@ -31,6 +31,7 @@ import {
   EDIT_SHOW_BEGIN,
   EDIT_SHOW_SUCCESS,
   EDIT_SHOW_ERROR,
+  CLEAR_VALUES,
 } from "./actions";
 import moment from "moment";
 
