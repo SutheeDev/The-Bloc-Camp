@@ -70,7 +70,7 @@ const deleteShow = async (req, res) => {
 
   checkPermission(req.user);
 
-  // await show.remove();
+  await show.deleteOne();
 
   res
     .status(StatusCodes.OK)

@@ -324,8 +324,15 @@ const AppProvider = ({ children }) => {
     console.log("edit show");
   };
 
-  const deleteShow = (id) => {
-    console.log(`delete show: ${id}`);
+  const deleteShow = async (id) => {
+    dispatch({ type: DELETE_SHOW_BEGIN });
+    try {
+      await authFetch.delete(`/shows/${id}`);
+      getShows();
+    } catch (error) {
+      console.log(error.response);
+      // logoutUser();
+    }
   };
 
   return (

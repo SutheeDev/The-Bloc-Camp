@@ -239,6 +239,12 @@ const reducer = (state, action) => {
       ticketPrice: ticketsPrice,
     };
   }
+  if (action.type === DELETE_SHOW_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
