@@ -19,6 +19,9 @@ const CreateShow = () => {
     uploadImage,
     isEditing,
     artist,
+    artistInfo,
+    ticketPrice,
+    status,
     performDate,
     performTime,
     createShow,
@@ -64,6 +67,7 @@ const CreateShow = () => {
               labelText="artist *"
               placeholder="artist name"
               handleChange={handleInput}
+              value={artist}
               required
             />
 
@@ -78,6 +82,7 @@ const CreateShow = () => {
                 placeholder="artist info"
                 className="form-desc"
                 onChange={handleInput}
+                value={artistInfo}
               ></textarea>
             </div>
 
@@ -87,6 +92,7 @@ const CreateShow = () => {
               labelText="ticket price"
               placeholder="ticket price"
               handleChange={handleInput}
+              value={ticketPrice}
             />
 
             <FormRowSelect
@@ -94,6 +100,7 @@ const CreateShow = () => {
               placeholder="click to select a status"
               handleChange={handleInput}
               list={statusOptions}
+              value={status}
             />
 
             <div className="form-row-subcontainer">

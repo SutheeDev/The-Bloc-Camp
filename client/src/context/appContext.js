@@ -53,7 +53,7 @@ const initialState = {
   editShowId: "",
   artist: "",
   artistInfo: "",
-  ticketPrice: 50,
+  ticketPrice: "",
   performDate: "",
   performTime: "",
   performDateTime: "",
@@ -63,7 +63,7 @@ const initialState = {
     "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
   published: false,
   featured: false,
-  status: "upcoming",
+  status: "",
   statusOptions: ["upcoming", "canceled", "sold out"],
 
   shows: [],
@@ -234,6 +234,10 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const clearValues = () => {
+    dispatch({ type: CLEAR_VALUES });
+  };
+
   const createShow = async () => {
     const {
       artist,
@@ -287,6 +291,7 @@ const AppProvider = ({ children }) => {
         isFeatured,
       });
       dispatch({ type: CREATE_SHOW_SUCCESS });
+      clearValues();
     } catch (error) {
       if (error.response.status === 401) return;
       dispatch({
@@ -352,6 +357,7 @@ const AppProvider = ({ children }) => {
         featured,
       });
       dispatch({ type: EDIT_SHOW_SUCCESS });
+      clearValues();
     } catch (error) {
       if (error.response.status === 401) return;
       dispatch({
@@ -372,10 +378,6 @@ const AppProvider = ({ children }) => {
       console.log(error.response);
       // logoutUser();
     }
-  };
-
-  const clearValues = () => {
-    dispatch({ type: CLEAR_VALUES });
   };
 
   return (

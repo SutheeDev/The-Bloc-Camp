@@ -255,12 +255,14 @@ const reducer = (state, action) => {
       editShowId: "",
       artist: "",
       artistInfo: "",
-      ticketPrice: 50,
+      ticketPrice: "",
       performDate: "",
       performTime: "",
       performDateTime: "",
-      artistImage: "",
-      featureImage: "",
+      artistImage:
+        "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
+      featureImage:
+        "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
       published: false,
       featured: false,
       status: "",
