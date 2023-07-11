@@ -27,6 +27,7 @@ import {
   EDIT_SHOW_SUCCESS,
   EDIT_SHOW_ERROR,
   CLEAR_VALUES,
+  CLEAR_FILE_UPLOAD,
 } from "./actions";
 
 import { initialState } from "./appContext";
