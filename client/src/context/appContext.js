@@ -332,34 +332,52 @@ const AppProvider = ({ children }) => {
   };
 
   const editShow = async () => {
+    const {
+      artist,
+      artistInfo,
+      ticketPrice,
+      status,
+      performDate,
+      performTime,
+      artistImage,
+      featureImage,
+      published,
+      featured,
+    } = state;
+
+    const formatDate = moment(performDate);
+    const formatTime = moment(performTime);
+    const performDateTime = formatDate
+      .set({
+        hour: formatTime.hour(),
+        minute: formatTime.minute(),
+        second: formatTime.second(),
+      })
+      .locale("en")
+      .format("ddd MMM DD YYYY HH:mm:ss");
+
+    const isPublished = JSON.parse(published);
+    const isFeatured = JSON.parse(featured);
+
+    const ticketsPrice = parseInt(ticketPrice);
+
     dispatch({ type: EDIT_SHOW_BEGIN });
     try {
-      const {
-        artist,
-        artistInfo,
-        ticketPrice,
-        status,
-        performDate,
-        performTime,
-        artistImage,
-        featureImage,
-        published,
-        featured,
-      } = state;
       await authFetch.patch(`/shows/${state.editShowId}`, {
         artist,
         artistInfo,
-        ticketPrice,
+        ticketsPrice,
         status,
         performDate,
         performTime,
+        performDateTime,
         artistImage,
         featureImage,
-        published,
-        featured,
+        isPublished,
+        isFeatured,
       });
       dispatch({ type: EDIT_SHOW_SUCCESS });
-      clearValues();
+      dispatch({ type: CLEAR_VALUES });
     } catch (error) {
       if (error.response.status === 401) return;
       dispatch({
@@ -369,6 +387,7 @@ const AppProvider = ({ children }) => {
         },
       });
     }
+    hideMessage();
   };
 
   const deleteShow = async (id) => {

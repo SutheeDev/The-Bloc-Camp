@@ -272,6 +272,30 @@ const reducer = (state, action) => {
       ...initialState,
     };
   }
+  if (action.type === EDIT_SHOW_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === EDIT_SHOW_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showMessage: true,
+      messageText: "the show has been updated!",
+      messageType: "success",
+    };
+  }
+  if (action.type === EDIT_SHOW_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showMessage: true,
+      messageText: action.payload.msg,
+      messageType: "error",
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
