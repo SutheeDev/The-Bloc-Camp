@@ -299,6 +299,13 @@ const reducer = (state, action) => {
       messageType: "error",
     };
   }
+  if (action.type === CLEAR_FILE_UPLOAD) {
+    return {
+      ...state,
+      artistImage: null,
+      featureImage: null,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
