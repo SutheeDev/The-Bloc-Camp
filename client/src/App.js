@@ -14,6 +14,7 @@ import {
   MyTickets,
   Overview,
   SharedLayout,
+  EditShow,
 } from "./pages/dashboard";
 
 function App() {
@@ -29,9 +30,10 @@ function App() {
           }
         >
           <Route index element={<Overview />} />
-          <Route path="profile" element={<Profile />} />
           <Route path="all-shows" element={<AllShows />} />
           <Route path="create-show" element={<CreateShow />} />
+          <Route path="edit-show" element={<EditShow />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
         <Route
           path="/dashboard"

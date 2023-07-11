@@ -2,6 +2,7 @@ import {
   BiBookContent,
   BiInfoSquare,
   BiAddToQueue,
+  BiCalendarEdit,
   BiBarChartSquare,
 } from "react-icons/bi";
 
@@ -26,6 +27,12 @@ const adminLinks = [
   },
   {
     id: 3,
+    text: "Edit Show",
+    path: "/admin-dashboard/edit-show",
+    icon: <BiCalendarEdit />,
+  },
+  {
+    id: 4,
     text: "Profile",
     path: "/admin-dashboard/profile",
     icon: <BiBookContent />,

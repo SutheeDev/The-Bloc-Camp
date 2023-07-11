@@ -5,6 +5,7 @@ import {
   UnauthenticatedError,
 } from "../errors/index.js";
 import { StatusCodes } from "http-status-codes";
+import checkPermission from "../utils/checkPermission.js";
 
 const createShow = async (req, res) => {
   const { artist, performDate, performTime } = req.body;
@@ -29,10 +30,51 @@ const getAllShows = async (req, res) => {
 };
 
 const updateShow = async (req, res) => {
-  res.send("Update Show Route");
+  const { id: showId } = req.params;
+
+  const { artist, performDate, performTime, artistImage, featureImage } =
+    req.body;
+
+  if (
+    !artist ||
+    !performDate ||
+    !performTime ||
+    !artistImage ||
+    !featureImage
+  ) {
+    throw new BadRequestError("Please provide all required fields!");
+  }
+
+  const show = await Show.findOne({ _id: showId });
+  if (!show) {
+    throw new NotFoundError(`no show with id: ${showId}`);
+  }
+
+  checkPermission(req.user);
+
+  const updatedShow = await Show.findOneAndUpdate({ _id: showId }, req.body, {
+    new: true,
+    runValidators: true,
+  });
+
+  res.status(StatusCodes.OK).json({ updatedShow });
 };
+
 const deleteShow = async (req, res) => {
-  res.send("Delete Show Route");
+  const { id: showId } = req.params;
+
+  const show = await Show.findOne({ _id: showId });
+  if (!show) {
+    throw new NotFoundError(`no show with id: ${showId}`);
+  }
+
+  checkPermission(req.user);
+
+  await show.deleteOne();
+
+  res
+    .status(StatusCodes.OK)
+    .json({ msg: `the ${show.artist} show has been removed` });
 };
 
 export { createShow, getAllShows, updateShow, deleteShow };

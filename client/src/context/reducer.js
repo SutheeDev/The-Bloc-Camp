@@ -22,9 +22,15 @@ import {
   GET_SHOWS_BEGIN,
   GET_SHOWS_SUCCESS,
   SET_EDIT_SHOW,
+  DELETE_SHOW_BEGIN,
+  EDIT_SHOW_BEGIN,
+  EDIT_SHOW_SUCCESS,
+  EDIT_SHOW_ERROR,
+  CLEAR_VALUES,
 } from "./actions";
 
 import { initialState } from "./appContext";
+import { parseISO } from "date-fns";
 
 const reducer = (state, action) => {
   if (action.type === SHOW_MESSAGE) {
@@ -189,6 +195,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: true,
+      isEditing: false,
       showMessage: false,
     };
   }
@@ -209,15 +216,13 @@ const reducer = (state, action) => {
       artistInfo,
       artistImage,
       featureImage,
-      isFeatured,
       isPublished,
-      performDate,
-      performTime,
+      isFeatured,
+      performDateTime,
       status,
       ticketsPrice,
     } = show;
-    console.log(performDate);
-    console.log(performTime);
+    const parsedPerformDateTime = parseISO(performDateTime);
     return {
       ...state,
       isEditing: true,
@@ -226,12 +231,69 @@ const reducer = (state, action) => {
       artistInfo,
       artistImage,
       featureImage,
-      isFeatured,
+      published: isPublished,
       isPublished,
-      // performDate,
-      // performTime,
+      featured: isFeatured,
+      isFeatured,
+      performDate: parsedPerformDateTime,
+      performTime: parsedPerformDateTime,
+      performDateTime: parsedPerformDateTime,
       status,
       ticketsPrice,
+      ticketPrice: ticketsPrice,
+    };
+  }
+  if (action.type === DELETE_SHOW_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === CLEAR_VALUES) {
+    const initialState = {
+      isEditing: false,
+      editShowId: "",
+      artist: "",
+      artistInfo: "",
+      ticketPrice: "",
+      performDate: "",
+      performTime: "",
+      performDateTime: "",
+      artistImage:
+        "https://res.cloudinary.com/dnc7potxo/image/upload/v1686913117/the-bloc-camp/artist-image/tmp-1-1686913115687_fad0kg.png",
+      featureImage:
+        "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
+      published: false,
+      featured: false,
+      status: "",
+    };
+    return {
+      ...state,
+      ...initialState,
+    };
+  }
+  if (action.type === EDIT_SHOW_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === EDIT_SHOW_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showMessage: true,
+      messageText: "the show has been updated!",
+      messageType: "success",
+    };
+  }
+  if (action.type === EDIT_SHOW_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showMessage: true,
+      messageText: action.payload.msg,
+      messageType: "error",
     };
   }
   throw new Error(`No such action: ${action.type}`);

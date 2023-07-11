@@ -105,7 +105,7 @@ const Event = ({
 
         <div className="btn-container">
           <Link
-            to="/admin-dashboard/create-show"
+            to="/admin-dashboard/edit-show"
             className="btn edit-btn"
             onClick={() => setEditShow(_id)}
           >

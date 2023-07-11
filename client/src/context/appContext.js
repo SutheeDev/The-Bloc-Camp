@@ -27,6 +27,11 @@ import {
   GET_SHOWS_BEGIN,
   GET_SHOWS_SUCCESS,
   SET_EDIT_SHOW,
+  DELETE_SHOW_BEGIN,
+  EDIT_SHOW_BEGIN,
+  EDIT_SHOW_SUCCESS,
+  EDIT_SHOW_ERROR,
+  CLEAR_VALUES,
 } from "./actions";
 import moment from "moment";
 
@@ -48,7 +53,7 @@ const initialState = {
   editShowId: "",
   artist: "",
   artistInfo: "",
-  ticketPrice: 50,
+  ticketPrice: "",
   performDate: "",
   performTime: "",
   performDateTime: "",
@@ -58,7 +63,7 @@ const initialState = {
     "https://res.cloudinary.com/dnc7potxo/image/upload/v1686927431/the-bloc-camp/feature-image/tmp-1-1686927429423_xgrkwk.png",
   published: false,
   featured: false,
-  status: "upcoming",
+  status: "",
   statusOptions: ["upcoming", "canceled", "sold out"],
 
   shows: [],
@@ -229,11 +234,16 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const clearValues = () => {
+    dispatch({ type: CLEAR_VALUES });
+  };
+
   const createShow = async () => {
     const {
       artist,
       artistInfo,
       ticketPrice,
+      status,
       performDate,
       performTime,
       artistImage,
@@ -273,6 +283,7 @@ const AppProvider = ({ children }) => {
         artist,
         artistInfo,
         ticketsPrice,
+        status,
         performDate,
         performTime,
         performDateTime,
@@ -282,6 +293,7 @@ const AppProvider = ({ children }) => {
         isFeatured,
       });
       dispatch({ type: CREATE_SHOW_SUCCESS });
+      dispatch({ type: CLEAR_VALUES });
     } catch (error) {
       if (error.response.status === 401) return;
       dispatch({
@@ -319,8 +331,74 @@ const AppProvider = ({ children }) => {
     dispatch({ type: SET_EDIT_SHOW, payload: { id } });
   };
 
-  const deleteShow = (id) => {
-    console.log(`delete show: ${id}`);
+  const editShow = async () => {
+    const {
+      artist,
+      artistInfo,
+      ticketPrice,
+      status,
+      performDate,
+      performTime,
+      artistImage,
+      featureImage,
+      published,
+      featured,
+    } = state;
+
+    const formatDate = moment(performDate);
+    const formatTime = moment(performTime);
+    const performDateTime = formatDate
+      .set({
+        hour: formatTime.hour(),
+        minute: formatTime.minute(),
+        second: formatTime.second(),
+      })
+      .locale("en")
+      .format("ddd MMM DD YYYY HH:mm:ss");
+
+    const isPublished = JSON.parse(published);
+    const isFeatured = JSON.parse(featured);
+
+    const ticketsPrice = parseInt(ticketPrice);
+
+    dispatch({ type: EDIT_SHOW_BEGIN });
+    try {
+      await authFetch.patch(`/shows/${state.editShowId}`, {
+        artist,
+        artistInfo,
+        ticketsPrice,
+        status,
+        performDate,
+        performTime,
+        performDateTime,
+        artistImage,
+        featureImage,
+        isPublished,
+        isFeatured,
+      });
+      dispatch({ type: EDIT_SHOW_SUCCESS });
+      dispatch({ type: CLEAR_VALUES });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: EDIT_SHOW_ERROR,
+        payload: {
+          msg: error.response.data.msg,
+        },
+      });
+    }
+    hideMessage();
+  };
+
+  const deleteShow = async (id) => {
+    dispatch({ type: DELETE_SHOW_BEGIN });
+    try {
+      await authFetch.delete(`/shows/${id}`);
+      getShows();
+    } catch (error) {
+      console.log(error.response);
+      // logoutUser();
+    }
   };
 
   return (
@@ -339,7 +417,9 @@ const AppProvider = ({ children }) => {
         createShow,
         getShows,
         setEditShow,
+        editShow,
         deleteShow,
+        clearValues,
       }}
     >
       {children}

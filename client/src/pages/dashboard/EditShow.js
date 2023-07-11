@@ -9,8 +9,10 @@ import {
   TimePickerComponent,
   FormRowSelect,
 } from "../../components";
+import { useState } from "react";
+import moment from "moment";
 
-const CreateShow = () => {
+const EditShow = () => {
   const {
     isLoading,
     handleInputChange,
@@ -20,16 +22,23 @@ const CreateShow = () => {
     isEditing,
     artist,
     artistInfo,
+    ticketsPrice,
     ticketPrice,
-    status,
-    published,
-    featured,
     performDate,
     performTime,
+    performDateTime,
+    artistImage,
+    featureImage,
+    published,
+    featured,
     createShow,
     statusOptions,
-    clearValues,
+    status,
+    editShow,
   } = useAppContext();
+
+  const [publish, setPublish] = useState(published);
+  const [feature, setFeature] = useState(featured);
 
   const handleInput = (e) => {
     const name = e.target.name;
@@ -45,7 +54,7 @@ const CreateShow = () => {
     //   return;
     // }
 
-    createShow();
+    editShow();
   };
 
   const handleImageChange = (e) => {
@@ -59,8 +68,8 @@ const CreateShow = () => {
 
   return (
     <Wrapper>
-      <form className="form">
-        <h3 className="form-title">create show</h3>
+      <form className="form" onSubmit={handleSubmit}>
+        <h3 className="form-title">edit show</h3>
         {showMessage && <Message />}
         <div className="form-content">
           <div className="form-row-container">
@@ -70,8 +79,8 @@ const CreateShow = () => {
               labelText="artist *"
               placeholder="artist name"
               handleChange={handleInput}
-              value={artist}
               required
+              value={artist}
             />
 
             <div className="form-row form-row-desc">
@@ -111,33 +120,42 @@ const CreateShow = () => {
               <TimePickerComponent name="performTime" selected={performTime} />
             </div>
 
-            <FormFileUpload
-              type="file"
-              name="artistImage"
-              labelText="thumbnail image"
-              id="artistImage"
-              accept="image/*"
-              handleChange={handleImageChange}
-            />
+            <div className="image-uploader artist">
+              <div className="artist-image">
+                <img src={artistImage} alt="artist" />
+              </div>
+              <FormFileUpload
+                type="file"
+                name="artistImage"
+                labelText="current thumbnail image"
+                id="artistImage"
+                accept="image/*"
+                handleChange={handleImageChange}
+              />
+            </div>
 
-            <FormFileUpload
-              type="file"
-              name="featureImage"
-              labelText="featured image"
-              id="featureImage"
-              accept="image/*"
-              handleChange={handleImageChange}
-            />
+            <div className="image-uploader feature">
+              <img src={featureImage} alt="featured" />
+              <FormFileUpload
+                type="file"
+                name="featureImage"
+                labelText="current featured image"
+                id="featureImage"
+                accept="image/*"
+                handleChange={handleImageChange}
+              />
+            </div>
+
             <ToggleSwitch
               text="publish on site?"
               name="published"
-              checked={published}
+              // Checked={published}
               defaultChecked={published}
             />
             <ToggleSwitch
               text="featured show?"
               name="featured"
-              checked={featured}
+              // Checked={featured}
               defaultChecked={featured}
             />
             <div className="btn-container">
@@ -147,16 +165,7 @@ const CreateShow = () => {
                 disabled={isLoading}
                 onClick={handleSubmit}
               >
-                submit
-              </button>
-              <button
-                className="btn clear-btn"
-                onClick={(e) => {
-                  e.preventDefault();
-                  clearValues();
-                }}
-              >
-                clear all
+                save changes
               </button>
             </div>
           </div>
@@ -165,7 +174,7 @@ const CreateShow = () => {
     </Wrapper>
   );
 };
-export default CreateShow;
+export default EditShow;
 
 const Wrapper = styled.div`
   color: var(--black);
@@ -195,16 +204,11 @@ const Wrapper = styled.div`
     border: 3px solid var(--darkBlue);
     background-color: var(--darkBlue);
   }
-  .btn-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .update-btn,
-  .clear-btn {
+  .update-btn {
     margin-top: 1.5em;
-    width: 100%;
+  }
+  .btn-container {
+    text-align: right;
   }
   .switch-container {
     display: flex;
@@ -226,21 +230,51 @@ const Wrapper = styled.div`
   textarea::placeholder {
     text-transform: capitalize;
   }
+  .image-uploader {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1em;
+  }
+  .artist-image {
+    width: 100%;
+    height: 200px;
+    background-color: var(--grey-100);
+    display: flex;
+    justify-content: center;
+  }
+  .image-uploader.artist img {
+    max-height: 100%;
+  }
+
+  .image-uploader.feature img {
+    width: 100%;
+  }
+  .form-row-subcontainer,
+  .image-uploader {
+    margin-bottom: 8px;
+  }
   @media screen and (min-width: 450px) {
     .form-desc {
       margin: 10px 0 25px 0;
     }
-    .btn-container {
-      display: block;
-      text-align: right;
+    .image-uploader {
+      flex-direction: row;
     }
-    .update-btn,
-    .clear-btn {
-      width: 45%;
-      max-width: 200px;
+    .form-row-subcontainer,
+    .image-uploader {
+      margin-bottom: 0;
     }
-    .clear-btn {
-      margin-left: 1.5em;
+    .artist-image {
+      max-width: 135px;
+      height: 76px;
+    }
+    .image-uploader.artist img {
+      width: 76px;
+    }
+    .image-uploader.feature img {
+      width: 135px;
     }
   }
   @media screen and (min-width: 950px) {

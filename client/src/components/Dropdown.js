@@ -1,9 +1,19 @@
 import { BiUserCircle, BiCaretDown } from "react-icons/bi";
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
+import adminLinks from "../utils/admin-links";
+import { NavLink } from "react-router-dom";
 
 const Dropdown = () => {
-  const { user, logoutUser } = useAppContext();
+  const { user, logoutUser, isEditing } = useAppContext();
+
+  let displayLinks;
+  if (isEditing) {
+    displayLinks = adminLinks;
+  } else {
+    displayLinks = adminLinks.filter((link) => link.text !== "Edit Show");
+  }
+
   return (
     <Wrapper>
       <div className="dropdown">
@@ -17,9 +27,21 @@ const Dropdown = () => {
           </div>
         </div>
         <div className="dropdown-menu">
-          <button className="btn">profile</button>
-          <button className="btn">create new shows</button>
-          <button className="btn">all shows</button>
+          {displayLinks.map((link) => {
+            const { text, path, id } = link;
+            return (
+              <NavLink
+                key={id}
+                to={path}
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+                end
+              >
+                <div className="btn">{text}</div>
+              </NavLink>
+            );
+          })}
           <button onClick={logoutUser} className="btn logout-btn">
             logout
           </button>
@@ -33,6 +55,7 @@ export default Dropdown;
 const Wrapper = styled.div`
   .dropdown {
     position: relative;
+    z-index: 50;
   }
   .dropdown-user {
     display: flex;
