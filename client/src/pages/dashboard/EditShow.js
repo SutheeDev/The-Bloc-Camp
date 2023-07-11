@@ -9,8 +9,8 @@ import {
   TimePickerComponent,
   FormRowSelect,
 } from "../../components";
-import { useState } from "react";
-import moment from "moment";
+import { useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 const EditShow = () => {
   const {
@@ -31,14 +31,12 @@ const EditShow = () => {
     featureImage,
     published,
     featured,
-    createShow,
     statusOptions,
     status,
     editShow,
+    clearValues,
   } = useAppContext();
-
-  const [publish, setPublish] = useState(published);
-  const [feature, setFeature] = useState(featured);
+  const navigate = useNavigate();
 
   const handleInput = (e) => {
     const name = e.target.name;
@@ -65,6 +63,14 @@ const EditShow = () => {
 
     uploadImage(formData, imageType);
   };
+
+  useEffect(() => {
+    if (!isEditing) {
+      setTimeout(() => {
+        navigate("/admin-dashboard/all-shows");
+      }, 3000);
+    }
+  });
 
   return (
     <Wrapper>
@@ -167,6 +173,9 @@ const EditShow = () => {
               >
                 save changes
               </button>
+              <Link to="/admin-dashboard/all-shows" className="btn clear-btn">
+                cancel
+              </Link>
             </div>
           </div>
         </div>
@@ -188,7 +197,6 @@ const Wrapper = styled.div`
   }
   .btn {
     text-transform: uppercase;
-    padding: 1rem 3rem;
     color: var(--reddish);
     border: 3px solid var(--reddish);
     background-color: var(--white);
@@ -199,16 +207,27 @@ const Wrapper = styled.div`
 
     transition: all 0.3s ease;
   }
+  .update-btn {
+    padding: 1rem 3rem;
+  }
+  .clear-btn {
+    padding: 0.85rem 3rem;
+  }
   .btn:hover {
     color: var(--white);
     border: 3px solid var(--darkBlue);
     background-color: var(--darkBlue);
   }
-  .update-btn {
-    margin-top: 1.5em;
-  }
   .btn-container {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .update-btn,
+  .clear-btn {
+    margin-top: 1.5em;
+    width: 100%;
   }
   .switch-container {
     display: flex;
@@ -275,6 +294,18 @@ const Wrapper = styled.div`
     }
     .image-uploader.feature img {
       width: 135px;
+    }
+    .btn-container {
+      display: block;
+      text-align: right;
+    }
+    .update-btn,
+    .clear-btn {
+      width: 45%;
+      max-width: 200px;
+    }
+    .clear-btn {
+      margin-left: 1.5em;
     }
   }
   @media screen and (min-width: 950px) {

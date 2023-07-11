@@ -147,7 +147,7 @@ const CreateShow = () => {
                 disabled={isLoading}
                 onClick={handleSubmit}
               >
-                submit
+                save changes
               </button>
               <button
                 className="btn clear-btn"
