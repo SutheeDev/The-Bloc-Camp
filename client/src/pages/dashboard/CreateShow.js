@@ -22,6 +22,8 @@ const CreateShow = () => {
     artistInfo,
     ticketPrice,
     status,
+    artistImage,
+    featureImage,
     published,
     featured,
     performDate,
@@ -53,6 +55,7 @@ const CreateShow = () => {
     const imageFile = e.target.files[0];
     const formData = new FormData();
     formData.append("image", imageFile);
+    console.log(imageType, formData);
 
     uploadImage(formData, imageType);
   };
@@ -118,6 +121,7 @@ const CreateShow = () => {
               id="artistImage"
               accept="image/*"
               handleChange={handleImageChange}
+              // value={artistImage}
             />
 
             <FormFileUpload
@@ -127,6 +131,7 @@ const CreateShow = () => {
               id="featureImage"
               accept="image/*"
               handleChange={handleImageChange}
+              // value={featureImage}
             />
             <ToggleSwitch
               text="publish on site?"
@@ -251,3 +256,5 @@ const Wrapper = styled.div`
     }
   }
 `;
+
+// The chosen filename isn't changed back when hit 'clear all' or 'save changes' button.

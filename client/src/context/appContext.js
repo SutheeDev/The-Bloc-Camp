@@ -237,7 +237,6 @@ const AppProvider = ({ children }) => {
 
   const clearValues = () => {
     dispatch({ type: CLEAR_VALUES });
-    dispatch({ type: CLEAR_FILE_UPLOAD });
   };
 
   const createShow = async () => {

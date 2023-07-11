@@ -302,8 +302,8 @@ const reducer = (state, action) => {
   if (action.type === CLEAR_FILE_UPLOAD) {
     return {
       ...state,
-      artistImage: null,
-      featureImage: null,
+      artistImage: "",
+      featureImage: "",
     };
   }
   throw new Error(`No such action: ${action.type}`);
