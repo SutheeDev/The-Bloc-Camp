@@ -9,8 +9,8 @@ import {
   TimePickerComponent,
   FormRowSelect,
 } from "../../components";
-import { useState } from "react";
-import moment from "moment";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const EditShow = () => {
   const {
@@ -31,11 +31,11 @@ const EditShow = () => {
     featureImage,
     published,
     featured,
-    createShow,
     statusOptions,
     status,
     editShow,
   } = useAppContext();
+  const navigate = useNavigate();
 
   const [publish, setPublish] = useState(published);
   const [feature, setFeature] = useState(featured);
@@ -65,6 +65,14 @@ const EditShow = () => {
 
     uploadImage(formData, imageType);
   };
+
+  useEffect(() => {
+    if (!isEditing) {
+      setTimeout(() => {
+        navigate("/admin-dashboard/all-shows");
+      }, 3000);
+    }
+  });
 
   return (
     <Wrapper>

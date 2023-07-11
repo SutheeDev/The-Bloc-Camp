@@ -282,6 +282,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
+      isEditing: false,
       showMessage: true,
       messageText: "the show has been updated!",
       messageType: "success",
@@ -291,6 +292,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
+      isEditing: false,
       showMessage: true,
       messageText: action.payload.msg,
       messageType: "error",
