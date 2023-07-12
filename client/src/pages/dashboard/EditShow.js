@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useAppContext } from "../../context/appContext";
 import {
   FormRow,
-  Message,
   ToggleSwitch,
   FormFileUpload,
   DatePickerComponent,
@@ -16,7 +15,6 @@ const EditShow = () => {
   const {
     isLoading,
     handleInputChange,
-    showMessage,
     displayMessage,
     uploadImage,
     isEditing,
@@ -75,8 +73,6 @@ const EditShow = () => {
   return (
     <Wrapper>
       <form className="form" onSubmit={handleSubmit}>
-        <h3 className="form-title">edit show</h3>
-        {showMessage && <Message />}
         <div className="form-content">
           <div className="form-row-container">
             <FormRow
