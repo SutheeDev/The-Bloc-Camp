@@ -33,6 +33,8 @@ import {
   EDIT_SHOW_ERROR,
   CLEAR_VALUES,
   CLEAR_FILE_UPLOAD,
+  SHOW_ALERT,
+  HIDE_ALERT,
 } from "./actions";
 import moment from "moment";
 
@@ -42,6 +44,7 @@ const role = localStorage.getItem("role");
 
 const initialState = {
   showMessage: false,
+  showAlert: false,
   messageText: "",
   messageType: "",
   isLoading: false,
@@ -112,6 +115,17 @@ const AppProvider = ({ children }) => {
   const hideMessage = () => {
     setTimeout(() => {
       dispatch({ type: HIDE_MESSAGE });
+    }, 3000);
+  };
+
+  const displayAlert = () => {
+    dispatch({ type: SHOW_ALERT });
+    hideAlert();
+  };
+
+  const hideAlert = () => {
+    setTimeout(() => {
+      dispatch({ type: HIDE_ALERT });
     }, 3000);
   };
 
@@ -304,7 +318,7 @@ const AppProvider = ({ children }) => {
         },
       });
     }
-    hideMessage();
+    hideAlert();
   };
 
   const getShows = async () => {
@@ -388,7 +402,7 @@ const AppProvider = ({ children }) => {
         },
       });
     }
-    hideMessage();
+    hideAlert();
   };
 
   const deleteShow = async (id) => {

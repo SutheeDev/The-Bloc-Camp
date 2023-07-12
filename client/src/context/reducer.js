@@ -28,6 +28,8 @@ import {
   EDIT_SHOW_ERROR,
   CLEAR_VALUES,
   CLEAR_FILE_UPLOAD,
+  SHOW_ALERT,
+  HIDE_ALERT,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -46,6 +48,24 @@ const reducer = (state, action) => {
     return {
       ...state,
       showMessage: false,
+      messageText: "",
+      messageType: "",
+    };
+  }
+  if (action.type === SHOW_ALERT) {
+    return {
+      ...state,
+      // showMessage: true,
+      showAlert: true,
+      messageText: "Please provide all values!",
+      messageType: "error",
+    };
+  }
+  if (action.type === HIDE_ALERT) {
+    return {
+      ...state,
+      // showMessage: false,
+      showAlert: false,
       messageText: "",
       messageType: "",
     };
@@ -178,7 +198,8 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
-      showMessage: true,
+      // showMessage: true,
+      showAlert: true,
       messageText: "Success, new show created!",
       messageType: "success",
     };
@@ -187,7 +208,8 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
-      showMessage: true,
+      // showMessage: true,
+      showAlert: true,
       messageText: action.payload.msg,
       messageType: "error",
     };
@@ -285,6 +307,7 @@ const reducer = (state, action) => {
       isLoading: false,
       isEditing: false,
       showMessage: true,
+      showAlert: true,
       messageText: "the show has been updated!",
       messageType: "success",
     };
@@ -295,6 +318,7 @@ const reducer = (state, action) => {
       isLoading: false,
       isEditing: false,
       showMessage: true,
+      showAlert: true,
       messageText: action.payload.msg,
       messageType: "error",
     };

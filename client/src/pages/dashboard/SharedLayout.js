@@ -1,8 +1,15 @@
 import { Outlet } from "react-router-dom";
-import { DashboardNavbar, ModalSidebar, Sidebar } from "../../components";
+import {
+  DashboardNavbar,
+  ModalSidebar,
+  Sidebar,
+  Alert,
+} from "../../components";
+import { useAppContext } from "../../context/appContext";
 import styled from "styled-components";
 
 const SharedLayout = () => {
+  const { showAlert } = useAppContext();
   return (
     <Wrapper>
       <div className="sharedLayout">
@@ -11,6 +18,7 @@ const SharedLayout = () => {
         <div className="content">
           <DashboardNavbar />
           <div className="dashboard-page">
+            {showAlert && <Alert />}
             <Outlet />
           </div>
         </div>
@@ -29,6 +37,8 @@ const Wrapper = styled.main`
   }
   .dashboard-page {
     padding: 1.3em 0.9em;
+
+    position: relative;
   }
   @media (min-width: 450px) {
     .dashboard-page {

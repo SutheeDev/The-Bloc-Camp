@@ -24,6 +24,7 @@ import EventsContainer from "./EventsContainer";
 import Event from "./Event";
 import Loading from "./Loading";
 import FormRowSelect from "./FormRowSelect";
+import Alert from "./Alert";
 
 export {
   Navbar,
@@ -52,4 +53,5 @@ export {
   Event,
   Loading,
   FormRowSelect,
+  Alert,
 };
