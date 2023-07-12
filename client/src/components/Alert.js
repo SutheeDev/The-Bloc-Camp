@@ -1,6 +1,3 @@
-// import { useAppContext } from "../context/appContext";
-// import { FiX } from "react-icons/fi";
-// import { BiCheck } from "react-icons/bi";
 import { Message } from "../components";
 import styled from "styled-components";
 
