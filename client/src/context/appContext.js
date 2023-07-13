@@ -391,7 +391,12 @@ const AppProvider = ({ children }) => {
         isPublished,
         isFeatured,
       });
-      dispatch({ type: EDIT_SHOW_SUCCESS });
+      dispatch({
+        type: EDIT_SHOW_SUCCESS,
+        payload: {
+          artist,
+        },
+      });
       dispatch({ type: CLEAR_VALUES });
     } catch (error) {
       if (error.response.status === 401) return;

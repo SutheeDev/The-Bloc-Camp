@@ -305,7 +305,7 @@ const reducer = (state, action) => {
       isLoading: false,
       isEditing: false,
       showAlert: true,
-      messageText: "the show has been updated!",
+      messageText: `${action.payload.artist} show has been updated!`,
       messageType: "success",
     };
   }
