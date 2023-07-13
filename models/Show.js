@@ -57,7 +57,7 @@ const ShowSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["upcoming", "canceled", "sold out"],
+      enum: ["upcoming", "canceled", "soldout"],
       default: "upcoming",
     },
   },

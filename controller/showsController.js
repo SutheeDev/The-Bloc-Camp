@@ -89,7 +89,15 @@ const showOverview = async (req, res) => {
     return acc;
   }, {});
 
-  res.status(StatusCodes.OK).json({ overview });
+  const defaultOverview = {
+    upcoming: overview.upcoming || 0,
+    canceled: overview.canceled || 0,
+    soldout: overview.soldout || 0,
+  };
+
+  const monthlyApplication = [];
+
+  res.status(StatusCodes.OK).json({ defaultOverview, monthlyApplication });
 };
 
 export { createShow, getAllShows, updateShow, deleteShow, showOverview };
