@@ -6,6 +6,7 @@ import {
 } from "../errors/index.js";
 import { StatusCodes } from "http-status-codes";
 import checkPermission from "../utils/checkPermission.js";
+import mongoose from "mongoose";
 
 const createShow = async (req, res) => {
   const { artist, performDate, performTime } = req.body;
@@ -77,4 +78,11 @@ const deleteShow = async (req, res) => {
     .json({ msg: `the ${show.artist} show has been removed` });
 };
 
-export { createShow, getAllShows, updateShow, deleteShow };
+const showOverview = async (req, res) => {
+  const overview = await Show.aggregate([
+    { $group: { _id: "$status", count: { $sum: 1 } } },
+  ]);
+  res.status(StatusCodes.OK).json({ overview });
+};
+
+export { createShow, getAllShows, updateShow, deleteShow, showOverview };
