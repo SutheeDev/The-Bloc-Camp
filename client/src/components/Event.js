@@ -89,7 +89,9 @@ const Event = ({
               </div>
 
               <div className="event-status">
-                <div className={`status ${status}`}>{status}</div>
+                <div className={`status ${status}`}>
+                  {status === "soldout" ? "sold out" : status}
+                </div>
               </div>
             </div>
           </div>
@@ -249,7 +251,7 @@ const Wrapper = styled.div`
   .status.canceled {
     background-color: var(--reddish);
   }
-  .status.sold {
+  .status.soldout {
     background-color: var(--lighterBlue);
   }
   .btn-container {

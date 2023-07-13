@@ -24,7 +24,8 @@ const createShow = async (req, res) => {
 };
 
 const getAllShows = async (req, res) => {
-  const shows = await Show.find({ status: "upcoming" }).sort("performDateTime");
+  // const shows = await Show.find({ status: "upcoming" }).sort("performDateTime");
+  const shows = await Show.find({}).sort("performDateTime");
   res
     .status(StatusCodes.OK)
     .json({ shows, totalShows: shows.length, numOfPages: 1 });
