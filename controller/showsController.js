@@ -79,9 +79,16 @@ const deleteShow = async (req, res) => {
 };
 
 const showOverview = async (req, res) => {
-  const overview = await Show.aggregate([
+  let overview = await Show.aggregate([
     { $group: { _id: "$status", count: { $sum: 1 } } },
   ]);
+
+  overview = overview.reduce((acc, curr) => {
+    const { _id: title, count } = curr;
+    acc[title] = count;
+    return acc;
+  }, {});
+
   res.status(StatusCodes.OK).json({ overview });
 };
 
