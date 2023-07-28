@@ -26,8 +26,15 @@ const createShow = async (req, res) => {
 const getAllShows = async (req, res) => {
   const { search, date, status, sort } = req.query;
 
+  const queryObject = {};
+
+  if (status !== "all") {
+    queryObject.status = status;
+  }
+
   // const shows = await Show.find({ status: "upcoming" }).sort("performDateTime");
-  const shows = await Show.find({}).sort("performDateTime");
+  let result = Show.find({}).sort("performDateTime");
+  const shows = await result;
   res
     .status(StatusCodes.OK)
     .json({ shows, totalShows: shows.length, numOfPages: 1 });
