@@ -36,7 +36,21 @@ const getAllShows = async (req, res) => {
   }
 
   // const shows = await Show.find({ status: "upcoming" }).sort("performDateTime");
-  let result = Show.find(queryObject).sort("performDateTime");
+  let result = Show.find(queryObject);
+
+  if (sort === "latest") {
+    result = result.sort("performDateTime");
+  }
+  if (sort === "oldest") {
+    result = result.sort("-performDateTime");
+  }
+  if (sort === "a-z") {
+    result = result.sort("artist");
+  }
+  if (sort === "z-a") {
+    result = result.sort("-artist");
+  }
+
   const shows = await result;
   res
     .status(StatusCodes.OK)
