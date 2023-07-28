@@ -28,6 +28,9 @@ const getAllShows = async (req, res) => {
 
   const queryObject = {};
 
+  if (search) {
+    queryObject.artist = { $regex: search, $options: "i" };
+  }
   if (status !== "all") {
     queryObject.status = status;
   }
