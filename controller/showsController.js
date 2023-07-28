@@ -33,7 +33,7 @@ const getAllShows = async (req, res) => {
   }
 
   // const shows = await Show.find({ status: "upcoming" }).sort("performDateTime");
-  let result = Show.find({}).sort("performDateTime");
+  let result = Show.find(queryObject).sort("performDateTime");
   const shows = await result;
   res
     .status(StatusCodes.OK)
