@@ -426,6 +426,10 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const clearFilters = () => {
+    console.log("clear filters");
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -445,6 +449,7 @@ const AppProvider = ({ children }) => {
         editShow,
         deleteShow,
         clearValues,
+        clearFilters,
       }}
     >
       {children}
