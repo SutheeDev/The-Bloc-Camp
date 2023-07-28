@@ -24,14 +24,14 @@ const createShow = async (req, res) => {
 };
 
 const getAllShows = async (req, res) => {
-  const { search, date, status, sort } = req.query;
+  const { search, status, sort } = req.query;
 
   const queryObject = {};
 
   if (search) {
     queryObject.artist = { $regex: search, $options: "i" };
   }
-  if (status !== "all") {
+  if (status && status !== "all") {
     queryObject.status = status;
   }
 

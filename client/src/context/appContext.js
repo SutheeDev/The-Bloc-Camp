@@ -74,6 +74,11 @@ const initialState = {
   totalShows: 0,
   numOfPages: 1,
   page: 1,
+
+  search: "",
+  searchStatus: "all",
+  sort: "latest",
+  sortOptions: ["latest", "oldest", "a-z", "z-a"],
 };
 
 const AppContext = React.createContext();
