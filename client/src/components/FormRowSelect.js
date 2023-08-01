@@ -21,9 +21,12 @@ const FormRowSelect = ({
           className="form-input form-status"
           required
         >
-          <option disabled selected value="">
-            {placeholder}
-          </option>
+          {placeholder && (
+            <option disabled selected value="">
+              {placeholder}
+            </option>
+          )}
+
           {list.map((item, index) => {
             return (
               <option key={index} value={item}>
