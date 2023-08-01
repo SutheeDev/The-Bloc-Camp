@@ -31,6 +31,8 @@ const PageBtnContainer = () => {
             <button
               type="button"
               class={pageNumber === page ? "pageNum-btn active" : "pageNum-btn"}
+              key={pageNumber}
+              onClick={() => console.log("change page")}
             >
               {pageNumber}
             </button>

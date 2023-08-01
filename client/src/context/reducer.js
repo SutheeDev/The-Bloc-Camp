@@ -31,6 +31,7 @@ import {
   SHOW_ALERT,
   HIDE_ALERT,
   CLEAR_FILTERS,
+  CHANGE_PAGE,
 } from "./actions";
 
 import { initialState } from "./appContext";
