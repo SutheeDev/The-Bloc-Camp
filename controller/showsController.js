@@ -51,10 +51,17 @@ const getAllShows = async (req, res) => {
     result = result.sort("-artist");
   }
 
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
+
+  const skip = 1;
+  result = result.skip(skip).limit(limit);
+
   const shows = await result;
-  res
-    .status(StatusCodes.OK)
-    .json({ shows, totalShows: shows.length, numOfPages: 1 });
+  const totalShows = await Show.countDocuments(queryObject);
+  const numOfPages = Math.ceil(totalShows / limit);
+
+  res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
 };
 
 const updateShow = async (req, res) => {
