@@ -17,7 +17,7 @@ const SearchContainer = () => {
   return (
     <Wrapper>
       <form className="form">
-        <h3 className="form-title">filter shows</h3>
+        <h2 className="search-title">filter shows</h2>
         <div className="form-content">
           <div className="form-row-container">
             <FormRow
@@ -71,6 +71,10 @@ export default SearchContainer;
 
 const Wrapper = styled.div`
   color: var(--black);
+  .search-title {
+    text-transform: capitalize;
+    margin-bottom: 1em;
+  }
   .form-input {
     border: none;
     background-color: var(--grey-100);
