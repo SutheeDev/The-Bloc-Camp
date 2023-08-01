@@ -14,6 +14,10 @@ const SearchContainer = () => {
     clearFilters,
   } = useAppContext();
 
+  const handleSearch = (e) => {
+    handleInputChange({ name: e.target.name, value: e.target.value });
+  };
+
   return (
     <Wrapper>
       <form className="form">
@@ -25,9 +29,8 @@ const SearchContainer = () => {
               name="search"
               labelText="search"
               placeholder="search artist"
-              // handleChange={handleInput}
-              // value={artist}
-              // required
+              handleChange={handleSearch}
+              value={search}
             />
 
             <FormRowSelect
