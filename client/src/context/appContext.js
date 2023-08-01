@@ -438,6 +438,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CLEAR_FILTERS });
   };
 
+  const changePage = (page) => {
+    dispatch({ type: CHANGE_PAGE, payload: { page } });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -458,6 +462,7 @@ const AppProvider = ({ children }) => {
         deleteShow,
         clearValues,
         clearFilters,
+        changePage,
       }}
     >
       {children}
