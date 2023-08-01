@@ -36,17 +36,17 @@ const SearchContainer = () => {
             <FormRowSelect
               name="status"
               placeholder="click to select a status"
-              // handleChange={handleInput}
+              handleChange={handleSearch}
               list={statusOptions}
-              // value={status}
+              // value={searchStatus}
             />
 
             <FormRowSelect
               name="sort"
               placeholder="click to sort the result"
-              // handleChange={handleInput}
+              handleChange={handleSearch}
               list={sortOptions}
-              // value={status}
+              // value={sort}
             />
           </div>
           <div className="btn-container">
