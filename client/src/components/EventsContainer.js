@@ -3,7 +3,7 @@ import { useAppContext } from "../context/appContext";
 import { useEffect } from "react";
 import styled from "styled-components";
 import Event from "./Event";
-import PageButtons from "./PageBtnContainer";
+import PageBtnContainer from "./PageBtnContainer";
 
 const EventsContainer = () => {
   const {
@@ -44,7 +44,7 @@ const EventsContainer = () => {
           return <Event key={show._id} {...show} />;
         })}
       </div>
-      {numOfPages > 1 && <PageButtons />}
+      {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
   );
 };
