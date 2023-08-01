@@ -5,12 +5,21 @@ import styled from "styled-components";
 import Event from "./Event";
 
 const EventsContainer = () => {
-  const { getShows, isLoading, shows, totalShows, numOfPages, page } =
-    useAppContext();
+  const {
+    getShows,
+    isLoading,
+    shows,
+    totalShows,
+    numOfPages,
+    page,
+    search,
+    searchStatus,
+    sort,
+  } = useAppContext();
 
   useEffect(() => {
     getShows();
-  }, []);
+  }, [search, searchStatus, sort]);
 
   if (isLoading) {
     return <Loading center />;
