@@ -19,6 +19,11 @@ const SearchContainer = () => {
     handleInputChange({ name: e.target.name, value: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    clearFilters();
+  };
+
   return (
     <Wrapper>
       <form className="form">
@@ -50,7 +55,9 @@ const SearchContainer = () => {
             />
           </div>
           <div className="btn-container">
-            <button className="btn clear-btn">clear all</button>
+            <button className="btn clear-btn" onClick={handleSubmit}>
+              clear all
+            </button>
           </div>
         </div>
       </form>
