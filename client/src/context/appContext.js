@@ -328,7 +328,13 @@ const AppProvider = ({ children }) => {
   };
 
   const getShows = async () => {
-    let url = "/shows";
+    const { search, searchStatus, sort } = state;
+
+    let url = `/shows?status=${searchStatus}&sort=${sort}`;
+    if (search) {
+      url = url + `&search=${search}`;
+    }
+
     dispatch({ type: GET_SHOWS_BEGIN });
     try {
       const { data } = await authFetch.get(url);
