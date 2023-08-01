@@ -3,6 +3,7 @@ import { useAppContext } from "../context/appContext";
 import { useEffect } from "react";
 import styled from "styled-components";
 import Event from "./Event";
+import PageButtons from "./PageButtons";
 
 const EventsContainer = () => {
   const {
@@ -38,9 +39,12 @@ const EventsContainer = () => {
       <h2>
         {totalShows} upcoming show{shows.length > 1 && "s"}
       </h2>
-      {shows.map((show) => {
-        return <Event key={show._id} {...show} />;
-      })}
+      <div>
+        {shows.map((show) => {
+          return <Event key={show._id} {...show} />;
+        })}
+      </div>
+      <PageButtons />
     </Wrapper>
   );
 };
