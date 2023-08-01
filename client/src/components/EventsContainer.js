@@ -44,7 +44,7 @@ const EventsContainer = () => {
           return <Event key={show._id} {...show} />;
         })}
       </div>
-      <PageButtons />
+      {numOfPages > 1 && <PageButtons />}
     </Wrapper>
   );
 };
