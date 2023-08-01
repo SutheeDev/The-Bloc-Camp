@@ -28,7 +28,10 @@ const PageBtnContainer = () => {
       <div className="pageNumber-container">
         {pages.map((pageNumber) => {
           return (
-            <button type="button" class="pageNum-btn">
+            <button
+              type="button"
+              class={pageNumber === page ? "pageNum-btn active" : "pageNum-btn"}
+            >
               {pageNumber}
             </button>
           );
@@ -80,13 +83,19 @@ const Wrapper = styled.div`
   .pageNum-btn:hover {
     color: var(--blue);
   }
+  .pageNum-btn.active {
+    background-color: var(--grey-300);
+    color: var(--white);
+  }
+  .pageNum-btn.active:hover {
+    color: var(--blue);
+  }
   .pageNumber-container {
     display: flex;
     gap: 0.3em;
   }
   .prev-icon,
   .next-icon {
-    /* background-color: red; */
     font-size: 1.3rem;
     display: flex;
     justify-content: center;
