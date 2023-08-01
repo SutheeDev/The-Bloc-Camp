@@ -336,6 +336,12 @@ const reducer = (state, action) => {
       sort: "latest",
     };
   }
+  if (action.type === CHANGE_PAGE) {
+    return {
+      ...state,
+      page: action.payload.page,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

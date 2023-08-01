@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 
 const PageBtnContainer = () => {
-  const { numOfPages, page } = useAppContext();
+  const { numOfPages, page, changePage } = useAppContext();
 
   const prevPage = () => {
-    console.log("previos page");
+    console.log("previous page");
   };
   const nextPage = () => {
     console.log("next page");
@@ -32,7 +32,7 @@ const PageBtnContainer = () => {
               type="button"
               class={pageNumber === page ? "pageNum-btn active" : "pageNum-btn"}
               key={pageNumber}
-              onClick={() => console.log("change page")}
+              onClick={() => changePage(pageNumber)}
             >
               {pageNumber}
             </button>
