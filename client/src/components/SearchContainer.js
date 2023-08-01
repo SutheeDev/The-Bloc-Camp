@@ -45,14 +45,9 @@ const SearchContainer = () => {
               list={sortOptions}
               // value={status}
             />
-
-            {/* <div className="form-row-subcontainer">
-              <DatePickerComponent name="performDate" selected={performDate} />
-            </div> */}
-
-            <div className="btn-container">
-              <button className="btn clear-btn">clear all</button>
-            </div>
+          </div>
+          <div className="btn-container">
+            <button className="btn clear-btn">clear all</button>
           </div>
         </div>
       </form>
@@ -63,6 +58,7 @@ export default SearchContainer;
 
 const Wrapper = styled.div`
   color: var(--black);
+  margin-bottom: 4em;
   .search-title {
     text-transform: capitalize;
     margin-bottom: 1em;
@@ -142,10 +138,12 @@ const Wrapper = styled.div`
     }
   }
   @media screen and (min-width: 950px) {
-    .form-row-subcontainer {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 2em;
+    .form-row-container {
+      display: flex;
+      gap: 1em;
+    }
+    .form-row-container > * {
+      width: 33.33%;
     }
   }
 `;

@@ -42,4 +42,7 @@ const Wrapper = styled.div`
   select:required:invalid {
     color: var(--grey-200);
   }
+  .form-input {
+    cursor: text;
+  }
 `;
