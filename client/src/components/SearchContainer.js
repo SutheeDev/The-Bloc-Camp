@@ -95,7 +95,6 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-  .update-btn,
   .clear-btn {
     margin-top: 1.5em;
     width: 100%;
@@ -128,22 +127,23 @@ const Wrapper = styled.div`
       display: block;
       text-align: right;
     }
-    .update-btn,
     .clear-btn {
       width: 45%;
       max-width: 200px;
-    }
-    .clear-btn {
-      margin-left: 1.5em;
     }
   }
   @media screen and (min-width: 950px) {
     .form-row-container {
       display: flex;
-      gap: 1em;
+      gap: 2%;
+      margin-bottom: -1em;
     }
     .form-row-container > * {
-      width: 33.33%;
+      width: 32%;
+    }
+    .clear-btn {
+      width: 32%;
+      max-width: none;
     }
   }
 `;
