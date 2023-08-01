@@ -51,15 +51,7 @@ const SearchContainer = () => {
             </div> */}
 
             <div className="btn-container">
-              <button
-                type="submit"
-                className="btn update-btn"
-                disabled={isLoading}
-                // onClick={handleSubmit}
-              >
-                search
-              </button>
-              <button className="btn clear-btn">clear all filters</button>
+              <button className="btn clear-btn">clear all</button>
             </div>
           </div>
         </div>
