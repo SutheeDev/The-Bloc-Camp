@@ -30,6 +30,7 @@ import {
   CLEAR_FILE_UPLOAD,
   SHOW_ALERT,
   HIDE_ALERT,
+  CLEAR_FILTERS,
 } from "./actions";
 
 import { initialState } from "./appContext";
