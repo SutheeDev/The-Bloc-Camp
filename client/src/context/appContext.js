@@ -428,7 +428,7 @@ const AppProvider = ({ children }) => {
   };
 
   const clearFilters = () => {
-    console.log("clear filters");
+    dispatch({ type: CLEAR_FILTERS });
   };
 
   return (

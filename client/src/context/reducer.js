@@ -327,6 +327,14 @@ const reducer = (state, action) => {
       featureImage: "",
     };
   }
+  if (action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+      search: "",
+      searchStatus: "all",
+      sort: "latest",
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
