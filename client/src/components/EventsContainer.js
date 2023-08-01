@@ -3,7 +3,7 @@ import { useAppContext } from "../context/appContext";
 import { useEffect } from "react";
 import styled from "styled-components";
 import Event from "./Event";
-import PageButtons from "./PageButtons";
+import PageButtons from "./PageBtnContainer";
 
 const EventsContainer = () => {
   const {
