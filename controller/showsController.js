@@ -134,7 +134,7 @@ const showOverview = async (req, res) => {
 };
 
 const getPublishedShows = async (req, res) => {
-  let result = Show.find({});
+  let result = Show.find({ isPublished: true }).sort("performDateTime");
 
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 10;
