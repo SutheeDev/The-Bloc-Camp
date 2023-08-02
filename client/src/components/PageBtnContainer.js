@@ -6,10 +6,18 @@ const PageBtnContainer = () => {
   const { numOfPages, page, changePage } = useAppContext();
 
   const prevPage = () => {
-    console.log("previous page");
+    let newPage = page - 1;
+    if (newPage < 1) {
+      newPage = numOfPages;
+    }
+    changePage(newPage);
   };
   const nextPage = () => {
-    console.log("next page");
+    let newPage = page + 1;
+    if (newPage > numOfPages) {
+      newPage = 1;
+    }
+    changePage(newPage);
   };
 
   const pages = Array.from({ length: numOfPages }, (_, index) => {
@@ -18,7 +26,7 @@ const PageBtnContainer = () => {
 
   return (
     <Wrapper>
-      <button className="prev-btn">
+      <button className="prev-btn" onClick={prevPage}>
         <div className="prev-icon">
           <BiChevronsLeft />
         </div>
@@ -40,7 +48,7 @@ const PageBtnContainer = () => {
         })}
       </div>
 
-      <button className="next-btn">
+      <button className="next-btn" onClick={nextPage}>
         next
         <div className="next-icon">
           <BiChevronsRight />
