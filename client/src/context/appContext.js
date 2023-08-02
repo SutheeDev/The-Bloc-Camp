@@ -329,9 +329,9 @@ const AppProvider = ({ children }) => {
   };
 
   const getShows = async () => {
-    const { search, searchStatus, sort } = state;
+    const { search, searchStatus, sort, page } = state;
 
-    let url = `/shows?status=${searchStatus}&sort=${sort}`;
+    let url = `/shows?page=${page}&status=${searchStatus}&sort=${sort}`;
     if (search) {
       url = url + `&search=${search}`;
     }
