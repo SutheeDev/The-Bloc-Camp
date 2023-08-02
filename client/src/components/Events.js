@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { TicketsBtn } from "../components";
 import { useAppContext } from "../context/appContext";
 import { useEffect } from "react";
+import moment from "moment";
 
 const Events = () => {
   const { shows, getPublishedShows } = useAppContext();
@@ -14,26 +15,25 @@ const Events = () => {
     <Wrapper class="shows">
       <div class="shows-container">
         {shows.map((show) => {
+          const { artist, performDateTime } = show;
+          const date = moment(performDateTime).format("DD");
+          const day = moment(performDateTime).format("ddd");
+          const month = moment(performDateTime).format("MMM");
+
           return (
             <div class="show">
-              <div className="show-info"></div>
+              <div className="show-info">
+                <h2>{date}</h2>
+                <div>
+                  <p className="day">{day}</p>
+                  <p>{month}</p>
+                </div>
+                <h3>{artist}</h3>
+              </div>
+              <TicketsBtn />
             </div>
           );
         })}
-
-        {/* Show */}
-        <div class="show">
-          <div class="show-info">
-            <h2>27</h2>
-            <div>
-              <p class="day">Mon</p>
-              <p>Feb</p>
-            </div>
-            <h3>The Generators</h3>
-          </div>
-          <TicketsBtn />
-        </div>
-        {/* End Show */}
 
         <div class="fancy-btn">
           <a href="#">
