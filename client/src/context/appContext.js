@@ -444,8 +444,18 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CHANGE_PAGE, payload: { page } });
   };
 
-  const getPublishedShows = () => {
-    console.log("get published shows");
+  const getPublishedShows = async () => {
+    dispatch({ type: GET_PUBLISHED_SHOWS_BEGIN });
+    try {
+      const { data } = await axios.get("/api/v1/shows/published");
+      const { shows, totalShows, numOfPages } = data;
+      dispatch({
+        type: GET_PUBLISHED_SHOWS_SUCCESS,
+        payload: { shows, totalShows, numOfPages },
+      });
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   return (

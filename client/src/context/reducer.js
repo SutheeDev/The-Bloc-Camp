@@ -345,6 +345,21 @@ const reducer = (state, action) => {
       page: action.payload.page,
     };
   }
+  if (action.type === GET_PUBLISHED_SHOWS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === GET_PUBLISHED_SHOWS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      shows: action.payload.shows,
+      totalShows: action.payload.totalShows,
+      numOfPages: action.payload.numOfPages,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

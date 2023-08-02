@@ -134,8 +134,18 @@ const showOverview = async (req, res) => {
 };
 
 const getPublishedShows = async (req, res) => {
-  const shows = await Show.find({});
-  res.status(StatusCodes.OK).json({ shows });
+  let result = Show.find({});
+
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
+  const skip = (page - 1) * limit;
+  result = result.skip(skip).limit(limit);
+
+  const shows = await result;
+  const totalShows = await Show.countDocuments(shows);
+  const numOfPages = Math.ceil(totalShows / limit);
+
+  res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
 };
 
 export {
