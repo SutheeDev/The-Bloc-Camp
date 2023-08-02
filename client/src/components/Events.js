@@ -3,13 +3,22 @@ import { TicketsBtn } from "../components";
 import { useAppContext } from "../context/appContext";
 import { useEffect } from "react";
 import moment from "moment";
+import Loading from "./Loading";
 
 const Events = () => {
-  const { shows, getPublishedShows } = useAppContext();
+  const { shows, getPublishedShows, isLoading } = useAppContext();
 
   useEffect(() => {
     getPublishedShows();
   }, []);
+
+  if (isLoading) {
+    return (
+      <WrapperLoading>
+        <Loading center />
+      </WrapperLoading>
+    );
+  }
 
   return (
     <Wrapper class="shows">
@@ -47,6 +56,11 @@ const Events = () => {
   );
 };
 export default Events;
+
+const WrapperLoading = styled.section`
+  background-color: var(--lighterBlue);
+  padding: 80px 0;
+`;
 
 const Wrapper = styled.section`
   /* ----------------- */
