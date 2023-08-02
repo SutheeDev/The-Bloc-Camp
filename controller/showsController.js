@@ -133,4 +133,16 @@ const showOverview = async (req, res) => {
   res.status(StatusCodes.OK).json({ defaultOverview, monthlyApplication });
 };
 
-export { createShow, getAllShows, updateShow, deleteShow, showOverview };
+const getPublishedShows = async (req, res) => {
+  const shows = await Show.find({});
+  res.status(StatusCodes.OK).json({ shows });
+};
+
+export {
+  createShow,
+  getAllShows,
+  updateShow,
+  deleteShow,
+  showOverview,
+  getPublishedShows,
+};
