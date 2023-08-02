@@ -19,7 +19,7 @@ router
   .route("/")
   .post(authenticatedUser, createShow)
   .get(authenticatedUser, getAllShows);
-router.route("/").get(getPublishedShows);
+router.route("/published").get(getPublishedShows);
 router.route("/overview").get(authenticatedUser, showOverview);
 router.route("/uploads-artistImage").post(authenticatedUser, uploadArtistImage);
 router
