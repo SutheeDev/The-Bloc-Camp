@@ -72,25 +72,27 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
     cursor: pointer;
     overflow: hidden;
 
     transition: all 0.3s ease-out;
   }
   .show:hover .show-info {
-    transform: translateX(-110px);
+    transform: translateX(-115px);
   }
   .show-info h2 {
     font-size: 42px;
+    width: 55px;
   }
   .show-info p {
     text-transform: capitalize;
   }
+  .show-info div {
+    width: 60px;
+  }
   .show-info h3 {
     font-size: 38px;
     text-transform: capitalize;
-    padding-left: 20px;
   }
   .day {
     color: #726185;
@@ -158,16 +160,16 @@ const Wrapper = styled.section`
     }
     .show-info h2 {
       font-size: 30px;
+      width: 45px;
     }
     .show-info p {
       font-size: 12px;
     }
     .show-info h3 {
       font-size: 26px;
-      padding-left: 15px;
     }
     .show:hover .show-info {
-      transform: translateX(-90px);
+      transform: translateX(-105px);
     }
   }
   @media screen and (max-width: 450px) {
@@ -179,12 +181,18 @@ const Wrapper = styled.section`
       justify-content: flex-start;
       margin-bottom: 20px;
     }
+    .show-info h2 {
+      width: 50px;
+    }
     .show-info h3 {
       display: block;
       width: 100%;
     }
+    .show-info div {
+      width: 55px;
+    }
     .show:hover .show-info {
-      transform: translateX(-90px);
+      transform: translateX(-80px);
     }
   }
 `;
