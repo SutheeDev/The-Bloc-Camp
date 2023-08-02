@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { TicketsBtn } from "../components";
+import { useAppContext } from "../context/appContext";
 
 const Events = () => {
+  const { shows } = useAppContext();
   return (
     <Wrapper class="shows">
       <div class="shows-container">

@@ -56,7 +56,7 @@ const SearchContainer = () => {
           </div>
           <div className="btn-container">
             <button className="btn clear-btn" onClick={handleSubmit}>
-              clear all
+              clear filters
             </button>
           </div>
         </div>

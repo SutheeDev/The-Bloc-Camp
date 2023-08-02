@@ -442,6 +442,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CHANGE_PAGE, payload: { page } });
   };
 
+  const getPublishedShows = () => {
+    console.log("get published shows");
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -463,6 +467,7 @@ const AppProvider = ({ children }) => {
         clearValues,
         clearFilters,
         changePage,
+        getPublishedShows,
       }}
     >
       {children}
