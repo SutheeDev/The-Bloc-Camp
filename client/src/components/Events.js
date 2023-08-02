@@ -1,67 +1,25 @@
 import styled from "styled-components";
 import { TicketsBtn } from "../components";
 import { useAppContext } from "../context/appContext";
+import { useEffect } from "react";
 
 const Events = () => {
-  const { shows } = useAppContext();
+  const { shows, getPublishedShows } = useAppContext();
+
+  useEffect(() => {
+    getPublishedShows();
+  }, []);
+
   return (
     <Wrapper class="shows">
       <div class="shows-container">
-        {/* Show */}
-        <div class="show">
-          <div class="show-info">
-            <h2>27</h2>
-            <div>
-              <p class="day">Mon</p>
-              <p>Feb</p>
+        {shows.map((show) => {
+          return (
+            <div class="show">
+              <div className="show-info"></div>
             </div>
-            <h3>The Generators</h3>
-          </div>
-          <TicketsBtn />
-        </div>
-        {/* End Show */}
-
-        {/* Show */}
-        <div class="show">
-          <div class="show-info">
-            <h2>27</h2>
-            <div>
-              <p class="day">Mon</p>
-              <p>Feb</p>
-            </div>
-            <h3>The Generators</h3>
-          </div>
-          <TicketsBtn />
-        </div>
-        {/* End Show */}
-
-        {/* Show */}
-        <div class="show">
-          <div class="show-info">
-            <h2>27</h2>
-            <div>
-              <p class="day">Mon</p>
-              <p>Feb</p>
-            </div>
-            <h3>The Generators</h3>
-          </div>
-          <TicketsBtn />
-        </div>
-        {/* End Show */}
-
-        {/* Show */}
-        <div class="show">
-          <div class="show-info">
-            <h2>27</h2>
-            <div>
-              <p class="day">Mon</p>
-              <p>Feb</p>
-            </div>
-            <h3>The Generators</h3>
-          </div>
-          <TicketsBtn />
-        </div>
-        {/* End Show */}
+          );
+        })}
 
         {/* Show */}
         <div class="show">
