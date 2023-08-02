@@ -20,7 +20,7 @@ const EventsContainer = () => {
 
   useEffect(() => {
     getShows();
-  }, [search, searchStatus, sort]);
+  }, [search, searchStatus, sort, page]);
 
   if (isLoading) {
     return <Loading center />;
