@@ -4,14 +4,11 @@ import SwiperCore, { Autoplay } from "swiper/core";
 import "swiper/css/autoplay";
 import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
-
+import moment from "moment";
 import styled from "styled-components";
-import testImg1 from "../assets/images/img-bg-1.jpg";
-import testImg2 from "../assets/images/img-bg-2.jpg";
-import testImg3 from "../assets/images/img-bg-3.jpg";
 
 const Slideshow = () => {
-  const { isLoading, getFeaturedShows } = useAppContext();
+  const { isLoading, getFeaturedShows, featuredShows } = useAppContext();
 
   useEffect(() => {
     getFeaturedShows();
@@ -29,60 +26,31 @@ const Slideshow = () => {
         slidesPerView={1}
         speed={1000}
       >
-        <SwiperSlide>
-          <div>
-            <div className="slides-info">
-              <h1>Artist.</h1>
-              <div className="slide-info">
-                <span className="slide-date">Tue Feb 21</span>
-                <span className="slide-time">8.00 pm</span>
-                <div>
-                  <a href="#">
-                    <button>Get Tickets</button>
-                  </a>
-                  <div className="btn-block"></div>
+        {featuredShows.map((show) => {
+          const { artist, performDateTime, featureImage } = show;
+          const showDate = moment(performDateTime).format("ddd MMM DD");
+          const showTime = moment(performDateTime).format("hh:mm A");
+          return (
+            <SwiperSlide>
+              <div>
+                <div className="slides-info">
+                  <h1>{artist}</h1>
+                  <div className="slide-info">
+                    <span className="slide-date">{showDate}</span>
+                    <span className="slide-time">{showTime}</span>
+                    <div>
+                      <a href="#">
+                        <button>Get Tickets</button>
+                      </a>
+                      <div className="btn-block"></div>
+                    </div>
+                  </div>
                 </div>
+                <img src={featureImage} alt="" />
               </div>
-            </div>
-            <img src={testImg1} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <div className="slides-info">
-              <h1>Artist.</h1>
-              <div className="slide-info">
-                <span className="slide-date">Tue Feb 21</span>
-                <span className="slide-time">8.00 pm</span>
-                <div>
-                  <a href="#">
-                    <button>Get Tickets</button>
-                  </a>
-                  <div className="btn-block"></div>
-                </div>
-              </div>
-            </div>
-            <img src={testImg2} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <div className="slides-info">
-              <h1>Artist.</h1>
-              <div className="slide-info">
-                <span className="slide-date">Tue Feb 21</span>
-                <span className="slide-time">8.00 pm</span>
-                <div>
-                  <a href="#">
-                    <button>Get Tickets</button>
-                  </a>
-                  <div className="btn-block"></div>
-                </div>
-              </div>
-            </div>
-            <img src={testImg3} alt="" />
-          </div>
-        </SwiperSlide>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </Wrapper>
   );
@@ -155,7 +123,7 @@ const Wrapper = styled.section`
   .slide-info div .btn-block {
     position: absolute;
     bottom: 1.5rem;
-    left: 2rem;
+    /* left: 2rem; */
   }
   .slide-info button {
     text-transform: uppercase;
@@ -168,6 +136,7 @@ const Wrapper = styled.section`
     cursor: pointer;
     letter-spacing: 1px;
     font-weight: 700;
+    left: 2rem;
 
     transition: all 0.3s ease;
   }
@@ -176,6 +145,7 @@ const Wrapper = styled.section`
     position: relative;
   }
   .slide-info div .btn-block {
+    left: 1rem;
     width: 235px;
     height: 27px;
     background-color: #ffffff;
@@ -197,40 +167,6 @@ const Wrapper = styled.section`
       top: 60px;
       left: 0;
     }
-    .slides-info {
-      padding: 5rem 6rem 0 6rem;
-    }
-    .slides-info h1 {
-      font-size: calc(6vw + 1rem);
-      line-height: 4rem;
-    }
-    .slide-info span {
-      font-size: calc(1.5vw + 0.5rem);
-      top: 1rem;
-      left: 1rem;
-    }
-    .slide-date {
-      width: calc(2rem + 25vw);
-    }
-    .slide-time {
-      width: calc(2rem + 12vw);
-      transform: translateY(3.5rem);
-    }
-    .slide-info button,
-    .slide-info div .btn-block {
-      left: 1rem;
-    }
-    .slide-info button {
-      font-size: 12px;
-      width: 7.5rem;
-      padding: 12px 10px;
-    }
-    .slide-info div .btn-block {
-      transform: translate(-36%, -34%);
-      width: 172px;
-    }
-  }
-  @media screen and (max-width: 850px) {
     .slides-info {
       padding: 5rem 3rem;
     }
@@ -254,8 +190,10 @@ const Wrapper = styled.section`
     .slide-info button,
     .slide-info div .btn-block {
       bottom: 0.5rem;
+      left: 1rem;
     }
     .slide-info button {
+      font-size: 12px;
       width: 7.5rem;
       padding: 7px 0;
     }
