@@ -493,6 +493,7 @@ const AppProvider = ({ children }) => {
         clearFilters,
         changePage,
         getPublishedShows,
+        getFeaturedShows,
       }}
     >
       {children}

@@ -2,6 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SwiperCore, { Autoplay } from "swiper/core";
 import "swiper/css/autoplay";
+import { useEffect } from "react";
+import { useAppContext } from "../context/appContext";
 
 import styled from "styled-components";
 import testImg1 from "../assets/images/img-bg-1.jpg";
@@ -9,6 +11,12 @@ import testImg2 from "../assets/images/img-bg-2.jpg";
 import testImg3 from "../assets/images/img-bg-3.jpg";
 
 const Slideshow = () => {
+  const { isLoading, getFeaturedShows } = useAppContext();
+
+  useEffect(() => {
+    getFeaturedShows();
+  }, []);
+
   return (
     <Wrapper>
       <Swiper
