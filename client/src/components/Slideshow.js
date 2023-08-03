@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
 import moment from "moment";
 import styled from "styled-components";
+import Loading from "./Loading";
 
 const Slideshow = () => {
   const { isLoading, getFeaturedShows, featuredShows } = useAppContext();
@@ -13,6 +14,14 @@ const Slideshow = () => {
   useEffect(() => {
     getFeaturedShows();
   }, []);
+
+  if (isLoading) {
+    return (
+      <WrapperLoading>
+        <Loading center />
+      </WrapperLoading>
+    );
+  }
 
   return (
     <Wrapper>
@@ -39,7 +48,7 @@ const Slideshow = () => {
                     <span className="slide-date">{showDate}</span>
                     <span className="slide-time">{showTime}</span>
                     <div>
-                      <a href="#">
+                      <a href="/shows">
                         <button>Get Tickets</button>
                       </a>
                       <div className="btn-block"></div>
@@ -58,6 +67,11 @@ const Slideshow = () => {
 
 export default Slideshow;
 
+const WrapperLoading = styled.section`
+  background-color: var(--lighterBlue);
+  padding: 80px 0;
+`;
+
 const Wrapper = styled.section`
   .swiper {
     width: 100vw;
@@ -69,7 +83,7 @@ const Wrapper = styled.section`
   .swiper-slide img {
     width: 100%;
     object-fit: cover;
-    filter: grayscale(100%) brightness(30%);
+    filter: grayscale(100%) brightness(50%);
   }
   .slides-info {
     position: absolute;
