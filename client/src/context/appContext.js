@@ -460,6 +460,17 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const getFeaturedShows = async () => {
+    dispatch({ type: GET_FEATURED_SHOWS_BEGIN });
+    try {
+      const { data } = await axios.get("api/v1/shows/featured");
+      const { shows } = data;
+      console.log(shows);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{

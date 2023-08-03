@@ -362,6 +362,12 @@ const reducer = (state, action) => {
       numOfPages: action.payload.numOfPages,
     };
   }
+  if (action.type === GET_FEATURED_SHOWS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
