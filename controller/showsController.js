@@ -148,6 +148,11 @@ const getPublishedShows = async (req, res) => {
   res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
 };
 
+const getFeaturedShows = async (req, res) => {
+  const shows = await Show.find({ isFeatured: true }).sort("performDateTime");
+  res.status(StatusCodes.OK).json({ shows });
+};
+
 export {
   createShow,
   getAllShows,
@@ -155,4 +160,5 @@ export {
   deleteShow,
   showOverview,
   getPublishedShows,
+  getFeaturedShows,
 };
