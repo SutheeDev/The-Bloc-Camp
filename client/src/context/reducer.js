@@ -368,6 +368,13 @@ const reducer = (state, action) => {
       isLoading: true,
     };
   }
+  if (action.type === GET_FEATURED_SHOWS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      featuredShows: action.payload.shows,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

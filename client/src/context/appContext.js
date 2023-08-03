@@ -85,6 +85,8 @@ const initialState = {
   searchStatus: "all",
   sort: "latest",
   sortOptions: ["latest", "oldest", "a-z", "z-a"],
+
+  featuredShows: [],
 };
 
 const AppContext = React.createContext();
@@ -465,7 +467,7 @@ const AppProvider = ({ children }) => {
     try {
       const { data } = await axios.get("api/v1/shows/featured");
       const { shows } = data;
-      console.log(shows);
+      dispatch({ type: GET_FEATURED_SHOWS_SUCCESS, payload: { shows } });
     } catch (error) {
       console.log(error.response);
     }
