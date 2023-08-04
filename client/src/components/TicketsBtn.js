@@ -13,8 +13,8 @@ const Wrapper = styled.a`
   .btn {
     text-transform: uppercase;
     padding: 1rem 1.5rem;
-    color: #df3311;
-    border: 3px solid #df3311;
+    color: var(--reddish);
+    border: 3px solid var(--reddish);
     background-color: transparent;
     border-radius: 1px;
     cursor: pointer;
@@ -24,8 +24,8 @@ const Wrapper = styled.a`
     transition: all 0.3s ease;
   }
   .btn:hover {
-    color: #ffffff;
-    border: 3px solid #8f210c;
+    color: var(--white);
+    border: 3px solid var(--darkRed);
   }
   @media screen and (max-width: 850px) {
     .btn {

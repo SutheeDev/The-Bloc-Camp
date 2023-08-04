@@ -5,6 +5,7 @@ import {
   PageTitle,
   Show,
   Subscribe,
+  PageBtnContainer,
 } from "../components";
 import styled from "styled-components";
 import { useEffect } from "react";
@@ -13,11 +14,12 @@ import moment from "moment";
 import Loading from "../components/Loading";
 
 const Shows = () => {
-  const { isLoading, getPublishedShows, shows } = useAppContext();
+  const { isLoading, getPublishedShows, shows, numOfPages, page } =
+    useAppContext();
 
   useEffect(() => {
     getPublishedShows();
-  }, []);
+  }, [page]);
 
   return (
     <Wrapper>
@@ -52,6 +54,9 @@ const Shows = () => {
           })}
         </section>
       )}
+      <div className="page-btn-container">
+        {numOfPages > 1 && <PageBtnContainer />}
+      </div>
 
       <Subscribe />
       <Footer />
@@ -61,11 +66,6 @@ const Shows = () => {
 
 export default Shows;
 
-const WrapperLoading = styled.section`
-  background-color: var(--lighterBlue);
-  padding: 80px 0;
-`;
-
 const Wrapper = styled.main`
   background-color: var(--backgroundColor);
   .calendar {
@@ -73,14 +73,18 @@ const Wrapper = styled.main`
     padding: 70px 0;
     margin-top: -5px;
   }
-  .calendar-container {
+  .calendar-container,
+  .page-btn-container {
     width: 75vw;
     margin: 0 auto;
     @media screen and (max-width: 850px) {
       width: 80vw;
     }
   }
-
+  .page-btn-container {
+    display: flex;
+    justify-content: center;
+  }
   .calendar-shows {
     width: 75vw;
     max-width: 980px;
@@ -99,5 +103,27 @@ const Wrapper = styled.main`
         width: 100%;
       }
     }
+  }
+  .prev-btn,
+  .next-btn,
+  .pageNum-btn {
+    color: var(--reddish);
+    border: 3px solid var(--reddish);
+    background-color: transparent;
+    border-radius: 1px;
+  }
+  .prev-btn:hover,
+  .next-btn:hover,
+  .pageNum-btn:hover {
+    color: var(--white);
+    border: 3px solid var(--darkRed);
+  }
+  .pageNum-btn.active {
+    background-color: var(--reddish);
+    color: var(--white);
+  }
+  .pageNum-btn.active:hover {
+    color: var(--darkBlue);
+    border: 3px solid var(--reddish);
   }
 `;

@@ -25,6 +25,7 @@ import Event from "./Event";
 import Loading from "./Loading";
 import FormRowSelect from "./FormRowSelect";
 import Alert from "./Alert";
+import PageBtnContainer from "./PageBtnContainer";
 
 export {
   Navbar,
@@ -54,4 +55,5 @@ export {
   Loading,
   FormRowSelect,
   Alert,
+  PageBtnContainer,
 };

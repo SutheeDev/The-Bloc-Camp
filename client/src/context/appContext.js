@@ -449,9 +449,11 @@ const AppProvider = ({ children }) => {
   };
 
   const getPublishedShows = async () => {
+    const { page } = state;
+    let url = `/api/v1/shows/published?page=${page}`;
     dispatch({ type: GET_PUBLISHED_SHOWS_BEGIN });
     try {
-      const { data } = await axios.get("/api/v1/shows/published");
+      const { data } = await axios.get(url);
       const { shows, totalShows, numOfPages } = data;
       dispatch({
         type: GET_PUBLISHED_SHOWS_SUCCESS,
