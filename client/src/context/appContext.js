@@ -91,7 +91,7 @@ const initialState = {
   featuredShows: [],
 
   overview: {},
-  monthloyApplications: [],
+  monthlyApplication: [],
 };
 
 const AppContext = React.createContext();
@@ -484,7 +484,13 @@ const AppProvider = ({ children }) => {
     dispatch({ type: SHOW_OVERVIEW_BEGIN });
     try {
       const { data } = await authFetch("/shows/overview");
-      console.log(data);
+      dispatch({
+        type: SHOW_OVERVIEW_SUCCESS,
+        payload: {
+          overview: data.defaultOverview,
+          monthlyApplication: data.monthlyApplication,
+        },
+      });
     } catch (error) {
       console.log(error.response);
       // logoutUser();

@@ -380,6 +380,16 @@ const reducer = (state, action) => {
   if (action.type === SHOW_OVERVIEW_BEGIN) {
     return {
       ...state,
+      isLoading: true,
+      showAlert: false,
+    };
+  }
+  if (action.type === SHOW_OVERVIEW_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      overview: action.payload.overview,
+      monthlyApplication: action.payload.monthlyApplication,
     };
   }
   throw new Error(`No such action: ${action.type}`);
