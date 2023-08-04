@@ -16,21 +16,21 @@ const OverviewContainer = () => {
       count: overview.upcoming || 0,
       icon: <BiCalendarStar />,
       color: "var(--reddish)",
-      bcg: "var(darkred)",
+      bcg: "var(--darkRed)",
     },
     {
       title: "canceled",
       count: overview.canceled || 0,
       icon: <BiCalendarX />,
       color: "var(--reddish)",
-      bcg: "var(darkred)",
+      bcg: "var(--darkRed)",
     },
     {
       title: "sold out",
       count: overview.soldout || 0,
       icon: <BiCalendarExclamation />,
       color: "var(--reddish)",
-      bcg: "var(darkred)",
+      bcg: "var(--darkRed)",
     },
   ];
 
