@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const TicketsBtn = () => {
   return (
-    <Wrapper href="#">
+    <Wrapper href="/shows">
       <button class="btn">get tickets</button>
     </Wrapper>
   );
