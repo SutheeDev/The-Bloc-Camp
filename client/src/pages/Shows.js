@@ -28,7 +28,7 @@ const Shows = () => {
 
       <section class="calendar">
         <div class="calendar-container">
-          <PageTitle />
+          <PageTitle text1="upcoming" text2="shows" />
         </div>
       </section>
 

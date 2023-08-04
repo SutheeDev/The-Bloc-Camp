@@ -18,7 +18,7 @@ const Landing = () => {
       <section class="upcoming">
         <div class="upcoming-container">
           <div class="line1"></div>
-          <PageTitle />
+          <PageTitle text1="upcoming" text2="shows" />
           <div class="line3"></div>
           <div class="upcoming-info">
             <p>All shows are 18+ to enter and 21+ to purchase alcohol.</p>

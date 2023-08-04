@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const PageTitle = () => {
+const PageTitle = ({ text1, text2 }) => {
   return (
     <Wrapper class="pageTitle">
-      <h1 class="pageTitle-text1">upcoming</h1>
+      <h1 class="pageTitle-text1">{text1}</h1>
       <div class="pageTitle-box">
-        <h1 class="pageTitle-text2">shows</h1>
+        <h1 class="pageTitle-text2">{text2}</h1>
         <div class="block"></div>
         <div class="line2"></div>
       </div>

@@ -10,7 +10,7 @@ const About = () => {
 
       <section class="about">
         <div class="about-container">
-          <PageTitle />
+          <PageTitle text1="about" text2="bloc camp" />
         </div>
       </section>
 
