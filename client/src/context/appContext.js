@@ -89,6 +89,9 @@ const initialState = {
   sortOptions: ["latest", "oldest", "a-z", "z-a"],
 
   featuredShows: [],
+
+  overview: {},
+  monthloyApplications: [],
 };
 
 const AppContext = React.createContext();
