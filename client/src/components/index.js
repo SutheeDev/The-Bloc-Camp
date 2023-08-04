@@ -26,6 +26,8 @@ import Loading from "./Loading";
 import FormRowSelect from "./FormRowSelect";
 import Alert from "./Alert";
 import PageBtnContainer from "./PageBtnContainer";
+import OverviewContainer from "./OverviewContainer";
+import ChartsContainer from "./ChartsContainer";
 
 export {
   Navbar,
@@ -56,4 +58,6 @@ export {
   FormRowSelect,
   Alert,
   PageBtnContainer,
+  OverviewContainer,
+  ChartsContainer,
 };
