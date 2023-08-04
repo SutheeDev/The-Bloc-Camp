@@ -7,8 +7,16 @@ import {
   Subscribe,
 } from "../components";
 import styled from "styled-components";
+import { useEffect } from "react";
+import { useAppContext } from "../context/appContext";
 
 const Shows = () => {
+  const { isLoading, getPublishedShows, shows } = useAppContext();
+
+  useEffect(() => {
+    getPublishedShows();
+  }, []);
+
   return (
     <Wrapper>
       <Navbar />
