@@ -9,6 +9,7 @@ import {
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
+import moment from "moment";
 
 const Shows = () => {
   const { isLoading, getPublishedShows, shows } = useAppContext();
@@ -29,12 +30,18 @@ const Shows = () => {
       </section>
 
       <section class="calendar-shows">
-        <Show />
-        <Show />
-        <Show />
-        <Show />
-        <Show />
-        <Show />
+        {shows.map((show) => {
+          const { artist, artistImage, artistInfo, performDateTime } = show;
+          const date = moment(performDateTime).format("ddd, MMM DD");
+          return (
+            <Show
+              artist={artist}
+              artistImage={artistImage}
+              artistInfo={artistInfo}
+              date={date}
+            />
+          );
+        })}
       </section>
 
       <Subscribe />

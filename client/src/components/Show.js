@@ -1,23 +1,18 @@
 import styled from "styled-components";
 import { TicketsBtn } from "../components";
-import bandImg from "../assets/images/img-band-1.jpg";
 
-const Show = () => {
+const Show = ({ artist, artistImage, artistInfo, date }) => {
   return (
     <Wrapper class="calendar-show">
-      <img src={bandImg} alt="" />
+      <img src={artistImage} alt="" />
       <div class="calendar-show-info">
         <div class="band-date-info">
           <div class="band-date">
-            <h2 class="band-name">The Generators</h2>
-            <h2>Mon, Feb 27</h2>
+            <h2 class="band-name">{artist}</h2>
+            <h2>{date}</h2>
           </div>
           <div class="band-info">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-              debitis neque at, mollitia qui veritatis suscipit voluptates
-              architecto ratione optio!
-            </p>
+            <p>{artistInfo}</p>
           </div>
         </div>
         <div class="getTicket-btn">
