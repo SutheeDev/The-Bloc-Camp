@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
 import moment from "moment";
+import Loading from "../components/Loading";
 
 const Shows = () => {
   const { isLoading, getPublishedShows, shows } = useAppContext();
@@ -29,20 +30,28 @@ const Shows = () => {
         </div>
       </section>
 
-      <section class="calendar-shows">
-        {shows.map((show) => {
-          const { artist, artistImage, artistInfo, performDateTime } = show;
-          const date = moment(performDateTime).format("ddd, MMM DD");
-          return (
-            <Show
-              artist={artist}
-              artistImage={artistImage}
-              artistInfo={artistInfo}
-              date={date}
-            />
-          );
-        })}
-      </section>
+      {isLoading ? (
+        <section class="calendar-shows">
+          <Loading center />
+        </section>
+      ) : (
+        <section class="calendar-shows">
+          {shows.map((show) => {
+            const { artist, artistImage, artistInfo, performDateTime, _id } =
+              show;
+            const date = moment(performDateTime).format("ddd, MMM DD");
+            return (
+              <Show
+                key={_id}
+                artist={artist}
+                artistImage={artistImage}
+                artistInfo={artistInfo}
+                date={date}
+              />
+            );
+          })}
+        </section>
+      )}
 
       <Subscribe />
       <Footer />
@@ -51,6 +60,11 @@ const Shows = () => {
 };
 
 export default Shows;
+
+const WrapperLoading = styled.section`
+  background-color: var(--lighterBlue);
+  padding: 80px 0;
+`;
 
 const Wrapper = styled.main`
   background-color: var(--backgroundColor);
