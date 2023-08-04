@@ -480,6 +480,17 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const showOverview = async () => {
+    dispatch({ type: SHOW_OVERVIEW_BEGIN });
+    try {
+      const { data } = await authFetch("/shows/overview");
+      console.log(data);
+    } catch (error) {
+      console.log(error.response);
+      // logoutUser();
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -503,6 +514,7 @@ const AppProvider = ({ children }) => {
         changePage,
         getPublishedShows,
         getFeaturedShows,
+        showOverview,
       }}
     >
       {children}

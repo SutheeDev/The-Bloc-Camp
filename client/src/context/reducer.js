@@ -377,6 +377,11 @@ const reducer = (state, action) => {
       featuredShows: action.payload.shows,
     };
   }
+  if (action.type === SHOW_OVERVIEW_BEGIN) {
+    return {
+      ...state,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;
