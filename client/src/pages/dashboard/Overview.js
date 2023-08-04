@@ -1,17 +1,23 @@
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useAppContext } from "../../context/appContext";
+import { ChartsContainer, OverviewContainer, Loading } from "../../components";
 
 const Overview = () => {
-  const { showOverview } = useAppContext();
+  const { showOverview, isLoading, monthlyApplication } = useAppContext();
 
   useEffect(() => {
     showOverview();
   }, []);
 
+  if (isLoading) {
+    return <Loading center />;
+  }
+
   return (
     <Wrapper>
-      <h2>Overview</h2>
+      <OverviewContainer />
+      {monthlyApplication > 0 && <ChartsContainer />}
     </Wrapper>
   );
 };
