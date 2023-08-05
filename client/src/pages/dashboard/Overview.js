@@ -18,7 +18,7 @@ const Overview = () => {
     <Wrapper>
       <h3 className="form-title">Overview</h3>
       <OverviewContainer />
-      {monthlyApplication > 0 && <ChartsContainer />}
+      {monthlyApplication.length > 0 && <ChartsContainer />}
     </Wrapper>
   );
 };
