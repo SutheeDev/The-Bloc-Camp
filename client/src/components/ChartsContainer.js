@@ -11,6 +11,14 @@ const ChartsContainer = () => {
   return (
     <Wrapper>
       {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
+      <h4>monthly shows</h4>
+      <button
+        type="button"
+        onClick={() => setBarChart(!barChart)}
+        className="button"
+      >
+        {barChart ? "area chart" : "bar chart"}
+      </button>
     </Wrapper>
   );
 };
