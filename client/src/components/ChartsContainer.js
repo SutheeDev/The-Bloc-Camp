@@ -6,10 +6,11 @@ import styled from "styled-components";
 
 const ChartsContainer = () => {
   const { monthlyApplication: data } = useAppContext();
+  const [barChart, setBarChart] = useState(true);
+
   return (
     <Wrapper>
-      <BarChart data={data} />
-      <AreaChart data={data} />
+      {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
     </Wrapper>
   );
 };
