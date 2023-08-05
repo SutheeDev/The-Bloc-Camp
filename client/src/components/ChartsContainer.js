@@ -1,4 +1,4 @@
-import BarChart from "./BarChart";
+import BarChartCompoent from "./BarChart";
 import AreaChart from "./AreaChart";
 import { useAppContext } from "../context/appContext";
 import { useState } from "react";
@@ -10,7 +10,6 @@ const ChartsContainer = () => {
 
   return (
     <Wrapper>
-      {barChart ? <BarChart data={data} /> : <AreaChart data={data} />}
       <h4>monthly shows</h4>
       <button
         type="button"
@@ -19,9 +18,12 @@ const ChartsContainer = () => {
       >
         {barChart ? "area chart" : "bar chart"}
       </button>
+      {barChart ? <BarChartCompoent data={data} /> : <AreaChart data={data} />}
     </Wrapper>
   );
 };
 export default ChartsContainer;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  text-align: center;
+`;
