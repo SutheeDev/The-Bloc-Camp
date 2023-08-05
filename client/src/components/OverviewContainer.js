@@ -45,7 +45,9 @@ const OverviewContainer = () => {
 export default OverviewContainer;
 
 const Wrapper = styled.div`
+  margin-bottom: 5em;
   @media screen and (min-width: 450px) {
+    margin-bottom: 3em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2em;
