@@ -48,6 +48,13 @@ html {
 
   --icon-bg: #22222225;
 
+  /* Overview */
+  --blueText: #44315a;
+  --lightBlue: #b293d5;
+  --lightRed: #ef7d66;
+  --green: #4b6242;
+  --lightGreen: #abc1a4;
+
   /* fonts  */
   --headingFont: "Oswald", San-Serifs;
   --bodyFont: Sans-Serif;

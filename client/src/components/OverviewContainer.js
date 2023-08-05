@@ -15,31 +15,39 @@ const OverviewContainer = () => {
       title: "upcoming shows",
       count: overview.upcoming || 0,
       icon: <BiCalendarStar />,
-      color: "var(--reddish)",
-      bcg: "var(--darkRed)",
+      color: "var(--blueText)",
+      bcg: "var(--lightBlue)",
     },
     {
       title: "canceled",
       count: overview.canceled || 0,
       icon: <BiCalendarX />,
-      color: "var(--reddish)",
-      bcg: "var(--darkRed)",
+      color: "var(--darkRed)",
+      bcg: "var(--lightRed)",
     },
     {
       title: "sold out",
       count: overview.soldout || 0,
       icon: <BiCalendarExclamation />,
-      color: "var(--reddish)",
-      bcg: "var(--darkRed)",
+      color: "var(--green)",
+      bcg: "var(--lightGreen)",
     },
   ];
 
   return (
-    <div>
+    <Wrapper>
       {defaultOverview.map((item, index) => {
         return <OverviewItem key={index} {...item} />;
       })}
-    </div>
+    </Wrapper>
   );
 };
 export default OverviewContainer;
+
+const Wrapper = styled.div`
+  @media screen and (min-width: 450px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+  }
+`;
