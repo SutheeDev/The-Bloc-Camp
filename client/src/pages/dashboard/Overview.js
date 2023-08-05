@@ -16,6 +16,7 @@ const Overview = () => {
 
   return (
     <Wrapper>
+      <h3 className="form-title">Overview</h3>
       <OverviewContainer />
       {monthlyApplication > 0 && <ChartsContainer />}
     </Wrapper>

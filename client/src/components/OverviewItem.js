@@ -14,7 +14,7 @@ const OverviewItem = ({ title, count, icon, color, bcg }) => {
 export default OverviewItem;
 
 const Wrapper = styled.div`
-  padding: 2em 1.5em;
+  padding: 2em 2em;
   margin-bottom: 2em;
   border-bottom: 7px solid ${(props) => props.color};
   border-radius: 3px;
@@ -54,5 +54,8 @@ const Wrapper = styled.div`
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: capitalize;
+  }
+  @media screen and (min-width: 950px) {
+    padding: 2em 1.5em;
   }
 `;
