@@ -1,5 +1,5 @@
 import BarChartCompoent from "./BarChart";
-import AreaChart from "./AreaChart";
+import AreaChartCompoent from "./AreaChart";
 import { useAppContext } from "../context/appContext";
 import { useState } from "react";
 import styled from "styled-components";
@@ -18,7 +18,11 @@ const ChartsContainer = () => {
       >
         {barChart ? "area chart" : "bar chart"}
       </button>
-      {barChart ? <BarChartCompoent data={data} /> : <AreaChart data={data} />}
+      {barChart ? (
+        <BarChartCompoent data={data} />
+      ) : (
+        <AreaChartCompoent data={data} />
+      )}
     </Wrapper>
   );
 };
