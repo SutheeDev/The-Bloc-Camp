@@ -128,7 +128,20 @@ const showOverview = async (req, res) => {
     soldout: overview.soldout || 0,
   };
 
-  const monthlyApplication = [];
+  // const monthlyApplication = [];
+  let monthlyApplication = await Show.aggregate([
+    {
+      $group: {
+        _id: {
+          year: { $year: "$performDateTime" },
+          month: { $month: "$performDateTime" },
+        },
+        count: { $sum: 1 },
+      },
+    },
+    { $sort: { "_id.year": -1, "_id.month": -1 } },
+    { $limit: 6 },
+  ]);
 
   res.status(StatusCodes.OK).json({ defaultOverview, monthlyApplication });
 };
