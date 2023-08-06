@@ -24,6 +24,9 @@ const uploadArtistImage = async (req, res) => {
     {
       use_filename: true,
       folder: "the-bloc-camp/artist-image",
+      width: 426,
+      height: 426,
+      crop: "fill",
     }
   );
   // Remove copied file from the temp folder
@@ -47,6 +50,9 @@ const uploadFeatureImage = async (req, res) => {
     {
       use_filename: true,
       folder: "the-bloc-camp/feature-image",
+      width: 640,
+      height: 360,
+      crop: "fill",
     }
   );
 
