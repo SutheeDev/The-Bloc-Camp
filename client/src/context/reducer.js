@@ -322,7 +322,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
-      isEditing: false,
+      // isEditing: false,
       showAlert: true,
       messageText: action.payload.msg,
       messageType: "error",

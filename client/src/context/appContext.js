@@ -432,6 +432,7 @@ const AppProvider = ({ children }) => {
       });
     }
     hideAlert();
+    clearFilters();
   };
 
   const deleteShow = async (id) => {
