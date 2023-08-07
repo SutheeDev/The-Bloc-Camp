@@ -39,10 +39,10 @@ const getAllShows = async (req, res) => {
   // const shows = await Show.find({ status: "upcoming" }).sort("performDateTime");
   let result = Show.find(queryObject);
 
-  if (sort === "latest") {
+  if (sort === "by date") {
     result = result.sort("performDateTime");
   }
-  if (sort === "oldest") {
+  if (sort === "reverse date") {
     result = result.sort("-performDateTime");
   }
   if (sort === "a-z") {

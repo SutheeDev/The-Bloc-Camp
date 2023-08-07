@@ -85,8 +85,8 @@ const initialState = {
 
   search: "",
   searchStatus: "all",
-  sort: "latest",
-  sortOptions: ["latest", "oldest", "a-z", "z-a"],
+  sort: "by date",
+  sortOptions: ["by date", "reverse date", "a-z", "z-a"],
 
   featuredShows: [],
 
