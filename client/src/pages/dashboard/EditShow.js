@@ -73,6 +73,7 @@ const EditShow = () => {
   return (
     <Wrapper>
       <form className="form" onSubmit={handleSubmit}>
+        <h3 className="form-title">edit show</h3>
         <div className="form-content">
           <div className="form-row-container">
             <FormRow
