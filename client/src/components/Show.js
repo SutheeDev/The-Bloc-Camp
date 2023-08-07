@@ -9,7 +9,7 @@ const Show = ({ artist, artistImage, artistInfo, date }) => {
         <div class="band-date-info">
           <div class="band-date">
             <h2 class="band-name">{artist}</h2>
-            <h2>{date}</h2>
+            <h2 className="date">{date}</h2>
           </div>
           <div class="band-info">
             <p>{artistInfo}</p>
@@ -38,9 +38,10 @@ const Wrapper = styled.article`
   .calendar-show-info {
     position: relative;
     background-color: #221333;
-    height: 285px;
+    height: 215px;
     margin-top: -4px;
     .band-date-info {
+      width: 100%;
       background-color: #221333;
       padding: 16px 25px;
       position: absolute;
@@ -58,11 +59,13 @@ const Wrapper = styled.article`
         font-size: 28px;
         text-transform: capitalize;
         letter-spacing: 0.5px;
-        margin-bottom: 25px;
         line-height: 1.1;
       }
       .band-name {
-        min-height: 95px;
+        min-height: 65px;
+      }
+      .date {
+        margin-bottom: 25px;
       }
     }
     .getTicket-btn {

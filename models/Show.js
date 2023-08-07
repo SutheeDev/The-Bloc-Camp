@@ -23,8 +23,8 @@ const ShowSchema = new mongoose.Schema(
     artistInfo: {
       type: String,
       maxlength: [
-        500,
-        "Artist description can't be longer than 500 characters",
+        400,
+        "Artist description can't be longer than 400 characters",
       ],
       default: "",
     },
