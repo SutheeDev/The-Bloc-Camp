@@ -340,6 +340,7 @@ const AppProvider = ({ children }) => {
   };
 
   const getShows = async () => {
+    clearValues();
     const { search, searchStatus, sort, page } = state;
 
     let url = `/shows?page=${page}&status=${searchStatus}&sort=${sort}`;
@@ -482,6 +483,7 @@ const AppProvider = ({ children }) => {
   };
 
   const showOverview = async () => {
+    clearValues();
     dispatch({ type: SHOW_OVERVIEW_BEGIN });
     try {
       const { data } = await authFetch("/shows/overview");
