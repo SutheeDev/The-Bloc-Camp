@@ -27,6 +27,7 @@ const uploadArtistImage = async (req, res) => {
       width: 426,
       height: 426,
       crop: "fill",
+      gravity: "face",
     }
   );
   // Remove copied file from the temp folder
@@ -53,6 +54,7 @@ const uploadFeatureImage = async (req, res) => {
       width: 640,
       height: 360,
       crop: "fill",
+      gravity: "face",
     }
   );
 
