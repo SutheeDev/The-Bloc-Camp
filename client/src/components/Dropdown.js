@@ -100,21 +100,42 @@ const Wrapper = styled.div`
     display: block;
     top: 35px;
   }
-  .btn {
+  .link,
+  .logout-btn {
     color: var(--darkBlue);
+    background-color: transparent;
+  }
+  .link:hover {
+    color: var(--white);
+  }
+  .link:hover .btn {
+    background-color: var(--reddish);
+  }
+  .logout-btn:hover {
+    color: var(--white);
+    background-color: var(--reddish);
+  }
+  .active .btn {
+    color: var(--reddish);
+  }
+  .active .btn:hover {
+    color: var(--white);
+  }
+  .btn {
+    /* color: var(--darkBlue); */
     width: 100%;
     padding: 0.5em 1.4em;
     text-transform: capitalize;
     text-align: right;
     font-family: var(--bodyFont);
-    background-color: transparent;
+    /* background-color: transparent; */
     border: 7px solid var(--white);
     cursor: pointer;
   }
-  .btn:hover {
+  /* .btn:hover {
     background-color: var(--reddish);
     color: var(--white);
-  }
+  } */
   @media screen and (min-width: 450px) {
     .user-icon {
       font-size: 1.4rem;
