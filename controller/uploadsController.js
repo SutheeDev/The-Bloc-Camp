@@ -54,7 +54,7 @@ const uploadFeatureImage = async (req, res) => {
       width: 640,
       height: 360,
       crop: "fill",
-      gravity: "face",
+      // gravity: "face",
     }
   );
 

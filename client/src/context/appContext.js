@@ -76,7 +76,7 @@ const initialState = {
   published: false,
   featured: false,
   status: "",
-  statusOptions: ["upcoming", "canceled", "sold out"],
+  statusOptions: ["upcoming", "canceled", "soldout"],
 
   shows: [],
   totalShows: 0,
