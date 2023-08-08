@@ -20,7 +20,6 @@ const createShow = async (req, res) => {
 
   const show = await Show.create(req.body);
 
-  console.log(show);
   res.status(StatusCodes.CREATED).json({ show });
 };
 

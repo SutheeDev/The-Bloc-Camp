@@ -3,7 +3,7 @@ import { useAppContext } from "../context/appContext";
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useAppContext();
-  if (!user) {
+  if (!user || user.role !== "admin") {
     return <Navigate to="/register" />;
   }
   return children;
