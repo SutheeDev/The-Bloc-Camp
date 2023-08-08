@@ -1,4 +1,5 @@
-import { BiBookContent, BiGridSmall, BiBarChartSquare } from "react-icons/bi";
+import { BiBookContent, BiBarChartSquare } from "react-icons/bi";
+import { RiCoupon2Line } from "react-icons/ri";
 
 const userLinks = [
   {
@@ -11,7 +12,7 @@ const userLinks = [
     id: 1,
     text: "My Tickets",
     path: "/dashboard/my-tickets",
-    icon: <BiGridSmall />,
+    icon: <RiCoupon2Line />,
   },
   {
     id: 2,
