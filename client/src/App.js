@@ -5,6 +5,7 @@ import {
   Contact,
   Register,
   ProtectedRoute,
+  UserProtectedRoute,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -38,9 +39,9 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
+            <UserProtectedRoute>
               <SharedLayout />
-            </ProtectedRoute>
+            </UserProtectedRoute>
           }
         >
           <Route index element={<Overview />} />
