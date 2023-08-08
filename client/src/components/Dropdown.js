@@ -2,17 +2,19 @@ import { BiUserCircle, BiCaretDown } from "react-icons/bi";
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 import adminLinks from "../utils/admin-links";
-import userLinks from "../utils/admin-links";
+import userLinks from "../utils/user-links";
 import { NavLink } from "react-router-dom";
 
 const Dropdown = () => {
   const { user, logoutUser, isEditing, role } = useAppContext();
 
   let displayLinks;
-  if (isEditing) {
+  if (role === "admin" && isEditing) {
     displayLinks = adminLinks;
-  } else {
+  } else if (role === "admin") {
     displayLinks = adminLinks.filter((link) => link.text !== "Edit Show");
+  } else if (role === "user") {
+    displayLinks = userLinks;
   }
 
   return (
