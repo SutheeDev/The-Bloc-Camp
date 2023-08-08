@@ -1,10 +1,11 @@
 import adminLinks from "../utils/admin-links";
+import userLinks from "../utils/user-links";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 
 const NavLinks = ({ toggleSidebar }) => {
-  const { isEditing } = useAppContext();
+  const { isEditing, role } = useAppContext();
 
   if (isEditing) {
     return (
