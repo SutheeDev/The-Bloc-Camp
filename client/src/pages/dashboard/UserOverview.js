@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useAppContext } from "../../context/appContext";
-import { ChartsContainer, OverviewContainer, Loading } from "../../components";
+import { OverviewContainer, Loading } from "../../components";
 
 const UserOverview = () => {
-  const { showOverview, isLoading, monthlyApplication } = useAppContext();
+  const { showOverview, isLoading, user } = useAppContext();
+  const { name, lastname, email } = user;
 
   useEffect(() => {
     showOverview();
@@ -16,9 +17,15 @@ const UserOverview = () => {
 
   return (
     <Wrapper>
-      <h3 className="form-title">User Overview</h3>
+      <h3 className="form-title">Overview</h3>
+      <div className="overview-container">
+        <header>
+          <h3>
+            {name} {lastname}
+          </h3>
+        </header>
+      </div>
       <OverviewContainer />
-      {monthlyApplication.length > 0 && <ChartsContainer />}
     </Wrapper>
   );
 };
