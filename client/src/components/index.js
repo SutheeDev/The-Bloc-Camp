@@ -28,6 +28,7 @@ import Alert from "./Alert";
 import PageBtnContainer from "./PageBtnContainer";
 import OverviewContainer from "./OverviewContainer";
 import ChartsContainer from "./ChartsContainer";
+import QuickTipsContainer from "./QuickTipsContainer";
 
 export {
   Navbar,
@@ -60,4 +61,5 @@ export {
   PageBtnContainer,
   OverviewContainer,
   ChartsContainer,
+  QuickTipsContainer,
 };
