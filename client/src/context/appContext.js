@@ -164,8 +164,11 @@ const AppProvider = ({ children }) => {
     try {
       const response = await axios.post("api/v1/auth/register", currentUser);
       const { user, token } = response.data;
-      dispatch({ type: REGISTER_SUCCESS, payload: { user, token } });
-      addUserToLocalStorage({ user, token });
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: { user, token, role: user.role },
+      });
+      addUserToLocalStorage({ user, token, role: user.role });
     } catch (error) {
       dispatch({
         type: REGISTER_ERROR,
