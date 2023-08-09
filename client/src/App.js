@@ -16,6 +16,7 @@ import {
   Overview,
   SharedLayout,
   EditShow,
+  UserOverview,
 } from "./pages/dashboard";
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
             </UserProtectedRoute>
           }
         >
-          <Route index element={<Overview />} />
+          <Route index element={<UserOverview />} />
           <Route path="profile" element={<Profile />} />
           <Route path="my-tickets" element={<MyTickets />} />
         </Route>
