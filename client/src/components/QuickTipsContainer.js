@@ -25,12 +25,26 @@ const QuickTipsContainer = () => {
 
   return (
     <Wrapper>
-      {defaultQuickTips.map((item, index) => {
-        <QuickTipsItem key={index} {...item} />;
-      })}
+      <h3 className="form-title">quick tips</h3>
+      <div className="tips-container">
+        {defaultQuickTips.map((item, index) => {
+          return <QuickTipsItem key={index} {...item} />;
+        })}
+      </div>
     </Wrapper>
   );
 };
 export default QuickTipsContainer;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  .tips-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+  @media screen and (min-width: 850px) {
+    .tips-container {
+      flex-direction: row;
+    }
+  }
+`;

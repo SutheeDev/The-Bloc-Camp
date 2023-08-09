@@ -44,7 +44,7 @@ const Wrapper = styled.div`
       0px 0.4px 0.5px rgba(0, 0, 0, 0.02), 0px 0.8px 1px rgba(0, 0, 0, 0.025),
       0px 1.3px 1.8px rgba(0, 0, 0, 0.03), 0px 2.5px 3.3px rgba(0, 0, 0, 0.036),
       0px 6px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2em;
+    margin-bottom: 5em;
   }
   header {
     margin-bottom: 0.7em;
