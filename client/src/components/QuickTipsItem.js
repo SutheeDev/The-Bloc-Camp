@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 const QuickTipsItem = ({ icon, title, text, btn }) => {
   return (
     <Wrapper>
-      <div className="icon">{icon}</div>
+      {/* <div className="icon">{icon}</div> */}
+      <div className="icon">
+        <img src={icon} alt="" />
+      </div>
       <div className="tip-info">
         <h3>{title}</h3>
         <p>{text}</p>
@@ -43,6 +46,9 @@ const Wrapper = styled.div`
     font-size: 3.5em;
     color: var(--blue);
     width: 65px;
+  }
+  img {
+    width: 100%;
   }
   .tip-info {
     width: 90%;

@@ -6,17 +6,19 @@ import {
 } from "react-icons/ai";
 import QuickTipsItem from "./QuickTipsItem";
 import styled from "styled-components";
+import accountImg from "../assets/svg/account.svg";
+import favImg from "../assets/svg/favorite.svg";
 
 const QuickTipsContainer = () => {
   const defaultQuickTips = [
     {
-      icon: <AiOutlineProfile />,
+      icon: accountImg,
       title: "account check-up",
       text: "been awhile? Consider updating your profile.",
       btn: "edit profile",
     },
     {
-      icon: <AiOutlineLike />,
+      icon: favImg,
       title: "pick your favorites",
       text: `Pick your favorites for the best way to know what’s happening live near you.`,
       btn: "pick favorites",
