@@ -41,11 +41,13 @@ const Wrapper = styled.div`
   } */
   .icon {
     /* background-color: red; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    font-size: 3.5em;
+    font-size: 3.5em; */
     color: var(--blue);
-    width: 65px;
+    /* width: 65px; */
+    width: 95px;
+    flex-shrink: 0;
   }
   img {
     width: 100%;
@@ -59,7 +61,8 @@ const Wrapper = styled.div`
     margin-bottom: 0.5em;
   }
   .tip-info p {
-    margin-bottom: 2.5em;
+    /* margin-bottom: 2.5em; */
+    height: 60px;
   }
   .btn {
     font-size: 0.7rem;
@@ -82,9 +85,11 @@ const Wrapper = styled.div`
   }
   @media screen and (min-width: 450px) {
     gap: 2em;
-    .icon {
-      font-size: 4.5rem;
-      width: 75px;
+    padding: 0 0 2em 0;
+  }
+  @media screen and (min-width: 850px) {
+    .tip-info p {
+      height: 70px;
     }
   }
 `;
