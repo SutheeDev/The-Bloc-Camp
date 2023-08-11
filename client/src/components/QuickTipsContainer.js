@@ -10,6 +10,7 @@ const QuickTipsContainer = () => {
       title: "account check-up",
       text: "been awhile? Consider updating your profile.",
       btn: "edit profile",
+      path: "/dashboard/profile",
     },
     {
       icon: favImg,

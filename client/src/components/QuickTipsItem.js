@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const QuickTipsItem = ({ icon, title, text, btn }) => {
+const QuickTipsItem = ({ icon, title, text, btn, path }) => {
   return (
     <Wrapper>
       <div className="icon">
@@ -10,7 +10,9 @@ const QuickTipsItem = ({ icon, title, text, btn }) => {
       <div className="tip-info">
         <h3>{title}</h3>
         <p>{text}</p>
-        <Link className="btn link-btn">{btn}</Link>
+        <Link to={path} className="btn link-btn">
+          {btn}
+        </Link>
       </div>
     </Wrapper>
   );
