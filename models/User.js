@@ -47,6 +47,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    favorites: {
+      type: Array,
+      default: [],
+    },
   },
   { timestamps: true }
 );
