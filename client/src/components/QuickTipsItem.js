@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const QuickTipsItem = ({ icon, title, text, btn }) => {
   return (
     <Wrapper>
-      {/* <div className="icon">{icon}</div> */}
       <div className="icon">
         <img src={icon} alt="" />
       </div>
@@ -19,7 +18,6 @@ const QuickTipsItem = ({ icon, title, text, btn }) => {
 export default QuickTipsItem;
 
 const Wrapper = styled.div`
-  /* background-color: wheat; */
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -27,25 +25,8 @@ const Wrapper = styled.div`
   gap: 1em;
   padding: 2em 2em 2em 0;
   border-radius: 3px;
-  /* box-shadow: 0px 0.2px 0.2px rgba(0, 0, 0, 0.014),
-    0px 0.4px 0.5px rgba(0, 0, 0, 0.02), 0px 0.8px 1px rgba(0, 0, 0, 0.025),
-    0px 1.3px 1.8px rgba(0, 0, 0, 0.03), 0px 2.5px 3.3px rgba(0, 0, 0, 0.036),
-    0px 6px 8px rgba(0, 0, 0, 0.05);
-
-  transition: all 0.2s ease;
-  :hover {
-    box-shadow: 0px 0.7px 1.7px rgba(0, 0, 0, 0.014),
-      0px 1.8px 4.1px rgba(0, 0, 0, 0.02), 0px 3.4px 7.8px rgba(0, 0, 0, 0.025),
-      0px 6px 13.8px rgba(0, 0, 0, 0.03), 0px 11.3px 25.9px rgba(0, 0, 0, 0.036),
-      0px 27px 62px rgba(0, 0, 0, 0.05);
-  } */
   .icon {
-    /* background-color: red; */
-    /* display: flex;
-    justify-content: center;
-    font-size: 3.5em; */
     color: var(--blue);
-    /* width: 65px; */
     width: 95px;
     flex-shrink: 0;
   }
@@ -61,7 +42,6 @@ const Wrapper = styled.div`
     margin-bottom: 0.5em;
   }
   .tip-info p {
-    /* margin-bottom: 2.5em; */
     height: 60px;
   }
   .btn {

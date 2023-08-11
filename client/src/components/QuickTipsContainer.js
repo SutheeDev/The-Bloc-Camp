@@ -1,9 +1,3 @@
-import {
-  AiOutlineSnippets,
-  AiOutlineSolution,
-  AiOutlineProfile,
-  AiOutlineLike,
-} from "react-icons/ai";
 import QuickTipsItem from "./QuickTipsItem";
 import styled from "styled-components";
 import accountImg from "../assets/svg/account.svg";
