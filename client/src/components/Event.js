@@ -24,7 +24,7 @@ const Event = ({
   status,
   ticketsPrice,
 }) => {
-  const { setEditShow, deleteShow } = useAppContext();
+  const { setEditShow, deleteShow, user } = useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
 
   let date = moment(performDateTime);
@@ -106,20 +106,28 @@ const Event = ({
         </div>
 
         <div className="btn-container">
-          <Link
-            to="/admin-dashboard/edit-show"
-            className="btn edit-btn"
-            onClick={() => setEditShow(_id)}
-          >
-            edit
-          </Link>
-          <button
-            type="button"
-            className="btn del-btn"
-            onClick={() => deleteShow(_id)}
-          >
-            delete
-          </button>
+          {user.role === "admin" ? (
+            <div>
+              <Link
+                to="/admin-dashboard/edit-show"
+                className="btn edit-btn"
+                onClick={() => setEditShow(_id)}
+              >
+                edit
+              </Link>
+              <button
+                type="button"
+                className="btn del-btn"
+                onClick={() => deleteShow(_id)}
+              >
+                delete
+              </button>
+            </div>
+          ) : (
+            <button type="button" className="btn fav-btn">
+              add to favorites
+            </button>
+          )}
           <BiChevronDown
             className="down-icon"
             onClick={() => setShowDropdown(!showDropdown)}
