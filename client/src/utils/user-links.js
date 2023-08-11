@@ -1,4 +1,9 @@
-import { BiBookContent, BiBarChartSquare } from "react-icons/bi";
+import {
+  BiBookContent,
+  BiBarChartSquare,
+  BiBookmarkHeart,
+  BiCalendarEvent,
+} from "react-icons/bi";
 import { RiCoupon2Line } from "react-icons/ri";
 
 const userLinks = [
@@ -12,10 +17,16 @@ const userLinks = [
     id: 1,
     text: "Favorites",
     path: "/dashboard/favorites",
-    icon: <RiCoupon2Line />,
+    icon: <BiBookmarkHeart />,
   },
   {
     id: 2,
+    text: "Upcoming",
+    path: "/dashboard/upcoming",
+    icon: <BiCalendarEvent />,
+  },
+  {
+    id: 3,
     text: "Profile",
     path: "/dashboard/profile",
     icon: <BiBookContent />,
