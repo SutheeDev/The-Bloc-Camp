@@ -12,7 +12,7 @@ import {
   Profile,
   CreateShow,
   AllShows,
-  MyTickets,
+  Favorites,
   Overview,
   SharedLayout,
   EditShow,
@@ -47,7 +47,7 @@ function App() {
         >
           <Route index element={<UserOverview />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="my-tickets" element={<MyTickets />} />
+          <Route path="favorites" element={<Favorites />} />
         </Route>
         <Route path="/" element={<Landing />} />
         <Route path="/shows" element={<Shows />} />

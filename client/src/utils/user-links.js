@@ -10,8 +10,8 @@ const userLinks = [
   },
   {
     id: 1,
-    text: "My Tickets",
-    path: "/dashboard/my-tickets",
+    text: "Favorites",
+    path: "/dashboard/favorites",
     icon: <RiCoupon2Line />,
   },
   {
