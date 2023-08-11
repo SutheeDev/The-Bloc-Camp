@@ -343,7 +343,7 @@ const reducer = (state, action) => {
       ...state,
       search: "",
       searchStatus: "all",
-      sort: "latest",
+      sort: "by date",
     };
   }
   if (action.type === CHANGE_PAGE) {
