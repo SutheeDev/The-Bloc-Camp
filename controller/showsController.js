@@ -180,6 +180,47 @@ const getFeaturedShows = async (req, res) => {
   res.status(StatusCodes.OK).json({ shows });
 };
 
+const getUpcomingShows = async (req, res) => {
+  const { search, status, sort } = req.query;
+
+  const queryObject = {
+    status: "upcoming",
+  };
+
+  if (search) {
+    queryObject.artist = { $regex: search, $options: "i" };
+  }
+  if (status && status !== "all") {
+    queryObject.status = status;
+  }
+
+  let result = Show.find(queryObject);
+
+  if (sort === "by date") {
+    result = result.sort("performDateTime");
+  }
+  if (sort === "reverse date") {
+    result = result.sort("-performDateTime");
+  }
+  if (sort === "a-z") {
+    result = result.sort("artist");
+  }
+  if (sort === "z-a") {
+    result = result.sort("-artist");
+  }
+
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
+  const skip = (page - 1) * limit;
+  result = result.skip(skip).limit(limit);
+
+  const shows = await result;
+  const totalShows = await Show.countDocuments(queryObject);
+  const numOfPages = Math.ceil(totalShows / limit);
+
+  res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
+};
+
 export {
   createShow,
   getAllShows,
@@ -188,4 +229,5 @@ export {
   showOverview,
   getPublishedShows,
   getFeaturedShows,
+  getUpcomingShows,
 };
