@@ -38,6 +38,8 @@ import {
   GET_FEATURED_SHOWS_SUCCESS,
   SHOW_OVERVIEW_BEGIN,
   SHOW_OVERVIEW_SUCCESS,
+  GET_UPCOMING_SHOWS_BEGIN,
+  GET_UPCOMING_SHOWS_SUCCESS,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -392,6 +394,23 @@ const reducer = (state, action) => {
       isLoading: false,
       overview: action.payload.overview,
       monthlyApplication: action.payload.monthlyApplication,
+    };
+  }
+  if (action.type === GET_UPCOMING_SHOWS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+      isEditing: false,
+      showMessage: false,
+    };
+  }
+  if (action.type === GET_UPCOMING_SHOWS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      shows: action.payload.shows,
+      totalShows: action.payload.totalShows,
+      numOfPages: action.payload.numOfPages,
     };
   }
   throw new Error(`No such action: ${action.type}`);
