@@ -17,6 +17,7 @@ const QuickTipsContainer = () => {
       title: "pick your favorites",
       text: `Pick your favorites for the best way to know what’s happening live near you.`,
       btn: "pick favorites",
+      path: "/dashboard/upcoming",
     },
   ];
 
