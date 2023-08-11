@@ -10,6 +10,7 @@ import {
   showOverview,
   getPublishedShows,
   getFeaturedShows,
+  getUpcomingShows,
 } from "../controller/showsController.js";
 import {
   uploadArtistImage,
@@ -22,6 +23,7 @@ router
   .get(authenticatedUser, getAllShows);
 router.route("/published").get(getPublishedShows);
 router.route("/featured").get(getFeaturedShows);
+router.route("/upcoming").get(authenticatedUser, getUpcomingShows);
 router.route("/overview").get(authenticatedUser, showOverview);
 router.route("/uploads-artistImage").post(authenticatedUser, uploadArtistImage);
 router
