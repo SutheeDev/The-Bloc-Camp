@@ -556,6 +556,7 @@ const AppProvider = ({ children }) => {
         getPublishedShows,
         getFeaturedShows,
         showOverview,
+        getUpcomingShows,
       }}
     >
       {children}
