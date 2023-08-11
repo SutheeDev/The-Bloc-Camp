@@ -43,6 +43,8 @@ import {
   GET_FEATURED_SHOWS_SUCCESS,
   SHOW_OVERVIEW_BEGIN,
   SHOW_OVERVIEW_SUCCESS,
+  GET_UPCOMING_SHOWS_BEGIN,
+  GET_UPCOMING_SHOWS_SUCCESS,
 } from "./actions";
 import moment from "moment";
 
@@ -501,6 +503,33 @@ const AppProvider = ({ children }) => {
       console.log(error.response);
       // logoutUser();
     }
+  };
+
+  const getUpcomingShows = async () => {
+    const { search, searchStatus, sort, page } = state;
+
+    let url = `/shows/upcoming?page=${page}&status=${searchStatus}&sort=${sort}`;
+    if (search) {
+      url = url + `&search=${search}`;
+    }
+
+    dispatch({ type: GET_UPCOMING_SHOWS_BEGIN });
+    try {
+      const { data } = await authFetch.get(url);
+      const { shows, totalShows, numOfPages } = data;
+      dispatch({
+        type: GET_UPCOMING_SHOWS_SUCCESS,
+        payload: {
+          shows,
+          totalShows,
+          numOfPages,
+        },
+      });
+    } catch (error) {
+      console.log(error.response);
+      // logoutUser();
+    }
+    hideMessage();
   };
 
   return (
