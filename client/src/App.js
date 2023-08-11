@@ -17,6 +17,7 @@ import {
   SharedLayout,
   EditShow,
   UserOverview,
+  Upcoming,
 } from "./pages/dashboard";
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <Route index element={<UserOverview />} />
           <Route path="profile" element={<Profile />} />
           <Route path="favorites" element={<Favorites />} />
+          <Route path="upcoming" element={<Upcoming />} />
         </Route>
         <Route path="/" element={<Landing />} />
         <Route path="/shows" element={<Shows />} />
