@@ -94,6 +94,8 @@ const initialState = {
 
   overview: {},
   monthlyApplication: [],
+
+  favorites: user.favorites || [],
 };
 
 const AppContext = React.createContext();
