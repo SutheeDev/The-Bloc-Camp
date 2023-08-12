@@ -24,7 +24,8 @@ const Event = ({
   status,
   ticketsPrice,
 }) => {
-  const { setEditShow, deleteShow, user } = useAppContext();
+  const { setEditShow, deleteShow, user, removeFavorites, addFavorites } =
+    useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
 
   let date = moment(performDateTime);
@@ -34,6 +35,15 @@ const Event = ({
   date = date.locale("en").format("MMM D");
   day = day.locale("en").format("ddd");
   time = time.locale("en").format("hh:mm a");
+
+  const toggleFavorites = (id) => {
+    const favorites = user.favorites;
+    if (favorites.includes(id)) {
+      removeFavorites(id);
+    } else {
+      addFavorites(id);
+    }
+  };
 
   return (
     <Wrapper>
@@ -124,7 +134,11 @@ const Event = ({
               </button>
             </div>
           ) : (
-            <button type="button" className="btn fav-btn">
+            <button
+              type="button"
+              className="btn fav-btn"
+              onClick={() => toggleFavorites(_id)}
+            >
               add to favorites
             </button>
           )}

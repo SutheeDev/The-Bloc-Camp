@@ -534,6 +534,14 @@ const AppProvider = ({ children }) => {
     hideMessage();
   };
 
+  const addFavorites = (id) => {
+    console.log(`add ${id} to favorites list`);
+  };
+
+  const removeFavorites = (id) => {
+    console.log(`remove ${id} from favorites list`);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -559,6 +567,8 @@ const AppProvider = ({ children }) => {
         getFeaturedShows,
         showOverview,
         getUpcomingShows,
+        addFavorites,
+        removeFavorites,
       }}
     >
       {children}
