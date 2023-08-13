@@ -12,6 +12,7 @@ import {
   BiHeart,
   BiSolidHeart,
 } from "react-icons/bi";
+import { HiOutlineHeart, HiHeart } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
 
@@ -133,11 +134,13 @@ const Event = ({
           ) : (
             <button
               type="button"
-              className="btn fav-btn"
+              className={
+                favorites.includes(_id) ? "btn fav-btn fav" : "btn fav-btn"
+              }
               onClick={() => toggleFavorites(_id)}
             >
               <div className="fav-icon">
-                <BiHeart />
+                {favorites.includes(_id) ? <HiHeart /> : <HiOutlineHeart />}
               </div>
               add to favorites
             </button>
@@ -314,6 +317,14 @@ const Wrapper = styled.div`
     display: flex;
     margin-right: 0.3em;
   }
+  .fav {
+    border: 2px solid var(--reddish);
+    color: var(--reddish);
+  }
+  /* .fav {
+    color: var(--reddish);
+    background-color: var(--reddish);
+  } */
   /* .fav-btn:hover {
     color: var(--white);
     background-color: var(--reddish);
