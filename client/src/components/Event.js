@@ -136,6 +136,9 @@ const Event = ({
               className="btn fav-btn"
               onClick={() => toggleFavorites(_id)}
             >
+              <div className="fav-icon">
+                <BiHeart />
+              </div>
               add to favorites
             </button>
           )}
@@ -302,11 +305,20 @@ const Wrapper = styled.div`
     background-color: var(--reddish);
     border: 2px solid var(--reddish);
   }
-  .fav-btn:hover {
+  .fav-btn {
+    display: flex;
+    align-items: center;
+  }
+  .fav-icon {
+    font-size: 1.1rem;
+    display: flex;
+    margin-right: 0.3em;
+  }
+  /* .fav-btn:hover {
     color: var(--white);
     background-color: var(--reddish);
     border: 2px solid var(--reddish);
-  }
+  } */
 
   .published,
   .featured,
