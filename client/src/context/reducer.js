@@ -40,6 +40,8 @@ import {
   SHOW_OVERVIEW_SUCCESS,
   GET_UPCOMING_SHOWS_BEGIN,
   GET_UPCOMING_SHOWS_SUCCESS,
+  ADD_FAVORITE,
+  REMOVE_FAVORITE,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -411,6 +413,18 @@ const reducer = (state, action) => {
       shows: action.payload.shows,
       totalShows: action.payload.totalShows,
       numOfPages: action.payload.numOfPages,
+    };
+  }
+  if (action.type === ADD_FAVORITE) {
+    return {
+      ...state,
+      favorites: action.payload.list,
+    };
+  }
+  if (action.type === REMOVE_FAVORITE) {
+    return {
+      ...state,
+      favorites: action.payload.list,
     };
   }
   throw new Error(`No such action: ${action.type}`);

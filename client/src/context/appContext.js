@@ -45,6 +45,8 @@ import {
   SHOW_OVERVIEW_SUCCESS,
   GET_UPCOMING_SHOWS_BEGIN,
   GET_UPCOMING_SHOWS_SUCCESS,
+  ADD_FAVORITE,
+  REMOVE_FAVORITE,
 } from "./actions";
 import moment from "moment";
 
@@ -534,12 +536,28 @@ const AppProvider = ({ children }) => {
     hideMessage();
   };
 
-  const addFavorites = (list) => {
-    console.log(list);
+  const addFavorites = (id) => {
+    console.log(`add ${id}`);
+    const { favorites } = state;
+    const list = [...favorites, id];
+    dispatch({
+      type: ADD_FAVORITE,
+      payload: {
+        list,
+      },
+    });
   };
 
-  const removeFavorites = (list) => {
-    console.log(list);
+  const removeFavorites = (id) => {
+    console.log(`remove ${id}`);
+    const { favorites } = state;
+    const list = favorites.filter((favorite) => favorite !== id);
+    dispatch({
+      type: REMOVE_FAVORITE,
+      payload: {
+        list,
+      },
+    });
   };
 
   return (

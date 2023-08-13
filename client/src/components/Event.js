@@ -42,15 +42,11 @@ const Event = ({
   day = day.locale("en").format("ddd");
   time = time.locale("en").format("hh:mm a");
 
-  let favList = [];
-
   const toggleFavorites = (id) => {
     if (favorites.includes(id)) {
-      const favList = favorites.filter((favorite) => favorite !== id);
-      removeFavorites(favList);
+      removeFavorites(id);
     } else {
-      const favList = favorites.push(id);
-      addFavorites(favList);
+      addFavorites(id);
     }
   };
 
