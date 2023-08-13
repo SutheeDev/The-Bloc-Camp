@@ -76,4 +76,23 @@ const updateUser = async (req, res) => {
 
   res.status(StatusCodes.OK).json({ user, token, role: user.role });
 };
-export { register, login, updateUser };
+
+const updateFavorites = async (req, res) => {
+  const { id: showId } = req.params;
+
+  const user = await User.findOne({ _id: req.user.userId });
+  let favList = user.favorites;
+  if (favList.includes(showId)) {
+    user.favorites = favList.filter((item) => item !== showId);
+  } else {
+    user.favorites = [...favList, showId];
+  }
+
+  await user.save();
+
+  const token = user.createJWT();
+
+  res.status(StatusCodes.OK).json({ user });
+};
+
+export { register, login, updateUser, updateFavorites };
