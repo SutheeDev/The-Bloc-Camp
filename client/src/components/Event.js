@@ -9,8 +9,6 @@ import {
   BiMessageSquareX,
   BiChevronDown,
   BiDollarCircle,
-  BiHeart,
-  BiSolidHeart,
 } from "react-icons/bi";
 import { HiOutlineHeart, HiHeart } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -142,7 +140,7 @@ const Event = ({
               <div className="fav-icon">
                 {favorites.includes(_id) ? <HiHeart /> : <HiOutlineHeart />}
               </div>
-              add to favorites
+              {favorites.includes(_id) ? `my favorites` : `add to favorites`}
             </button>
           )}
           <BiChevronDown

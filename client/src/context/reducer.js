@@ -417,7 +417,8 @@ const reducer = (state, action) => {
   if (action.type === UPDATE_FAVORITE) {
     return {
       ...state,
-      favorites: action.payload.list,
+      user: action.payload.user,
+      favorites: action.payload.favorites,
     };
   }
   throw new Error(`No such action: ${action.type}`);

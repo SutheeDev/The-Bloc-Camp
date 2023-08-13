@@ -92,7 +92,9 @@ const updateFavorites = async (req, res) => {
 
   const token = user.createJWT();
 
-  res.status(StatusCodes.OK).json({ user });
+  res
+    .status(StatusCodes.OK)
+    .json({ user, token, role: user.role, favorites: user.favorites });
 };
 
 export { register, login, updateUser, updateFavorites };

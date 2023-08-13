@@ -536,21 +536,17 @@ const AppProvider = ({ children }) => {
   };
 
   const updateFavorites = async (id) => {
-    const { favorites } = state;
-    let list = favorites;
-    if (favorites.includes(id)) {
-      list = favorites.filter((favorite) => favorite !== id);
-    } else {
-      list = [...favorites, id];
-    }
     try {
-      await authFetch.patch(`/auth/favorites/${id}`, list);
+      const { data } = await authFetch.patch(`/auth/favorites/${id}`);
+      const { user, token, role, favorites } = data;
       dispatch({
         type: UPDATE_FAVORITE,
         payload: {
-          list,
+          user,
+          favorites,
         },
       });
+      addUserToLocalStorage({ user, token, role });
     } catch (error) {
       console.log(error.response);
     }
