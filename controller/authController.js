@@ -23,7 +23,7 @@ const register = async (req, res) => {
       name: user.name,
       email: user.email,
       lastname: user.lastname,
-      phoneNumber: user.phoneNumber,
+      favorites: user.favorites,
       location: user.location,
       role: user.role,
     },
