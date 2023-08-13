@@ -534,12 +534,12 @@ const AppProvider = ({ children }) => {
     hideMessage();
   };
 
-  const addFavorites = (id) => {
-    console.log(`add ${id} to favorites list`);
+  const addFavorites = (list) => {
+    console.log(list);
   };
 
-  const removeFavorites = (id) => {
-    console.log(`remove ${id} from favorites list`);
+  const removeFavorites = (list) => {
+    console.log(list);
   };
 
   return (

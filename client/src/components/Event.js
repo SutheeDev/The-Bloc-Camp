@@ -24,8 +24,14 @@ const Event = ({
   status,
   ticketsPrice,
 }) => {
-  const { setEditShow, deleteShow, user, removeFavorites, addFavorites } =
-    useAppContext();
+  const {
+    setEditShow,
+    deleteShow,
+    user,
+    removeFavorites,
+    addFavorites,
+    favorites,
+  } = useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
 
   let date = moment(performDateTime);
@@ -36,12 +42,15 @@ const Event = ({
   day = day.locale("en").format("ddd");
   time = time.locale("en").format("hh:mm a");
 
+  let favList = [];
+
   const toggleFavorites = (id) => {
-    const favorites = user.favorites;
     if (favorites.includes(id)) {
-      removeFavorites(id);
+      const favList = favorites.filter((favorite) => favorite !== id);
+      removeFavorites(favList);
     } else {
-      addFavorites(id);
+      const favList = favorites.push(id);
+      addFavorites(favList);
     }
   };
 
