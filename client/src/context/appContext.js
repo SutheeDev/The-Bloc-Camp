@@ -45,8 +45,6 @@ import {
   SHOW_OVERVIEW_SUCCESS,
   GET_UPCOMING_SHOWS_BEGIN,
   GET_UPCOMING_SHOWS_SUCCESS,
-  ADD_FAVORITE,
-  REMOVE_FAVORITE,
   UPDATE_FAVORITE,
 } from "./actions";
 import moment from "moment";
@@ -583,8 +581,6 @@ const AppProvider = ({ children }) => {
         getFeaturedShows,
         showOverview,
         getUpcomingShows,
-        addFavorites,
-        removeFavorites,
         updateFavorites,
       }}
     >

@@ -40,8 +40,6 @@ import {
   SHOW_OVERVIEW_SUCCESS,
   GET_UPCOMING_SHOWS_BEGIN,
   GET_UPCOMING_SHOWS_SUCCESS,
-  ADD_FAVORITE,
-  REMOVE_FAVORITE,
   UPDATE_FAVORITE,
 } from "./actions";
 
@@ -414,18 +412,6 @@ const reducer = (state, action) => {
       shows: action.payload.shows,
       totalShows: action.payload.totalShows,
       numOfPages: action.payload.numOfPages,
-    };
-  }
-  if (action.type === ADD_FAVORITE) {
-    return {
-      ...state,
-      favorites: action.payload.list,
-    };
-  }
-  if (action.type === REMOVE_FAVORITE) {
-    return {
-      ...state,
-      favorites: action.payload.list,
     };
   }
   if (action.type === UPDATE_FAVORITE) {
