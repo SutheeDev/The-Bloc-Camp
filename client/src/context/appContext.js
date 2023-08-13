@@ -47,6 +47,7 @@ import {
   GET_UPCOMING_SHOWS_SUCCESS,
   ADD_FAVORITE,
   REMOVE_FAVORITE,
+  UPDATE_FAVORITE,
 } from "./actions";
 import moment from "moment";
 
@@ -536,28 +537,25 @@ const AppProvider = ({ children }) => {
     hideMessage();
   };
 
-  const addFavorites = (id) => {
-    console.log(`add ${id}`);
+  const updateFavorites = async (id) => {
     const { favorites } = state;
-    const list = [...favorites, id];
-    dispatch({
-      type: ADD_FAVORITE,
-      payload: {
-        list,
-      },
-    });
-  };
-
-  const removeFavorites = (id) => {
-    console.log(`remove ${id}`);
-    const { favorites } = state;
-    const list = favorites.filter((favorite) => favorite !== id);
-    dispatch({
-      type: REMOVE_FAVORITE,
-      payload: {
-        list,
-      },
-    });
+    let list = favorites;
+    if (favorites.includes(id)) {
+      list = favorites.filter((favorite) => favorite !== id);
+    } else {
+      list = [...favorites, id];
+    }
+    try {
+      await authFetch.patch(`/auth/favorites/${id}`, list);
+      dispatch({
+        type: UPDATE_FAVORITE,
+        payload: {
+          list,
+        },
+      });
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   return (
@@ -587,6 +585,7 @@ const AppProvider = ({ children }) => {
         getUpcomingShows,
         addFavorites,
         removeFavorites,
+        updateFavorites,
       }}
     >
       {children}

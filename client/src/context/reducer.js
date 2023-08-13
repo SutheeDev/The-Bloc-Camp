@@ -42,6 +42,7 @@ import {
   GET_UPCOMING_SHOWS_SUCCESS,
   ADD_FAVORITE,
   REMOVE_FAVORITE,
+  UPDATE_FAVORITE,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -422,6 +423,12 @@ const reducer = (state, action) => {
     };
   }
   if (action.type === REMOVE_FAVORITE) {
+    return {
+      ...state,
+      favorites: action.payload.list,
+    };
+  }
+  if (action.type === UPDATE_FAVORITE) {
     return {
       ...state,
       favorites: action.payload.list,

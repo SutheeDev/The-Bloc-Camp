@@ -24,14 +24,8 @@ const Event = ({
   status,
   ticketsPrice,
 }) => {
-  const {
-    setEditShow,
-    deleteShow,
-    user,
-    removeFavorites,
-    addFavorites,
-    favorites,
-  } = useAppContext();
+  const { setEditShow, deleteShow, user, updateFavorites, favorites } =
+    useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
 
   let date = moment(performDateTime);
@@ -43,11 +37,7 @@ const Event = ({
   time = time.locale("en").format("hh:mm a");
 
   const toggleFavorites = (id) => {
-    if (favorites.includes(id)) {
-      removeFavorites(id);
-    } else {
-      addFavorites(id);
-    }
+    updateFavorites(id);
   };
 
   return (
