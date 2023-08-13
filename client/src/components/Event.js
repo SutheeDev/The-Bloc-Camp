@@ -9,6 +9,8 @@ import {
   BiMessageSquareX,
   BiChevronDown,
   BiDollarCircle,
+  BiHeart,
+  BiSolidHeart,
 } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
@@ -296,6 +298,11 @@ const Wrapper = styled.div`
     border: 2px solid var(--lighterBlue);
   }
   .del-btn:hover {
+    color: var(--white);
+    background-color: var(--reddish);
+    border: 2px solid var(--reddish);
+  }
+  .fav-btn:hover {
     color: var(--white);
     background-color: var(--reddish);
     border: 2px solid var(--reddish);
