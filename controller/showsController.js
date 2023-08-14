@@ -181,6 +181,11 @@ const getFeaturedShows = async (req, res) => {
 };
 
 const getUpcomingShows = async (req, res) => {
+  // May be import the UserSchema
+  // Then find the logged-in user using findOne({ _id: req.user.userId })
+  // Then pass the user.favorites through the return
+  // Then in appContext, grab it in getUpcomingShows, pass it through dispatch, update it in reducer
+
   const { search, status, sort } = req.query;
 
   const queryObject = {
