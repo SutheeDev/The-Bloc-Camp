@@ -43,6 +43,11 @@ import {
   GET_FEATURED_SHOWS_SUCCESS,
   SHOW_OVERVIEW_BEGIN,
   SHOW_OVERVIEW_SUCCESS,
+  GET_UPCOMING_SHOWS_BEGIN,
+  GET_UPCOMING_SHOWS_SUCCESS,
+  UPDATE_FAVORITE_BEGIN,
+  UPDATE_FAVORITE_SUCCESS,
+  GET_FAVORITES,
 } from "./actions";
 import moment from "moment";
 
@@ -92,6 +97,9 @@ const initialState = {
 
   overview: {},
   monthlyApplication: [],
+
+  favorites: [],
+  isProcessing: false,
 };
 
 const AppContext = React.createContext();
@@ -164,8 +172,11 @@ const AppProvider = ({ children }) => {
     try {
       const response = await axios.post("api/v1/auth/register", currentUser);
       const { user, token } = response.data;
-      dispatch({ type: REGISTER_SUCCESS, payload: { user, token } });
-      addUserToLocalStorage({ user, token });
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: { user, token, role: user.role },
+      });
+      addUserToLocalStorage({ user, token, role: user.role });
     } catch (error) {
       dispatch({
         type: REGISTER_ERROR,
@@ -500,6 +511,67 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const getUpcomingShows = async () => {
+    const { search, searchStatus, sort, page } = state;
+
+    let url = `/shows/upcoming?page=${page}&status=${searchStatus}&sort=${sort}`;
+    if (search) {
+      url = url + `&search=${search}`;
+    }
+
+    dispatch({ type: GET_UPCOMING_SHOWS_BEGIN });
+    try {
+      const { data } = await authFetch.get(url);
+      const { shows, totalShows, numOfPages } = data;
+      dispatch({
+        type: GET_UPCOMING_SHOWS_SUCCESS,
+        payload: {
+          shows,
+          totalShows,
+          numOfPages,
+        },
+      });
+      getUserFavorites();
+    } catch (error) {
+      console.log(error.response);
+      // logoutUser();
+    }
+    hideMessage();
+  };
+
+  const updateFavorites = async (id) => {
+    dispatch({ type: UPDATE_FAVORITE_BEGIN });
+    try {
+      const { data } = await authFetch.patch(`/auth/favorites/${id}`);
+      const { user, token, role, favorites } = data;
+      dispatch({
+        type: UPDATE_FAVORITE_SUCCESS,
+        payload: {
+          user,
+          favorites,
+        },
+      });
+      addUserToLocalStorage({ user, token, role });
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
+  const getUserFavorites = async () => {
+    try {
+      const { data } = await authFetch.get("/auth/favorites");
+      const { favorites } = data;
+      dispatch({
+        type: GET_FAVORITES,
+        payload: {
+          favorites,
+        },
+      });
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -524,6 +596,8 @@ const AppProvider = ({ children }) => {
         getPublishedShows,
         getFeaturedShows,
         showOverview,
+        getUpcomingShows,
+        updateFavorites,
       }}
     >
       {children}

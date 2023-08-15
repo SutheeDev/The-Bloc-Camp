@@ -5,16 +5,19 @@ import {
   Contact,
   Register,
   ProtectedRoute,
+  UserProtectedRoute,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   Profile,
   CreateShow,
   AllShows,
-  MyTickets,
+  Favorites,
   Overview,
   SharedLayout,
   EditShow,
+  UserOverview,
+  Upcoming,
 } from "./pages/dashboard";
 
 function App() {
@@ -38,14 +41,15 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <ProtectedRoute>
+            <UserProtectedRoute>
               <SharedLayout />
-            </ProtectedRoute>
+            </UserProtectedRoute>
           }
         >
-          <Route index element={<Overview />} />
+          <Route index element={<UserOverview />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="my-tickets" element={<MyTickets />} />
+          <Route path="favorites" element={<Favorites />} />
+          <Route path="upcoming" element={<Upcoming />} />
         </Route>
         <Route path="/" element={<Landing />} />
         <Route path="/shows" element={<Shows />} />

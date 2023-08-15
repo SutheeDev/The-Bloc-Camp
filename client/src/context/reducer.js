@@ -38,6 +38,11 @@ import {
   GET_FEATURED_SHOWS_SUCCESS,
   SHOW_OVERVIEW_BEGIN,
   SHOW_OVERVIEW_SUCCESS,
+  GET_UPCOMING_SHOWS_BEGIN,
+  GET_UPCOMING_SHOWS_SUCCESS,
+  UPDATE_FAVORITE_BEGIN,
+  UPDATE_FAVORITE_SUCCESS,
+  GET_FAVORITES,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -93,6 +98,7 @@ const reducer = (state, action) => {
       isLoading: false,
       user: action.payload.user,
       token: action.payload.token,
+      role: action.payload.role,
     };
   }
   if (action.type === REGISTER_ERROR) {
@@ -340,7 +346,7 @@ const reducer = (state, action) => {
       ...state,
       search: "",
       searchStatus: "all",
-      sort: "latest",
+      sort: "by date",
     };
   }
   if (action.type === CHANGE_PAGE) {
@@ -391,6 +397,43 @@ const reducer = (state, action) => {
       isLoading: false,
       overview: action.payload.overview,
       monthlyApplication: action.payload.monthlyApplication,
+    };
+  }
+  if (action.type === GET_UPCOMING_SHOWS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+      isEditing: false,
+      showMessage: false,
+    };
+  }
+  if (action.type === GET_UPCOMING_SHOWS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      shows: action.payload.shows,
+      totalShows: action.payload.totalShows,
+      numOfPages: action.payload.numOfPages,
+    };
+  }
+  if (action.type === UPDATE_FAVORITE_BEGIN) {
+    return {
+      ...state,
+      isProcessing: true,
+    };
+  }
+  if (action.type === UPDATE_FAVORITE_SUCCESS) {
+    return {
+      ...state,
+      isProcessing: false,
+      user: action.payload.user,
+      favorites: action.payload.favorites,
+    };
+  }
+  if (action.type === GET_FAVORITES) {
+    return {
+      ...state,
+      favorites: action.payload.favorites,
     };
   }
   throw new Error(`No such action: ${action.type}`);

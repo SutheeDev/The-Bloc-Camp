@@ -10,8 +10,10 @@ import {
   BiChevronDown,
   BiDollarCircle,
 } from "react-icons/bi";
+import { HiOutlineHeart, HiHeart } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
+import Loading from "./Loading";
 
 const Event = ({
   _id,
@@ -24,7 +26,14 @@ const Event = ({
   status,
   ticketsPrice,
 }) => {
-  const { setEditShow, deleteShow } = useAppContext();
+  const {
+    setEditShow,
+    deleteShow,
+    user,
+    updateFavorites,
+    favorites,
+    isProcessing,
+  } = useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
 
   let date = moment(performDateTime);
@@ -34,6 +43,10 @@ const Event = ({
   date = date.locale("en").format("MMM D");
   day = day.locale("en").format("ddd");
   time = time.locale("en").format("hh:mm a");
+
+  const toggleFavorites = (id) => {
+    updateFavorites(id);
+  };
 
   return (
     <Wrapper>
@@ -106,20 +119,37 @@ const Event = ({
         </div>
 
         <div className="btn-container">
-          <Link
-            to="/admin-dashboard/edit-show"
-            className="btn edit-btn"
-            onClick={() => setEditShow(_id)}
-          >
-            edit
-          </Link>
-          <button
-            type="button"
-            className="btn del-btn"
-            onClick={() => deleteShow(_id)}
-          >
-            delete
-          </button>
+          {user.role === "admin" ? (
+            <div>
+              <Link
+                to="/admin-dashboard/edit-show"
+                className="btn edit-btn"
+                onClick={() => setEditShow(_id)}
+              >
+                edit
+              </Link>
+              <button
+                type="button"
+                className="btn del-btn"
+                onClick={() => deleteShow(_id)}
+              >
+                delete
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              className={
+                favorites.includes(_id) ? "btn fav-btn fav" : "btn fav-btn"
+              }
+              onClick={() => toggleFavorites(_id)}
+            >
+              <div className="fav-icon">
+                {favorites.includes(_id) ? <HiHeart /> : <HiOutlineHeart />}
+              </div>
+              {favorites.includes(_id) ? `my favorites` : `add to favorites`}
+            </button>
+          )}
           <BiChevronDown
             className="down-icon"
             onClick={() => setShowDropdown(!showDropdown)}
@@ -283,7 +313,21 @@ const Wrapper = styled.div`
     background-color: var(--reddish);
     border: 2px solid var(--reddish);
   }
-
+  .fav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+  }
+  .fav-icon {
+    font-size: 1.1rem;
+    display: flex;
+    margin-right: 0.3em;
+  }
+  .fav {
+    border: 2px solid var(--reddish);
+    color: var(--reddish);
+  }
   .published,
   .featured,
   .price {
@@ -330,6 +374,9 @@ const Wrapper = styled.div`
     }
     .del-btn {
       margin-left: 1.1em;
+    }
+    .fav-btn {
+      width: 100%;
     }
     .event-condition,
     .price-desc {

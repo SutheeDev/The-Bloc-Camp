@@ -16,10 +16,16 @@ const EventsContainer = () => {
     search,
     searchStatus,
     sort,
+    getUpcomingShows,
+    user,
   } = useAppContext();
 
   useEffect(() => {
-    getShows();
+    if (user.role === "admin") {
+      getShows();
+    } else {
+      getUpcomingShows();
+    }
   }, [search, searchStatus, sort, page]);
 
   if (isLoading) {

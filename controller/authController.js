@@ -23,8 +23,9 @@ const register = async (req, res) => {
       name: user.name,
       email: user.email,
       lastname: user.lastname,
-      phoneNumber: user.phoneNumber,
+      favorites: user.favorites,
       location: user.location,
+      role: user.role,
     },
     token,
   });
@@ -75,4 +76,35 @@ const updateUser = async (req, res) => {
 
   res.status(StatusCodes.OK).json({ user, token, role: user.role });
 };
-export { register, login, updateUser };
+
+const updateUserFavorites = async (req, res) => {
+  const { id: showId } = req.params;
+
+  const user = await User.findOne({ _id: req.user.userId });
+  let favList = user.favorites;
+  if (favList.includes(showId)) {
+    user.favorites = favList.filter((item) => item !== showId);
+  } else {
+    user.favorites = [...favList, showId];
+  }
+
+  await user.save();
+
+  const token = user.createJWT();
+
+  res
+    .status(StatusCodes.OK)
+    .json({ user, token, role: user.role, favorites: user.favorites });
+};
+
+const getUserFavorites = async (req, res) => {
+  const user = await User.findOne({ _id: req.user.userId });
+  res.status(StatusCodes.OK).json({ favorites: user.favorites });
+};
+
+// May be import the UserSchema
+// Then find the logged-in user using findOne({ _id: req.user.userId })
+// Then pass the user.favorites through the return
+// Then in appContext, grab it in getUpcomingShows, pass it through dispatch, update it in reducer
+
+export { register, login, updateUser, updateUserFavorites, getUserFavorites };

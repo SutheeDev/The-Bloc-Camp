@@ -1,22 +1,34 @@
-import { BiBookContent, BiGridSmall, BiBarChartSquare } from "react-icons/bi";
+import {
+  BiBookContent,
+  BiBarChartSquare,
+  BiBookmarkHeart,
+  BiCalendarEvent,
+} from "react-icons/bi";
+import { RiCoupon2Line } from "react-icons/ri";
 
 const userLinks = [
   {
     id: 0,
     text: "Overview",
-    path: "/admin-dashboard/",
+    path: "/dashboard/",
     icon: <BiBarChartSquare />,
   },
   {
     id: 1,
-    text: "My Tickets",
-    path: "/admin-dashboard/my-tickets",
-    icon: <BiGridSmall />,
+    text: "Favorites",
+    path: "/dashboard/favorites",
+    icon: <BiBookmarkHeart />,
   },
   {
     id: 2,
+    text: "Upcoming",
+    path: "/dashboard/upcoming",
+    icon: <BiCalendarEvent />,
+  },
+  {
+    id: 3,
     text: "Profile",
-    path: "/admin-dashboard/profile",
+    path: "/dashboard/profile",
     icon: <BiBookContent />,
   },
 ];

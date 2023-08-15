@@ -12,6 +12,7 @@ const SearchContainer = () => {
     sortOptions,
     handleInputChange,
     clearFilters,
+    user,
   } = useAppContext();
 
   const handleSearch = (e) => {
@@ -39,13 +40,15 @@ const SearchContainer = () => {
               value={search}
             />
 
-            <FormRowSelect
-              name="searchStatus"
-              labelText="status"
-              handleChange={handleSearch}
-              list={["all", ...statusOptions]}
-              value={searchStatus}
-            />
+            {user.role === "admin" && (
+              <FormRowSelect
+                name="searchStatus"
+                labelText="status"
+                handleChange={handleSearch}
+                list={["all", ...statusOptions]}
+                value={searchStatus}
+              />
+            )}
 
             <FormRowSelect
               name="sort"
@@ -55,7 +58,14 @@ const SearchContainer = () => {
             />
           </div>
           <div className="btn-container">
-            <button className="btn clear-btn" onClick={handleSubmit}>
+            <button
+              className={
+                user.role === "admin"
+                  ? "btn clear-btn"
+                  : "btn clear-btn half-width"
+              }
+              onClick={handleSubmit}
+            >
               clear filters
             </button>
           </div>
@@ -149,11 +159,14 @@ const Wrapper = styled.div`
       margin-bottom: -1em;
     }
     .form-row-container > * {
-      width: 32%;
+      width: 100%;
     }
     .clear-btn {
       width: 32%;
       max-width: none;
+    }
+    .half-width {
+      width: 49%;
     }
   }
 `;
