@@ -46,6 +46,7 @@ import {
   GET_UPCOMING_SHOWS_BEGIN,
   GET_UPCOMING_SHOWS_SUCCESS,
   UPDATE_FAVORITE,
+  GET_FAVORITES,
 } from "./actions";
 import moment from "moment";
 
@@ -557,7 +558,13 @@ const AppProvider = ({ children }) => {
     try {
       const { data } = await authFetch.get("/auth/favorites");
       const { favorites } = data;
-      console.log(favorites);
+      // console.log(favorites);
+      dispatch({
+        type: GET_FAVORITES,
+        payload: {
+          favorites,
+        },
+      });
     } catch (error) {
       console.log(error.response);
     }

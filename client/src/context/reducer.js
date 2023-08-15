@@ -41,6 +41,7 @@ import {
   GET_UPCOMING_SHOWS_BEGIN,
   GET_UPCOMING_SHOWS_SUCCESS,
   UPDATE_FAVORITE,
+  GET_FAVORITES,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -418,6 +419,12 @@ const reducer = (state, action) => {
     return {
       ...state,
       user: action.payload.user,
+      favorites: action.payload.favorites,
+    };
+  }
+  if (action.type === GET_FAVORITES) {
+    return {
+      ...state,
       favorites: action.payload.favorites,
     };
   }
