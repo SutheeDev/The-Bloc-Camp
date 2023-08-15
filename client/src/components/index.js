@@ -29,6 +29,7 @@ import PageBtnContainer from "./PageBtnContainer";
 import OverviewContainer from "./OverviewContainer";
 import ChartsContainer from "./ChartsContainer";
 import QuickTipsContainer from "./QuickTipsContainer";
+import FavoritesContainer from "./FavoritesContainer";
 
 export {
   Navbar,
@@ -62,4 +63,5 @@ export {
   OverviewContainer,
   ChartsContainer,
   QuickTipsContainer,
+  FavoritesContainer,
 };

@@ -102,9 +102,4 @@ const getUserFavorites = async (req, res) => {
   res.status(StatusCodes.OK).json({ favorites: user.favorites });
 };
 
-// May be import the UserSchema
-// Then find the logged-in user using findOne({ _id: req.user.userId })
-// Then pass the user.favorites through the return
-// Then in appContext, grab it in getUpcomingShows, pass it through dispatch, update it in reducer
-
 export { register, login, updateUser, updateUserFavorites, getUserFavorites };
