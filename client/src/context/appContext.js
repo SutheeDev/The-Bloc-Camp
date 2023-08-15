@@ -528,6 +528,7 @@ const AppProvider = ({ children }) => {
           numOfPages,
         },
       });
+      getUserFavorites();
     } catch (error) {
       console.log(error.response);
       // logoutUser();
@@ -547,6 +548,16 @@ const AppProvider = ({ children }) => {
         },
       });
       addUserToLocalStorage({ user, token, role });
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
+  const getUserFavorites = async () => {
+    try {
+      const { data } = await authFetch.get("/auth/favorites");
+      const { favorites } = data;
+      console.log(favorites);
     } catch (error) {
       console.log(error.response);
     }
