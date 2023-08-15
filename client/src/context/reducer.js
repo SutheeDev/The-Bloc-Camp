@@ -40,7 +40,8 @@ import {
   SHOW_OVERVIEW_SUCCESS,
   GET_UPCOMING_SHOWS_BEGIN,
   GET_UPCOMING_SHOWS_SUCCESS,
-  UPDATE_FAVORITE,
+  UPDATE_FAVORITE_BEGIN,
+  UPDATE_FAVORITE_SUCCESS,
   GET_FAVORITES,
 } from "./actions";
 
@@ -415,9 +416,16 @@ const reducer = (state, action) => {
       numOfPages: action.payload.numOfPages,
     };
   }
-  if (action.type === UPDATE_FAVORITE) {
+  if (action.type === UPDATE_FAVORITE_BEGIN) {
     return {
       ...state,
+      isProcessing: true,
+    };
+  }
+  if (action.type === UPDATE_FAVORITE_SUCCESS) {
+    return {
+      ...state,
+      isProcessing: false,
       user: action.payload.user,
       favorites: action.payload.favorites,
     };

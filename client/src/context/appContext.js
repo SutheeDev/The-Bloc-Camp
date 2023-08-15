@@ -45,7 +45,8 @@ import {
   SHOW_OVERVIEW_SUCCESS,
   GET_UPCOMING_SHOWS_BEGIN,
   GET_UPCOMING_SHOWS_SUCCESS,
-  UPDATE_FAVORITE,
+  UPDATE_FAVORITE_BEGIN,
+  UPDATE_FAVORITE_SUCCESS,
   GET_FAVORITES,
 } from "./actions";
 import moment from "moment";
@@ -97,7 +98,8 @@ const initialState = {
   overview: {},
   monthlyApplication: [],
 
-  favorites: JSON.parse(user).favorites || [],
+  favorites: [],
+  isProcessing: false,
 };
 
 const AppContext = React.createContext();
@@ -538,11 +540,12 @@ const AppProvider = ({ children }) => {
   };
 
   const updateFavorites = async (id) => {
+    dispatch({ type: UPDATE_FAVORITE_BEGIN });
     try {
       const { data } = await authFetch.patch(`/auth/favorites/${id}`);
       const { user, token, role, favorites } = data;
       dispatch({
-        type: UPDATE_FAVORITE,
+        type: UPDATE_FAVORITE_SUCCESS,
         payload: {
           user,
           favorites,
@@ -558,7 +561,6 @@ const AppProvider = ({ children }) => {
     try {
       const { data } = await authFetch.get("/auth/favorites");
       const { favorites } = data;
-      // console.log(favorites);
       dispatch({
         type: GET_FAVORITES,
         payload: {

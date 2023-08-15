@@ -13,6 +13,7 @@ import {
 import { HiOutlineHeart, HiHeart } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
+import Loading from "./Loading";
 
 const Event = ({
   _id,
@@ -25,8 +26,14 @@ const Event = ({
   status,
   ticketsPrice,
 }) => {
-  const { setEditShow, deleteShow, user, updateFavorites, favorites } =
-    useAppContext();
+  const {
+    setEditShow,
+    deleteShow,
+    user,
+    updateFavorites,
+    favorites,
+    isProcessing,
+  } = useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
 
   let date = moment(performDateTime);
@@ -309,6 +316,8 @@ const Wrapper = styled.div`
   .fav-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 180px;
   }
   .fav-icon {
     font-size: 1.1rem;
@@ -319,16 +328,6 @@ const Wrapper = styled.div`
     border: 2px solid var(--reddish);
     color: var(--reddish);
   }
-  /* .fav {
-    color: var(--reddish);
-    background-color: var(--reddish);
-  } */
-  /* .fav-btn:hover {
-    color: var(--white);
-    background-color: var(--reddish);
-    border: 2px solid var(--reddish);
-  } */
-
   .published,
   .featured,
   .price {
@@ -375,6 +374,9 @@ const Wrapper = styled.div`
     }
     .del-btn {
       margin-left: 1.1em;
+    }
+    .fav-btn {
+      width: 100%;
     }
     .event-condition,
     .price-desc {
