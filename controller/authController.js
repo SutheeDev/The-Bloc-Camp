@@ -77,7 +77,7 @@ const updateUser = async (req, res) => {
   res.status(StatusCodes.OK).json({ user, token, role: user.role });
 };
 
-const updateFavorites = async (req, res) => {
+const updateUserFavorites = async (req, res) => {
   const { id: showId } = req.params;
 
   const user = await User.findOne({ _id: req.user.userId });
@@ -97,4 +97,9 @@ const updateFavorites = async (req, res) => {
     .json({ user, token, role: user.role, favorites: user.favorites });
 };
 
-export { register, login, updateUser, updateFavorites };
+// May be import the UserSchema
+// Then find the logged-in user using findOne({ _id: req.user.userId })
+// Then pass the user.favorites through the return
+// Then in appContext, grab it in getUpcomingShows, pass it through dispatch, update it in reducer
+
+export { register, login, updateUser, updateUserFavorites };

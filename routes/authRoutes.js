@@ -6,12 +6,12 @@ import {
   register,
   login,
   updateUser,
-  updateFavorites,
+  updateUserFavorites,
 } from "../controller/authController.js";
 
 router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/updateuser").patch(authenticatedUser, updateUser);
-router.route("/favorites/:id").patch(authenticatedUser, updateFavorites);
+router.route("/favorites/:id").patch(authenticatedUser, updateUserFavorites);
 
 export default router;
