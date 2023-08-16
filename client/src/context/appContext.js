@@ -575,12 +575,22 @@ const AppProvider = ({ children }) => {
   };
 
   const getFavoriteShows = async (req, res) => {
+    const { page } = state;
+
+    let url = `/shows/favorites?page=${page}`;
+
     dispatch({ type: GET_FAVORITE_SHOWS_BEGIN });
     try {
-      const { data } = await authFetch.get("/shows/favorites");
-      const { favItems } = data;
-      console.log(favItems);
-      dispatch({ type: GET_FAVORITE_SHOWS_SUCCESS });
+      const { data } = await authFetch.get(url);
+      const { shows, totalShows, numOfPages } = data;
+      dispatch({
+        type: GET_FAVORITE_SHOWS_SUCCESS,
+        payload: {
+          shows,
+          totalShows,
+          numOfPages,
+        },
+      });
     } catch (error) {
       console.log(error.response);
     }
