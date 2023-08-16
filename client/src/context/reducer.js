@@ -43,6 +43,8 @@ import {
   UPDATE_FAVORITE_BEGIN,
   UPDATE_FAVORITE_SUCCESS,
   GET_FAVORITES,
+  GET_FAVORITE_SHOWS_BEGIN,
+  GET_FAVORITE_SHOWS_SUCCESS,
 } from "./actions";
 
 import { initialState } from "./appContext";
