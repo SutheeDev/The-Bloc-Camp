@@ -19,11 +19,12 @@ const FavoritesContainer = () => {
     getUpcomingShows,
     user,
     getFavoriteShows,
+    favorites,
   } = useAppContext();
 
   useEffect(() => {
     getFavoriteShows();
-  }, [page]);
+  }, [page, user]);
 
   if (isLoading) {
     return <Loading center />;
