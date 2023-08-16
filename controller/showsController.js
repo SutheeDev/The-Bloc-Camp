@@ -226,11 +226,18 @@ const getFavoriteShows = async (req, res) => {
   const user = await User.findOne({ _id: req.user.userId });
   const favList = user.favorites;
 
-  let queryObject = {
-    status: "upcoming",
-  };
+  const allUpcoming = await Show.find({ status: "upcoming" });
 
-  res.status(StatusCodes.OK).json({ favList });
+  let favItems = [];
+  favList.forEach((favId) => {
+    const favObjectId = new mongoose.Types.ObjectId(favId);
+    const favItem = allUpcoming.find((item) => item._id.equals(favObjectId));
+    if (favItem) {
+      favItems.push(favItem);
+    }
+  });
+
+  res.status(StatusCodes.OK).json({ favItems });
 };
 
 export {
