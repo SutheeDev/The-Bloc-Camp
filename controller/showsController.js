@@ -236,6 +236,7 @@ const getFavoriteShows = async (req, res) => {
       shows.push(favItem);
     }
   });
+  shows.sort((a, b) => a.performDateTime - b.performDateTime);
 
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 10;
