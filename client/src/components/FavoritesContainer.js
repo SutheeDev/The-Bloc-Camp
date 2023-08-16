@@ -41,7 +41,7 @@ const FavoritesContainer = () => {
   return (
     <Wrapper>
       <h2>
-        you have {totalShows} favorite show{shows.length > 1 && "s"}
+        {totalShows} favorite show{shows.length > 1 && "s"}
       </h2>
       <div>
         {shows.map((show) => {

@@ -10,7 +10,7 @@ const userLinks = [
   {
     id: 0,
     text: "Overview",
-    path: "/dashboard/",
+    path: "/dashboard",
     icon: <BiBarChartSquare />,
   },
   {
