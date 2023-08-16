@@ -1,4 +1,63 @@
+import Loading from "./Loading";
+import { useAppContext } from "../context/appContext";
+import { useEffect } from "react";
+import styled from "styled-components";
+import Event from "./Event";
+import PageBtnContainer from "./PageBtnContainer";
+
 const FavoritesContainer = () => {
-  return <div>FavoritesContainer</div>;
+  const {
+    getShows,
+    isLoading,
+    shows,
+    totalShows,
+    numOfPages,
+    page,
+    search,
+    searchStatus,
+    sort,
+    getUpcomingShows,
+    user,
+  } = useAppContext();
+
+  useEffect(() => {
+    if (user.role === "admin") {
+      getShows();
+    } else {
+      getUpcomingShows();
+    }
+  }, [search, searchStatus, sort, page]);
+
+  if (isLoading) {
+    return <Loading center />;
+  }
+
+  if (shows.length === 0) {
+    return (
+      <Wrapper>
+        <h2>No upcoming show to display </h2>
+      </Wrapper>
+    );
+  }
+
+  return (
+    <Wrapper>
+      <h2>
+        {totalShows} upcoming show{shows.length > 1 && "s"}
+      </h2>
+      <div>
+        {shows.map((show) => {
+          return <Event key={show._id} {...show} />;
+        })}
+      </div>
+      {numOfPages > 1 && <PageBtnContainer />}
+    </Wrapper>
+  );
 };
 export default FavoritesContainer;
+
+const Wrapper = styled.main`
+  h2 {
+    text-transform: capitalize;
+  }
+`;

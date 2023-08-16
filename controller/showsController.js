@@ -1,4 +1,5 @@
 import Show from "../models/Show.js";
+import User from "../models/User.js";
 import {
   BadRequestError,
   NotFoundError,
@@ -221,6 +222,17 @@ const getUpcomingShows = async (req, res) => {
   res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
 };
 
+const getFavoriteShows = async (req, res) => {
+  const user = await User.findOne({ _id: req.user.userId });
+  const favList = user.favorites;
+
+  let queryObject = {
+    status: "upcoming",
+  };
+
+  res.status(StatusCodes.OK).json({ favList });
+};
+
 export {
   createShow,
   getAllShows,
@@ -230,4 +242,5 @@ export {
   getPublishedShows,
   getFeaturedShows,
   getUpcomingShows,
+  getFavoriteShows,
 };

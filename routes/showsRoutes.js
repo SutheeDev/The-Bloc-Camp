@@ -11,6 +11,7 @@ import {
   getPublishedShows,
   getFeaturedShows,
   getUpcomingShows,
+  getFavoriteShows,
 } from "../controller/showsController.js";
 import {
   uploadArtistImage,
@@ -25,6 +26,7 @@ router.route("/published").get(getPublishedShows);
 router.route("/featured").get(getFeaturedShows);
 router.route("/upcoming").get(authenticatedUser, getUpcomingShows);
 router.route("/overview").get(authenticatedUser, showOverview);
+router.route("/favorites").get(authenticatedUser, getFavoriteShows);
 router.route("/uploads-artistImage").post(authenticatedUser, uploadArtistImage);
 router
   .route("/uploads-featureImage")
