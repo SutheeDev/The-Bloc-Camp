@@ -228,16 +228,25 @@ const getFavoriteShows = async (req, res) => {
 
   const allUpcoming = await Show.find({ status: "upcoming" });
 
-  let favItems = [];
+  let shows = [];
   favList.forEach((favId) => {
     const favObjectId = new mongoose.Types.ObjectId(favId);
     const favItem = allUpcoming.find((item) => item._id.equals(favObjectId));
     if (favItem) {
-      favItems.push(favItem);
+      shows.push(favItem);
     }
   });
 
-  res.status(StatusCodes.OK).json({ favItems });
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 10;
+  const skip = (page - 1) * limit;
+  const endIndex = skip + limit;
+  shows = shows.slice(skip, endIndex);
+
+  const totalShows = favList.length;
+  const numOfPages = Math.ceil(totalShows / limit);
+
+  res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
 };
 
 export {

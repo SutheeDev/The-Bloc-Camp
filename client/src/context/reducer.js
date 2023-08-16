@@ -438,6 +438,18 @@ const reducer = (state, action) => {
       favorites: action.payload.favorites,
     };
   }
+  if (action.type === GET_FAVORITE_SHOWS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === GET_FAVORITE_SHOWS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

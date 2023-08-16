@@ -18,15 +18,12 @@ const FavoritesContainer = () => {
     sort,
     getUpcomingShows,
     user,
+    getFavoriteShows,
   } = useAppContext();
 
   useEffect(() => {
-    if (user.role === "admin") {
-      getShows();
-    } else {
-      getUpcomingShows();
-    }
-  }, [search, searchStatus, sort, page]);
+    getFavoriteShows();
+  }, []);
 
   if (isLoading) {
     return <Loading center />;
@@ -35,7 +32,7 @@ const FavoritesContainer = () => {
   if (shows.length === 0) {
     return (
       <Wrapper>
-        <h2>No upcoming show to display </h2>
+        <h2>you have no favorite shows</h2>
       </Wrapper>
     );
   }

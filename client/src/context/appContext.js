@@ -574,7 +574,17 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  const getFavoriteShows = async (req, res) => {};
+  const getFavoriteShows = async (req, res) => {
+    dispatch({ type: GET_FAVORITE_SHOWS_BEGIN });
+    try {
+      const { data } = await authFetch.get("/shows/favorites");
+      const { favItems } = data;
+      console.log(favItems);
+      dispatch({ type: GET_FAVORITE_SHOWS_SUCCESS });
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
 
   return (
     <AppContext.Provider
@@ -602,6 +612,7 @@ const AppProvider = ({ children }) => {
         showOverview,
         getUpcomingShows,
         updateFavorites,
+        getFavoriteShows,
       }}
     >
       {children}
