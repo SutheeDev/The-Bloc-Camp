@@ -448,6 +448,9 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
+      shows: action.payload.shows,
+      totalShows: action.payload.totalShows,
+      numOfPages: action.payload.numOfPages,
     };
   }
   throw new Error(`No such action: ${action.type}`);

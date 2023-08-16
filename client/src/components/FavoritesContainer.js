@@ -23,7 +23,7 @@ const FavoritesContainer = () => {
 
   useEffect(() => {
     getFavoriteShows();
-  }, []);
+  }, [page]);
 
   if (isLoading) {
     return <Loading center />;
@@ -40,7 +40,7 @@ const FavoritesContainer = () => {
   return (
     <Wrapper>
       <h2>
-        {totalShows} upcoming show{shows.length > 1 && "s"}
+        you have {totalShows} favorite show{shows.length > 1 && "s"}
       </h2>
       <div>
         {shows.map((show) => {

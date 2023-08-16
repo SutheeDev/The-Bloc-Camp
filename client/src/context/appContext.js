@@ -591,6 +591,7 @@ const AppProvider = ({ children }) => {
           numOfPages,
         },
       });
+      getUserFavorites();
     } catch (error) {
       console.log(error.response);
     }
