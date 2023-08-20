@@ -123,6 +123,18 @@ const Register = () => {
                 {values.isRegistered ? "Register" : "Login"}
               </button>
             </p>
+            {values.isRegistered && (
+              <p className="toggleForm demo">
+                Or explore
+                <button type="button" className="toggleForm-btn">
+                  user demo
+                </button>
+                &nbsp;/
+                <button type="button" className="toggleForm-btn">
+                  admin demo
+                </button>
+              </p>
+            )}
           </form>
         </div>
       </section>
@@ -217,6 +229,12 @@ const Wrapper = styled.main`
     left: 50%;
     transform: translate(-25%, -50%);
     border-radius: 1px;
+  }
+  .toggleForm.demo {
+    margin-top: -5px;
+    padding: 0 0 13px 0;
+    font-size: 14px;
+    letter-spacing: 0px;
   }
   /* ------------------- */
   /* Media Queries */
