@@ -126,11 +126,31 @@ const Register = () => {
             {values.isRegistered && (
               <p className="toggleForm demo">
                 Or explore
-                <button type="button" className="toggleForm-btn">
+                <button
+                  type="button"
+                  className="toggleForm-btn"
+                  onClick={() =>
+                    loginUser({
+                      name: "Demo User",
+                      email: "testUser@test.com",
+                      password: "secret",
+                    })
+                  }
+                >
                   user demo
                 </button>
                 &nbsp;/
-                <button type="button" className="toggleForm-btn">
+                <button
+                  type="button"
+                  className="toggleForm-btn"
+                  onClick={() =>
+                    loginUser({
+                      name: "Demo Admin",
+                      email: "testAdmin@test.com",
+                      password: "secret",
+                    })
+                  }
+                >
                   admin demo
                 </button>
               </p>
