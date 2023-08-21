@@ -563,8 +563,8 @@ const AppProvider = ({ children }) => {
           msg: error.response.data.msg,
         },
       });
+      hideAlert();
     }
-    hideAlert();
   };
 
   const getUserFavorites = async () => {

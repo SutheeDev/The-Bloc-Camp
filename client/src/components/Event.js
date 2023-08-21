@@ -33,6 +33,7 @@ const Event = ({
     updateFavorites,
     favorites,
     isProcessing,
+    isLoading,
   } = useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -139,6 +140,7 @@ const Event = ({
           ) : (
             <button
               type="button"
+              disabled={isLoading}
               className={
                 favorites.includes(_id) ? "btn fav-btn fav" : "btn fav-btn"
               }
