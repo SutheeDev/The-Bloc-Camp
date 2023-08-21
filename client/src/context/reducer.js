@@ -205,6 +205,9 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
+      showAlert: true,
+      messageText: action.payload.msg,
+      messageType: "error",
     };
   }
   if (action.type === CREATE_SHOW_BEGIN) {

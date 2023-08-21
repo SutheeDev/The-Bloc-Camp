@@ -272,13 +272,14 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      console.log(error.response);
+      // console.log(error.response);
       dispatch({
         type: UPLOAD_IMAGE_ERROR,
         payload: {
           msg: error.response.data.msg,
         },
       });
+      hideAlert();
     }
   };
 
