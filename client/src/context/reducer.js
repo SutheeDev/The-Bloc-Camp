@@ -433,6 +433,15 @@ const reducer = (state, action) => {
       favorites: action.payload.favorites,
     };
   }
+  if (action.type === UPDATE_FAVORITE_ERROR) {
+    return {
+      ...state,
+      isProcessing: false,
+      showAlert: true,
+      messageText: action.payload.msg,
+      messageType: "error",
+    };
+  }
   if (action.type === GET_FAVORITES) {
     return {
       ...state,
