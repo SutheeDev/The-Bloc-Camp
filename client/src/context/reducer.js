@@ -23,6 +23,7 @@ import {
   GET_SHOWS_SUCCESS,
   SET_EDIT_SHOW,
   DELETE_SHOW_BEGIN,
+  DELETE_SHOW_ERROR,
   EDIT_SHOW_BEGIN,
   EDIT_SHOW_SUCCESS,
   EDIT_SHOW_ERROR,
@@ -286,6 +287,15 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: true,
+    };
+  }
+  if (action.type === DELETE_SHOW_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      messageText: action.payload.msg,
+      messageType: "error",
     };
   }
   if (action.type === CLEAR_VALUES) {

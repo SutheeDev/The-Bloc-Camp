@@ -28,6 +28,7 @@ import {
   GET_SHOWS_SUCCESS,
   SET_EDIT_SHOW,
   DELETE_SHOW_BEGIN,
+  DELETE_SHOW_ERROR,
   EDIT_SHOW_BEGIN,
   EDIT_SHOW_SUCCESS,
   EDIT_SHOW_ERROR,
@@ -451,13 +452,23 @@ const AppProvider = ({ children }) => {
   };
 
   const deleteShow = async (id) => {
-    dispatch({ type: DELETE_SHOW_BEGIN });
     try {
       await authFetch.delete(`/shows/${id}`);
+      dispatch({ type: DELETE_SHOW_BEGIN });
       getShows();
     } catch (error) {
       console.log(error.response);
       // logoutUser();
+      if (error.response.status === 401) {
+        logoutUser();
+      }
+      dispatch({
+        type: DELETE_SHOW_ERROR,
+        payload: {
+          msg: error.response.data.msg,
+        },
+      });
+      hideAlert();
     }
   };
 
