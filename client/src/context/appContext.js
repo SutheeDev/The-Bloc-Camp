@@ -158,6 +158,9 @@ const AppProvider = ({ children }) => {
       dispatch({ type: HIDE_ALERT });
     }, 3000);
   };
+  const hideAlertImmediate = () => {
+    dispatch({ type: HIDE_ALERT });
+  };
 
   const addUserToLocalStorage = ({ user, token, role }) => {
     localStorage.setItem("user", JSON.stringify(user));
@@ -644,6 +647,7 @@ const AppProvider = ({ children }) => {
         getUpcomingShows,
         updateFavorites,
         getFavoriteShows,
+        hideAlertImmediate,
       }}
     >
       {children}

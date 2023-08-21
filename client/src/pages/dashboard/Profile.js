@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import { useAppContext } from "../../context/appContext";
 import { FormRow, Message } from "../../components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Profile = () => {
-  const { user, showMessage, displayMessage, updateUser, isLoading } =
-    useAppContext();
+  const {
+    user,
+    showMessage,
+    displayMessage,
+    updateUser,
+    isLoading,
+    hideAlertImmediate,
+  } = useAppContext();
 
   const [name, setname] = useState(user?.name);
   const [lastname, setLastname] = useState(user?.lastname);
@@ -28,6 +34,10 @@ const Profile = () => {
     // }
     updateUser({ name, lastname, email, location });
   };
+
+  useEffect(() => {
+    hideAlertImmediate();
+  }, []);
 
   return (
     <Wrapper>
