@@ -32,7 +32,7 @@ const CreateShow = () => {
     createShow,
     statusOptions,
     clearValues,
-    hideAlertImmediate,
+    closeAlertFromAnotherPage,
   } = useAppContext();
 
   const handleInput = (e) => {
@@ -63,7 +63,7 @@ const CreateShow = () => {
   };
 
   useEffect(() => {
-    hideAlertImmediate();
+    closeAlertFromAnotherPage();
     clearValues();
   }, []);
 

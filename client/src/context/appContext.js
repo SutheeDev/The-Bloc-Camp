@@ -160,7 +160,7 @@ const AppProvider = ({ children }) => {
     }, 3000);
   };
 
-  const hideAlertImmediate = () => {
+  const closeAlertFromAnotherPage = () => {
     dispatch({ type: CLOSE_ALL_ALERT });
   };
 
@@ -649,7 +649,7 @@ const AppProvider = ({ children }) => {
         getUpcomingShows,
         updateFavorites,
         getFavoriteShows,
-        hideAlertImmediate,
+        closeAlertFromAnotherPage,
       }}
     >
       {children}

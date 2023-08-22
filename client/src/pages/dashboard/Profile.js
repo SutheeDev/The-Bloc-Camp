@@ -10,7 +10,7 @@ const Profile = () => {
     displayMessage,
     updateUser,
     isLoading,
-    hideAlertImmediate,
+    closeAlertFromAnotherPage,
   } = useAppContext();
 
   const [name, setname] = useState(user?.name);
@@ -36,7 +36,7 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    hideAlertImmediate();
+    closeAlertFromAnotherPage();
   }, []);
 
   return (
