@@ -81,7 +81,7 @@ const reducer = (state, action) => {
   if (action.type === HIDE_ALERT) {
     return {
       ...state,
-      // showMessage: false,
+      showMessage: false,
       showAlert: false,
       messageText: "",
       messageType: "",

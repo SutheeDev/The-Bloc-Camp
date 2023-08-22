@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useAppContext } from "../../context/appContext";
+import { useEffect } from "react";
 import {
   FormRow,
   Message,
@@ -31,6 +32,7 @@ const CreateShow = () => {
     createShow,
     statusOptions,
     clearValues,
+    hideAlertImmediate,
   } = useAppContext();
 
   const handleInput = (e) => {
@@ -59,6 +61,10 @@ const CreateShow = () => {
 
     uploadImage(formData, imageType);
   };
+
+  useEffect(() => {
+    hideAlertImmediate();
+  }, []);
 
   return (
     <Wrapper>
