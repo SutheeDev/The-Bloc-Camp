@@ -240,6 +240,7 @@ const reducer = (state, action) => {
       isLoading: true,
       isEditing: false,
       showMessage: false,
+      showAlert: false,
     };
   }
   if (action.type === GET_SHOWS_SUCCESS) {
@@ -421,7 +422,7 @@ const reducer = (state, action) => {
       isLoading: true,
       isEditing: false,
       showMessage: false,
-      // showAlert: false,
+      showAlert: false,
     };
   }
   if (action.type === GET_UPCOMING_SHOWS_SUCCESS) {
