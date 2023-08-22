@@ -31,6 +31,7 @@ import {
   CLEAR_FILE_UPLOAD,
   SHOW_ALERT,
   HIDE_ALERT,
+  CLOSE_ALL_ALERT,
   CLEAR_FILTERS,
   CHANGE_PAGE,
   GET_PUBLISHED_SHOWS_BEGIN,
@@ -85,6 +86,16 @@ const reducer = (state, action) => {
       showAlert: false,
       messageText: "",
       messageType: "",
+    };
+  }
+  if (action.type === CLOSE_ALL_ALERT) {
+    return {
+      ...state,
+      showMessage: false,
+      showAlert: false,
+      messageText: "",
+      messageType: "",
+      isEditing: false,
     };
   }
   if (action.type === REGISTER_BEGIN) {
@@ -183,6 +194,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
+      // isEditing: false,
       showMessage: true,
       messageText: action.payload.msg,
       messageType: "error",
@@ -229,6 +241,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
+      // isEditing: false,
       showAlert: true,
       messageText: action.payload.msg,
       messageType: "error",
@@ -467,6 +480,7 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: true,
+      showAlert: false,
     };
   }
   if (action.type === GET_FAVORITE_SHOWS_SUCCESS) {

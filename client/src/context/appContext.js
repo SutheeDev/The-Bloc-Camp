@@ -36,6 +36,7 @@ import {
   CLEAR_FILE_UPLOAD,
   SHOW_ALERT,
   HIDE_ALERT,
+  CLOSE_ALL_ALERT,
   CLEAR_FILTERS,
   CHANGE_PAGE,
   GET_PUBLISHED_SHOWS_BEGIN,
@@ -159,7 +160,7 @@ const AppProvider = ({ children }) => {
     }, 3000);
   };
   const hideAlertImmediate = () => {
-    dispatch({ type: HIDE_ALERT });
+    dispatch({ type: CLOSE_ALL_ALERT });
   };
 
   const addUserToLocalStorage = ({ user, token, role }) => {
