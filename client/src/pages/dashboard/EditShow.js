@@ -33,7 +33,6 @@ const EditShow = () => {
     status,
     editShow,
     clearValues,
-    hideAlertImmediate,
   } = useAppContext();
   const navigate = useNavigate();
 

@@ -64,6 +64,7 @@ const CreateShow = () => {
 
   useEffect(() => {
     hideAlertImmediate();
+    clearValues();
   }, []);
 
   return (

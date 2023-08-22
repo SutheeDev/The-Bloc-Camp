@@ -159,6 +159,7 @@ const AppProvider = ({ children }) => {
       dispatch({ type: HIDE_ALERT });
     }, 3000);
   };
+
   const hideAlertImmediate = () => {
     dispatch({ type: CLOSE_ALL_ALERT });
   };
@@ -442,7 +443,7 @@ const AppProvider = ({ children }) => {
           artist,
         },
       });
-      dispatch({ type: CLEAR_VALUES });
+      clearValues();
     } catch (error) {
       if (error.response.status === 401) return;
       dispatch({
