@@ -73,7 +73,6 @@ const reducer = (state, action) => {
   if (action.type === SHOW_ALERT) {
     return {
       ...state,
-      // showMessage: true,
       showAlert: true,
       messageText: "Please provide all values!",
       messageType: "error",
@@ -82,7 +81,6 @@ const reducer = (state, action) => {
   if (action.type === HIDE_ALERT) {
     return {
       ...state,
-      // showMessage: false,
       showAlert: false,
       messageText: "",
       messageType: "",
@@ -194,7 +192,6 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
-      // isEditing: false,
       showMessage: true,
       messageText: action.payload.msg,
       messageType: "error",
@@ -241,7 +238,6 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
-      // isEditing: false,
       showAlert: true,
       messageText: action.payload.msg,
       messageType: "error",
@@ -358,19 +354,18 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
-      // isEditing: false,
       showAlert: true,
       messageText: action.payload.msg,
       messageType: "error",
     };
   }
-  if (action.type === CLEAR_FILE_UPLOAD) {
-    return {
-      ...state,
-      artistImage: "",
-      featureImage: "",
-    };
-  }
+  // if (action.type === CLEAR_FILE_UPLOAD) {
+  //   return {
+  //     ...state,
+  //     artistImage: "",
+  //     featureImage: "",
+  //   };
+  // }
   if (action.type === CLEAR_FILTERS) {
     return {
       ...state,
@@ -419,6 +414,7 @@ const reducer = (state, action) => {
       isLoading: true,
       isEditing: false,
       showAlert: false,
+      showMessage: false,
     };
   }
   if (action.type === SHOW_OVERVIEW_SUCCESS) {
