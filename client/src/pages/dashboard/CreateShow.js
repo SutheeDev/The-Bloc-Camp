@@ -33,6 +33,7 @@ const CreateShow = () => {
     statusOptions,
     clearValues,
     closeAlertFromAnotherPage,
+    clearFilters,
   } = useAppContext();
 
   const handleInput = (e) => {
@@ -65,6 +66,7 @@ const CreateShow = () => {
   useEffect(() => {
     closeAlertFromAnotherPage();
     clearValues();
+    clearFilters();
   }, []);
 
   return (

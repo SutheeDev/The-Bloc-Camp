@@ -11,6 +11,7 @@ const Profile = () => {
     updateUser,
     isLoading,
     closeAlertFromAnotherPage,
+    clearFilters,
   } = useAppContext();
 
   const [name, setname] = useState(user?.name);
@@ -37,6 +38,7 @@ const Profile = () => {
 
   useEffect(() => {
     closeAlertFromAnotherPage();
+    clearFilters();
   }, []);
 
   return (

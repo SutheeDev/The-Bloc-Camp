@@ -20,10 +20,12 @@ const FavoritesContainer = () => {
     user,
     getFavoriteShows,
     favorites,
+    clearFilters,
   } = useAppContext();
 
   useEffect(() => {
     getFavoriteShows();
+    clearFilters();
   }, [page, user]);
 
   if (isLoading) {
