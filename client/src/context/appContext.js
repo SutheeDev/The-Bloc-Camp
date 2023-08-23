@@ -504,6 +504,7 @@ const AppProvider = ({ children }) => {
 
   const showOverview = async () => {
     clearValues();
+    clearFilters();
 
     dispatch({ type: SHOW_OVERVIEW_BEGIN });
     try {
