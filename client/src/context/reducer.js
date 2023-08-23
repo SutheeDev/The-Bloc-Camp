@@ -28,8 +28,6 @@ import {
   EDIT_SHOW_SUCCESS,
   EDIT_SHOW_ERROR,
   CLEAR_VALUES,
-  CLEAR_FILE_UPLOAD,
-  SHOW_ALERT,
   HIDE_ALERT,
   CLOSE_ALL_ALERT,
   CLEAR_FILTERS,
@@ -68,14 +66,6 @@ const reducer = (state, action) => {
       showMessage: false,
       messageText: "",
       messageType: "",
-    };
-  }
-  if (action.type === SHOW_ALERT) {
-    return {
-      ...state,
-      showAlert: true,
-      messageText: "Please provide all values!",
-      messageType: "error",
     };
   }
   if (action.type === HIDE_ALERT) {
@@ -359,13 +349,6 @@ const reducer = (state, action) => {
       messageType: "error",
     };
   }
-  // if (action.type === CLEAR_FILE_UPLOAD) {
-  //   return {
-  //     ...state,
-  //     artistImage: "",
-  //     featureImage: "",
-  //   };
-  // }
   if (action.type === CLEAR_FILTERS) {
     return {
       ...state,

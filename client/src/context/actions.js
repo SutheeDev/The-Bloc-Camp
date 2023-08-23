@@ -41,9 +41,6 @@ export const EDIT_SHOW_ERROR = "EDIT_SHOW_ERROR";
 
 export const CLEAR_VALUES = "CLEAR_VALUES";
 
-export const CLEAR_FILE_UPLOAD = "CLEAR_FILE_UPLOAD";
-
-export const SHOW_ALERT = "SHOW_ALERT";
 export const HIDE_ALERT = "HIDE_ALERT";
 export const CLOSE_ALL_ALERT = "CLOSE_ALL_ALERT";
 

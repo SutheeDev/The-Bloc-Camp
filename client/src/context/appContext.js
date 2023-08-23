@@ -33,8 +33,6 @@ import {
   EDIT_SHOW_SUCCESS,
   EDIT_SHOW_ERROR,
   CLEAR_VALUES,
-  // CLEAR_FILE_UPLOAD,
-  SHOW_ALERT,
   HIDE_ALERT,
   CLOSE_ALL_ALERT,
   CLEAR_FILTERS,
@@ -147,11 +145,6 @@ const AppProvider = ({ children }) => {
     setTimeout(() => {
       dispatch({ type: HIDE_MESSAGE });
     }, 3000);
-  };
-
-  const displayAlert = () => {
-    dispatch({ type: SHOW_ALERT });
-    hideAlert();
   };
 
   const hideAlert = () => {
@@ -293,6 +286,7 @@ const AppProvider = ({ children }) => {
   };
 
   const createShow = async () => {
+    dispatch({ type: CREATE_SHOW_BEGIN });
     const {
       artist,
       artistInfo,
@@ -305,9 +299,6 @@ const AppProvider = ({ children }) => {
       published,
       featured,
     } = state;
-    // const formatDate = moment(performDate).format("ddd MMM DD YYYY");
-    // const formatTime = moment(performTime).format("hh:mmA");
-    // const formatDate = new Date(performDate);
 
     // combine performDate and performTime into performDateTime
     const formatDate = moment(performDate);
@@ -329,9 +320,7 @@ const AppProvider = ({ children }) => {
     const ticketsPrice = parseInt(ticketPrice);
 
     const now = moment().format("ddd MMM DD YYYY HH:mm:ss");
-    console.log(now, performDate, performTime);
 
-    dispatch({ type: CREATE_SHOW_BEGIN });
     try {
       await authFetch.post("/shows", {
         artist,
@@ -385,7 +374,7 @@ const AppProvider = ({ children }) => {
       console.log(error.response);
       // logoutUser();
     }
-    hideMessage();
+    // hideMessage();
   };
 
   const setEditShow = (id) => {
@@ -458,13 +447,12 @@ const AppProvider = ({ children }) => {
   };
 
   const deleteShow = async (id) => {
+    dispatch({ type: DELETE_SHOW_BEGIN });
     try {
       await authFetch.delete(`/shows/${id}`);
-      dispatch({ type: DELETE_SHOW_BEGIN });
       getShows();
     } catch (error) {
       console.log(error.response);
-      // logoutUser();
       if (error.response.status === 401) {
         logoutUser();
       }
@@ -489,6 +477,7 @@ const AppProvider = ({ children }) => {
   const getPublishedShows = async () => {
     const { page } = state;
     let url = `/api/v1/shows/published?page=${page}`;
+
     dispatch({ type: GET_PUBLISHED_SHOWS_BEGIN });
     try {
       const { data } = await axios.get(url);
@@ -515,6 +504,7 @@ const AppProvider = ({ children }) => {
 
   const showOverview = async () => {
     clearValues();
+
     dispatch({ type: SHOW_OVERVIEW_BEGIN });
     try {
       const { data } = await authFetch("/shows/overview");
