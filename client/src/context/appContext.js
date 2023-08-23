@@ -379,6 +379,7 @@ const AppProvider = ({ children }) => {
 
   const setEditShow = (id) => {
     dispatch({ type: SET_EDIT_SHOW, payload: { id } });
+    clearFilters();
   };
 
   const editShow = async () => {
