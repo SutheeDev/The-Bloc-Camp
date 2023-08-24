@@ -18,7 +18,7 @@ const ShowSchema = new mongoose.Schema(
     },
     performDateTime: {
       type: Date,
-      requred: true,
+      required: true,
     },
     artistInfo: {
       type: String,
