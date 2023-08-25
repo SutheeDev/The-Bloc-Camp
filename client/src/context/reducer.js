@@ -473,6 +473,19 @@ const reducer = (state, action) => {
       numOfPages: action.payload.numOfPages,
     };
   }
+  if (action.type === GET_ARTIST_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === GET_ARTIST_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      show: action.payload.show,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

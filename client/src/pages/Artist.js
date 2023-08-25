@@ -1,14 +1,28 @@
-import { Navbar, Header, Footer, PageTitle, Subscribe } from "../components";
+import {
+  Navbar,
+  Header,
+  Footer,
+  PageTitle,
+  Subscribe,
+  Loading,
+} from "../components";
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
 
 const Artist = () => {
-  const { getArtist } = useAppContext();
+  const { getArtist, show, isLoading } = useAppContext();
+  // const showId = JSON.parse(show._id);
 
-  useEffect(() => {
-    getArtist();
-  }, []);
+  if (isLoading) {
+    return (
+      <Wrapper>
+        <Navbar />
+        <Header />
+        <Loading />
+      </Wrapper>
+    );
+  }
 
   return (
     <Wrapper>

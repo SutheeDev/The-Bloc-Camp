@@ -105,6 +105,8 @@ const initialState = {
 
   favorites: [],
   isProcessing: false,
+
+  show: {},
 };
 
 const AppContext = React.createContext();
@@ -617,12 +619,19 @@ const AppProvider = ({ children }) => {
   };
 
   const getArtist = async (id) => {
+    // console.log(`artist: ${id}`);
     dispatch({ type: GET_ARTIST_BEGIN });
 
-    let url = `api/v1/shows/artist/${id}`;
+    let url = `/api/v1/shows/artist/${id}`;
     try {
       const { data } = await axios.get(url);
-      console.log(data);
+      const { show } = data;
+      dispatch({
+        type: GET_ARTIST_SUCCESS,
+        payload: {
+          show,
+        },
+      });
     } catch (error) {
       console.log(error.response);
     }

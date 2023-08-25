@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../context/appContext";
 
 const ToArtistPageBtn = ({ id }) => {
+  const { getArtist } = useAppContext();
+
   return (
     <Wrapper>
-      <Link to={`/artist/${id}`} className="btn">
+      {/* <Link to={`/artist/${id}`} className="btn"> */}
+      <Link to={`/artist/`} onClick={() => getArtist(id)} className="btn">
         get tickets
       </Link>
     </Wrapper>
