@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const ToArtistPageBtn = ({ id }) => {
   return (
     <Wrapper>
-      <Link className="btn">get tickets</Link>
+      <Link to={`/artist/${id}`} className="btn">
+        get tickets
+      </Link>
     </Wrapper>
   );
 };

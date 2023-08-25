@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TicketsBtn, ToArtistPageBtn } from "../components";
+import { ToArtistPageBtn } from "../components";
 
 const Show = ({ artist, artistImage, artistInfo, date, id }) => {
   return (
@@ -16,8 +16,7 @@ const Show = ({ artist, artistImage, artistInfo, date, id }) => {
           </div>
         </div>
         <div class="getTicket-btn">
-          <TicketsBtn />
-          <ToArtistPageBtn />
+          <ToArtistPageBtn id={id} />
         </div>
       </div>
     </Wrapper>
