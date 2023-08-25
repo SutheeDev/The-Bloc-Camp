@@ -3,7 +3,7 @@ import styled from "styled-components";
 const TicketsBtn = () => {
   return (
     <Wrapper href="/shows">
-      <button class="btn">get tickets</button>
+      <button className="btn">get tickets</button>
     </Wrapper>
   );
 };

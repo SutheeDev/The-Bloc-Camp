@@ -6,9 +6,6 @@ const ToArtistPageBtn = ({ id }) => {
     <Wrapper>
       <Link className="btn">get tickets</Link>
     </Wrapper>
-    // <Wrapper href="/shows">
-    //   <button class="btn">get tickets</button>
-    // </Wrapper>
   );
 };
 export default ToArtistPageBtn;
