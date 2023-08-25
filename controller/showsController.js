@@ -250,6 +250,14 @@ const getFavoriteShows = async (req, res) => {
   res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
 };
 
+const getArtist = async (req, res) => {
+  const { id: showId } = req.params;
+
+  const show = await Show.findOne(" _id: showId ");
+
+  res.status(StatusCodes.OK).json({ show });
+};
+
 export {
   createShow,
   getAllShows,
@@ -260,4 +268,5 @@ export {
   getFeaturedShows,
   getUpcomingShows,
   getFavoriteShows,
+  getArtist,
 };
