@@ -5,6 +5,7 @@ import Contact from "./Contact";
 import Register from "./Register";
 import ProtectedRoute from "./ProtectedRoute";
 import UserProtectedRoute from "./UserProtectedRoute";
+import Artist from "./Artist";
 
 export {
   Landing,
@@ -14,4 +15,5 @@ export {
   Register,
   ProtectedRoute,
   UserProtectedRoute,
+  Artist,
 };
