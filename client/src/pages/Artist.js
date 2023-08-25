@@ -29,12 +29,6 @@ const Artist = () => {
       <Navbar />
       <Header />
 
-      <section class="contact">
-        <div class="contact-container">
-          <PageTitle text1="contact" text2="us" />
-        </div>
-      </section>
-
       <main class="tickets-page">
         <div class="tickets-container">
           <section class="tickets-band-info">
