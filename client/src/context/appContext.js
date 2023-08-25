@@ -617,7 +617,15 @@ const AppProvider = ({ children }) => {
   };
 
   const getArtist = async (id) => {
-    console.log(`artist: ${id}`);
+    dispatch({ type: GET_ARTIST_BEGIN });
+
+    let url = `api/v1/shows/artist/${id}`;
+    try {
+      const { data } = await axios.get(url);
+      console.log(data);
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   return (
@@ -648,6 +656,7 @@ const AppProvider = ({ children }) => {
         updateFavorites,
         getFavoriteShows,
         closeAlertFromAnotherPage,
+        getArtist,
       }}
     >
       {children}

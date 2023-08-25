@@ -1,7 +1,15 @@
 import { Navbar, Header, Footer, PageTitle, Subscribe } from "../components";
 import styled from "styled-components";
+import { useEffect } from "react";
+import { useAppContext } from "../context/appContext";
 
 const Artist = () => {
+  const { getArtist } = useAppContext();
+
+  useEffect(() => {
+    getArtist();
+  }, []);
+
   return (
     <Wrapper>
       <Navbar />
