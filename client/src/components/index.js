@@ -30,6 +30,7 @@ import OverviewContainer from "./OverviewContainer";
 import ChartsContainer from "./ChartsContainer";
 import QuickTipsContainer from "./QuickTipsContainer";
 import FavoritesContainer from "./FavoritesContainer";
+import ToArtistPageBtn from "./ToArtistPageBtn";
 
 export {
   Navbar,
@@ -64,4 +65,5 @@ export {
   ChartsContainer,
   QuickTipsContainer,
   FavoritesContainer,
+  ToArtistPageBtn,
 };
