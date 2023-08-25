@@ -13,6 +13,7 @@ import {
   getFeaturedShows,
   getUpcomingShows,
   getFavoriteShows,
+  getArtist,
 } from "../controller/showsController.js";
 import {
   uploadArtistImage,
@@ -38,5 +39,6 @@ router
   .route("/:id")
   .patch(authenticatedUser, testUser, updateShow)
   .delete(authenticatedUser, testUser, deleteShow);
+router.route("/artist/:id").get(getArtist);
 
 export default router;
