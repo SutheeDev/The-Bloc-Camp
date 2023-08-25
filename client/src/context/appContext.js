@@ -51,6 +51,8 @@ import {
   GET_FAVORITES,
   GET_FAVORITE_SHOWS_BEGIN,
   GET_FAVORITE_SHOWS_SUCCESS,
+  GET_ARTIST_BEGIN,
+  GET_ARTIST_SUCCESS,
 } from "./actions";
 import moment from "moment";
 
@@ -612,6 +614,10 @@ const AppProvider = ({ children }) => {
     } catch (error) {
       console.log(error.response);
     }
+  };
+
+  const getArtist = async (id) => {
+    console.log(`artist: ${id}`);
   };
 
   return (

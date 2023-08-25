@@ -46,6 +46,8 @@ import {
   GET_FAVORITES,
   GET_FAVORITE_SHOWS_BEGIN,
   GET_FAVORITE_SHOWS_SUCCESS,
+  GET_ARTIST_BEGIN,
+  GET_ARTIST_SUCCESS,
 } from "./actions";
 
 import { initialState } from "./appContext";

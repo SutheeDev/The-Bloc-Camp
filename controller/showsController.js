@@ -253,7 +253,7 @@ const getFavoriteShows = async (req, res) => {
 const getArtist = async (req, res) => {
   const { id: showId } = req.params;
 
-  const show = await Show.findOne(" _id: showId ");
+  const show = await Show.findOne({ _id: showId });
 
   res.status(StatusCodes.OK).json({ show });
 };
