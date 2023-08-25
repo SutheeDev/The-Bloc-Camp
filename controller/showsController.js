@@ -172,7 +172,6 @@ const getPublishedShows = async (req, res) => {
   const shows = await result;
   const totalShows = await Show.countDocuments({ isPublished: true });
   const numOfPages = Math.ceil(totalShows / limit);
-  console.log(shows);
 
   res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
 };

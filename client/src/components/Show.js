@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TicketsBtn } from "../components";
 
-const Show = ({ artist, artistImage, artistInfo, date }) => {
+const Show = ({ artist, artistImage, artistInfo, date, id }) => {
   return (
     <Wrapper class="calendar-show">
       <img src={artistImage} alt="" />

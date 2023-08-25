@@ -49,6 +49,7 @@ const Shows = () => {
                 artistImage={artistImage}
                 artistInfo={artistInfo}
                 date={date}
+                id={_id}
               />
             );
           })}
