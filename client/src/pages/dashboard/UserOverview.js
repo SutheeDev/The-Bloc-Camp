@@ -14,7 +14,12 @@ const UserOverview = () => {
   }, []);
 
   if (isLoading) {
-    return <Loading center />;
+    return (
+      <Wrapper>
+        <h3 className="form-title">Overview</h3>
+        <Loading center />
+      </Wrapper>
+    );
   }
 
   return (
