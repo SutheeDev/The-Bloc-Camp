@@ -20,8 +20,12 @@ import {
   UserOverview,
   Upcoming,
 } from "./pages/dashboard";
+import { useAppContext } from "./context/appContext";
 
 function App() {
+  const { show } = useAppContext();
+  const id = show._id;
+
   return (
     <BrowserRouter>
       <Routes>
@@ -57,7 +61,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
-        <Route path={`/artist`} element={<Artist />} />
+        <Route path={`/artist/${id}`} element={<Artist />} />
       </Routes>
     </BrowserRouter>
   );
