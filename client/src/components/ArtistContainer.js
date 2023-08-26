@@ -7,7 +7,6 @@ const ArtistContainer = () => {
 
   const showDate = moment(performDateTime).format("MMM DD, YYYY");
   const showTime = moment(performDateTime).format("HH:MM A");
-  console.log(showTime);
 
   return (
     <div>
