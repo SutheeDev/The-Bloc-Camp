@@ -4,9 +4,8 @@ import moment from "moment";
 const ArtistContainer = () => {
   const { show } = useAppContext();
   const { artist, artistInfo, featureImage, performDateTime } = show;
-
   const showDate = moment(performDateTime).format("MMM DD, YYYY");
-  const showTime = moment(performDateTime).format("HH:MM A");
+  const showTime = moment(performDateTime).format("hh:mm A");
 
   return (
     <div>
