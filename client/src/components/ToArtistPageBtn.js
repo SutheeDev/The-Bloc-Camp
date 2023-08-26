@@ -8,7 +8,7 @@ const ToArtistPageBtn = ({ id }) => {
   return (
     <Wrapper>
       {/* <Link to={`/artist/${id}`} className="btn"> */}
-      <Link to={`/artist/`} onClick={() => getArtist(id)} className="btn">
+      <Link to={`/artist/${id}`} onClick={() => getArtist(id)} className="btn">
         get tickets
       </Link>
     </Wrapper>
