@@ -1,9 +1,26 @@
 import { useAppContext } from "../context/appContext";
 import { BiPlus, BiMinus } from "react-icons/bi";
+import { useState } from "react";
 
 const TicketsCalculation = () => {
   const { show } = useAppContext();
-  const { ticketsPrice } = show;
+  const price = show.ticketsPrice;
+
+  const [quantity, setQuantity] = useState(0);
+
+  const increment = (ticketAmounts) => {
+    console.log(`increment ${ticketAmounts} by 1`);
+    setQuantity(quantity + 1);
+  };
+
+  const subtract = (ticketAmounts) => {
+    console.log(`subtract ${ticketAmounts} by 1`);
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    } else {
+      setQuantity(0);
+    }
+  };
 
   return (
     <section className="tickets-info">
@@ -11,24 +28,20 @@ const TicketsCalculation = () => {
         <div className="tickets-title">
           <h3>Tickets</h3>
           <p>Price</p>
-          <p>Quanlity</p>
+          <p>Quantity</p>
           <p>Total</p>
         </div>
         <div className="tickets-calculation">
           <p>Regular</p>
-          <p>$ {ticketsPrice}</p>
+          <p>$ {price}</p>
           <div className="tickets-amount">
-            {/* <p className="minus"> */}
-            <div className="minus">
+            <div className="minus" onClick={() => subtract(quantity)}>
               <BiMinus />
             </div>
-            {/* </p> */}
-            <p className="amount">0</p>
-            {/* <p className="plus"> */}
-            <div className="plus">
+            <p className="amount">{quantity}</p>
+            <div className="plus" onClick={() => increment(quantity)}>
               <BiPlus />
             </div>
-            {/* </p> */}
           </div>
           <p className="total">$0.00</p>
         </div>

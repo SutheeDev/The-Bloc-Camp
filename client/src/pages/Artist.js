@@ -8,12 +8,10 @@ import {
   TicketsCalculation,
 } from "../components";
 import styled from "styled-components";
-import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
 
 const Artist = () => {
-  const { getArtist, show, isLoading } = useAppContext();
-  // const showId = JSON.parse(show._id);
+  const { isLoading } = useAppContext();
 
   if (isLoading) {
     return (
@@ -244,6 +242,10 @@ const Wrapper = styled.main`
     border: 1px solid #ffffff36;
     padding: 10px 20px;
     gap: 20px;
+  }
+  .plus,
+  .minus {
+    cursor: pointer;
   }
   .tickets-title p,
   .tickets-title h3,
