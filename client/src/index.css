@@ -17,6 +17,7 @@
 
 html {
   font-size: 100%;
+  background-color: var(--darkBlue);
 } /*16px*/
 
 /* --------- */

@@ -20,7 +20,9 @@ const Artist = () => {
       <Wrapper>
         <Navbar />
         <Header />
-        <Loading />
+        <Loading center />
+        <Subscribe />
+        <Footer />
       </Wrapper>
     );
   }
@@ -39,6 +41,7 @@ const Artist = () => {
 export default Artist;
 
 const Wrapper = styled.main`
+  background-color: var(--darkBlue);
   .contact {
     background-color: #221333;
     padding: 70px 0;

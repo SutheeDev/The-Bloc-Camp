@@ -29,6 +29,7 @@ const SharedLayout = () => {
 export default SharedLayout;
 
 const Wrapper = styled.main`
+  background-color: var(--white);
   .sharedLayout {
     display: flex;
   }
