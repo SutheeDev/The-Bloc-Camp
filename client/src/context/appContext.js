@@ -59,6 +59,7 @@ import moment from "moment";
 const user = localStorage.getItem("user");
 const token = localStorage.getItem("token");
 const role = localStorage.getItem("role");
+const storageShow = localStorage.getItem("show");
 
 const initialState = {
   showMessage: false,
@@ -106,7 +107,7 @@ const initialState = {
   favorites: [],
   isProcessing: false,
 
-  show: {},
+  show: JSON.parse(storageShow) || {},
 };
 
 const AppContext = React.createContext();
@@ -618,8 +619,11 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const addShowToLocalStorage = (show) => {
+    localStorage.setItem("show", JSON.stringify(show));
+  };
+
   const getArtist = async (id) => {
-    // console.log(`artist: ${id}`);
     dispatch({ type: GET_ARTIST_BEGIN });
 
     let url = `/api/v1/shows/artist/${id}`;
@@ -632,6 +636,7 @@ const AppProvider = ({ children }) => {
           show,
         },
       });
+      addShowToLocalStorage(show);
     } catch (error) {
       console.log(error.response);
     }
