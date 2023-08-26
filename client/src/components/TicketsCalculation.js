@@ -7,18 +7,22 @@ const TicketsCalculation = () => {
   const price = show.ticketsPrice;
 
   const [quantity, setQuantity] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const increment = (ticketAmounts) => {
-    console.log(`increment ${ticketAmounts} by 1`);
-    setQuantity(quantity + 1);
+    const newAmount = quantity + 1;
+    setQuantity(newAmount);
+    setTotal(newAmount * price);
   };
 
   const subtract = (ticketAmounts) => {
-    console.log(`subtract ${ticketAmounts} by 1`);
     if (quantity > 0) {
-      setQuantity(quantity - 1);
+      const newAmount = quantity - 1;
+      setQuantity(newAmount);
+      setTotal(newAmount * price);
     } else {
       setQuantity(0);
+      setTotal(0);
     }
   };
 
@@ -43,12 +47,12 @@ const TicketsCalculation = () => {
               <BiPlus />
             </div>
           </div>
-          <p className="total">$0.00</p>
+          <p className="total">$ {total}</p>
         </div>
         <div className="tickets-total">
           <div></div>
           <p>Total</p>
-          <p className="grand-total">$0.00</p>
+          <p className="grand-total">$ {total}</p>
         </div>
         <a href="#">
           <button className="btn checkout-btn">Checkout</button>
