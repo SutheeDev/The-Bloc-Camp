@@ -277,6 +277,35 @@ const Wrapper = styled.main`
   button.checkout-btn {
     width: 393px;
   }
+  .btn {
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    color: var(--reddish);
+    border: 3px solid var(--reddish);
+    background-color: transparent;
+    border-radius: 1px;
+    /* cursor: pointer; */
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 3em;
+
+    transition: all 0.3s ease;
+  }
+  .btn:hover {
+    color: var(--white);
+    border: 3px solid var(--darkRed);
+  }
+  .note {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.7;
+    opacity: 0;
+
+    transition: all 0.3s ease;
+  }
+  .btn-container:hover .note {
+    opacity: 1;
+  }
   @media screen and (max-width: 1200px) {
     button.checkout-btn {
       width: 32vw;
@@ -354,9 +383,10 @@ const Wrapper = styled.main`
       align-items: center;
       padding: 0 5vw;
     }
-    button.checkout-btn {
+    button.checkout-btn,
+    .note {
       width: calc(100vw - 10vw);
-      margin: 0 auto;
+      margin: 0 auto 3em auto;
     }
     .tickets-info-container {
       text-align: center;

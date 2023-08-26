@@ -54,9 +54,16 @@ const TicketsCalculation = () => {
           <p>Total</p>
           <p className="grand-total">$ {total}</p>
         </div>
-        <a href="#">
-          <button className="btn checkout-btn">Checkout</button>
-        </a>
+        <div className="btn-container">
+          <button className="btn checkout-btn" disabled={true}>
+            Checkout
+          </button>
+          <p className="note">
+            * Our online checkout is not available at this time. Please get in
+            touch with us if you're interested in purchasing tickets for this
+            show.
+          </p>
+        </div>
       </div>
     </section>
   );
