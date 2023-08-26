@@ -3,6 +3,7 @@ import hamburger from "../assets/svg/hamburger.svg";
 import closeHamburger from "../assets/svg/close-hamburger.svg";
 import login from "../assets/svg/login.svg";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,18 +29,18 @@ const Navbar = () => {
                   className="hamburger-close"
                 />
               </li>
-              <li className="link">
-                <a href="/">home</a>
-              </li>
-              <li className="link">
-                <a href="/shows">shows</a>
-              </li>
-              <li className="link">
-                <a href="/about">about</a>
-              </li>
-              <li className="link">
-                <a href="/contact">contact</a>
-              </li>
+              <Link className="link" to="/">
+                home
+              </Link>
+              <Link className="link" to="/shows">
+                shows
+              </Link>
+              <Link className="link" to="/about">
+                about
+              </Link>
+              <Link className="link" to="/contact">
+                contact
+              </Link>
             </ul>
           </nav>
         </div>
@@ -87,7 +88,11 @@ const Wrapper = styled.section`
         transition: all 0.2s ease;
       }
     }
-    li.link {
+    .link {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 400;
+      cursor: pointer;
       display: block;
       margin-bottom: 40px;
     }
