@@ -469,8 +469,6 @@ const reducer = (state, action) => {
       ...state,
       isLoading: false,
       shows: action.payload.shows,
-      totalShows: action.payload.totalShows,
-      numOfPages: action.payload.numOfPages,
     };
   }
   if (action.type === GET_ARTIST_BEGIN) {
