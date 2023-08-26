@@ -6,39 +6,39 @@ const TicketsCalculation = () => {
   const { ticketsPrice } = show;
 
   return (
-    <section class="tickets-info">
-      <div class="tickets-info-container">
-        <div class="tickets-title">
+    <section className="tickets-info">
+      <div className="tickets-info-container">
+        <div className="tickets-title">
           <h3>Tickets</h3>
           <p>Price</p>
           <p>Quanlity</p>
           <p>Total</p>
         </div>
-        <div class="tickets-calculation">
+        <div className="tickets-calculation">
           <p>Regular</p>
           <p>$ {ticketsPrice}</p>
-          <div class="tickets-amount">
-            <p class="minus">
-              <div>
-                <BiMinus />
-              </div>
-            </p>
-            <p class="amount">0</p>
-            <p class="plus">
-              <div>
-                <BiPlus />
-              </div>
-            </p>
+          <div className="tickets-amount">
+            {/* <p className="minus"> */}
+            <div className="minus">
+              <BiMinus />
+            </div>
+            {/* </p> */}
+            <p className="amount">0</p>
+            {/* <p className="plus"> */}
+            <div className="plus">
+              <BiPlus />
+            </div>
+            {/* </p> */}
           </div>
-          <p class="total">$0.00</p>
+          <p className="total">$0.00</p>
         </div>
-        <div class="tickets-total">
+        <div className="tickets-total">
           <div></div>
           <p>Total</p>
-          <p class="grand-total">$0.00</p>
+          <p className="grand-total">$0.00</p>
         </div>
         <a href="#">
-          <button class="btn checkout-btn">Checkout</button>
+          <button className="btn checkout-btn">Checkout</button>
         </a>
       </div>
     </section>

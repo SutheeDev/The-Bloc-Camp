@@ -237,7 +237,6 @@ const Wrapper = styled.main`
     margin-bottom: 50px;
   }
   .tickets-amount {
-    width: 110px;
     display: flex;
     font-size: 20px;
     justify-content: space-between;
