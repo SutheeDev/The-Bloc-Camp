@@ -277,7 +277,7 @@ const Wrapper = styled.main`
   button.checkout-btn {
     width: 393px;
   }
-  .btn {
+  .checkout-btn {
     text-transform: uppercase;
     padding: 1rem 1.5rem;
     color: var(--reddish);
@@ -291,7 +291,7 @@ const Wrapper = styled.main`
 
     transition: all 0.3s ease;
   }
-  .btn:hover {
+  .checkout-btn:hover {
     color: var(--white);
     border: 3px solid var(--darkRed);
   }
