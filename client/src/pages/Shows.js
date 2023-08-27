@@ -44,7 +44,7 @@ const Shows = () => {
         </section>
       ) : (
         <section class="calendar-shows">
-          {shows.map((show) => {
+          {shows.slice(0, visibleItems).map((show) => {
             const { artist, artistImage, artistInfo, performDateTime, _id } =
               show;
             const date = moment(performDateTime).format("ddd, MMM DD");
@@ -64,10 +64,11 @@ const Shows = () => {
       {/* <div className="page-btn-container">
         {numOfPages > 1 && <PageBtnContainer />}
       </div> */}
-
-      <div className="page-btn-container">
-        <button>load more</button>
-      </div>
+      {visibleItems < shows.length && (
+        <div className="page-btn-container">
+          <button>load more</button>
+        </div>
+      )}
 
       <Subscribe />
       <Footer />
