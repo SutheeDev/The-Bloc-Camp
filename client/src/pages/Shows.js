@@ -8,7 +8,7 @@ import {
   PageBtnContainer,
 } from "../components";
 import styled from "styled-components";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../context/appContext";
 import moment from "moment";
 import Loading from "../components/Loading";
@@ -55,8 +55,12 @@ const Shows = () => {
           })}
         </section>
       )}
-      <div className="page-btn-container">
+      {/* <div className="page-btn-container">
         {numOfPages > 1 && <PageBtnContainer />}
+      </div> */}
+
+      <div className="page-btn-container">
+        <button>load more</button>
       </div>
 
       <Subscribe />
