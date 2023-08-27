@@ -1,7 +1,12 @@
 import { Navbar, Header, Footer, PageTitle, Subscribe } from "../components";
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Wrapper>
       <Navbar />

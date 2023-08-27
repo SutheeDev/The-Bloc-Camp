@@ -1,8 +1,13 @@
 import { Navbar, Header, Footer, PageTitle, Subscribe } from "../components";
 import aboutImg from "../assets/images/img-about.jpg";
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Wrapper>
       <Navbar />

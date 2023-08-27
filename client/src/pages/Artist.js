@@ -9,9 +9,14 @@ import {
 } from "../components";
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
+import { useEffect } from "react";
 
 const Artist = () => {
   const { isLoading } = useAppContext();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (isLoading) {
     return (
