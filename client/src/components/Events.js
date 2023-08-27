@@ -7,6 +7,7 @@ import Loading from "./Loading";
 
 const Events = () => {
   const { shows, getPublishedShows, isLoading } = useAppContext();
+  const visibleItems = 12;
 
   useEffect(() => {
     getPublishedShows();
@@ -23,7 +24,7 @@ const Events = () => {
   return (
     <Wrapper class="shows">
       <div class="shows-container">
-        {shows.map((show) => {
+        {shows.slice(0, visibleItems).map((show) => {
           const { artist, performDateTime } = show;
           const date = moment(performDateTime).format("DD");
           const day = moment(performDateTime).format("ddd");

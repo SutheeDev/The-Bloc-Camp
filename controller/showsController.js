@@ -163,17 +163,8 @@ const showOverview = async (req, res) => {
 
 const getPublishedShows = async (req, res) => {
   let result = Show.find({ isPublished: true }).sort("performDateTime");
-
-  const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 12;
-  const skip = (page - 1) * limit;
-  result = result.skip(skip).limit(limit);
-
   const shows = await result;
-  const totalShows = await Show.countDocuments({ isPublished: true });
-  const numOfPages = Math.ceil(totalShows / limit);
-
-  res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
+  res.status(StatusCodes.OK).json({ shows });
 };
 
 const getFeaturedShows = async (req, res) => {

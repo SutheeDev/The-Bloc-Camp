@@ -8,14 +8,20 @@ import {
   PageBtnContainer,
 } from "../components";
 import styled from "styled-components";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../context/appContext";
 import moment from "moment";
 import Loading from "../components/Loading";
 
 const Shows = () => {
+  const [visibleItems, setVisibleItems] = useState(12);
+
   const { isLoading, getPublishedShows, shows, numOfPages, page } =
     useAppContext();
+
+  const loadMore = () => {
+    setVisibleItems(visibleItems + 12);
+  };
 
   useEffect(() => {
     getPublishedShows();
@@ -37,27 +43,33 @@ const Shows = () => {
           <Loading center />
         </section>
       ) : (
-        <section class="calendar-shows">
-          {shows.map((show) => {
-            const { artist, artistImage, artistInfo, performDateTime, _id } =
-              show;
-            const date = moment(performDateTime).format("ddd, MMM DD");
-            return (
-              <Show
-                key={_id}
-                artist={artist}
-                artistImage={artistImage}
-                artistInfo={artistInfo}
-                date={date}
-                id={_id}
-              />
-            );
-          })}
-        </section>
+        <div>
+          <section class="calendar-shows">
+            {shows.slice(0, visibleItems).map((show) => {
+              const { artist, artistImage, artistInfo, performDateTime, _id } =
+                show;
+              const date = moment(performDateTime).format("ddd, MMM DD");
+              return (
+                <Show
+                  key={_id}
+                  artist={artist}
+                  artistImage={artistImage}
+                  artistInfo={artistInfo}
+                  date={date}
+                  id={_id}
+                />
+              );
+            })}
+          </section>
+          {visibleItems < shows.length && (
+            <div className="loadMore-container">
+              <button className="loadMore-btn" onClick={() => loadMore()}>
+                load more
+              </button>
+            </div>
+          )}
+        </div>
       )}
-      <div className="page-btn-container">
-        {numOfPages > 1 && <PageBtnContainer />}
-      </div>
 
       <Subscribe />
       <Footer />
@@ -75,14 +87,14 @@ const Wrapper = styled.main`
     margin-top: -5px;
   }
   .calendar-container,
-  .page-btn-container {
+  .loadMore-container {
     width: 75vw;
     margin: 0 auto;
     @media screen and (max-width: 850px) {
       width: 80vw;
     }
   }
-  .page-btn-container {
+  .loadMore-container {
     display: flex;
     justify-content: center;
   }
@@ -126,5 +138,31 @@ const Wrapper = styled.main`
   .pageNum-btn.active:hover {
     color: var(--darkBlue);
     border: 3px solid var(--reddish);
+  }
+  .loadMore-btn {
+    width: 100%;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    color: var(--reddish);
+    border: 3px solid var(--reddish);
+    background-color: transparent;
+    border-radius: 1px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 2em 0 1em 0;
+
+    transition: all 0.3s ease;
+  }
+  .loadMore-btn:hover {
+    color: var(--white);
+    border: 3px solid var(--darkRed);
+  }
+  @media screen and (min-width: 450px) {
+    .loadMore-btn {
+      width: 45%;
+      max-width: 250px;
+      margin: 4em 0 1em 0;
+    }
   }
 `;
