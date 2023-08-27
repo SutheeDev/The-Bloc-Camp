@@ -19,6 +19,10 @@ const Shows = () => {
   const { isLoading, getPublishedShows, shows, numOfPages, page } =
     useAppContext();
 
+  const loadMore = () => {
+    setVisibleItems(visibleItems + 12);
+  };
+
   useEffect(() => {
     getPublishedShows();
   }, [page]);
