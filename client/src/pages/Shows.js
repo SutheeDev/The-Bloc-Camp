@@ -25,7 +25,7 @@ const Shows = () => {
 
   useEffect(() => {
     getPublishedShows();
-  }, [page]);
+  }, []);
 
   return (
     <Wrapper>
