@@ -43,29 +43,31 @@ const Shows = () => {
           <Loading center />
         </section>
       ) : (
-        <section class="calendar-shows">
-          {shows.slice(0, visibleItems).map((show) => {
-            const { artist, artistImage, artistInfo, performDateTime, _id } =
-              show;
-            const date = moment(performDateTime).format("ddd, MMM DD");
-            return (
-              <Show
-                key={_id}
-                artist={artist}
-                artistImage={artistImage}
-                artistInfo={artistInfo}
-                date={date}
-                id={_id}
-              />
-            );
-          })}
-        </section>
-      )}
-      {visibleItems < shows.length && (
-        <div className="loadMore-container">
-          <button className="loadMore-btn" onClick={() => loadMore()}>
-            load more
-          </button>
+        <div>
+          <section class="calendar-shows">
+            {shows.slice(0, visibleItems).map((show) => {
+              const { artist, artistImage, artistInfo, performDateTime, _id } =
+                show;
+              const date = moment(performDateTime).format("ddd, MMM DD");
+              return (
+                <Show
+                  key={_id}
+                  artist={artist}
+                  artistImage={artistImage}
+                  artistInfo={artistInfo}
+                  date={date}
+                  id={_id}
+                />
+              );
+            })}
+          </section>
+          {visibleItems < shows.length && (
+            <div className="loadMore-container">
+              <button className="loadMore-btn" onClick={() => loadMore()}>
+                load more
+              </button>
+            </div>
+          )}
         </div>
       )}
 
