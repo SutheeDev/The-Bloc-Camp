@@ -18,21 +18,14 @@ const Profile = () => {
   const [lastname, setLastname] = useState(user?.lastname);
   const [email, setEmail] = useState(user?.email);
   const [location, setLocation] = useState(user?.location);
-  // const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber);
-
-  // const handleInput = (e) => {
-  //   const name = e.target.name;
-  //   const value = e.target.value;
-  //   handleInputChange({ name, value });
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // if (!name || !lastname || !email || !location) {
-    //   displayMessage();
-    //   return;
-    // }
+    if (!name || !lastname || !email || !location) {
+      displayMessage();
+      return;
+    }
     updateUser({ name, lastname, email, location });
   };
 
@@ -95,11 +88,6 @@ export default Profile;
 
 const Wrapper = styled.div`
   color: var(--black);
-  /* .form-title {
-    text-transform: uppercase;
-    font-size: 2rem;
-    margin-bottom: 1.3em;
-  } */
   .form-input {
     border: none;
     background-color: var(--grey-100);

@@ -4,7 +4,6 @@ import {
   BiBookmarkHeart,
   BiCalendarEvent,
 } from "react-icons/bi";
-import { RiCoupon2Line } from "react-icons/ri";
 
 const userLinks = [
   {

@@ -20,7 +20,6 @@ const Register = () => {
     showMessage,
     displayMessage,
     isLoading,
-    hideMessage,
     registerUser,
     loginUser,
     role,

@@ -1,10 +1,6 @@
 import Show from "../models/Show.js";
 import User from "../models/User.js";
-import {
-  BadRequestError,
-  NotFoundError,
-  UnauthenticatedError,
-} from "../errors/index.js";
+import { BadRequestError, NotFoundError } from "../errors/index.js";
 import { StatusCodes } from "http-status-codes";
 import checkPermission from "../utils/checkPermission.js";
 import mongoose from "mongoose";
@@ -36,7 +32,6 @@ const getAllShows = async (req, res) => {
     queryObject.status = status;
   }
 
-  // const shows = await Show.find({ status: "upcoming" }).sort("performDateTime");
   let result = Show.find(queryObject);
 
   if (sort === "by date") {
@@ -122,7 +117,6 @@ const showOverview = async (req, res) => {
     soldout: overview.soldout || 0,
   };
 
-  // const monthlyApplication = [];
   let monthlyApplication = await Show.aggregate([
     {
       $group: {

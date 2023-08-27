@@ -15,7 +15,6 @@ const EditShow = () => {
   const {
     isLoading,
     handleInputChange,
-    displayMessage,
     uploadImage,
     isEditing,
     artist,
@@ -144,13 +143,11 @@ const EditShow = () => {
             <ToggleSwitch
               text="publish on site?"
               name="published"
-              // Checked={published}
               defaultChecked={published}
             />
             <ToggleSwitch
               text="featured show?"
               name="featured"
-              // Checked={featured}
               defaultChecked={featured}
             />
             <div className="btn-container">

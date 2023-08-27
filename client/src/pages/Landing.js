@@ -87,9 +87,4 @@ const Wrapper = styled.main`
       font-size: 14px;
     }
   }
-  /* @media screen and (max-width: 450px) {
-    .upcoming {
-      padding: 50px 0;
-    }
-  } */
 `;

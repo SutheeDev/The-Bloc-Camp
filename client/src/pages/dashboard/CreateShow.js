@@ -16,7 +16,6 @@ const CreateShow = () => {
     isLoading,
     handleInputChange,
     showMessage,
-    displayMessage,
     uploadImage,
     artist,
     artistInfo,
@@ -122,7 +121,6 @@ const CreateShow = () => {
               id="artistImage"
               accept="image/*"
               handleChange={handleImageChange}
-              // value={artistImage}
             />
 
             <FormFileUpload
@@ -132,7 +130,6 @@ const CreateShow = () => {
               id="featureImage"
               accept="image/*"
               handleChange={handleImageChange}
-              // value={featureImage}
             />
             <ToggleSwitch
               text="publish on site?"
