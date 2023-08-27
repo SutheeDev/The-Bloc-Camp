@@ -35,12 +35,12 @@ const Slideshow = () => {
         slidesPerView={1}
         speed={1000}
       >
-        {featuredShows.map((show) => {
+        {featuredShows.map((show, index) => {
           const { artist, performDateTime, featureImage } = show;
           const showDate = moment(performDateTime).format("ddd MMM DD");
           const showTime = moment(performDateTime).format("hh:mm A");
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <div>
                 <div className="slides-info">
                   <h1>{artist}</h1>

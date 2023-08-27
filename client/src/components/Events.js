@@ -25,14 +25,14 @@ const Events = () => {
   return (
     <Wrapper className="shows">
       <div className="shows-container">
-        {shows.slice(0, visibleItems).map((show) => {
+        {shows.slice(0, visibleItems).map((show, index) => {
           const { artist, performDateTime } = show;
           const date = moment(performDateTime).format("DD");
           const day = moment(performDateTime).format("ddd");
           const month = moment(performDateTime).format("MMM");
 
           return (
-            <div className="show">
+            <div className="show" key={index}>
               <div className="show-info">
                 <h2>{date}</h2>
                 <div>
