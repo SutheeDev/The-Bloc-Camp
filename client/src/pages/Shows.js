@@ -61,12 +61,11 @@ const Shows = () => {
           })}
         </section>
       )}
-      {/* <div className="page-btn-container">
-        {numOfPages > 1 && <PageBtnContainer />}
-      </div> */}
       {visibleItems < shows.length && (
         <div className="loadMore-container">
-          <button className="loadMore-btn">load more</button>
+          <button className="loadMore-btn" onClick={() => loadMore()}>
+            load more
+          </button>
         </div>
       )}
 
