@@ -14,6 +14,8 @@ import moment from "moment";
 import Loading from "../components/Loading";
 
 const Shows = () => {
+  const [visibleItems, setVisibleItems] = useState(12);
+
   const { isLoading, getPublishedShows, shows, numOfPages, page } =
     useAppContext();
 
