@@ -4,6 +4,7 @@ import { useAppContext } from "../context/appContext";
 import { useEffect } from "react";
 import moment from "moment";
 import Loading from "./Loading";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   const { shows, getPublishedShows, isLoading } = useAppContext();
@@ -46,9 +47,9 @@ const Events = () => {
         })}
 
         <div class="fancy-btn">
-          <a href="#">
-            <button>Get Tickets</button>
-          </a>
+          <Link to="/shows" className="link">
+            get tickets
+          </Link>
           <div class="btn-block"></div>
           <div class="btn-bg"></div>
         </div>
@@ -118,7 +119,7 @@ const Wrapper = styled.section`
     height: 55px;
     margin-top: 80px;
   }
-  .fancy-btn button {
+  .fancy-btn .link {
     text-transform: uppercase;
     padding: 1rem 1.5rem;
     color: #221333;
@@ -148,7 +149,7 @@ const Wrapper = styled.section`
     border-radius: 1px;
     z-index: 1;
   }
-  .fancy-btn button:hover {
+  .fancy-btn .link:hover {
     background-color: #221333;
     color: #df3311;
   }
