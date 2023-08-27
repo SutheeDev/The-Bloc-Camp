@@ -103,6 +103,7 @@ const EditShow = () => {
 
             <FormRowSelect
               name="status"
+              labelText="status *"
               placeholder="click to select a status"
               handleChange={handleInput}
               list={statusOptions}
