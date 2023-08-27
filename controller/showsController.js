@@ -67,16 +67,9 @@ const getAllShows = async (req, res) => {
 const updateShow = async (req, res) => {
   const { id: showId } = req.params;
 
-  const { artist, performDate, performTime, artistImage, featureImage } =
-    req.body;
+  const { artist, performDate, performTime, status } = req.body;
 
-  if (
-    !artist ||
-    !performDate ||
-    !performTime ||
-    !artistImage ||
-    !featureImage
-  ) {
+  if (!artist || !performDate || !performTime || !status) {
     throw new BadRequestError("Please provide all required fields!");
   }
 
