@@ -2,28 +2,28 @@ import styled from "styled-components";
 
 const Subscribe = () => {
   return (
-    <Wrapper class="subscribe" id="subscribe-form">
-      <div class="subscribe-info">
-        <div class="subscribe-title">
+    <Wrapper className="subscribe" id="subscribe-form">
+      <div className="subscribe-info">
+        <div className="subscribe-title">
           <h1>stay up to date</h1>
-          <div class="block"></div>
+          <div className="block"></div>
         </div>
         <p>
           Sign up to get our newsletter for all the latest news, shows, and
           events
         </p>
       </div>
-      <form action="submit" class="subscribe-form">
+      <form action="submit" className="subscribe-form">
         <input
           type="email"
           name="email"
           placeholder="Enter Your Email Address"
         />
-        <div class="subscribe-btn-block">
-          <button class="btn subscribe-btn" type="submit">
+        <div className="subscribe-btn-block">
+          <button className="btn subscribe-btn" type="submit">
             Subscribe
           </button>
-          <div class="subscribe-btn-bg"></div>
+          <div className="subscribe-btn-bg"></div>
         </div>
       </form>
     </Wrapper>

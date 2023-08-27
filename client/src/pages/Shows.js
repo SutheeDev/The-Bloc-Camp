@@ -33,19 +33,19 @@ const Shows = () => {
       <Navbar />
       <Header />
 
-      <section class="calendar">
-        <div class="calendar-container">
+      <section className="calendar">
+        <div className="calendar-container">
           <PageTitle text1="upcoming" text2="shows" />
         </div>
       </section>
 
       {isLoading ? (
-        <section class="calendar-shows">
+        <section className="calendar-shows">
           <Loading center />
         </section>
       ) : (
         <div>
-          <section class="calendar-shows">
+          <section className="calendar-shows">
             {shows.slice(0, visibleItems).map((show) => {
               const { artist, artistImage, artistInfo, performDateTime, _id } =
                 show;

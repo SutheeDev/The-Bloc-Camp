@@ -13,14 +13,14 @@ const About = () => {
       <Navbar />
       <Header />
 
-      <section class="about">
-        <div class="about-container">
+      <section className="about">
+        <div className="about-container">
           <PageTitle text1="about" text2="bloc camp" />
         </div>
       </section>
 
-      <section class="about-info">
-        <div class="about-info-container">
+      <section className="about-info">
+        <div className="about-info-container">
           <div></div>
           <img src={aboutImg} alt="" />
           <p>

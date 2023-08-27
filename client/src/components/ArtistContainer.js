@@ -9,19 +9,19 @@ const ArtistContainer = () => {
 
   return (
     <div>
-      <main class="tickets-page">
-        <div class="tickets-container">
-          <section class="tickets-band-info">
+      <main className="tickets-page">
+        <div className="tickets-container">
+          <section className="tickets-band-info">
             <h1>{artist}</h1>
             <p>{artistInfo}</p>
           </section>
         </div>
-        <div class="tickets-img">
+        <div className="tickets-img">
           <img src={featureImage} alt="artist image" />
         </div>
       </main>
-      <section class="time-location">
-        <div class="time-location-container">
+      <section className="time-location">
+        <div className="time-location-container">
           <h3>Time & Location</h3>
           <p>
             {showDate}, {showTime}

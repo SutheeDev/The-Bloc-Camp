@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const PageTitle = ({ text1, text2 }) => {
   return (
-    <Wrapper class="pageTitle">
-      <h1 class="pageTitle-text1">{text1}</h1>
-      <div class="pageTitle-box">
-        <h1 class="pageTitle-text2">{text2}</h1>
-        <div class="block"></div>
-        <div class="line2"></div>
+    <Wrapper className="pageTitle">
+      <h1 className="pageTitle-text1">{text1}</h1>
+      <div className="pageTitle-box">
+        <h1 className="pageTitle-text2">{text2}</h1>
+        <div className="block"></div>
+        <div className="line2"></div>
       </div>
     </Wrapper>
   );

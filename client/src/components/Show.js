@@ -3,19 +3,19 @@ import { ToArtistPageBtn } from "../components";
 
 const Show = ({ artist, artistImage, artistInfo, date, id }) => {
   return (
-    <Wrapper class="calendar-show">
+    <Wrapper className="calendar-show">
       <img src={artistImage} alt="" />
-      <div class="calendar-show-info">
-        <div class="band-date-info">
-          <div class="band-date">
-            <h2 class="band-name">{artist}</h2>
+      <div className="calendar-show-info">
+        <div className="band-date-info">
+          <div className="band-date">
+            <h2 className="band-name">{artist}</h2>
             <h2 className="date">{date}</h2>
           </div>
-          <div class="band-info">
+          <div className="band-info">
             <p>{artistInfo}</p>
           </div>
         </div>
-        <div class="getTicket-btn">
+        <div className="getTicket-btn">
           <ToArtistPageBtn id={id} />
         </div>
       </div>

@@ -20,12 +20,12 @@ const Landing = () => {
       <Navbar />
       <Header />
       <Slideshow />
-      <section class="upcoming">
-        <div class="upcoming-container">
-          <div class="line1"></div>
+      <section className="upcoming">
+        <div className="upcoming-container">
+          <div className="line1"></div>
           <PageTitle text1="upcoming" text2="shows" />
-          <div class="line3"></div>
-          <div class="upcoming-info">
+          <div className="line3"></div>
+          <div className="upcoming-info">
             <p>All shows are 18+ to enter and 21+ to purchase alcohol.</p>
             <p>No smoking inside. Please bring a valid form of ID.</p>
           </div>

@@ -23,8 +23,8 @@ const Events = () => {
   }
 
   return (
-    <Wrapper class="shows">
-      <div class="shows-container">
+    <Wrapper className="shows">
+      <div className="shows-container">
         {shows.slice(0, visibleItems).map((show) => {
           const { artist, performDateTime } = show;
           const date = moment(performDateTime).format("DD");
@@ -32,7 +32,7 @@ const Events = () => {
           const month = moment(performDateTime).format("MMM");
 
           return (
-            <div class="show">
+            <div className="show">
               <div className="show-info">
                 <h2>{date}</h2>
                 <div>
@@ -46,12 +46,12 @@ const Events = () => {
           );
         })}
 
-        <div class="fancy-btn">
+        <div className="fancy-btn">
           <Link to="/shows" className="link">
             get tickets
           </Link>
-          <div class="btn-block"></div>
-          <div class="btn-bg"></div>
+          <div className="btn-block"></div>
+          <div className="btn-bg"></div>
         </div>
       </div>
     </Wrapper>

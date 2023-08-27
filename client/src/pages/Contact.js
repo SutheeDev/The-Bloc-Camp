@@ -12,17 +12,17 @@ const Contact = () => {
       <Navbar />
       <Header />
 
-      <section class="contact">
-        <div class="contact-container">
+      <section className="contact">
+        <div className="contact-container">
           <PageTitle text1="contact" text2="us" />
         </div>
       </section>
 
-      <section class="contact-info">
-        <div class="contact-info-container">
-          <div class="map-address">
-            <div class="map">
-              <div class="square"></div>
+      <section className="contact-info">
+        <div className="contact-info-container">
+          <div className="map-address">
+            <div className="map">
+              <div className="square"></div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.829665291793!2d-122.38940054869533!3d37.77059197966076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7f1a33f38ea7%3A0xe4941e6c1dc4022b!2s500%20Terry%20A%20Francois%20Blvd%2C%20San%20Francisco%2C%20CA%2094158!5e0!3m2!1sen!2sus!4v1677626702353!5m2!1sen!2sus"
                 width="686"
@@ -34,18 +34,18 @@ const Contact = () => {
                 className="google"
               ></iframe>
             </div>
-            <div class="address-section">
+            <div className="address-section">
               <h4>Address</h4>
-              <p class="address">
+              <p className="address">
                 500 Terry Francois St. San Francisco, CA 94158
               </p>
               <p>Parking is available on site</p>
             </div>
           </div>
 
-          <div class="contact-us">
+          <div className="contact-us">
             <h4>Contact Us</h4>
-            <div class="contact-us-info">
+            <div className="contact-us-info">
               <p>
                 Looking to host a private party or book your band to play at The
                 Launch? We’re open for business - please send us an email or

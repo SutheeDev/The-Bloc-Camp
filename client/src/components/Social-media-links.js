@@ -7,7 +7,7 @@ import styled from "styled-components";
 const SocialLinks = () => {
   return (
     <Wrapper>
-      <ul class="social-links">
+      <ul className="social-links">
         <li>
           <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
             <img src={facebook} alt="facebook icon" className="social-icon" />

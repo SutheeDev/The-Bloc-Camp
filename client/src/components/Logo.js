@@ -4,9 +4,9 @@ const Logo = () => {
   return (
     <Wrapper>
       <h4>the</h4>
-      <div class="logo">
+      <div className="logo">
         <h1>bloc camp</h1>
-        <div class="block"></div>
+        <div className="block"></div>
       </div>
       <p>The Bay’s Premiere Concert Spot</p>
     </Wrapper>
