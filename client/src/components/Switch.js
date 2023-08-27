@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 
 const ToggleSwitch = ({ text, name, checked, defaultChecked }) => {
-  const { handleInputChange, state } = useAppContext();
+  const { handleInputChange } = useAppContext();
 
   const handleSwitchChange = (checked) => {
     const value = checked.toString();

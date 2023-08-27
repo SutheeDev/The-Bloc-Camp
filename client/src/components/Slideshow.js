@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import SwiperCore, { Autoplay } from "swiper/core";
+import { Autoplay } from "swiper/core";
 import "swiper/css/autoplay";
 import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";

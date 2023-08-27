@@ -54,6 +54,5 @@ const Wrapper = styled.div`
   }
   @media screen and (min-width: 950px) {
     grid-template-columns: 1fr 1fr 1fr;
-    /* column-gap: 2em; */
   }
 `;

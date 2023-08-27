@@ -40,7 +40,6 @@ const DatePickerComponent = ({ selected, name }) => {
           },
         }}
         onChange={handleInput}
-        // required
       />
     </Wrapper>
   );

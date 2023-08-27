@@ -45,10 +45,10 @@ const EditShow = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // if (!artist || !performDate || !performTime) {
-    //   displayMessage();
-    //   return;
-    // }
+    if (!artist || !performDate || !performTime) {
+      displayMessage();
+      return;
+    }
 
     editShow();
   };

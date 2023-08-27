@@ -125,20 +125,14 @@ const Wrapper = styled.div`
     color: var(--white);
   }
   .btn {
-    /* color: var(--darkBlue); */
     width: 100%;
     padding: 0.5em 1.4em;
     text-transform: capitalize;
     text-align: right;
     font-family: var(--bodyFont);
-    /* background-color: transparent; */
     border: 7px solid var(--white);
     cursor: pointer;
   }
-  /* .btn:hover {
-    background-color: var(--reddish);
-    color: var(--white);
-  } */
   @media screen and (min-width: 450px) {
     .user-icon {
       font-size: 1.4rem;

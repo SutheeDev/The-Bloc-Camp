@@ -3,7 +3,6 @@ import { useAppContext } from "../context/appContext";
 import { useEffect } from "react";
 import styled from "styled-components";
 import Event from "./Event";
-import PageBtnContainer from "./PageBtnContainer";
 
 const FavoritesContainer = () => {
   const { isLoading, shows, page, user, getFavoriteShows, clearFilters } =

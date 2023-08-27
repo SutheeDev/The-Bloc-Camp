@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 const SearchContainer = () => {
   const {
-    isLoading,
     search,
     searchStatus,
     statusOptions,
@@ -16,7 +15,6 @@ const SearchContainer = () => {
   } = useAppContext();
 
   const handleSearch = (e) => {
-    // if (isLoading) return;
     handleInputChange({ name: e.target.name, value: e.target.value });
   };
 

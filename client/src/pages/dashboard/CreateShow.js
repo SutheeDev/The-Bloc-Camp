@@ -18,13 +18,10 @@ const CreateShow = () => {
     showMessage,
     displayMessage,
     uploadImage,
-    isEditing,
     artist,
     artistInfo,
     ticketPrice,
     status,
-    artistImage,
-    featureImage,
     published,
     featured,
     performDate,
@@ -45,10 +42,10 @@ const CreateShow = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // if (!artist || !performDate || !performTime) {
-    //   displayMessage();
-    //   return;
-    // }
+    if (!artist || !performDate || !performTime) {
+      displayMessage();
+      return;
+    }
 
     createShow();
   };
@@ -265,5 +262,3 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-// The chosen filename isn't changed back when hit 'clear all' or 'save changes' button.

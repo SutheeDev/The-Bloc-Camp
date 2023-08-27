@@ -21,7 +21,6 @@ const Wrapper = styled.header`
   width: 100%;
   background-color: var(--darkBlue);
   padding: 0px 0 85px 0;
-  /* margin-top: 14px; */
   padding-top: 14px;
   div {
     width: 100%;

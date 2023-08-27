@@ -9,13 +9,13 @@ const TicketsCalculation = () => {
   const [quantity, setQuantity] = useState(0);
   const [total, setTotal] = useState(0);
 
-  const increment = (ticketAmounts) => {
+  const increment = () => {
     const newAmount = quantity + 1;
     setQuantity(newAmount);
     setTotal(newAmount * price);
   };
 
-  const subtract = (ticketAmounts) => {
+  const subtract = () => {
     if (quantity > 0) {
       const newAmount = quantity - 1;
       setQuantity(newAmount);
@@ -39,11 +39,11 @@ const TicketsCalculation = () => {
           <p>Regular</p>
           <p>$ {price}</p>
           <div className="tickets-amount">
-            <div className="minus" onClick={() => subtract(quantity)}>
+            <div className="minus" onClick={() => subtract()}>
               <BiMinus />
             </div>
             <p className="amount">{quantity}</p>
-            <div className="plus" onClick={() => increment(quantity)}>
+            <div className="plus" onClick={() => increment()}>
               <BiPlus />
             </div>
           </div>

@@ -13,7 +13,6 @@ import {
 import { HiOutlineHeart, HiHeart } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
-import Loading from "./Loading";
 
 const Event = ({
   _id,
@@ -32,7 +31,6 @@ const Event = ({
     user,
     updateFavorites,
     favorites,
-    isProcessing,
     isLoading,
   } = useAppContext();
   const [showDropdown, setShowDropdown] = useState(false);
