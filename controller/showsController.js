@@ -238,16 +238,7 @@ const getFavoriteShows = async (req, res) => {
   });
   shows.sort((a, b) => a.performDateTime - b.performDateTime);
 
-  const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 10;
-  const skip = (page - 1) * limit;
-  const endIndex = skip + limit;
-  shows = shows.slice(skip, endIndex);
-
-  const totalShows = favList.length;
-  const numOfPages = Math.ceil(totalShows / limit);
-
-  res.status(StatusCodes.OK).json({ shows, totalShows, numOfPages });
+  res.status(StatusCodes.OK).json({ shows });
 };
 
 const getArtist = async (req, res) => {

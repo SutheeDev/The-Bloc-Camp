@@ -6,22 +6,8 @@ import Event from "./Event";
 import PageBtnContainer from "./PageBtnContainer";
 
 const FavoritesContainer = () => {
-  const {
-    getShows,
-    isLoading,
-    shows,
-    totalShows,
-    numOfPages,
-    page,
-    search,
-    searchStatus,
-    sort,
-    getUpcomingShows,
-    user,
-    getFavoriteShows,
-    favorites,
-    clearFilters,
-  } = useAppContext();
+  const { isLoading, shows, page, user, getFavoriteShows, clearFilters } =
+    useAppContext();
 
   useEffect(() => {
     getFavoriteShows();
@@ -43,14 +29,13 @@ const FavoritesContainer = () => {
   return (
     <Wrapper>
       <h2>
-        {totalShows} favorite show{shows.length > 1 && "s"}
+        {shows.length} favorite show{shows.length > 1 && "s"}
       </h2>
       <div>
         {shows.map((show) => {
           return <Event key={show._id} {...show} />;
         })}
       </div>
-      {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
   );
 };
