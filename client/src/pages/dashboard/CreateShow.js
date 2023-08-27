@@ -42,10 +42,10 @@ const CreateShow = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!artist || !performDate || !performTime) {
-      displayMessage();
-      return;
-    }
+    // if (!artist || !performDate || !performTime) {
+    //   displayMessage();
+    //   return;
+    // }
 
     createShow();
   };
@@ -109,6 +109,7 @@ const CreateShow = () => {
 
             <FormRowSelect
               name="status"
+              labelText="status *"
               placeholder="click to select a status"
               handleChange={handleInput}
               list={statusOptions}

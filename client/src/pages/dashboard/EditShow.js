@@ -20,11 +20,9 @@ const EditShow = () => {
     isEditing,
     artist,
     artistInfo,
-    ticketsPrice,
     ticketPrice,
     performDate,
     performTime,
-    performDateTime,
     artistImage,
     featureImage,
     published,
@@ -32,7 +30,6 @@ const EditShow = () => {
     statusOptions,
     status,
     editShow,
-    clearValues,
   } = useAppContext();
   const navigate = useNavigate();
 

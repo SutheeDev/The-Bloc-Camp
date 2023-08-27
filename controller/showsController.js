@@ -11,9 +11,9 @@ import mongoose from "mongoose";
 import moment from "moment";
 
 const createShow = async (req, res) => {
-  const { artist, performDate, performTime } = req.body;
+  const { artist, performDate, performTime, status } = req.body;
 
-  if (!artist || !performDate || !performTime) {
+  if (!artist || !performDate || !performTime || !status) {
     throw new BadRequestError("Please provide all required fields!");
   }
 
