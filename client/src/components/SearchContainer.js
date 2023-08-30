@@ -1,6 +1,7 @@
 import { FormRow, FormRowSelect } from ".";
 import { useAppContext } from "../context/appContext";
 import styled from "styled-components";
+import { useState, useMemo } from "react";
 
 const SearchContainer = () => {
   const {
@@ -13,6 +14,8 @@ const SearchContainer = () => {
     clearFilters,
     user,
   } = useAppContext();
+
+  const [localSearch, setLocalSearch] = useState("");
 
   const handleSearch = (e) => {
     handleInputChange({ name: e.target.name, value: e.target.value });
