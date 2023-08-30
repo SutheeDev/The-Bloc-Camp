@@ -21,8 +21,22 @@ const SearchContainer = () => {
     handleInputChange({ name: e.target.name, value: e.target.value });
   };
 
+  const debounce = () => {
+    let timeoutID;
+    return (e) => {
+      clearTimeout(timeoutID);
+      setLocalSearch(e.target.value);
+      timeoutID = setTimeout(() => {
+        handleInputChange({ name: e.target.name, value: e.target.value });
+      }, 1000);
+    };
+  };
+
+  const optimizedDebounce = useMemo(() => debounce(), []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLocalSearch("");
     clearFilters();
   };
 
@@ -37,8 +51,8 @@ const SearchContainer = () => {
               name="search"
               labelText="search"
               placeholder="search artist"
-              handleChange={handleSearch}
-              value={search}
+              handleChange={optimizedDebounce}
+              value={localSearch}
             />
 
             {user.role === "admin" && (
