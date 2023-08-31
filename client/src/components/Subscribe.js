@@ -1,6 +1,15 @@
 import styled from "styled-components";
+import { useAppContext } from "../context/appContext";
+import Message from "./Message";
 
 const Subscribe = () => {
+  const { showMessage, sendSubscribeEmail } = useAppContext();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendSubscribeEmail();
+  };
+
   return (
     <Wrapper className="subscribe" id="subscribe-form">
       <div className="subscribe-info">
@@ -13,6 +22,7 @@ const Subscribe = () => {
           events
         </p>
       </div>
+
       <form action="submit" className="subscribe-form">
         <input
           type="email"
@@ -20,12 +30,17 @@ const Subscribe = () => {
           placeholder="Enter Your Email Address"
         />
         <div className="subscribe-btn-block">
-          <button className="btn subscribe-btn" type="submit">
+          <button
+            className="btn subscribe-btn"
+            type="submit"
+            onClick={handleSubmit}
+          >
             Subscribe
           </button>
           <div className="subscribe-btn-bg"></div>
         </div>
       </form>
+      {showMessage && <Message />}
     </Wrapper>
   );
 };

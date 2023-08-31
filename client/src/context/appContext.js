@@ -633,6 +633,17 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const sendSubscribeEmail = async () => {
+    // console.log("send subscribe email");
+    // dispatch({ SEND_SUBSCRIBE_EMAIL_BEGIN })
+    try {
+      const { data } = await axios.post("/subscribe");
+      console.log(data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -662,6 +673,7 @@ const AppProvider = ({ children }) => {
         getFavoriteShows,
         closeAlertFromAnotherPage,
         getArtist,
+        sendSubscribeEmail,
       }}
     >
       {children}
