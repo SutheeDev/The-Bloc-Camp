@@ -496,7 +496,7 @@ const reducer = (state, action) => {
       ...state,
       isSendingEmail: false,
       showMessage: true,
-      messageText: "thank you for subscribing. please check your email",
+      messageText: "thank you for subscribing! please check your email.",
       messageType: "success",
     };
   }

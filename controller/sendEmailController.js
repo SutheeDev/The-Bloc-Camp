@@ -3,7 +3,7 @@ import { StatusCodes } from "http-status-codes";
 import { BadRequestError } from "../errors/index.js";
 
 const sendEmail = async (req, res) => {
-  const email = req.body;
+  const { email } = req.body;
 
   if (!email) {
     throw new BadRequestError("Please provide your email address");
@@ -27,8 +27,8 @@ const sendEmail = async (req, res) => {
   //   html: "<h2>Sending Email Subscribtion</h2>",
   // });
 
-  res.json(email);
-  // res.status(StatusCodes.OK).json({ email });
+  // res.json(email);
+  res.status(StatusCodes.OK).json({ email });
 };
 
 export default sendEmail;

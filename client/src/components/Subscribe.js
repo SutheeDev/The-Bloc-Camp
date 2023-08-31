@@ -3,7 +3,14 @@ import { useAppContext } from "../context/appContext";
 import Message from "./Message";
 
 const Subscribe = () => {
-  const { showMessage, sendSubscribeEmail } = useAppContext();
+  const { showMessage, handleInputChange, sendSubscribeEmail, subscribeEmail } =
+    useAppContext();
+
+  const handleInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    handleInputChange({ name, value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,8 +34,10 @@ const Subscribe = () => {
       <form action="submit" className="subscribe-form">
         <input
           type="email"
-          name="email"
+          name="subscribeEmail"
+          value={subscribeEmail}
           placeholder="Enter Your Email Address"
+          onChange={handleInput}
         />
         <div className="subscribe-btn-block">
           <button

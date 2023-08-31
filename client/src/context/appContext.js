@@ -111,6 +111,8 @@ const initialState = {
   isProcessing: false,
 
   show: JSON.parse(storageShow) || {},
+
+  subscribeEmail: "",
 };
 
 const AppContext = React.createContext();
@@ -647,10 +649,11 @@ const AppProvider = ({ children }) => {
       dispatch({
         type: SEND_SUBSCRIBE_EMAIL_ERROR,
         payload: {
-          msg: error.response.msg,
+          msg: error.response.data.msg,
         },
       });
     }
+    hideMessage();
   };
 
   return (
