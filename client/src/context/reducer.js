@@ -485,6 +485,30 @@ const reducer = (state, action) => {
       show: action.payload.show,
     };
   }
+  if (action.type === SEND_SUBSCRIBE_EMAIL_BEGIN) {
+    return {
+      ...state,
+      isSendingEmail: true,
+    };
+  }
+  if (action.type === SEND_SUBSCRIBE_EMAIL_SUCCESS) {
+    return {
+      ...state,
+      isSendingEmail: false,
+      showMessage: true,
+      messageText: "thank you for subscribing. please check your email",
+      messageType: "success",
+    };
+  }
+  if (action.type === SEND_SUBSCRIBE_EMAIL_ERROR) {
+    return {
+      ...state,
+      isSendingEmail: false,
+      showMessage: true,
+      messageText: action.payload.msg,
+      messageType: "error",
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

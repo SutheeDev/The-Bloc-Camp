@@ -637,15 +637,19 @@ const AppProvider = ({ children }) => {
   };
 
   const sendSubscribeEmail = async () => {
-    // console.log("send subscribe email");
-    // dispatch({ SEND_SUBSCRIBE_EMAIL_BEGIN })
+    dispatch({ type: SEND_SUBSCRIBE_EMAIL_BEGIN });
     try {
       const { data } = await axios.post("/subscribe");
       console.log(data);
-      dispatch({ SEND_SUBSCRIBE_EMAIL_SUCCESS });
+      dispatch({ type: SEND_SUBSCRIBE_EMAIL_SUCCESS });
     } catch (error) {
       console.log(error.response);
-      dispatch({ SEND_SUBSCRIBE_EMAIL_ERROR });
+      dispatch({
+        type: SEND_SUBSCRIBE_EMAIL_ERROR,
+        payload: {
+          msg: error.response.msg,
+        },
+      });
     }
   };
 

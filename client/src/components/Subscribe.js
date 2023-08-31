@@ -17,6 +17,7 @@ const Subscribe = () => {
           <h1>stay up to date</h1>
           <div className="block"></div>
         </div>
+        {showMessage && <Message />}
         <p>
           Sign up to get our newsletter for all the latest news, shows, and
           events
@@ -40,7 +41,6 @@ const Subscribe = () => {
           <div className="subscribe-btn-bg"></div>
         </div>
       </form>
-      {showMessage && <Message />}
     </Wrapper>
   );
 };
@@ -51,10 +51,11 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 80px 0;
+  padding: 120px 0 80px 0;
   overflow: hidden;
   .subscribe-info {
     width: 35%;
+    position: relative;
     .subscribe-title {
       position: relative;
       height: 55px;
@@ -99,6 +100,13 @@ const Wrapper = styled.section`
       font-weight: 200;
       background-color: #df3311;
       padding: 70px 0 82px 30px;
+    }
+    .message {
+      position: absolute;
+      left: 0;
+      top: -79px;
+      width: 85vw;
+      margin: 0;
     }
   }
   .subscribe-form {
@@ -178,6 +186,14 @@ const Wrapper = styled.section`
         .block {
           display: none;
         }
+      }
+      .message {
+        position: relative;
+        top: 0;
+        width: 100%;
+        /* margin-bottom: 0.9em;
+        margin-top: 0; */
+        margin: 1em 0 2em 0;
       }
     }
     .subscribe-form {

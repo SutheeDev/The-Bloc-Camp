@@ -27,8 +27,8 @@ const sendEmail = async (req, res) => {
   //   html: "<h2>Sending Email Subscribtion</h2>",
   // });
 
-  // res.json(info);
-  res.status(StatusCodes.OK).json({ email });
+  res.json(email);
+  // res.status(StatusCodes.OK).json({ email });
 };
 
 export default sendEmail;
