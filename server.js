@@ -18,6 +18,7 @@ cloudinary.config({
 // Routes
 import authRouter from "./routes/authRoutes.js";
 import showRouter from "./routes/showsRoutes.js";
+import sendEmailRouter from "./routes/sendEmailRoutes.js";
 
 // middleware import
 import NotFoundMiddleware from "./middleware/not-found.js";
@@ -39,8 +40,8 @@ app.use(fileUpload({ useTempFiles: true }));
 
 // API routes
 app.use("/api/v1/auth", authRouter);
-// app.use("/api/v1/shows", authenticatedUser, showRouter);
 app.use("/api/v1/shows", showRouter);
+app.use("", sendEmailRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello User");
