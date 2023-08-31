@@ -48,6 +48,9 @@ import {
   GET_FAVORITE_SHOWS_SUCCESS,
   GET_ARTIST_BEGIN,
   GET_ARTIST_SUCCESS,
+  SEND_SUBSCRIBE_EMAIL_BEGIN,
+  SEND_SUBSCRIBE_EMAIL_SUCCESS,
+  SEND_SUBSCRIBE_EMAIL_ERROR,
 } from "./actions";
 
 import { initialState } from "./appContext";

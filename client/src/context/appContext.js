@@ -53,6 +53,9 @@ import {
   GET_FAVORITE_SHOWS_SUCCESS,
   GET_ARTIST_BEGIN,
   GET_ARTIST_SUCCESS,
+  SEND_SUBSCRIBE_EMAIL_BEGIN,
+  SEND_SUBSCRIBE_EMAIL_SUCCESS,
+  SEND_SUBSCRIBE_EMAIL_ERROR,
 } from "./actions";
 import moment from "moment";
 
@@ -639,8 +642,10 @@ const AppProvider = ({ children }) => {
     try {
       const { data } = await axios.post("/subscribe");
       console.log(data);
+      dispatch({ SEND_SUBSCRIBE_EMAIL_SUCCESS });
     } catch (error) {
       console.log(error.response);
+      dispatch({ SEND_SUBSCRIBE_EMAIL_ERROR });
     }
   };
 
