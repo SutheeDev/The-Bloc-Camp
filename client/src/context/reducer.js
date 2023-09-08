@@ -498,6 +498,7 @@ const reducer = (state, action) => {
       showMessage: true,
       messageText: "thank you for subscribing! please check your email.",
       messageType: "success",
+      subscribeEmail: "",
     };
   }
   if (action.type === SEND_SUBSCRIBE_EMAIL_ERROR) {
@@ -507,6 +508,7 @@ const reducer = (state, action) => {
       showMessage: true,
       messageText: action.payload.msg,
       messageType: "error",
+      subscribeEmail: "",
     };
   }
   throw new Error(`No such action: ${action.type}`);
