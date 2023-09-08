@@ -41,7 +41,7 @@ app.use(fileUpload({ useTempFiles: true }));
 // API routes
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/shows", showRouter);
-app.use("", sendEmailRouter);
+app.use("/api/v1/email", sendEmailRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello User");

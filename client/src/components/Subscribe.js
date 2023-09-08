@@ -14,7 +14,7 @@ const Subscribe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendSubscribeEmail();
+    sendSubscribeEmail(subscribeEmail);
   };
 
   return (
