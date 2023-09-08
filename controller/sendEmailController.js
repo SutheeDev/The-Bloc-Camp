@@ -27,7 +27,6 @@ const sendEmailEthereal = async (req, res) => {
     html: "<h2>Sending Email Subscribtion</h2>",
   });
 
-  // res.json(email);
   res.status(StatusCodes.OK).json({ info });
 };
 

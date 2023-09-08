@@ -1,10 +1,16 @@
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 import Message from "./Message";
+import Loading from "./Loading";
 
 const Subscribe = () => {
-  const { showMessage, handleInputChange, sendSubscribeEmail, subscribeEmail } =
-    useAppContext();
+  const {
+    showMessage,
+    handleInputChange,
+    sendSubscribeEmail,
+    subscribeEmail,
+    isSendingEmail,
+  } = useAppContext();
 
   const handleInput = (e) => {
     const name = e.target.name;
@@ -24,6 +30,11 @@ const Subscribe = () => {
           <h1>stay up to date</h1>
           <div className="block"></div>
         </div>
+        {isSendingEmail && (
+          <div className="sendEmail-loading">
+            <Loading center />
+          </div>
+        )}
         {showMessage && <Message />}
         <p>
           Sign up to get our newsletter for all the latest news, shows, and
@@ -110,7 +121,8 @@ const Wrapper = styled.section`
       background-color: #df3311;
       padding: 70px 0 82px 30px;
     }
-    .message {
+    .message,
+    .sendEmail-loading {
       position: absolute;
       left: 0;
       top: -79px;
@@ -196,7 +208,8 @@ const Wrapper = styled.section`
           display: none;
         }
       }
-      .message {
+      .message,
+      .sendEmail-loading {
         position: relative;
         top: 0;
         width: 100%;
