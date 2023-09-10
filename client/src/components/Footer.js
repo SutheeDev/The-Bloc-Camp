@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Footer = () => {
   return (
     <Wrapper>
-      <p>&copy; 2022 by The Bloc Camp. Created by SutheeDeveloper</p>
+      <p>&copy; 2024 by The Bloc Camp. Created by SutheeDeveloper</p>
     </Wrapper>
   );
 };
