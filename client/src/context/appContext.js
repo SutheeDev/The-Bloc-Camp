@@ -280,7 +280,6 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      // console.log(error.response);
       dispatch({
         type: UPLOAD_IMAGE_ERROR,
         payload: {
@@ -381,10 +380,8 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      console.log(error.response);
-      // logoutUser();
+      logoutUser();
     }
-    // hideMessage();
   };
 
   const setEditShow = (id) => {
@@ -463,7 +460,6 @@ const AppProvider = ({ children }) => {
       await authFetch.delete(`/shows/${id}`);
       getShows();
     } catch (error) {
-      console.log(error.response);
       if (error.response.status === 401) {
         logoutUser();
       }
@@ -525,8 +521,7 @@ const AppProvider = ({ children }) => {
         },
       });
     } catch (error) {
-      console.log(error.response);
-      // logoutUser();
+      logoutUser();
     }
   };
 
@@ -552,8 +547,7 @@ const AppProvider = ({ children }) => {
       });
       getUserFavorites();
     } catch (error) {
-      console.log(error.response);
-      // logoutUser();
+      logoutUser();
     }
     hideMessage();
   };
@@ -646,7 +640,6 @@ const AppProvider = ({ children }) => {
       });
       dispatch({ type: SEND_SUBSCRIBE_EMAIL_SUCCESS });
     } catch (error) {
-      console.log(error.response);
       dispatch({
         type: SEND_SUBSCRIBE_EMAIL_ERROR,
         payload: {
