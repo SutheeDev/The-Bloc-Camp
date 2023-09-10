@@ -30,7 +30,6 @@ const register = async (req, res) => {
       location: user.location,
       role: user.role,
     },
-    token,
   });
 };
 
@@ -59,7 +58,7 @@ const login = async (req, res) => {
 
   // Set password to undefined so it's not visible in the response
   user.password = undefined;
-  res.status(StatusCodes.OK).json({ user, token, role: user.role });
+  res.status(StatusCodes.OK).json({ user, role: user.role });
 };
 
 const updateUser = async (req, res) => {
@@ -81,7 +80,7 @@ const updateUser = async (req, res) => {
 
   attachCookies({ res, token });
 
-  res.status(StatusCodes.OK).json({ user, token, role: user.role });
+  res.status(StatusCodes.OK).json({ user, role: user.role });
 };
 
 const updateUserFavorites = async (req, res) => {
@@ -103,7 +102,7 @@ const updateUserFavorites = async (req, res) => {
 
   res
     .status(StatusCodes.OK)
-    .json({ user, token, role: user.role, favorites: user.favorites });
+    .json({ user, role: user.role, favorites: user.favorites });
 };
 
 const getUserFavorites = async (req, res) => {
