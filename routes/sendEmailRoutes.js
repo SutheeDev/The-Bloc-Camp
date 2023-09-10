@@ -1,8 +1,8 @@
 import express from "express";
 const router = express.Router();
 
-import sendEmail from "../controller/sendEmailController.js";
+import sendEmailBrevo from "../controller/sendEmailController.js";
 
-router.route("/subscribe").post(sendEmail);
+router.route("/subscribe").post(sendEmailBrevo);
 
 export default router;

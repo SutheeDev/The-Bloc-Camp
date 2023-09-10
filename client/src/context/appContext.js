@@ -1,5 +1,4 @@
 import React, { useContext, useReducer } from "react";
-
 import reducer from "./reducer";
 import axios from "axios";
 
@@ -330,7 +329,7 @@ const AppProvider = ({ children }) => {
     // Convert a string to Number
     const ticketsPrice = parseInt(ticketPrice);
 
-    const now = moment().format("ddd MMM DD YYYY HH:mm:ss");
+    // const now = moment().format("ddd MMM DD YYYY HH:mm:ss");
 
     try {
       await authFetch.post("/shows", {
@@ -642,12 +641,12 @@ const AppProvider = ({ children }) => {
   const sendSubscribeEmail = async (subscribeEmail) => {
     dispatch({ type: SEND_SUBSCRIBE_EMAIL_BEGIN });
     try {
-      console.log(subscribeEmail);
       await axios.post("/api/v1/email/subscribe", {
         subscribeEmail,
       });
       dispatch({ type: SEND_SUBSCRIBE_EMAIL_SUCCESS });
     } catch (error) {
+      console.log(error.response);
       dispatch({
         type: SEND_SUBSCRIBE_EMAIL_ERROR,
         payload: {
