@@ -14,6 +14,7 @@ cloudinary.config({
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
 });
+import cookieParser from "cookie-parser";
 
 // security packages
 import helmet from "helmet";
@@ -40,6 +41,7 @@ if (process.env.NODE_ENV !== "production") {
 
 // Built-in middleware
 app.use(express.json());
+app.use(cookieParser());
 // Invoke security packages
 app.use(helmet());
 app.use(xss());
