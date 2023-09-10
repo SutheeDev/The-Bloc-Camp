@@ -1,12 +1,17 @@
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError } from "../errors/index.js";
 import brevoApi from "sib-api-v3-sdk";
+import validator from "validator";
 
 const sendEmailBrevo = async (req, res) => {
   const { subscribeEmail } = req.body;
 
   if (!subscribeEmail) {
     throw new BadRequestError("Please provide your email address");
+  }
+
+  if (!validator.isEmail(subscribeEmail)) {
+    throw new BadRequestError("Please provide valid email address");
   }
 
   const client = brevoApi.ApiClient.instance;
