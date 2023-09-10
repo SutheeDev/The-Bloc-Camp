@@ -15,6 +15,11 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 
+// security packages
+import helmet from "helmet";
+import xss from "xss-clean";
+import mongoSanitize from "express-mongo-sanitize";
+
 // Routes
 import authRouter from "./routes/authRoutes.js";
 import showRouter from "./routes/showsRoutes.js";
@@ -35,6 +40,10 @@ if (process.env.NODE_ENV !== "production") {
 
 // Built-in middleware
 app.use(express.json());
+// Invoke security packages
+app.use(helmet());
+app.use(xss());
+app.use(mongoSanitize());
 // Invoke express-fileupload
 app.use(fileUpload({ useTempFiles: true }));
 
