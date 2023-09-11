@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const TicketsBtn = () => {
   return (
-    <Wrapper href="/shows">
-      <button className="btn">get tickets</button>
+    <Wrapper>
+      <Link to="/shows" className="btn">
+        get tickets
+      </Link>
     </Wrapper>
   );
 };
@@ -12,7 +15,7 @@ export default TicketsBtn;
 const Wrapper = styled.a`
   .btn {
     text-transform: uppercase;
-    padding: 1rem 1.5rem;
+    padding: 0.87rem 1.5rem;
     color: var(--reddish);
     border: 3px solid var(--reddish);
     background-color: transparent;
@@ -29,7 +32,8 @@ const Wrapper = styled.a`
   }
   @media screen and (max-width: 850px) {
     .btn {
-      padding: 10px 18px;
+      /* padding: 10px 18px; */
+      padding: 7.6px 18px;
     }
   }
   @media screen and (max-width: 450px) {
