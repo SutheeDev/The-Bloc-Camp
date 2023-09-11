@@ -15,6 +15,9 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 import cookieParser from "cookie-parser";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import path from "path";
 
 // security packages
 import helmet from "helmet";
@@ -39,6 +42,8 @@ if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
 }
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 // Built-in middleware
 app.use(express.json());
 app.use(cookieParser());
@@ -53,6 +58,11 @@ app.use(fileUpload({ useTempFiles: true }));
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/shows", showRouter);
 app.use("/api/v1/email", sendEmailRouter);
+
+// direct routes to index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 
 app.get("/", (req, res) => {
   res.send("Hello User");
