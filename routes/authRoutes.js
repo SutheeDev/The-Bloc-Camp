@@ -11,6 +11,7 @@ import {
   updateUserFavorites,
   getUserFavorites,
   getCurrentUser,
+  logout,
 } from "../controller/authController.js";
 
 const apiLimiter = rateLimit({
@@ -28,5 +29,6 @@ router.route("/favorites").get(authenticatedUser, getUserFavorites);
 router
   .route("/favorites/:id")
   .patch(authenticatedUser, testUser, updateUserFavorites);
+router.route("/logout").get(logout);
 
 export default router;
