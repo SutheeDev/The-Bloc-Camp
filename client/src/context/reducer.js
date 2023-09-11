@@ -159,6 +159,7 @@ const reducer = (state, action) => {
       user: null,
       // token: null,
       role: "",
+      userLoading: false,
     };
   }
   if (action.type === HANDLE_CHANGE) {
