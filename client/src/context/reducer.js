@@ -513,6 +513,21 @@ const reducer = (state, action) => {
       subscribeEmail: "",
     };
   }
+  if (action.type === GET_CURRENT_USER_BEGIN) {
+    return {
+      ...state,
+      userLoading: true,
+      showAlert: false,
+    };
+  }
+  if (action.type === GET_CURRENT_USER_SUCCESS) {
+    return {
+      ...state,
+      userLoading: false,
+      user: action.payload.user,
+      role: action.payload.role,
+    };
+  }
   throw new Error(`No such action: ${action.type}`);
 };
 export default reducer;

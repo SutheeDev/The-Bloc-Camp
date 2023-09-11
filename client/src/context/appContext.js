@@ -1,4 +1,4 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useReducer, useEffect } from "react";
 import reducer from "./reducer";
 import axios from "axios";
 
@@ -117,6 +117,8 @@ const initialState = {
 
   subscribeEmail: "",
   isSendingEmail: false,
+
+  userLoading: true,
 };
 
 const AppContext = React.createContext();
@@ -659,6 +661,28 @@ const AppProvider = ({ children }) => {
     }
     hideMessage();
   };
+
+  const getCurrentUser = async () => {
+    dispatch({ type: GET_CURRENT_USER_BEGIN });
+    try {
+      const { data } = await authFetch.get("/auth/getCurrentUser");
+      const { user, role } = data;
+      dispatch({
+        type: GET_CURRENT_USER_SUCCESS,
+        payload: {
+          user,
+          role,
+        },
+      });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      logoutUser();
+    }
+  };
+
+  useEffect(() => {
+    getCurrentUser();
+  }, []);
 
   return (
     <AppContext.Provider
