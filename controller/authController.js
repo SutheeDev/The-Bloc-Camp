@@ -110,4 +110,16 @@ const getUserFavorites = async (req, res) => {
   res.status(StatusCodes.OK).json({ favorites: user.favorites });
 };
 
-export { register, login, updateUser, updateUserFavorites, getUserFavorites };
+const getCurrentUser = async (req, res) => {
+  const user = await User.findOne({ _id: req.user.userId });
+  res.status(StatusCodes.OK).json({ user, role: user.role });
+};
+
+export {
+  register,
+  login,
+  updateUser,
+  updateUserFavorites,
+  getUserFavorites,
+  getCurrentUser,
+};
