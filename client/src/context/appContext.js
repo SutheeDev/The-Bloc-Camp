@@ -58,10 +58,10 @@ import {
 } from "./actions";
 import moment from "moment";
 
-const user = localStorage.getItem("user");
-const token = localStorage.getItem("token");
-const role = localStorage.getItem("role");
-const storageShow = localStorage.getItem("show");
+// const user = localStorage.getItem("user");
+// const token = localStorage.getItem("token");
+// const role = localStorage.getItem("role");
+// const storageShow = localStorage.getItem("show");
 
 const initialState = {
   showMessage: false,
@@ -69,9 +69,10 @@ const initialState = {
   messageText: "",
   messageType: "",
   isLoading: false,
-  user: JSON.parse(user) || null,
-  token: token,
-  role: role,
+  // user: JSON.parse(user) || null,
+  user: null,
+  // token: token,
+  role: "",
   showSidebar: false,
 
   isEditing: false,
@@ -109,7 +110,8 @@ const initialState = {
   favorites: [],
   isProcessing: false,
 
-  show: JSON.parse(storageShow) || {},
+  // show: JSON.parse(storageShow) || {},
+  show: {},
 
   subscribeEmail: "",
   isSendingEmail: false,
@@ -124,15 +126,15 @@ const AppProvider = ({ children }) => {
     baseURL: "/api/v1",
   });
 
-  authFetch.interceptors.request.use(
-    (config) => {
-      config.headers["Authorization"] = `Bearer ${state.token}`;
-      return config;
-    },
-    (error) => {
-      return Promise.reject(error);
-    }
-  );
+  // authFetch.interceptors.request.use(
+  //   (config) => {
+  //     config.headers["Authorization"] = `Bearer ${state.token}`;
+  //     return config;
+  //   },
+  //   (error) => {
+  //     return Promise.reject(error);
+  //   }
+  // );
 
   authFetch.interceptors.response.use(
     (response) => {
@@ -167,28 +169,30 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CLOSE_ALL_ALERT });
   };
 
-  const addUserToLocalStorage = ({ user, token, role }) => {
-    localStorage.setItem("user", JSON.stringify(user));
-    localStorage.setItem("token", token);
-    localStorage.setItem("role", role);
-  };
+  // const addUserToLocalStorage = ({ user, token, role }) => {
+  //   localStorage.setItem("user", JSON.stringify(user));
+  //   localStorage.setItem("token", token);
+  //   localStorage.setItem("role", role);
+  // };
 
-  const removeUserFromLocalStorage = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    localStorage.removeItem("role");
-  };
+  // const removeUserFromLocalStorage = () => {
+  //   localStorage.removeItem("user");
+  //   localStorage.removeItem("token");
+  //   localStorage.removeItem("role");
+  // };
 
   const registerUser = async (currentUser) => {
     dispatch({ type: REGISTER_BEGIN });
     try {
       const response = await axios.post("api/v1/auth/register", currentUser);
-      const { user, token } = response.data;
+      // const { user, token } = response.data;
+      const { user } = response.data;
       dispatch({
         type: REGISTER_SUCCESS,
-        payload: { user, token, role: user.role },
+        // payload: { user, token, role: user.role },
+        payload: { user, role: user.role },
       });
-      addUserToLocalStorage({ user, token, role: user.role });
+      // addUserToLocalStorage({ user, token, role: user.role });
     } catch (error) {
       dispatch({
         type: REGISTER_ERROR,
@@ -202,9 +206,11 @@ const AppProvider = ({ children }) => {
     dispatch({ type: LOGIN_BEGIN });
     try {
       const response = await axios.post("api/v1/auth/login", currentUser);
-      const { user, token, role } = response.data;
-      dispatch({ type: LOGIN_SUCCESS, payload: { user, token, role } });
-      addUserToLocalStorage({ user, token, role });
+      // const { user, token, role } = response.data;
+      const { user, role } = response.data;
+      // dispatch({ type: LOGIN_SUCCESS, payload: { user, token, role } });
+      dispatch({ type: LOGIN_SUCCESS, payload: { user, role } });
+      // addUserToLocalStorage({ user, token, role });
     } catch (error) {
       dispatch({
         type: LOGIN_ERROR,
@@ -220,23 +226,24 @@ const AppProvider = ({ children }) => {
 
   const logoutUser = () => {
     dispatch({ type: LOGOUT_USER });
-    removeUserFromLocalStorage();
+    // removeUserFromLocalStorage();
   };
 
   const updateUser = async (currentUser) => {
     dispatch({ type: UPDATE_USER_BEGIN });
     try {
       const { data } = await authFetch.patch("/auth/updateuser", currentUser);
-      const { user, token, role } = data;
+      // const { user, token, role } = data;
+      const { user, role } = data;
       dispatch({
         type: UPDATE_USER_SUCCESS,
         payload: {
           user,
-          token,
+          // token,
           role,
         },
       });
-      addUserToLocalStorage({ user, token, role });
+      // addUserToLocalStorage({ user, token, role });
     } catch (error) {
       if (error.response.status !== 401) {
         dispatch({
@@ -556,7 +563,8 @@ const AppProvider = ({ children }) => {
     dispatch({ type: UPDATE_FAVORITE_BEGIN });
     try {
       const { data } = await authFetch.patch(`/auth/favorites/${id}`);
-      const { user, token, role, favorites } = data;
+      // const { user, token, role, favorites } = data;
+      const { user, role, favorites } = data;
       dispatch({
         type: UPDATE_FAVORITE_SUCCESS,
         payload: {
@@ -564,7 +572,7 @@ const AppProvider = ({ children }) => {
           favorites,
         },
       });
-      addUserToLocalStorage({ user, token, role });
+      // addUserToLocalStorage({ user, token, role });
     } catch (error) {
       if (error.response.status === 401) return;
       dispatch({
