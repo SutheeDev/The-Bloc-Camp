@@ -6,6 +6,7 @@ import Register from "./Register";
 import ProtectedRoute from "./ProtectedRoute";
 import UserProtectedRoute from "./UserProtectedRoute";
 import Artist from "./Artist";
+import Error from "./Error";
 
 export {
   Landing,
@@ -16,4 +17,5 @@ export {
   ProtectedRoute,
   UserProtectedRoute,
   Artist,
+  Error,
 };

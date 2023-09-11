@@ -7,6 +7,7 @@ import {
   ProtectedRoute,
   UserProtectedRoute,
   Artist,
+  Error,
 } from "./pages";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
@@ -62,6 +63,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path={`/artist/${id}`} element={<Artist />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
