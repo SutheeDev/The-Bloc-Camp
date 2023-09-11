@@ -105,7 +105,7 @@ const reducer = (state, action) => {
       messageType: "success",
       isLoading: false,
       user: action.payload.user,
-      token: action.payload.token,
+      // token: action.payload.token,
       role: action.payload.role,
     };
   }
@@ -132,7 +132,7 @@ const reducer = (state, action) => {
       messageType: "success",
       isLoading: false,
       user: action.payload.user,
-      token: action.payload.token,
+      // token: action.payload.token,
       role: action.payload.role,
     };
   }
@@ -155,7 +155,7 @@ const reducer = (state, action) => {
     return {
       ...initialState,
       user: null,
-      token: null,
+      // token: null,
       role: "",
     };
   }
@@ -180,7 +180,7 @@ const reducer = (state, action) => {
       messageText: "user profile updated!",
       messageType: "success",
       user: action.payload.user,
-      token: action.payload.token,
+      // token: action.payload.token,
     };
   }
   if (action.type === UPDATE_USER_ERROR) {
