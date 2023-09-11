@@ -1,6 +1,7 @@
 import User from "../models/User.js";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError, UnauthenticatedError } from "../errors/index.js";
+import attachCookies from "../utils/attachCookies.js";
 
 const register = async (req, res) => {
   const { name, email, password } = req.body;
@@ -18,6 +19,8 @@ const register = async (req, res) => {
 
   const token = user.createJWT();
 
+  attachCookies({ res, token });
+
   res.status(StatusCodes.CREATED).json({
     user: {
       name: user.name,
@@ -27,7 +30,6 @@ const register = async (req, res) => {
       location: user.location,
       role: user.role,
     },
-    token,
   });
 };
 
@@ -52,9 +54,11 @@ const login = async (req, res) => {
 
   const token = user.createJWT();
 
+  attachCookies({ res, token });
+
   // Set password to undefined so it's not visible in the response
   user.password = undefined;
-  res.status(StatusCodes.OK).json({ user, token, role: user.role });
+  res.status(StatusCodes.OK).json({ user, role: user.role });
 };
 
 const updateUser = async (req, res) => {
@@ -74,7 +78,9 @@ const updateUser = async (req, res) => {
 
   const token = user.createJWT();
 
-  res.status(StatusCodes.OK).json({ user, token, role: user.role });
+  attachCookies({ res, token });
+
+  res.status(StatusCodes.OK).json({ user, role: user.role });
 };
 
 const updateUserFavorites = async (req, res) => {
@@ -92,9 +98,11 @@ const updateUserFavorites = async (req, res) => {
 
   const token = user.createJWT();
 
+  attachCookies({ res, token });
+
   res
     .status(StatusCodes.OK)
-    .json({ user, token, role: user.role, favorites: user.favorites });
+    .json({ user, role: user.role, favorites: user.favorites });
 };
 
 const getUserFavorites = async (req, res) => {
@@ -102,4 +110,26 @@ const getUserFavorites = async (req, res) => {
   res.status(StatusCodes.OK).json({ favorites: user.favorites });
 };
 
-export { register, login, updateUser, updateUserFavorites, getUserFavorites };
+const getCurrentUser = async (req, res) => {
+  const user = await User.findOne({ _id: req.user.userId });
+  res.status(StatusCodes.OK).json({ user, role: user.role });
+};
+
+const logout = async (req, res) => {
+  res.cookie("token", "logout", {
+    httpOnly: true,
+    expires: new Date(Date.now()),
+  });
+
+  res.status(StatusCodes.OK).json({ msg: "user logged out" });
+};
+
+export {
+  register,
+  login,
+  updateUser,
+  updateUserFavorites,
+  getUserFavorites,
+  getCurrentUser,
+  logout,
+};

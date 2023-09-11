@@ -51,6 +51,8 @@ import {
   SEND_SUBSCRIBE_EMAIL_BEGIN,
   SEND_SUBSCRIBE_EMAIL_SUCCESS,
   SEND_SUBSCRIBE_EMAIL_ERROR,
+  GET_CURRENT_USER_BEGIN,
+  GET_CURRENT_USER_SUCCESS,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -105,7 +107,6 @@ const reducer = (state, action) => {
       messageType: "success",
       isLoading: false,
       user: action.payload.user,
-      token: action.payload.token,
       role: action.payload.role,
     };
   }
@@ -132,7 +133,6 @@ const reducer = (state, action) => {
       messageType: "success",
       isLoading: false,
       user: action.payload.user,
-      token: action.payload.token,
       role: action.payload.role,
     };
   }
@@ -155,8 +155,8 @@ const reducer = (state, action) => {
     return {
       ...initialState,
       user: null,
-      token: null,
       role: "",
+      userLoading: false,
     };
   }
   if (action.type === HANDLE_CHANGE) {
@@ -180,7 +180,6 @@ const reducer = (state, action) => {
       messageText: "user profile updated!",
       messageType: "success",
       user: action.payload.user,
-      token: action.payload.token,
     };
   }
   if (action.type === UPDATE_USER_ERROR) {
@@ -509,6 +508,21 @@ const reducer = (state, action) => {
       messageText: action.payload.msg,
       messageType: "error",
       subscribeEmail: "",
+    };
+  }
+  if (action.type === GET_CURRENT_USER_BEGIN) {
+    return {
+      ...state,
+      userLoading: true,
+      showAlert: false,
+    };
+  }
+  if (action.type === GET_CURRENT_USER_SUCCESS) {
+    return {
+      ...state,
+      userLoading: false,
+      user: action.payload.user,
+      role: action.payload.role,
     };
   }
   throw new Error(`No such action: ${action.type}`);
