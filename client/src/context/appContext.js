@@ -60,6 +60,8 @@ import {
 } from "./actions";
 import moment from "moment";
 
+const storageShow = localStorage.getItem("show");
+
 const initialState = {
   showMessage: false,
   showAlert: false,
@@ -105,7 +107,7 @@ const initialState = {
   favorites: [],
   isProcessing: false,
 
-  show: {},
+  show: JSON.parse(storageShow) || {},
 
   subscribeEmail: "",
   isSendingEmail: false,
