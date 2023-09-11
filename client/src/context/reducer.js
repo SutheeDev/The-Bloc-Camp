@@ -51,6 +51,8 @@ import {
   SEND_SUBSCRIBE_EMAIL_BEGIN,
   SEND_SUBSCRIBE_EMAIL_SUCCESS,
   SEND_SUBSCRIBE_EMAIL_ERROR,
+  GET_CURRENT_USER_BEGIN,
+  GET_CURRENT_USER_SUCCESS,
 } from "./actions";
 
 import { initialState } from "./appContext";
