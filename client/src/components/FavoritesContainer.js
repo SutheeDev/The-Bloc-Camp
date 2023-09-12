@@ -11,6 +11,7 @@ const FavoritesContainer = () => {
   useEffect(() => {
     getFavoriteShows();
     clearFilters();
+    // eslint-disable-next-line
   }, [page, user]);
 
   if (isLoading) {

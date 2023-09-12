@@ -5,7 +5,6 @@ import { useState, useMemo } from "react";
 
 const SearchContainer = () => {
   const {
-    search,
     searchStatus,
     statusOptions,
     sort,

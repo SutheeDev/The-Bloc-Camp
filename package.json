@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "browserslist": "^4.21.10",
     "cloudinary": "^1.37.1",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
@@ -47,5 +48,9 @@
     "sib-api-v3-sdk": "^8.5.0",
     "validator": "^13.9.0",
     "xss-clean": "^0.1.4"
-  }
+  },
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ]
 }

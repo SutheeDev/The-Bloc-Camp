@@ -17,7 +17,7 @@ const ArtistContainer = () => {
           </section>
         </div>
         <div className="tickets-img">
-          <img src={featureImage} alt="artist image" />
+          <img src={featureImage} alt=" featured artist" />
         </div>
       </main>
       <section className="time-location">

@@ -13,6 +13,7 @@ const Slideshow = () => {
 
   useEffect(() => {
     getFeaturedShows();
+    // eslint-disable-next-line
   }, []);
 
   if (isLoading) {

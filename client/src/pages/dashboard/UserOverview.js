@@ -11,6 +11,7 @@ const UserOverview = () => {
 
   useEffect(() => {
     showOverview();
+    // eslint-disable-next-line
   }, []);
 
   if (isLoading) {

@@ -3,7 +3,7 @@ import { NavLinks } from ".";
 import { useAppContext } from "../context/appContext";
 
 const Sidebar = () => {
-  const { showSidebar, toggleSidebar } = useAppContext();
+  const { showSidebar } = useAppContext();
   return (
     <Wrapper>
       <div

@@ -12,6 +12,7 @@ const Events = () => {
 
   useEffect(() => {
     getPublishedShows();
+    // eslint-disable-next-line
   }, []);
 
   if (isLoading) {

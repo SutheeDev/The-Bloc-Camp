@@ -5,7 +5,6 @@ import {
   PageTitle,
   Show,
   Subscribe,
-  PageBtnContainer,
 } from "../components";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
@@ -16,8 +15,7 @@ import Loading from "../components/Loading";
 const Shows = () => {
   const [visibleItems, setVisibleItems] = useState(12);
 
-  const { isLoading, getPublishedShows, shows, numOfPages, page } =
-    useAppContext();
+  const { isLoading, getPublishedShows, shows } = useAppContext();
 
   const loadMore = () => {
     setVisibleItems(visibleItems + 12);
@@ -26,6 +24,7 @@ const Shows = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     getPublishedShows();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -32,6 +32,7 @@ const Contact = () => {
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 className="google"
+                title="Google Map"
               ></iframe>
             </div>
             <div className="address-section">

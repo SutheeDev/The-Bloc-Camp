@@ -57,7 +57,7 @@ const Event = ({
         }
       >
         <div className="event-img">
-          <img src={featureImage} />
+          <img src={featureImage} alt="featured artist" />
         </div>
 
         <div className="all-info">

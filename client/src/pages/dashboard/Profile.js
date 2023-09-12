@@ -32,6 +32,7 @@ const Profile = () => {
   useEffect(() => {
     closeAlertFromAnotherPage();
     clearFilters();
+    // eslint-disable-next-line
   }, []);
 
   return (
