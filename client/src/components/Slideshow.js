@@ -7,6 +7,7 @@ import { useAppContext } from "../context/appContext";
 import moment from "moment";
 import styled from "styled-components";
 import Loading from "./Loading";
+import { Link } from "react-router-dom";
 
 const Slideshow = () => {
   const { isLoading, getFeaturedShows, featuredShows } = useAppContext();
@@ -49,9 +50,9 @@ const Slideshow = () => {
                     <span className="slide-date">{showDate}</span>
                     <span className="slide-time">{showTime}</span>
                     <div>
-                      <a href="/shows">
-                        <button>Get Tickets</button>
-                      </a>
+                      <Link to="/shows" className="button">
+                        Get Tickets
+                      </Link>
                       <div className="btn-block"></div>
                     </div>
                   </div>
@@ -134,13 +135,13 @@ const Wrapper = styled.section`
     width: calc(2rem + 13vw);
     transform: translateY(4.5rem);
   }
-  .slide-info button,
+  .slide-info .button,
   .slide-info div .btn-block {
     position: absolute;
     bottom: 1.5rem;
     /* left: 2rem; */
   }
-  .slide-info button {
+  .slide-info .button {
     text-transform: uppercase;
     padding: 1rem 1.5rem;
     color: #221333;
@@ -167,7 +168,7 @@ const Wrapper = styled.section`
     transform: translate(-42%, -51%);
     border-radius: 1px;
   }
-  .slide-info button:hover {
+  .slide-info .button:hover {
     background-color: #221333;
     color: #df3311;
   }
@@ -202,12 +203,12 @@ const Wrapper = styled.section`
       width: calc(2rem + 11vw);
       transform: translateY(3rem);
     }
-    .slide-info button,
+    .slide-info .button,
     .slide-info div .btn-block {
       bottom: 0.5rem;
       left: 1rem;
     }
-    .slide-info button {
+    .slide-info .button {
       font-size: 12px;
       width: 7.5rem;
       padding: 7px 0;
@@ -227,11 +228,11 @@ const Wrapper = styled.section`
       left: 0.5rem;
       padding: 0.3rem 0 0.5rem 0.5rem;
     }
-    .slide-info button,
+    .slide-info .button,
     .slide-info div .btn-block {
       left: 0.5rem;
     }
-    .slide-info button {
+    .slide-info .button {
       font-size: 10px;
       width: 6rem;
       padding: 5px 0;
