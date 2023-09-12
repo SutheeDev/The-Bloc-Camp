@@ -48,7 +48,15 @@ app.use(express.static(path.resolve(__dirname, "./client/build")));
 app.use(express.json());
 app.use(cookieParser());
 // Invoke security packages
-app.use(helmet());
+// set up CSP policy to allow images from Cloudinary
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: [" 'self' "],
+      imgSrc: [" 'self' ", "https://res.cloudinary.com"],
+    },
+  })
+);
 app.use(xss());
 app.use(mongoSanitize());
 // Invoke express-fileupload
