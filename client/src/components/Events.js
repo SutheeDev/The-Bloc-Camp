@@ -1,21 +1,24 @@
 import styled from "styled-components";
 import { TicketsBtn } from "../components";
 import { useAppContext } from "../context/appContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import moment from "moment";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
 const Events = () => {
-  const { shows, getPublishedShows, isLoading } = useAppContext();
+  const { shows, getPublishedShows } = useAppContext();
   const visibleItems = 12;
+  const [localLoading, setLocalLoading] = useState(true);
 
   useEffect(() => {
-    getPublishedShows();
+    getPublishedShows().then(() => {
+      setLocalLoading(false);
+    });
     // eslint-disable-next-line
   }, []);
 
-  if (isLoading) {
+  if (localLoading) {
     return (
       <WrapperLoading>
         <Loading center />
@@ -164,7 +167,6 @@ const Wrapper = styled.section`
     transform: translate(-38%, -50%);
     border-radius: 1px;
   }
-
   /* ----------------- */
   /* Shows Section Media Queries */
   /* ----------------- */
