@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/core";
 import "swiper/css/autoplay";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../context/appContext";
 import moment from "moment";
 import styled from "styled-components";
@@ -10,14 +10,17 @@ import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
 const Slideshow = () => {
-  const { isLoading, getFeaturedShows, featuredShows } = useAppContext();
+  const { getFeaturedShows, featuredShows } = useAppContext();
+  const [localLoading, setLocalLoading] = useState(true);
 
   useEffect(() => {
-    getFeaturedShows();
+    getFeaturedShows().then(() => {
+      setLocalLoading(false);
+    });
     // eslint-disable-next-line
   }, []);
 
-  if (isLoading) {
+  if (localLoading) {
     return (
       <WrapperLoading>
         <Loading center />
@@ -71,7 +74,13 @@ export default Slideshow;
 
 const WrapperLoading = styled.section`
   background-color: var(--lighterBlue);
-  padding: 80px 0;
+  height: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 450px) {
+    height: 60vw;
+  }
 `;
 
 const Wrapper = styled.section`
@@ -139,7 +148,6 @@ const Wrapper = styled.section`
   .slide-info div .btn-block {
     position: absolute;
     bottom: 1.5rem;
-    /* left: 2rem; */
   }
   .slide-info .button {
     text-transform: uppercase;
