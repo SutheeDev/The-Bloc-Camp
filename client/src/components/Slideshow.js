@@ -74,7 +74,13 @@ export default Slideshow;
 
 const WrapperLoading = styled.section`
   background-color: var(--lighterBlue);
-  padding: 80px 0;
+  height: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 450px) {
+    height: 60vw;
+  }
 `;
 
 const Wrapper = styled.section`
@@ -142,7 +148,6 @@ const Wrapper = styled.section`
   .slide-info div .btn-block {
     position: absolute;
     bottom: 1.5rem;
-    /* left: 2rem; */
   }
   .slide-info .button {
     text-transform: uppercase;
