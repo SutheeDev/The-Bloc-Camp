@@ -389,7 +389,7 @@ const reducer = (state, action) => {
   if (action.type === GET_FEATURED_SHOWS_SUCCESS) {
     return {
       ...state,
-      // isLoading: false,
+      isLoading: false,
       featuredShows: action.payload.shows,
     };
   }

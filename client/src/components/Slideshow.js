@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/core";
 import "swiper/css/autoplay";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../context/appContext";
 import moment from "moment";
 import styled from "styled-components";
@@ -10,14 +10,17 @@ import Loading from "./Loading";
 import { Link } from "react-router-dom";
 
 const Slideshow = () => {
-  const { isLoading, getFeaturedShows, featuredShows } = useAppContext();
+  const { getFeaturedShows, featuredShows } = useAppContext();
+  const [localLoading, setLocalLoading] = useState(true);
 
   useEffect(() => {
-    getFeaturedShows();
+    getFeaturedShows().then(() => {
+      setLocalLoading(false);
+    });
     // eslint-disable-next-line
   }, []);
 
-  if (isLoading) {
+  if (localLoading) {
     return (
       <WrapperLoading>
         <Loading center />

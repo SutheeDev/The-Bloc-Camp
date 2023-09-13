@@ -14,8 +14,9 @@ import Loading from "../components/Loading";
 
 const Shows = () => {
   const [visibleItems, setVisibleItems] = useState(12);
+  const [localLoading, setLocalLoading] = useState(true);
 
-  const { isLoading, getPublishedShows, shows } = useAppContext();
+  const { getPublishedShows, shows } = useAppContext();
 
   const loadMore = () => {
     setVisibleItems(visibleItems + 12);
@@ -23,7 +24,9 @@ const Shows = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    getPublishedShows();
+    getPublishedShows().then(() => {
+      setLocalLoading(false);
+    });
     // eslint-disable-next-line
   }, []);
 
@@ -38,7 +41,7 @@ const Shows = () => {
         </div>
       </section>
 
-      {isLoading ? (
+      {localLoading ? (
         <section className="calendar-shows">
           <Loading center />
         </section>
