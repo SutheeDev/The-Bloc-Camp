@@ -153,7 +153,7 @@ const reducer = (state, action) => {
   }
   if (action.type === LOGOUT_USER) {
     return {
-      ...initialState,
+      ...state,
       user: null,
       role: "",
       userLoading: false,
@@ -370,26 +370,26 @@ const reducer = (state, action) => {
   if (action.type === GET_PUBLISHED_SHOWS_BEGIN) {
     return {
       ...state,
-      isLoading: true,
+      // isLoading: true,
     };
   }
   if (action.type === GET_PUBLISHED_SHOWS_SUCCESS) {
     return {
       ...state,
-      isLoading: false,
+      // isLoading: false,
       shows: action.payload.shows,
     };
   }
   if (action.type === GET_FEATURED_SHOWS_BEGIN) {
     return {
       ...state,
-      isLoading: true,
+      // isLoading: true,
     };
   }
   if (action.type === GET_FEATURED_SHOWS_SUCCESS) {
     return {
       ...state,
-      isLoading: false,
+      // isLoading: false,
       featuredShows: action.payload.shows,
     };
   }

@@ -195,8 +195,16 @@ const AppProvider = ({ children }) => {
   };
 
   const logoutUser = async () => {
+    const { shows, featuredShows } = state;
+    console.log(shows, featuredShows);
     await authFetch.get("/auth/logout");
-    dispatch({ type: LOGOUT_USER });
+    dispatch({
+      type: LOGOUT_USER,
+      payload: {
+        shows,
+        featuredShows,
+      },
+    });
   };
 
   const updateUser = async (currentUser) => {
