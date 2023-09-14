@@ -6,11 +6,15 @@ import {
   PageTitle,
   Events,
   Subscribe,
+  Loading,
 } from "../components";
 import styled from "styled-components";
 import { useEffect } from "react";
+import { useAppContext } from "../context/appContext";
 
 const Landing = () => {
+  const { getFeaturedShows, getPublishedShows } = useAppContext();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

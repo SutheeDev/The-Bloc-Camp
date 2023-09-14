@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
         <div className="logIn">
           <img src={login} alt="login icon" />
-          <a href="/register">log in</a>
+          <Link to="/register">log in</Link>
         </div>
       </div>
     </Wrapper>
