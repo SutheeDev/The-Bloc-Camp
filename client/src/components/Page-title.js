@@ -39,7 +39,7 @@ const Wrapper = styled.div`
     margin: 0;
   }
   .pageTitle-box {
-    width: 285px;
+    width: 27vw;
     position: relative;
   }
   .block {
