@@ -11,12 +11,15 @@ This project consists of two main parts: the website and the application.
 ### Website
 
 The Bloc Camp website offers a range of features to enhance the user experience. It is where the venue showcases its forthcoming shows, displays event information, provides details of the artists, sells the tickets, and supplies the venue's regulations and contact info. There are four main pages the user can visit on The Bloc Camp website:
-Home
-Shows
-About
-Contact
+
+- [Home](#home)
+- [Shows](#shows)
+- [About](#about)
+- [Contact](#contact)
 
 #### Home
+
+<a name="home"></a>
 
 The Home page offers a beautiful dynamic slideshow showcasing featured artists and event information such as date, time, and button navigation to the Shows page.
 The interactive slideshow allows users to click and drag to view featured artists.
@@ -25,15 +28,21 @@ Exhibit of upcoming events with a "Get Tickets" button for more details.
 
 #### Shows
 
+<a name="shows"></a>
+
 The Shows page provides detailed artist information, including images, performance dates, and descriptions.
 A button on each show leads to an individual Artist page.
 
 #### About
 
+<a name="about"></a>
+
 The About page is where the message from the venue can be found.
 Also provides insights into the venue's principles.
 
 #### Contact
+
+<a name="conatct"></a>
 
 The Contact page offers the venue address, Google Maps with directions, phone number, and email for easy contact.
 
