@@ -31,7 +31,7 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 <a name="shows"></a>
 
 - The Shows page provides detailed artist information, including images, performance dates, and descriptions.
-- A button on each show leads to an individual Artist page.
+- A button on each show leads to an individual [Artist](#artist) page.
 
 #### About
 
@@ -49,6 +49,8 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 #### Additional Pages
 
 ##### Artist
+
+<a name="artist"></a>
 
 - The Artist page is dedicated to each individual artist.
 - All information about the event can be found, including the artist's name, artist description, image, event date, time, and ticket price.
