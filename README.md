@@ -81,3 +81,7 @@ In addition to those pages described above, the website maintains consistent ele
 - The subscription form is available for users to input email addresses.
 - Equipped with a validator checking whether the input is an email and provides an error message if it is not.
 - A thank you note will be sent to the user's email in case of a successful subscription.
+
+### Application
+
+The second part of this project is the application, which extends the user experience by offering additional functionalities through a dashboard divided into two separate classes: the User Dashboard and the Admin Dashboard. The dashboard is only accessible through the Register / Login page.
