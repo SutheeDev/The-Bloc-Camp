@@ -21,44 +21,44 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 
 <a name="home"></a>
 
-The Home page offers a beautiful dynamic slideshow showcasing featured artists and event information such as date, time, and button navigation to the Shows page.
-The interactive slideshow allows users to click and drag to view featured artists.
-Display of venue rules and regulations.
-Exhibit of upcoming events with a "Get Tickets" button for more details.
+- The Home page offers a beautiful dynamic slideshow showcasing featured artists and event information such as date, time, and button navigation to the Shows page.
+- The interactive slideshow allows users to click and drag to view featured artists.
+- Display of venue rules and regulations.
+- Exhibit of upcoming events with a "Get Tickets" button for more details.
 
 #### Shows
 
 <a name="shows"></a>
 
-The Shows page provides detailed artist information, including images, performance dates, and descriptions.
-A button on each show leads to an individual Artist page.
+- The Shows page provides detailed artist information, including images, performance dates, and descriptions.
+- A button on each show leads to an individual Artist page.
 
 #### About
 
 <a name="about"></a>
 
-The About page is where the message from the venue can be found.
-Also provides insights into the venue's principles.
+- The About page is where the message from the venue can be found.
+- Also provides insights into the venue's principles.
 
 #### Contact
 
 <a name="conatct"></a>
 
-The Contact page offers the venue address, Google Maps with directions, phone number, and email for easy contact.
+- The Contact page offers the venue address, Google Maps with directions, phone number, and email for easy contact.
 
 #### Additional Pages
 
 ##### Artist
 
-The Artist page is dedicated to each individual artist.
-All information about the event can be found, including the artist's name, artist description, image, event date, time, and ticket price.
-A function to calculate total ticket cost.
-Although the 'Checkout' button is currently disabled, it provides a glimpse of the site's future capabilities.
+- The Artist page is dedicated to each individual artist.
+- All information about the event can be found, including the artist's name, artist description, image, event date, time, and ticket price.
+- A function to calculate total ticket cost.
+- Although the 'Checkout' button is currently disabled, it provides a glimpse of the site's future capabilities.
 
 #### Error
 
-Suppose users attempt to access a non-existent page on the website; they are gracefully redirected to the Error page.
-Equipped with a Home button for easy navigation.
+- Suppose users attempt to access a non-existent page on the website; they are gracefully redirected to the Error page.
+- Equipped with a Home button for easy navigation.
 
 ### Common Elements
 
@@ -66,16 +66,16 @@ In addition to those pages described above, the website maintains consistent ele
 
 #### Navbar
 
-Remains conveniently visible, ensuring easy navigation without the need to scroll to the top.
-Responsive design for mobile and desktop screens.
+- Remains conveniently visible, ensuring easy navigation without the need to scroll to the top.
+- Responsive design for mobile and desktop screens.
 
 #### The social-media links
 
-Visibly attached to the left, providing effortless accessibility.
-The links shift beneath the logo on smaller screens, ensuring accessibility without wasting screen real estate.
+- Visibly attached to the left, providing effortless accessibility.
+- The links shift beneath the logo on smaller screens, ensuring accessibility without wasting screen real estate.
 
 #### Subscription
 
-The subscription form is available for users to input email addresses.
-Equipped with a validator checking whether the input is an email and provides an error message if it is not.
-A thank you note will be sent to the user's email in case of a successful subscription.
+- The subscription form is available for users to input email addresses.
+- Equipped with a validator checking whether the input is an email and provides an error message if it is not.
+- A thank you note will be sent to the user's email in case of a successful subscription.
