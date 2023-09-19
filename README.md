@@ -15,7 +15,6 @@ Welcome to [The Bloc Camp](https://the-bloc-camp.onrender.com/), a project that 
   - [User Dashboard](#user_dashboard)
   - [Admin Dashboard](#admin_dashboard)
 - [Demo Dashboard](#demo_dashboard)
-- [How to Use](#how_to_use)
 - [Technologies Used](#technologies)
 - [Contact](#contact)
 
@@ -270,56 +269,56 @@ The demo function exhibits the application's possibilities and allows visitors t
 
 The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project.
 
-| Frontend         | Backend              | Security               | Utility       | Database   | Deployment |
-| ---------------- | -------------------- | ---------------------- | ------------- | ---------- | ---------- |
-| React            | NodeJS               | jsonwebtoken           | Axios         | MongoDB    | Render.com |
-| Style-components | Express              | Bcrypt JS              | Moment JS     | Cloudinary |            |
-| Swiper JS        | Mongoose             | jsonwebtoken           | Dotenv        |            |            |
-| Recharts         | Morgan               | express-mongo-sanitize | Validator JS  |            |            |
-| normalize.css    | http-status-codes    | xss-clean              | Concurrently  |            |            |
-| react-router-dom | express-async-errors | express-rate-limit     | cookie-parser |            |            |
-| react-icons      | express-fileupload   |                        | Browserslist  |            |            |
-| antd             |                      |                        |               |            |            |
-| date-fns         |                      |                        |               |            |            |
+| **Frontend**     | **Backend**          | **Security**           | **Utility**   | **Database** | **Deployment** |
+| :--------------- | :------------------- | :--------------------- | :------------ | :----------- | :------------- |
+| React            | NodeJS               | jsonwebtoken           | Axios         | MongoDB      | Render.com     |
+| Style-components | Express              | BcryptJS               | MomentJS      | Cloudinary   |                |
+| SwiperJS         | Mongoose             | jsonwebtoken           | Dotenv        |              |                |
+| Recharts         | Morgan               | express-mongo-sanitize | ValidatorJS   |              |                |
+| normalize.css    | http-status-codes    | xss-clean              | Concurrently  |              |                |
+| react-router-dom | express-async-errors | express-rate-limit     | cookie-parser |              |                |
+| react-icons      | express-fileupload   |                        | Browserslist  |              |                |
+| antd             |                      |                        |               |              |                |
+| date-fns         |                      |                        |               |              |                |
 
-| **Category**                 | **Dependency**         |
-| ---------------------------- | ---------------------- |
-| **Backend**                  | NodeJS                 |
-|                              | Express                |
-|                              | Mongoose               |
-|                              | Helmet                 |
-|                              | http-status-codes      |
-|                              | jsonwebtoken           |
-|                              | Morgan                 |
-|                              | Nodemailer             |
-|                              | express-async-errors   |
-|                              | express-fileupload     |
+|         **Category**         |     **Dependency**     |
+| :--------------------------: | :--------------------: |
+|         **Backend**          |         NodeJS         |
+|                              |        Express         |
+|                              |        Mongoose        |
+|                              |         Helmet         |
+|                              |   http-status-codes    |
+|                              |      jsonwebtoken      |
+|                              |         Morgan         |
+|                              |       Nodemailer       |
+|                              |  express-async-errors  |
+|                              |   express-fileupload   |
 |                              | express-mongo-sanitize |
-|                              | express-rate-limit     |
-| **Frontend**                 | React                  |
-|                              | Styled-components      |
-|                              | SwiperJS               |
-|                              | Recharts               |
-|                              | antd                   |
-|                              | date-fns               |
-|                              | normalize.css          |
-|                              | react-icons            |
-|                              | react-router-dom       |
-| **Utility**                  | Axios                  |
-|                              | Bcrypt.js              |
-|                              | Moment.js              |
-|                              | Browserslist           |
-|                              | cookie-parser          |
-|                              | Dotenv                 |
-|                              | validator.js           |
-|                              | xss-clean              |
-|                              | Concurrently           |
-| **Database & Data Handling** | MongoDB                |
-|                              | Cloudinary             |
-| **Deployment & Hosting**     | Render.com             |
-| **Security**                 | Helmet                 |
-|                              | jsonwebtoken           |
+|                              |   express-rate-limit   |
+|         **Frontend**         |         React          |
+|                              |   Styled-components    |
+|                              |        SwiperJS        |
+|                              |        Recharts        |
+|                              |          antd          |
+|                              |        date-fns        |
+|                              |     normalize.css      |
+|                              |      react-icons       |
+|                              |    react-router-dom    |
+|         **Utility**          |         Axios          |
+|                              |       Bcrypt.js        |
+|                              |       Moment.js        |
+|                              |      Browserslist      |
+|                              |     cookie-parser      |
+|                              |         Dotenv         |
+|                              |      validator.js      |
+|                              |       xss-clean        |
+|                              |      Concurrently      |
+| **Database & Data Handling** |        MongoDB         |
+|                              |       Cloudinary       |
+|   **Deployment & Hosting**   |       Render.com       |
+|         **Security**         |         Helmet         |
+|                              |      jsonwebtoken      |
 |                              | express-mongo-sanitize |
-|                              | xss-clean              |
-|                              | Bcrypt.js              |
-|                              | express-rate-limit     |
+|                              |       xss-clean        |
+|                              |       Bcrypt.js        |
+|                              |   express-rate-limit   |
