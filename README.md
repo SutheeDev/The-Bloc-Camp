@@ -14,7 +14,7 @@ Welcome to The Bloc Camp, a project that showcases my development skills through
 - [Application](#application)
   - [User Dashboard](#user_dashboard)
   - [Admin Dashboard](#admin_dashboard)
-- [Demo Dashoard](#demo_dashboard)
+- [Demo Dashboard](#demo_dashboard)
 - [How to Use](#how_to_use)
 - [Technologies Used](#technologies)
 - [Contact](#contact)
@@ -269,3 +269,8 @@ The demo function exhibits the application's possibilities and allows visitors t
 ## Technologies Used <a name="technologies"></a>
 
 The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project.
+
+| Frontend     | Backend      | Header 3     |
+| ------------ | ------------ | ------------ |
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
+| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
