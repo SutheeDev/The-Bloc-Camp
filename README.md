@@ -153,3 +153,24 @@ The user dashboard is where the user view and update their profile, manage favor
 - Mandatory completion of all fields to successfully update the profile.
 - Error message displayed if any required information is missing or incomplete.
 - Confirmation message is shown upon successful update after clicking the update button.
+
+### Admin Dashboard
+
+The Admin Dashboard is exclusively accessible to assigned application administrators. It is the central hub for managing the music venue's operations. It consists of four sub-pages: Overview, All Shows, Create Show, and Profile page.
+
+#### Overview (Admin)
+
+- A comprehensive overview of the venue's performance.
+- Displays the total number of shows categorized by status (Upcoming, Canceled, and Sold Out) at the top.
+- Monthly show chart visualizing venue performance in a six-month period with bar and area charts.
+
+#### All Shows
+
+- Provides administrators with a complete listing of all types of shows and events for easy management.
+- Shows the total number of shows for quick reference.
+- Basic show information, including the artist's name, performance date, and time, is immediately visible.
+- Expandable show containers with additional details, such as show status, ticket price, and artist's description.
+- Edit button allows administrators to update information for specific shows, leading to the Edit Show page.
+- No standalone "Edit Show" link on the sidebar or dropdown menu; it appears dynamically only when the admin is on the Edit Show page to avoid confusion.
+- Delete button allows administrators to remove events from the database.
+- Please refer to the Create Show page for a comprehensive form input guide on the Edit Show.
