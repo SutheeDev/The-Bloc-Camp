@@ -85,3 +85,13 @@ In addition to those pages described above, the website maintains consistent ele
 ### Application
 
 The second part of this project is the application, which extends the user experience by offering additional functionalities through a dashboard divided into two separate classes: the User Dashboard and the Admin Dashboard. The dashboard is only accessible through the Register / Login page.
+
+#### Register / Login
+
+- The Register / Login page provides user-friendly forms for registration and login.
+- Users can either log in with their existing credentials or switch to the Register page to create a new account.
+- Email address and password are required for login, while Name input is additionally requested on the registration form.
+- Robust form validation to ensure accurate and complete information entry.
+- Upon successful login or registration, users receive a friendly success message and are seamlessly redirected to their respective dashboards.
+- Users and admins will be navigated to a different dashboard. However, a new registerer will be automatically initialized as a general user.
+- The links to explore the User Demo and Admin Demo are also provided on the login form.
