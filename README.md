@@ -5,6 +5,7 @@ Welcome to The Bloc Camp, a project that showcases my development skills through
 ## Table of Contents
 
 - [Website](#website)
+- [Common Elements](#common_elements)
 - [Application](#application)
 - [User Dashoard](#user_dashboard)
 - [Admin Dashoard](#admin_dashboard)
@@ -50,7 +51,7 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 
 Apart from the four main pages, there are some additional pages users may occasionally encounter, which are:
 
-#### Artist <a name="artist"></a>
+### Artist <a name="artist"></a>
 
 - The Artist page is dedicated to each individual artist.
 - All information about the event can be found, including the artist's name, artist description, image, event date, time, and ticket price.
@@ -62,7 +63,7 @@ Apart from the four main pages, there are some additional pages users may occasi
 - Suppose users attempt to access a non-existent page on the website; they are gracefully redirected to the Error page.
 - Equipped with a Home button for easy navigation. <br><br>
 
-## Common Elements
+## Common Elements <a name="common_elements"></a>
 
 In addition to those pages described above, the website maintains consistent elements across all pages. Essential elements – the logo, navbar, social-media links, and footer, where a call to subscription is located – are displayed on every page.
 
