@@ -107,3 +107,9 @@ The user and admin dashboard share some standard functionalities, such as a dash
 - Automatically hidden to save space, ensuring a better user experience.
 - When hidden, it is transformed into a floating modal menu.
 - Could be manually toggled to be visible or hidden using the hamburger menu on the header's top left.
+
+##### Dropdown Menu & User Icon
+
+- The user icon on the top right indicates an individual user name, providing a personalized touch to the interface.
+- Hovering over the user's name opens a dropdown menu with links to various pages, mirroring the functionality of the sidebar.
+- The dropdown menu includes a Logout link to securely log out and redirect the user to the Register / Login page.
