@@ -42,11 +42,13 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 - The About page is where the message from the venue can be found.
 - Also provides insights into the venue's principles.
 
-### Contact <a name="conatct"></a>
+### Contact <a name="contact"></a>
 
-- The Contact page offers the venue address, Google Maps with directions, phone number, and email for easy contact.
+- The Contact page offers the venue address, Google Maps with directions, phone number, and email for easy contact. <br><br>
 
 ### Additional Pages
+
+Apart from the four main pages, there are some additional pages users may occasionally encounter, which are:
 
 #### Artist <a name="artist"></a>
 
