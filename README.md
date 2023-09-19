@@ -5,10 +5,16 @@ Welcome to The Bloc Camp, a project that showcases my development skills through
 ## Table of Contents
 
 - [Website](#website)
+  - [Home](#home)
+  - [Shows](#shows)
+  - [About](#about)
+  - [Contact](#contact)
+  - [Additional Pages](#additional_pages)
 - [Common Elements](#common_elements)
 - [Application](#application)
-- [User Dashoard](#user_dashboard)
-- [Admin Dashoard](#admin_dashboard)
+  - [User Dashboard](#user_dashboard)
+  - [Admin Dashboard](#admin_dashboard)
+- [Demo Dashoard](#demo_dashboard)
 - [How to Use](#how_to_use)
 - [Technologies Used](#technologies)
 - [Contact](#contact)
@@ -47,7 +53,7 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 
 - The Contact page offers the venue address, Google Maps with directions, phone number, and email for easy contact. <br><br>
 
-### Additional Pages
+### Additional Pages <a name="additional_pages"></a>
 
 Apart from the four main pages, there are some additional pages users may occasionally encounter, which are:
 
