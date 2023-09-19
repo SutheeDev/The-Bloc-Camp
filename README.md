@@ -174,3 +174,11 @@ The Admin Dashboard is exclusively accessible to assigned application administra
 - No standalone "Edit Show" link on the sidebar or dropdown menu; it appears dynamically only when the admin is on the Edit Show page to avoid confusion.
 - Delete button allows administrators to remove events from the database.
 - Please refer to the Create Show page for a comprehensive form input guide on the Edit Show.
+
+#### Create Show
+
+The Create Show page provides a comprehensive set of form inputs for administrators to construct an event. These fields include:
+
+1. Artist
+   - Specify the name of the artist, band, event, or show.
+   - This field is required; an error message will display if omitted.
