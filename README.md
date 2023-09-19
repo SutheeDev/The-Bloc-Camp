@@ -14,7 +14,7 @@ Welcome to The Bloc Camp, a project that showcases my development skills through
 
 ## Features
 
-This project consists of two main parts: the website and the application. <br>
+This project consists of two main parts: the [website](#website) and the [application](#application). <br>
 
 ## Website <a name="website"></a>
 
