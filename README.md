@@ -113,3 +113,43 @@ The user and admin dashboard share some standard functionalities, such as a dash
 - The user icon on the top right indicates an individual user name, providing a personalized touch to the interface.
 - Hovering over the user's name opens a dropdown menu with links to various pages, mirroring the functionality of the sidebar.
 - The dropdown menu includes a Logout link to securely log out and redirect the user to the Register / Login page.
+
+### User Dashboard
+
+The user dashboard is where the user view and update their profile, manage favorite shows, and discover upcoming events. It contains four sub-pages: Overview, Favorites, Upcoming, and Profile.
+
+#### Overview (User)
+
+- The overview is the first page users encounter upon entering the dashboard.
+- Users are greeted by their username, creating a personalized experience from the start.
+- A Quick Tips section offers quick access links for essential actions, for example, updating user profile and managing favorite shows.
+
+#### Favorites
+
+- Displays all shows and events users mark as favorites in one convenient location.
+- Ability to easily remove a show from the favorites list with a simple click.
+
+#### Upcoming
+
+- Display of all upcoming shows, categorized by the venue admin.
+- Basic show information, including the artist's name, image, performance date, and time, is readily available.
+- Expandable show containers with additional details such as show status, ticket price, and artist's description.
+- User-friendly search functionality at the top, allowing for show filtering and sorting.
+  - Sorting options include By Date, Reverse Date, A-Z, and Z-A.
+  - Loading spinner displayed during a search for timely results.
+- Page navigation buttons, situated at the end of the page, for browsing multiple shows.
+  - While on the first page, the Prev button takes users to the last page.
+  - While on the last page, the Next button loops users back to the first page.
+  - Page Number buttons for easy access to specific pages, enhancing user convenience.
+
+#### Profile
+
+- The Profile page lets users easily update and manage account information from one location.
+- Four editable input fields for user customization:
+  - Name
+  - Last Name
+  - Email
+  - Location
+- Mandatory completion of all fields to successfully update the profile.
+- Error message displayed if any required information is missing or incomplete.
+- Confirmation message is shown upon successful update after clicking the update button.
