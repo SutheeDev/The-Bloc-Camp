@@ -270,7 +270,14 @@ The demo function exhibits the application's possibilities and allows visitors t
 
 The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project.
 
-| Frontend     | Backend      | Security     | Utility      | Security     | Database     | Deployment   |
-| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
-| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 3 |
-| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 | Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 | Row 2, Col 3 |
+| Frontend         | Backend              | Security               | Utility       | Database   | Deployment |
+| ---------------- | -------------------- | ---------------------- | ------------- | ---------- | ---------- |
+| React            | NodeJS               | jsonwebtoken           | Axios         | MongoDB    | Render.com |
+| Style-components | Express              | Bcrypt JS              | Moment JS     | Cloudinary |            |
+| Swiper JS        | Mongoose             | jsonwebtoken           | Dotenv        |            |            |
+| Recharts         | Morgan               | express-mongo-sanitize | Validator JS  |            |            |
+| normalize.css    | http-status-codes    | xss-clean              | Concurrently  |            |            |
+| react-router-dom | express-async-errors | express-rate-limit     | cookie-parser |            |            |
+| react-icons      | express-fileupload   |                        | Browserslist  |            |            |
+| antd             |                      |                        |               |            |            |
+| date-fns         |                      |                        |               |            |            |
