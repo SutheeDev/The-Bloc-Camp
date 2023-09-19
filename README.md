@@ -4,11 +4,13 @@ Welcome to The Bloc Camp, a project that showcases my development skills through
 
 ## Table of Contents
 
-    - [Website](#website)
-    - [Application](#application)
-    - [User Dashoard](#user_dashboard)
-    - [Admin Dashoard](#admin_dashboard)
-    - [Technologies Used](#technologies)
+- [Website](#website)
+- [Application](#application)
+- [User Dashoard](#user_dashboard)
+- [Admin Dashoard](#admin_dashboard)
+- [How to Use](#how_to_use)
+- [Technologies Used](#technologies)
+- [Contact](#contact)
 
 ## Features
 
