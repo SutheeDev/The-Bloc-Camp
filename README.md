@@ -14,7 +14,7 @@ Welcome to The Bloc Camp, a project that showcases my development skills through
 
 ## Features
 
-This project consists of two main parts: the [website](#website) and the [application](#application). <br>
+This project consists of two main parts: the [website](#website) and the [application](#application). <br><br>
 
 ## Website <a name="website"></a>
 
@@ -58,7 +58,7 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 ### Error
 
 - Suppose users attempt to access a non-existent page on the website; they are gracefully redirected to the Error page.
-- Equipped with a Home button for easy navigation. <br>
+- Equipped with a Home button for easy navigation. <br><br>
 
 ## Common Elements
 
@@ -78,7 +78,7 @@ In addition to those pages described above, the website maintains consistent ele
 
 - The subscription form is available for users to input email addresses.
 - Equipped with a validator checking whether the input is an email and provides an error message if it is not.
-- A thank you note will be sent to the user's email in case of a successful subscription. <br>
+- A thank you note will be sent to the user's email in case of a successful subscription. <br><br>
 
 ## Application <a name="application"></a>
 
@@ -110,7 +110,7 @@ The user and admin dashboard share some standard functionalities, such as a dash
 
 - The user icon on the top right indicates an individual user name, providing a personalized touch to the interface.
 - Hovering over the user's name opens a dropdown menu with links to various pages, mirroring the functionality of the sidebar.
-- The dropdown menu includes a Logout link to securely log out and redirect the user to the Register / Login page. <br>
+- The dropdown menu includes a Logout link to securely log out and redirect the user to the Register / Login page. <br><br>
 
 ## User Dashboard <a name="user_dashboard"></a>
 
@@ -150,7 +150,7 @@ The user dashboard is where the user view and update their profile, manage favor
   - Location
 - Mandatory completion of all fields to successfully update the profile.
 - Error message displayed if any required information is missing or incomplete.
-- Confirmation message is shown upon successful update after clicking the update button. <br>
+- Confirmation message is shown upon successful update after clicking the update button. <br><br>
 
 ## Admin Dashboard <a name="admin_dashboard"></a>
 
@@ -236,7 +236,7 @@ Admin can immediately view the results of a newly created show by navigating to 
   - Location
 - Mandatory completion of all fields to successfully update the profile.
 - Error message displayed if any required information is missing or incomplete.
-- Confirmation message is shown upon successful update after clicking the update button. <br>
+- Confirmation message is shown upon successful update after clicking the update button. <br><br>
 
 ## Technologies Used <a name="technologies"></a>
 
