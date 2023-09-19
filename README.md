@@ -281,3 +281,45 @@ The Bloc Camp website and application were created using various technologies to
 | react-icons      | express-fileupload   |                        | Browserslist  |            |            |
 | antd             |                      |                        |               |            |            |
 | date-fns         |                      |                        |               |            |            |
+
+| **Category**                 | **Dependency**         |
+| ---------------------------- | ---------------------- |
+| **Backend**                  | NodeJS                 |
+|                              | Express                |
+|                              | Mongoose               |
+|                              | Helmet                 |
+|                              | http-status-codes      |
+|                              | jsonwebtoken           |
+|                              | Morgan                 |
+|                              | Nodemailer             |
+|                              | express-async-errors   |
+|                              | express-fileupload     |
+|                              | express-mongo-sanitize |
+|                              | express-rate-limit     |
+| **Frontend**                 | React                  |
+|                              | Styled-components      |
+|                              | SwiperJS               |
+|                              | Recharts               |
+|                              | antd                   |
+|                              | date-fns               |
+|                              | normalize.css          |
+|                              | react-icons            |
+|                              | react-router-dom       |
+| **Utility**                  | Axios                  |
+|                              | Bcrypt.js              |
+|                              | Moment.js              |
+|                              | Browserslist           |
+|                              | cookie-parser          |
+|                              | Dotenv                 |
+|                              | validator.js           |
+|                              | xss-clean              |
+|                              | Concurrently           |
+| **Database & Data Handling** | MongoDB                |
+|                              | Cloudinary             |
+| **Deployment & Hosting**     | Render.com             |
+| **Security**                 | Helmet                 |
+|                              | jsonwebtoken           |
+|                              | express-mongo-sanitize |
+|                              | xss-clean              |
+|                              | Bcrypt.js              |
+|                              | express-rate-limit     |
