@@ -1,6 +1,6 @@
 # The Bloc Camp
 
-Welcome to The Bloc Camp, a project that showcases my development skills through a dynamic website and a feature-packed application designed for The Bloc Camp, the Bay area's premiere live music venue, providing an excellent space for hosting events and concerts and delivering an exceptional musical experience for music lovers. <br><br>
+Welcome to [The Bloc Camp](https://the-bloc-camp.onrender.com/), a project that showcases my development skills through a dynamic website and a feature-packed application designed for The Bloc Camp, the Bay area's premiere live music venue, providing an excellent space for hosting events and concerts and delivering an exceptional musical experience for music lovers. <br><br>
 
 ## Table of Contents
 
@@ -270,7 +270,7 @@ The demo function exhibits the application's possibilities and allows visitors t
 
 The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project.
 
-| Frontend     | Backend      | Header 3     |
-| ------------ | ------------ | ------------ |
-| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
-| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
+| Frontend     | Backend      | Security     | Utility      | Security     | Database     | Deployment   |
+| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 | Row 1, Col 3 |
+| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 | Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 | Row 2, Col 3 |
