@@ -92,7 +92,7 @@ The second part of this project is the application, which extends the user exper
 - Robust form validation to ensure accurate and complete information entry.
 - Upon successful login or registration, users receive a friendly success message and are seamlessly redirected to their respective dashboards.
 - Users and admins will be navigated to a different dashboard. However, a new registerer will be automatically initialized as a general user.
-- The links to explore the User Demo and Admin Demo are also provided on the login form.
+- The links to explore the [User Demo](#user_demo) and [Admin Demo](#admin_demo) are also provided on the login form.
 
 ### Dashboard
 
@@ -122,12 +122,12 @@ The user dashboard is where the user view and update their profile, manage favor
 - Users are greeted by their username, creating a personalized experience from the start.
 - A Quick Tips section offers quick access links for essential actions, for example, updating user profile and managing favorite shows.
 
-### Favorites
+### Favorites <a name="favorites"></a>
 
 - Displays all shows and events users mark as favorites in one convenient location.
 - Ability to easily remove a show from the favorites list with a simple click.
 
-### Upcoming
+### Upcoming <a name="upcoming"></a>
 
 - Display of all upcoming shows, categorized by the venue admin.
 - Basic show information, including the artist's name, image, performance date, and time, is readily available.
@@ -156,13 +156,13 @@ The user dashboard is where the user view and update their profile, manage favor
 
 The Admin Dashboard is exclusively accessible to assigned application administrators. It is the central hub for managing the music venue's operations. It consists of four sub-pages: Overview, All Shows, Create Show, and Profile page.
 
-### Overview (Admin)
+### Overview (Admin) <a name="overview_admin"></a>
 
 - A comprehensive overview of the venue's performance.
 - Displays the total number of shows categorized by status (Upcoming, Canceled, and Sold Out) at the top.
 - Monthly show chart visualizing venue performance in a six-month period with bar and area charts.
 
-### All Shows
+### All Shows <a name="all_shows"></a>
 
 - Provides administrators with a complete listing of all types of shows and events for easy management.
 - Shows the total number of shows for quick reference.
@@ -171,9 +171,9 @@ The Admin Dashboard is exclusively accessible to assigned application administra
 - Edit button allows administrators to update information for specific shows, leading to the Edit Show page.
 - No standalone "Edit Show" link on the sidebar or dropdown menu; it appears dynamically only when the admin is on the Edit Show page to avoid confusion.
 - Delete button allows administrators to remove events from the database.
-- Please refer to the Create Show page for a comprehensive form input guide on the Edit Show.
+- Please refer to the [Create Show](#create_show) page for a comprehensive form input guide on the Edit Show.
 
-### Create Show
+### Create Show <a name="create_show"></a>
 
 The Create Show page provides a comprehensive set of form inputs for administrators to construct an event. These fields include:
 
@@ -187,8 +187,8 @@ The Create Show page provides a comprehensive set of form inputs for administrat
    - Specify the ticket price.
 4. Status
    - A dropdown menu where the admin chooses between upcoming, canceled, and soldout.
-   - Each selected status appears on the All Shows page and is color-coded differently for easy identification.
-   - Total number of all shows statuses is reflected on the Overview page.
+   - Each selected status appears on the [All Shows](#all_shows) page and is color-coded differently for easy identification.
+   - Total number of all shows statuses is reflected on the [Overview](#overview_admin) page.
    - This field is required; an error message will appear if not specified.
 5. Show Date
    - Specify the event date using a calendar provided
@@ -203,18 +203,18 @@ The Create Show page provides a comprehensive set of form inputs for administrat
    - An error message is displayed if exceeds the maximum file size or uploads a non-image file type.
    - Automatically crops, resizes, and converts the image to a square format of 426px x 426px for uniform presentation.
    - Default image provided if no upload is made.
-   - Artist's thumbnails appear on the Shows page.
+   - Artist's thumbnails appear on the [Shows](#shows) page.
 8. Featured Image
    - Similar functionalities to Thumbnail Image, allowing image uploads up to 3 MB.
    - Automatically crops, resizes, and converts the image to a rectangle format of 640px x 360px.
-   - Used in various places on the front-end and dashboard, including Favorites and Upcoming on the User Dashboard, All Shows on the Admin Dashboard, and Artist page on the front-end.
-   - Featured image of a featured show is included on the slideshow displayed on the Home page.
+   - Used in various places on the front-end and dashboard, including [Favorites](#favorites) and [Upcoming](#upcoming) on the [User Dashboard](#user_dashboard), [All Shows](#all_shows) on the [Admin Dashboard](#admin_dashboard), and [Artist](#artist) page on the front-end.
+   - Featured image of a [featured show](#featured_show) is included on the slideshow displayed on the [Home](#home) page.
 9. Publish On Site?
    - Toggle switch to decide whether the show should appear on the site
    - With this switch ON, the show is exhibited on Home and Shows Pages.
    - Useful for hiding incomplete or future shows from site visitors.
    - Published status is displayed on each show on the dashboard.
-10. Featured Show?
+10. Featured Show? <a name="featured_show"></a>
     - Toggle switch to set the show as a featured show, displayed in the slideshow on the Home Page.
     - Promote selected shows or concerts effectively.
     - Featured status is also displayed on each show on the dashboard.
