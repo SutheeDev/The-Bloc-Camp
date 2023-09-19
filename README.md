@@ -1,14 +1,22 @@
 # The Bloc Camp
 
-Welcome to The Bloc Camp, a project that showcases my development skills through a dynamic website and a feature-packed application designed for The Bloc Camp, the Bay area's premiere live music venue, providing an excellent space for hosting events and concerts and delivering an exceptional musical experience for music lovers.
+Welcome to The Bloc Camp, a project that showcases my development skills through a dynamic website and a feature-packed application designed for The Bloc Camp, the Bay area's premiere live music venue, providing an excellent space for hosting events and concerts and delivering an exceptional musical experience for music lovers. <br>
 
 ## Table of Contents
 
+    - [Website](#website)
+    - [Application](#application)
+    - [User Dashoard](#user_dashboard)
+    - [Admin Dashoard](#admin_dashboard)
+    - [Technologies Used](#technologies)
+
 ## Features
 
-This project consists of two main parts: the website and the application.
+This project consists of two main parts: the website and the application. <br>
 
 ## Website
+
+<a name="website"></a>
 
 The Bloc Camp website offers a range of features to enhance the user experience. It is where the venue showcases its forthcoming shows, displays event information, provides details of the artists, sells the tickets, and supplies the venue's regulations and contact info. There are four main pages the user can visit on The Bloc Camp website:
 
@@ -60,7 +68,7 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 ### Error
 
 - Suppose users attempt to access a non-existent page on the website; they are gracefully redirected to the Error page.
-- Equipped with a Home button for easy navigation.
+- Equipped with a Home button for easy navigation. <br>
 
 ## Common Elements
 
@@ -80,9 +88,11 @@ In addition to those pages described above, the website maintains consistent ele
 
 - The subscription form is available for users to input email addresses.
 - Equipped with a validator checking whether the input is an email and provides an error message if it is not.
-- A thank you note will be sent to the user's email in case of a successful subscription.
+- A thank you note will be sent to the user's email in case of a successful subscription. <br>
 
 ## Application
+
+<a name="application"></a>
 
 The second part of this project is the application, which extends the user experience by offering additional functionalities through a dashboard divided into two separate classes: the User Dashboard and the Admin Dashboard. The dashboard is only accessible through the Register / Login page.
 
@@ -112,9 +122,11 @@ The user and admin dashboard share some standard functionalities, such as a dash
 
 - The user icon on the top right indicates an individual user name, providing a personalized touch to the interface.
 - Hovering over the user's name opens a dropdown menu with links to various pages, mirroring the functionality of the sidebar.
-- The dropdown menu includes a Logout link to securely log out and redirect the user to the Register / Login page.
+- The dropdown menu includes a Logout link to securely log out and redirect the user to the Register / Login page. <br>
 
 ## User Dashboard
+
+<a name="user_dashboard"></a>
 
 The user dashboard is where the user view and update their profile, manage favorite shows, and discover upcoming events. It contains four sub-pages: Overview, Favorites, Upcoming, and Profile.
 
@@ -152,9 +164,11 @@ The user dashboard is where the user view and update their profile, manage favor
   - Location
 - Mandatory completion of all fields to successfully update the profile.
 - Error message displayed if any required information is missing or incomplete.
-- Confirmation message is shown upon successful update after clicking the update button.
+- Confirmation message is shown upon successful update after clicking the update button. <br>
 
 ## Admin Dashboard
+
+<a name="admin_dashboard"></a>
 
 The Admin Dashboard is exclusively accessible to assigned application administrators. It is the central hub for managing the music venue's operations. It consists of four sub-pages: Overview, All Shows, Create Show, and Profile page.
 
@@ -238,8 +252,10 @@ Admin can immediately view the results of a newly created show by navigating to 
   - Location
 - Mandatory completion of all fields to successfully update the profile.
 - Error message displayed if any required information is missing or incomplete.
-- Confirmation message is shown upon successful update after clicking the update button.
+- Confirmation message is shown upon successful update after clicking the update button. <br>
 
 ## Technologies Used
+
+<a name="technologies"></a>
 
 The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project.
