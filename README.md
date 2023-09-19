@@ -16,9 +16,7 @@ Welcome to The Bloc Camp, a project that showcases my development skills through
 
 This project consists of two main parts: the website and the application. <br>
 
-## Website
-
-<a name="website"></a>
+## Website <a name="website"></a>
 
 The Bloc Camp website offers a range of features to enhance the user experience. It is where the venue showcases its forthcoming shows, displays event information, provides details of the artists, sells the tickets, and supplies the venue's regulations and contact info. There are four main pages the user can visit on The Bloc Camp website:
 
@@ -27,40 +25,30 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 - [About](#about)
 - [Contact](#contact)
 
-### Home
-
-<a name="home"></a>
+### Home <a name="home"></a>
 
 - The Home page offers a beautiful dynamic slideshow showcasing featured artists and event information such as date, time, and button navigation to the Shows page.
 - The interactive slideshow allows users to click and drag to view featured artists.
 - Display of venue rules and regulations.
 - Exhibit of upcoming events with a "Get Tickets" button for more details.
 
-### Shows
-
-<a name="shows"></a>
+### Shows <a name="shows"></a>
 
 - The Shows page provides detailed artist information, including images, performance dates, and descriptions.
 - A button on each show leads to an individual [Artist](#artist) page.
 
-### About
-
-<a name="about"></a>
+### About <a name="about"></a>
 
 - The About page is where the message from the venue can be found.
 - Also provides insights into the venue's principles.
 
-### Contact
-
-<a name="conatct"></a>
+### Contact <a name="conatct"></a>
 
 - The Contact page offers the venue address, Google Maps with directions, phone number, and email for easy contact.
 
 ### Additional Pages
 
-#### Artist
-
-<a name="artist"></a>
+#### Artist <a name="artist"></a>
 
 - The Artist page is dedicated to each individual artist.
 - All information about the event can be found, including the artist's name, artist description, image, event date, time, and ticket price.
@@ -92,9 +80,7 @@ In addition to those pages described above, the website maintains consistent ele
 - Equipped with a validator checking whether the input is an email and provides an error message if it is not.
 - A thank you note will be sent to the user's email in case of a successful subscription. <br>
 
-## Application
-
-<a name="application"></a>
+## Application <a name="application"></a>
 
 The second part of this project is the application, which extends the user experience by offering additional functionalities through a dashboard divided into two separate classes: the User Dashboard and the Admin Dashboard. The dashboard is only accessible through the Register / Login page.
 
@@ -126,9 +112,7 @@ The user and admin dashboard share some standard functionalities, such as a dash
 - Hovering over the user's name opens a dropdown menu with links to various pages, mirroring the functionality of the sidebar.
 - The dropdown menu includes a Logout link to securely log out and redirect the user to the Register / Login page. <br>
 
-## User Dashboard
-
-<a name="user_dashboard"></a>
+## User Dashboard <a name="user_dashboard"></a>
 
 The user dashboard is where the user view and update their profile, manage favorite shows, and discover upcoming events. It contains four sub-pages: Overview, Favorites, Upcoming, and Profile.
 
@@ -168,9 +152,7 @@ The user dashboard is where the user view and update their profile, manage favor
 - Error message displayed if any required information is missing or incomplete.
 - Confirmation message is shown upon successful update after clicking the update button. <br>
 
-## Admin Dashboard
-
-<a name="admin_dashboard"></a>
+## Admin Dashboard <a name="admin_dashboard"></a>
 
 The Admin Dashboard is exclusively accessible to assigned application administrators. It is the central hub for managing the music venue's operations. It consists of four sub-pages: Overview, All Shows, Create Show, and Profile page.
 
@@ -256,8 +238,6 @@ Admin can immediately view the results of a newly created show by navigating to 
 - Error message displayed if any required information is missing or incomplete.
 - Confirmation message is shown upon successful update after clicking the update button. <br>
 
-## Technologies Used
-
-<a name="technologies"></a>
+## Technologies Used <a name="technologies"></a>
 
 The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project.
