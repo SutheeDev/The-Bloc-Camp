@@ -182,3 +182,48 @@ The Create Show page provides a comprehensive set of form inputs for administrat
 1. Artist
    - Specify the name of the artist, band, event, or show.
    - This field is required; an error message will display if omitted.
+2. Artist Info
+   - Where the admin describes the artist, provides a backstory, shares information about the show, or highlights exciting details.
+   - Limited to 400 characters, an error message will be displayed if the character limit is exceeded.
+3. Ticket Price
+   - Specify the ticket price.
+4. Status
+   - A dropdown menu where the admin chooses between upcoming, canceled, and soldout.
+   - Each selected status appears on the All Shows page and is color-coded differently for easy identification.
+   - Total number of all shows statuses is reflected on the Overview page.
+   - This field is required; an error message will appear if not specified.
+5. Show Date
+   - Specify the event date using a calendar provided
+   - Accepts formats of "mm/dd/yy" or "mm/dd/yyyy" for manual input.
+   - This is a required field; an error message will display if omitted.
+6. Start Time
+   - Specify the show's start time in "hh:mm PM" format.
+   - Manual input is available, but choosing from predefined time slots – every 15 minutes from 12:00 PM to 22:30 PM – is recommended for precision.
+   - This is a required field; an error message will appear if omitted.
+7. Thumbnail Image
+   - Allow uploading an image up to 3 MB to serve as the artist's thumbnail.
+   - An error message is displayed if exceeds the maximum file size or uploads a non-image file type.
+   - Automatically crops, resizes, and converts the image to a square format of 426px x 426px for uniform presentation.
+   - Default image provided if no upload is made.
+   - Artist's thumbnails appear on the Shows page.
+8. Featured Image
+   - Similar functionalities to Thumbnail Image, allowing image uploads up to 3 MB.
+   - Automatically crops, resizes, and converts the image to a rectangle format of 640px x 360px.
+   - Used in various places on the front-end and dashboard, including Favorites and Upcoming on the User Dashboard, All Shows on the Admin Dashboard, and Artist page on the front-end.
+   - Featured image of a featured show is included on the slideshow displayed on the Home page.
+9. Publish On Site?
+   - Toggle switch to decide whether the show should appear on the site
+   - With this switch ON, the show is exhibited on Home and Shows Pages.
+   - Useful for hiding incomplete or future shows from site visitors.
+   - Published status is displayed on each show on the dashboard.
+10. Featured Show?
+    - Toggle switch to set the show as a featured show, displayed in the slideshow on the Home Page.
+    - Promote selected shows or concerts effectively.
+    - Featured status is also displayed on each show on the dashboard.
+11. Save Changes Button
+    - Compiles and saves all show information to the database, displaying a success message.
+    - Resets all form inputs to their default settings, ready to create a new show.
+12. Clear All Button
+    - Resets all form inputs to their default setup.
+
+Admin can immediately view the results of a newly created show by navigating to the All Shows page.
