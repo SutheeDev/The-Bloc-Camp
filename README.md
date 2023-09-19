@@ -227,3 +227,19 @@ The Create Show page provides a comprehensive set of form inputs for administrat
     - Resets all form inputs to their default setup.
 
 Admin can immediately view the results of a newly created show by navigating to the All Shows page.
+
+#### Profile
+
+- The Profile page allows admins to update and manage account information conveniently.
+- Includes four editable input fields:
+  - Name
+  - Last Name
+  - Email
+  - Location
+- Mandatory completion of all fields to successfully update the profile.
+- Error message displayed if any required information is missing or incomplete.
+- Confirmation message is shown upon successful update after clicking the update button.
+
+## Technologies Used
+
+The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project.
