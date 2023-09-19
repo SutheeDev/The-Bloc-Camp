@@ -85,7 +85,7 @@ In addition to those pages described above, the website maintains consistent ele
 
 ## Application <a name="application"></a>
 
-The second part of this project is the application, which extends the user experience by offering additional functionalities through a dashboard divided into two separate classes: the User Dashboard and the Admin Dashboard. The dashboard is only accessible through the Register / Login page.
+The second part of this project is the application, which extends the user experience by offering additional functionalities through a dashboard divided into two separate classes: the [User Dashboard](#user_dashboard) and the [Admin Dashboard](#admin_dashboard). The dashboard is only accessible through the Register / Login page.
 
 ### Register / Login
 
@@ -240,6 +240,25 @@ Admin can immediately view the results of a newly created show by navigating to 
 - Mandatory completion of all fields to successfully update the profile.
 - Error message displayed if any required information is missing or incomplete.
 - Confirmation message is shown upon successful update after clicking the update button. <br><br>
+
+## Demo Dashboard <a name="demo_dashboard"></a>
+
+The demo function exhibits the application's possibilities and allows visitors to explore dashboard capabilities without registering or signing in.
+
+### User Demo <a name="user_demo"></a>
+
+- Delivers identical design and layout as the User Dashboard.
+- Offered read-only mode; allows users to examine essential functionalities with some limited access.
+  - Adding or removing the favorite shows to the list on the Favorite and Upcoming pages and updating information on the Profile page are not permitted.
+
+### Admin Demo <a name="admin_demo"></a>
+
+- Provides a similar structure and layout as the Admin Dashboard.
+- Offered read-only mode; allows admins to explore basic functionalities with some restricted behaviors.
+  - Deleting the shows is not authorized on the All Shows page.
+  - Uploading Thumbnail Image and Featured Image functionalities on Edit Show and Create Show pages are intentionally restricted.
+  - Save Changes button is not operable on the Edit Show and Create Show pages.
+  - Updating information on the Profile page is also not permitted. <br><br>
 
 ## Technologies Used <a name="technologies"></a>
 
