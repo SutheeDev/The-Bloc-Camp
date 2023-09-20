@@ -16,7 +16,7 @@ Welcome to [The Bloc Camp](https://the-bloc-camp.onrender.com/), a project that 
   - [Admin Dashboard](#admin_dashboard)
 - [Demo Dashboard](#demo_dashboard)
 - [Technologies Used](#technologies)
-- [Contact](#contact)
+- [Feedback](#feedback) <br><br>
 
 ## Features
 
@@ -267,7 +267,7 @@ The demo function exhibits the application's possibilities and allows visitors t
 
 ## Technologies Used <a name="technologies"></a>
 
-The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project.
+The Bloc Camp website and application were created using various technologies to ensure a smooth and practical user experience. Here are some technologies I incorporated into this project. <br><br>
 
 | **Frontend**     | **Backend**          | **Security**           | **Utility**   | **Database** | **Deployment** |
 | :--------------- | :------------------- | :--------------------- | :------------ | :----------- | :------------- |
@@ -281,44 +281,8 @@ The Bloc Camp website and application were created using various technologies to
 | antd             |                      |                        |               |              |                |
 | date-fns         |                      |                        |               |              |                |
 
-|         **Category**         |     **Dependency**     |
-| :--------------------------: | :--------------------: |
-|         **Backend**          |         NodeJS         |
-|                              |        Express         |
-|                              |        Mongoose        |
-|                              |         Helmet         |
-|                              |   http-status-codes    |
-|                              |      jsonwebtoken      |
-|                              |         Morgan         |
-|                              |       Nodemailer       |
-|                              |  express-async-errors  |
-|                              |   express-fileupload   |
-|                              | express-mongo-sanitize |
-|                              |   express-rate-limit   |
-|         **Frontend**         |         React          |
-|                              |   Styled-components    |
-|                              |        SwiperJS        |
-|                              |        Recharts        |
-|                              |          antd          |
-|                              |        date-fns        |
-|                              |     normalize.css      |
-|                              |      react-icons       |
-|                              |    react-router-dom    |
-|         **Utility**          |         Axios          |
-|                              |       Bcrypt.js        |
-|                              |       Moment.js        |
-|                              |      Browserslist      |
-|                              |     cookie-parser      |
-|                              |         Dotenv         |
-|                              |      validator.js      |
-|                              |       xss-clean        |
-|                              |      Concurrently      |
-| **Database & Data Handling** |        MongoDB         |
-|                              |       Cloudinary       |
-|   **Deployment & Hosting**   |       Render.com       |
-|         **Security**         |         Helmet         |
-|                              |      jsonwebtoken      |
-|                              | express-mongo-sanitize |
-|                              |       xss-clean        |
-|                              |       Bcrypt.js        |
-|                              |   express-rate-limit   |
+<br><br>
+
+## Feedback <a name="feedback"></a>
+
+Feedback to improve The Bloc Camp project is welcome. If you have any suggestions or would like to collaborate, please get in touch with me on GitHub. Thanks!
