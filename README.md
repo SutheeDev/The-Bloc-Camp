@@ -273,12 +273,12 @@ The Bloc Camp website and application were created using various technologies to
 | :--------------- | :------------------- | :--------------------- | :------------ | :----------- | :------------- |
 | React            | NodeJS               | jsonwebtoken           | Axios         | MongoDB      | Render.com     |
 | Style-components | Express              | BcryptJS               | MomentJS      | Cloudinary   |                |
-| SwiperJS         | Mongoose             | jsonwebtoken           | Dotenv        |              |                |
+| SwiperJS         | Mongoose             | express-rate-limit     | Dotenv        |              |                |
 | Recharts         | Morgan               | express-mongo-sanitize | ValidatorJS   |              |                |
 | normalize.css    | http-status-codes    | xss-clean              | Concurrently  |              |                |
-| react-router-dom | express-async-errors | express-rate-limit     | cookie-parser |              |                |
+| react-router-dom | express-async-errors |                        | cookie-parser |              |                |
 | react-icons      | express-fileupload   |                        | Browserslist  |              |                |
-| antd             |                      |                        |               |              |                |
+| antd             | Brevo                |                        |               |              |                |
 | date-fns         |                      |                        |               |              |                |
 
 <br><br>
