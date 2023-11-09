@@ -96,13 +96,18 @@ In addition to those pages described above, the website maintains consistent ele
 
 - Remains conveniently visible, ensuring easy navigation without the need to scroll to the top.
 
-  ![Navbar on small screen](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557328/ReadMe-Images/The%20Bloc%20Camp/Images/Navbar_Small_il9cgr.png)
+![Navbar on small screen](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557328/ReadMe-Images/The%20Bloc%20Camp/Images/Navbar_Small_il9cgr.png)
 
 - Responsive design for mobile and desktop screens.
 
 ### The social-media links
 
+![Social-media links attached to the left of the page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699559857/ReadMe-Images/The%20Bloc%20Camp/Images/Social_Side_v8htfa.png)
+
 - Visibly attached to the left, providing effortless accessibility.
+
+![Social-media links fixed under the page logo](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557331/ReadMe-Images/The%20Bloc%20Camp/Images/Social_Small_o8scuf.png)
+
 - The links shift beneath the logo on smaller screens, ensuring accessibility without wasting screen real estate.
 
 ### Subscription
