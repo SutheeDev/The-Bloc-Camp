@@ -81,6 +81,8 @@ Apart from the four main pages, there are some additional pages users may occasi
 
 ### Error
 
+![Error 404 Page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557324/ReadMe-Images/The%20Bloc%20Camp/Images/404_s4imcy.png)
+
 - Suppose users attempt to access a non-existent page on the website; they are gracefully redirected to the Error page.
 - Equipped with a Home button for easy navigation. <br><br>
 
