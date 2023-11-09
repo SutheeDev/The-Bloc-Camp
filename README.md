@@ -120,9 +120,13 @@ In addition to those pages described above, the website maintains consistent ele
 
 ## Application <a name="application"></a>
 
+![Application](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557324/ReadMe-Images/The%20Bloc%20Camp/Images/Application_twllsl.png)
+
 The second part of this project is the application, which extends the user experience by offering additional functionalities through a dashboard divided into two separate classes: the [User Dashboard](#user_dashboard) and the [Admin Dashboard](#admin_dashboard). The dashboard is only accessible through the Register / Login page.
 
 ### Register / Login
+
+![Login](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558417/ReadMe-Images/The%20Bloc%20Camp/GIF/Login_eqinmm.gif)
 
 - The Register / Login page provides user-friendly forms for registration and login.
 - Users can either log in with their existing credentials or switch to the Register page to create a new account.
