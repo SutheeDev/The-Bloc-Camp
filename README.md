@@ -1,5 +1,8 @@
 # The Bloc Camp
 
+![The Bloc Camp Landing Page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557326/ReadMe-Images/The%20Bloc%20Camp/Images/Bloc_Camp_forf30.png)
+<br><br>
+
 Welcome to [The Bloc Camp](https://the-bloc-camp.onrender.com/), a project that showcases my development skills through a dynamic website and a feature-packed application designed for The Bloc Camp, the Bay area's premiere live music venue, providing an excellent space for hosting events and concerts and delivering an exceptional musical experience for music lovers. <br><br>
 
 ## Table of Contents
