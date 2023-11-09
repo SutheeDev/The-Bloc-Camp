@@ -33,6 +33,8 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 
 ### Home <a name="home"></a>
 
+![Home Page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699556857/ReadMe-Images/The%20Bloc%20Camp/GIF/Home%20Page.gif)
+
 - The Home page offers a beautiful dynamic slideshow showcasing featured artists and event information such as date, time, and button navigation to the Shows page.
 - The interactive slideshow allows users to click and drag to view featured artists.
 - Display of venue rules and regulations.
