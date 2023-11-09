@@ -45,15 +45,21 @@ The Bloc Camp website offers a range of features to enhance the user experience.
 
 ### Shows <a name="shows"></a>
 
+![Shows Page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557330/ReadMe-Images/The%20Bloc%20Camp/Images/Shows_Page_julft5.png)
+
 - The Shows page provides detailed artist information, including images, performance dates, and descriptions.
 - A button on each show leads to an individual [Artist](#artist) page.
 
 ### About <a name="about"></a>
 
+![About Page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557323/ReadMe-Images/The%20Bloc%20Camp/Images/About_Page_uuedxw.png)
+
 - The About page is where the message from the venue can be found.
 - Also provides insights into the venue's principles.
 
 ### Contact <a name="contact"></a>
+
+![Contact Page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557327/ReadMe-Images/The%20Bloc%20Camp/Images/Contact_Page_c4m8jy.png)
 
 - The Contact page offers the venue address, Google Maps with directions, phone number, and email for easy contact. <br><br>
 
