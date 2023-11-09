@@ -312,12 +312,18 @@ The demo function exhibits the application's possibilities and allows visitors t
 ### User Demo <a name="user_demo"></a>
 
 - Delivers identical design and layout as the User Dashboard.
+
+![User Demo offers only read-only mode](https://res.cloudinary.com/dnc7potxo/image/upload/v1699563374/ReadMe-Images/The%20Bloc%20Camp/GIF/User_Demo_-_No_Change_laeuiv.gif)
+
 - Offered read-only mode; allows users to examine essential functionalities with some limited access.
   - Adding or removing the favorite shows to the list on the Favorite and Upcoming pages and updating information on the Profile page are not permitted.
 
 ### Admin Demo <a name="admin_demo"></a>
 
 - Provides a similar structure and layout as the Admin Dashboard.
+
+![Admin Demo offers only read-only mode](https://res.cloudinary.com/dnc7potxo/image/upload/v1699563375/ReadMe-Images/The%20Bloc%20Camp/GIF/Admin_Demo_-_No_Change_ybmooa.gif)
+
 - Offered read-only mode; allows admins to explore basic functionalities with some restricted behaviors.
   - Deleting the shows is not authorized on the All Shows page.
   - Uploading Thumbnail Image and Featured Image functionalities on Edit Show and Create Show pages are intentionally restricted.
