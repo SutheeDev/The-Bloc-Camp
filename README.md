@@ -142,9 +142,14 @@ The user and admin dashboard share some standard functionalities, such as a dash
 
 #### Dashboard Sidebar
 
+![Close and open sidebar on a big screen](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558419/ReadMe-Images/The%20Bloc%20Camp/GIF/Sidebar_close_open_ryq402.gif)
+
 - A key navigation component on the left side of the application's interface offers convenient access to different sub-pages.
 - Automatically displayed for quick navigation on larger screens.
 - Automatically hidden to save space, ensuring a better user experience.
+
+![Open and openclose sidebar on a small screen](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558420/ReadMe-Images/The%20Bloc%20Camp/GIF/Sidebar_open_close_a9h4gr.gif)
+
 - When hidden, it is transformed into a floating modal menu.
 - Could be manually toggled to be visible or hidden using the hamburger menu on the header's top left.
 
