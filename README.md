@@ -112,7 +112,7 @@ In addition to those pages described above, the website maintains consistent ele
 
 ### Subscription
 
-![Subscribe form](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557332/ReadMe-Images/The%20Bloc%20Camp/Images/Subscribe_elnz05.png)
+![Subscribe form](https://res.cloudinary.com/dnc7potxo/image/upload/v1699563373/ReadMe-Images/The%20Bloc%20Camp/GIF/Send_Email_ykhmwv.gif)
 
 - The subscription form is available for users to input email addresses.
 - Equipped with a validator checking whether the input is an email and provides an error message if it is not.
