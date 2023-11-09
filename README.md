@@ -95,11 +95,10 @@ In addition to those pages described above, the website maintains consistent ele
 ![Navbar on big screen](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557329/ReadMe-Images/The%20Bloc%20Camp/Images/Navbar_l9m8su.png)
 
 - Remains conveniently visible, ensuring easy navigation without the need to scroll to the top.
+
+  ![Navbar on small screen](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557328/ReadMe-Images/The%20Bloc%20Camp/Images/Navbar_Small_il9cgr.png)
+
 - Responsive design for mobile and desktop screens.
-
-![Navbar on small screen](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557328/ReadMe-Images/The%20Bloc%20Camp/Images/Navbar_Small_il9cgr.png)
-
-###### Navbar on a small screen
 
 ### The social-media links
 
