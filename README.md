@@ -167,6 +167,8 @@ The user dashboard is where the user view and update their profile, manage favor
 
 ### Overview (User)
 
+![User Overview](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557333/ReadMe-Images/The%20Bloc%20Camp/Images/User_Overview_mgetlw.png)
+
 - The overview is the first page users encounter upon entering the dashboard.
 - Users are greeted by their username, creating a personalized experience from the start.
 - A Quick Tips section offers quick access links for essential actions, for example, updating user profile and managing favorite shows.
