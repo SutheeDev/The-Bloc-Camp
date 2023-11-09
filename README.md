@@ -238,6 +238,8 @@ The Admin Dashboard is exclusively accessible to assigned application administra
 
 ### Create Show <a name="create_show"></a>
 
+![Create show using the Create Show page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558422/ReadMe-Images/The%20Bloc%20Camp/GIF/Create_Show_ndh2jx.gif)
+
 The Create Show page provides a comprehensive set of form inputs for administrators to construct an event. These fields include:
 
 1. Artist
