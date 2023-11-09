@@ -305,6 +305,8 @@ Admin can immediately view the results of a newly created show by navigating to 
 
 ## Demo Dashboard <a name="demo_dashboard"></a>
 
+![Demo](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558416/ReadMe-Images/The%20Bloc%20Camp/GIF/Demo_nj2r6l.gif)
+
 The demo function exhibits the application's possibilities and allows visitors to explore dashboard capabilities without registering or signing in.
 
 ### User Demo <a name="user_demo"></a>
