@@ -155,6 +155,8 @@ The user and admin dashboard share some standard functionalities, such as a dash
 
 #### Dropdown Menu & User Icon
 
+![Dropdown menu access](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558416/ReadMe-Images/The%20Bloc%20Camp/GIF/Dropdown_Menu_hhkiri.gif)
+
 - The user icon on the top right indicates an individual user name, providing a personalized touch to the interface.
 - Hovering over the user's name opens a dropdown menu with links to various pages, mirroring the functionality of the sidebar.
 - The dropdown menu includes a Logout link to securely log out and redirect the user to the Register / Login page. <br><br>
