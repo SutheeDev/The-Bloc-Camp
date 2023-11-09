@@ -175,6 +175,8 @@ The user dashboard is where the user view and update their profile, manage favor
 
 ### Favorites <a name="favorites"></a>
 
+![Favorite page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557333/ReadMe-Images/The%20Bloc%20Camp/Images/User_Favorite_yi3x3u.png)
+
 - Displays all shows and events users mark as favorites in one convenient location.
 - Ability to easily remove a show from the favorites list with a simple click.
 
