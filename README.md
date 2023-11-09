@@ -214,6 +214,8 @@ The user dashboard is where the user view and update their profile, manage favor
 
 The Admin Dashboard is exclusively accessible to assigned application administrators. It is the central hub for managing the music venue's operations. It consists of four sub-pages: Overview, All Shows, Create Show, and Profile page.
 
+![Admin Dashboard](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558415/ReadMe-Images/The%20Bloc%20Camp/GIF/Admin_Overview_rjmz5g.gif)
+
 ### Overview (Admin) <a name="overview_admin"></a>
 
 - A comprehensive overview of the venue's performance.
@@ -226,6 +228,9 @@ The Admin Dashboard is exclusively accessible to assigned application administra
 - Shows the total number of shows for quick reference.
 - Basic show information, including the artist's name, performance date, and time, is immediately visible.
 - Expandable show containers with additional details, such as show status, ticket price, and artist's description.
+
+![Access Update Show page from the All Shows page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558421/ReadMe-Images/The%20Bloc%20Camp/GIF/All_Shows_-_Update_xlwc0i.gif)
+
 - Edit button allows administrators to update information for specific shows, leading to the Edit Show page.
 - No standalone "Edit Show" link on the sidebar or dropdown menu; it appears dynamically only when the admin is on the Edit Show page to avoid confusion.
 - Delete button allows administrators to remove events from the database.
