@@ -198,6 +198,8 @@ The user dashboard is where the user view and update their profile, manage favor
 
 ### Profile
 
+![Profile Update](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558418/ReadMe-Images/The%20Bloc%20Camp/GIF/Profile_Update_pi9nzd.gif)
+
 - The Profile page lets users easily update and manage account information from one location.
 - Four editable input fields for user customization:
   - Name
