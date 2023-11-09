@@ -185,6 +185,9 @@ The user dashboard is where the user view and update their profile, manage favor
 - Display of all upcoming shows, categorized by the venue admin.
 - Basic show information, including the artist's name, image, performance date, and time, is readily available.
 - Expandable show containers with additional details such as show status, ticket price, and artist's description.
+
+![Filter on the Upcoming page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699558420/ReadMe-Images/The%20Bloc%20Camp/GIF/Filter_jr4d0i.gif)
+
 - User-friendly search functionality at the top, allowing for show filtering and sorting.
   - Sorting options include By Date, Reverse Date, A-Z, and Z-A.
   - Loading spinner displayed during a search for timely results.
