@@ -69,8 +69,13 @@ Apart from the four main pages, there are some additional pages users may occasi
 
 ### Artist <a name="artist"></a>
 
+![Artist Page](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557325/ReadMe-Images/The%20Bloc%20Camp/Images/Artist_Page1_gtiser.png)
+
 - The Artist page is dedicated to each individual artist.
 - All information about the event can be found, including the artist's name, artist description, image, event date, time, and ticket price.
+
+![Artist Page with a function to calculate a total price](https://res.cloudinary.com/dnc7potxo/image/upload/v1699557326/ReadMe-Images/The%20Bloc%20Camp/Images/Artist_Page2_utuckd.png)
+
 - A function to calculate total ticket cost.
 - Although the 'Checkout' button is currently disabled, it provides a glimpse of the site's future capabilities.
 
